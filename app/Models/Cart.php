@@ -20,6 +20,6 @@ class Cart extends Model
     ];
 
     function items(){
-        return $this->belongsToMany(Group::class,'cart_item','cart_id','item_id');
+        return $this->belongsToMany(Item::class,'cart_item','cart_id','item_id');
     }
 }

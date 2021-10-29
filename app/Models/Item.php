@@ -54,7 +54,7 @@ class Item extends Model
     }
 
     function carts(){
-        return $this->belongsToMany(Item::class,'cart_item','item_id','cart_id');
+        return $this->belongsToMany(Cart::class,'cart_item','item_id','cart_id');
     }
 
     function user(){
