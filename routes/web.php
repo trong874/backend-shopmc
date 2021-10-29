@@ -6,7 +6,7 @@ use App\Http\Controllers\Backend\PagesController;
 
 use Illuminate\Support\Facades\Route;
 
-
+Route::get('/',[\App\Http\Controllers\Frontend\PagesController::class,'index'])->name('page.index');
 Route::get('/quick-search', [PagesController::class, 'quickSearch'])->name('quick-search');
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {

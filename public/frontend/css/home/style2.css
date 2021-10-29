@@ -1,0 +1,493 @@
+ @media (min-width: 1025px) {
+    .header .logo-section {
+        padding: 30px 0;
+    }
+}
+
+nav.top_menu > ul > li > a {
+    font-weight: normal;
+}
+
+.dl-menuwrapper li a, nav.top_menu ul li a, #re_menu_near_logo li, #re_menu_near_logo li {
+    font-family: "Roboto", trebuchet ms !important;
+    font-style: normal;
+}
+
+.rehub_feat_block div.offer_title, .rh_wrapper_video_playlist .rh_video_title_and_time .rh_video_title, .main_slider .flex-overlay h2, .related_articles ul li > a, h1, h2, h3, h4, h5, h6, .widget .title, .title h1, .title h5, .small_post blockquote p, .related_articles .related_title, #comments .title_comments, .commentlist .comment-author .fn, .commentlist .comment-author .fn a, .media_video > p, .rate_bar_wrap .review-top .review-text span.review-header, .wpsm-numbox.wpsm-style6 span.num, .wpsm-numbox.wpsm-style5 span.num, .rehub-main-font, .cegg-list-logo-title, .logo .textlogo, .wp-block-quote.is-style-large, .comment-respond h3, .related_articles .related_title, .re_title_inmodal {
+    font-family: "Roboto", trebuchet ms;
+}
+
+.main_slider .flex-overlay h2, h1, h2, h3, h4, h5, h6, .title h1, .title h5, .comment-respond h3 {
+}
+
+.sidebar, .rehub-body-font, body {
+    font-family: "Roboto", arial !important;
+}
+
+.header_top_wrap .user-ava-intop:after, .header-top .top-nav > ul > li > a, .header-top a.cart-contents, .header_top_wrap .icon-search-onclick:before, .header-top .top-social, .header-top .top-social a {
+    color: #f4f4f4 !important;
+}
+
+.header-top .top-nav li {
+    border: none !important;
+}
+
+.left-sidebar-archive .main-side {
+    float: right;
+}
+
+.left-sidebar-archive .sidebar {
+    float: left
+}
+
+.footer-bottom {
+    background-color: #f9f9f9 !important
+}
+
+.footer-bottom .footer_widget {
+    border: none !important
+}
+
+.widget .title:after {
+    border-bottom: 2px solid #3c6a02;
+}
+
+.rehub-main-color-border, nav.top_menu > ul > li.vertical-menu.border-main-color .sub-menu, .rh-main-bg-hover:hover, .wp-block-quote, ul.def_btn_link_tabs li.active a, .wp-block-pullquote {
+    border-color: #3c6a02;
+}
+
+.wpsm_promobox.rehub_promobox {
+    border-left-color: #3c6a02 !important;
+}
+
+.color_link {
+    color: #3c6a02 !important;
+}
+
+.search-header-contents {
+    border-top-color: #3c6a02;
+}
+
+.featured_slider:hover .score, .top_chart_controls .controls:hover, article.post .wpsm_toplist_heading:before {
+    border-color: #3c6a02;
+}
+
+.btn_more:hover, .small_post .overlay .btn_more:hover, .tw-pagination .current {
+    border: 1px solid #3c6a02;
+    color: #fff
+}
+
+.rehub_woo_review .rehub_woo_tabs_menu li.current {
+    border-top: 3px solid #3c6a02;
+}
+
+.gallery-pics .gp-overlay {
+    box-shadow: 0 0 0 4px #3c6a02 inset;
+}
+
+.post .rehub_woo_tabs_menu li.current, .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    border-top: 2px solid #3c6a02;
+}
+
+.rething_item a.cat {
+    border-bottom-color: #3c6a02
+}
+
+nav.top_menu ul li ul.sub-menu {
+    border-bottom: 2px solid #3c6a02;
+}
+
+.widget.deal_daywoo, .elementor-widget-wpsm_woofeatured .deal_daywoo {
+    border: 3px solid #3c6a02;
+    padding: 20px;
+    background: #fff;
+}
+
+.deal_daywoo .wpsm-bar-bar {
+    background-color: #3c6a02 !important
+}
+
+#buddypress div.item-list-tabs ul li.selected a span, #buddypress div.item-list-tabs ul li.current a span, #buddypress div.item-list-tabs ul li a span, .user-profile-div .user-menu-tab > li.active > a, .user-profile-div .user-menu-tab > li.active > a:focus, .user-profile-div .user-menu-tab > li.active > a:hover, .slide .news_cat a, .news_in_thumb:hover .news_cat a, .news_out_thumb:hover .news_cat a, .col-feat-grid:hover .news_cat a, .carousel-style-deal .re_carousel .controls, .re_carousel .controls:hover, .openedprevnext .postNavigation a, .postNavigation a:hover, .top_chart_pagination a.selected, .flex-control-paging li a.flex-active, .flex-control-paging li a:hover, .btn_more:hover, .tabs-menu li:hover, .tabs-menu li.current, .featured_slider:hover .score, #bbp_user_edit_submit, .bbp-topic-pagination a, .bbp-topic-pagination a, .custom-checkbox label.checked:after, .slider_post .caption, ul.postpagination li.active a, ul.postpagination li:hover a, ul.postpagination li a:focus, .top_theme h5 strong, .re_carousel .text:after, #topcontrol:hover, .main_slider .flex-overlay:hover a.read-more, .rehub_chimp #mc_embed_signup input#mc-embedded-subscribe, #rank_1.rank_count, #toplistmenu > ul li:before, .rehub_chimp:before, .wpsm-members > strong:first-child, .r_catbox_btn, .wpcf7 .wpcf7-submit, .comm_meta_wrap .rh_user_s2_label, .wpsm_pretty_hover li:hover, .wpsm_pretty_hover li.current, .rehub-main-color-bg, .togglegreedybtn:after, .rh-bg-hover-color:hover .news_cat a, .rh-main-bg-hover:hover, .rh_wrapper_video_playlist .rh_video_currently_playing, .rh_wrapper_video_playlist .rh_video_currently_playing.rh_click_video:hover, .rtmedia-list-item .rtmedia-album-media-count, .tw-pagination .current, .dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li.active, .dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li:hover, .dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li.dokan-common-links a:hover, #ywqa-submit-question, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .rh-hov-bor-line > a:after, nav.top_menu > ul:not(.off-canvas) > li > a:after, .rh-border-line:after, .wpsm-table.wpsm-table-main-color table tr th, .rehub_chimp_flat #mc_embed_signup input#mc-embedded-subscribe {
+    background: #3c6a02;
+}
+
+@media (max-width: 767px) {
+    .postNavigation a {
+        background: #3c6a02;
+    }
+}
+
+.rh-main-bg-hover:hover, .rh-main-bg-hover:hover .whitehovered {
+    color: #fff !important
+}
+
+a, .carousel-style-deal .deal-item .priced_block .price_count ins, nav.top_menu ul li.menu-item-has-children ul li.menu-item-has-children > a:before, .top_chart_controls .controls:hover, .flexslider .fa-pulse, .footer-bottom .widget .f_menu li a:hover, .comment_form h3 a, .bbp-body li.bbp-forum-info > a:hover, .bbp-body li.bbp-topic-title > a:hover, #subscription-toggle a:before, #favorite-toggle a:before, .aff_offer_links .aff_name a, .rh-deal-price, .commentlist .comment-content small a, .related_articles .title_cat_related a, article em.emph, .campare_table table.one td strong.red, .sidebar .tabs-item .detail p a, .footer-bottom .widget .title span, footer p a, .welcome-frase strong, article.post .wpsm_toplist_heading:before, .post a.color_link, .categoriesbox:hover h3 a:after, .bbp-body li.bbp-forum-info > a, .bbp-body li.bbp-topic-title > a, .widget .title i, .woocommerce-MyAccount-navigation ul li.is-active a, .category-vendormenu li.current a, .deal_daywoo .title, .rehub-main-color, .wpsm_pretty_colored ul li.current a, .wpsm_pretty_colored ul li.current, .rh-heading-hover-color:hover h2 a, .rh-heading-hover-color:hover h3 a, .rh-heading-hover-color:hover h4 a, .rh-heading-hover-color:hover h5 a, .rh-heading-hover-color:hover .rh-heading-hover-item a, .rh-heading-icon:before, .widget_layered_nav ul li.chosen a:before, .wp-block-quote.is-style-large p, ul.page-numbers li span.current, ul.page-numbers li a:hover, ul.page-numbers li.active a, .page-link > span:not(.page-link-title), blockquote:not(.wp-block-quote) p, span.re_filtersort_btn:hover, span.active.re_filtersort_btn, .deal_daywoo .price, div.sortingloading:after {
+    color: #3c6a02;
+}
+
+.page-link > span:not(.page-link-title), .postimagetrend .title, .widget.widget_affegg_widget .title, .widget.top_offers .title, .widget.cegg_widget_products .title, header .header_first_style .search form.search-form [type="submit"], header .header_eight_style .search form.search-form [type="submit"], .more_post a, .more_post span, .filter_home_pick span.active, .filter_home_pick span:hover, .filter_product_pick span.active, .filter_product_pick span:hover, .rh_tab_links a.active, .rh_tab_links a:hover, .wcv-navigation ul.menu li.active, .wcv-navigation ul.menu li:hover a, form.search-form [type="submit"], .rehub-sec-color-bg, input#ywqa-submit-question, input#ywqa-send-answer, .woocommerce button.button.alt, .tabsajax span.active.re_filtersort_btn, .wpsm-table.wpsm-table-sec-color table tr th, .rh-slider-arrow {
+    background: #005005 !important;
+    color: #fff !important;
+    outline: 0
+}
+
+.widget.widget_affegg_widget .title:after, .widget.top_offers .title:after, .vc_tta-tabs.wpsm-tabs .vc_tta-tab.vc_active, .vc_tta-tabs.wpsm-tabs .vc_tta-panel.vc_active .vc_tta-panel-heading, .widget.cegg_widget_products .title:after {
+    border-top-color: #005005 !important;
+}
+
+.page-link > span:not(.page-link-title) {
+    border: 1px solid #005005;
+}
+
+.page-link > span:not(.page-link-title), .header_first_style .search form.search-form [type="submit"] i {
+    color: #fff !important;
+}
+
+.rh_tab_links a.active, .rh_tab_links a:hover, .rehub-sec-color-border, nav.top_menu > ul > li.vertical-menu.border-sec-color > .sub-menu, .rh-slider-thumbs-item--active {
+    border-color: #005005
+}
+
+.rh_wrapper_video_playlist .rh_video_currently_playing, .rh_wrapper_video_playlist .rh_video_currently_playing.rh_click_video:hover {
+    background-color: #005005;
+    box-shadow: 1200px 0 0 #005005 inset;
+}
+
+.rehub-sec-color {
+    color: #005005
+}
+
+form.search-form input[type="text"] {
+    border-radius: 4px
+}
+
+.news .priced_block .price_count, .blog_string .priced_block .price_count, .main_slider .price_count {
+    margin-right: 5px
+}
+
+.right_aff .priced_block .btn_offer_block, .right_aff .priced_block .price_count {
+    border-radius: 0 !important
+}
+
+form.search-form.product-search-form input[type="text"] {
+    border-radius: 4px 0 0 4px;
+}
+
+form.search-form [type="submit"] {
+    border-radius: 0 4px 4px 0;
+}
+
+.rtl form.search-form.product-search-form input[type="text"] {
+    border-radius: 0 4px 4px 0;
+}
+
+.rtl form.search-form [type="submit"] {
+    border-radius: 4px 0 0 4px;
+}
+
+.price_count, .rehub_offer_coupon, #buddypress .dir-search input[type=text], .gmw-form-wrapper input[type=text], .gmw-form-wrapper select, #buddypress a.button, .btn_more, #main_header .wpsm-button, #rh-header-cover-image .wpsm-button, #wcvendor_image_bg .wpsm-button, input[type="text"], textarea, input[type="tel"], input[type="password"], input[type="email"], input[type="url"], input[type="number"], .def_btn, input[type="submit"], input[type="button"], input[type="reset"], .rh_offer_list .offer_thumb .deal_img_wrap, .grid_onsale, .rehub-main-smooth, .re_filter_instore span.re_filtersort_btn:hover, .re_filter_instore span.active.re_filtersort_btn, #buddypress .standard-form input[type=text], #buddypress .standard-form textarea, .blacklabelprice {
+    border-radius: 4px
+}
+
+.news-community, .woocommerce .products.grid_woo .product, .rehub_chimp #mc_embed_signup input.email, #mc_embed_signup input#mc-embedded-subscribe, .rh_offer_list, .woo-tax-logo, #buddypress div.item-list-tabs ul li a, #buddypress form#whats-new-form, #buddypress div#invite-list, #buddypress #send-reply div.message-box, .rehub-sec-smooth, .rate-bar-bar, .rate-bar, #wcfm-main-contentainer #wcfm-content, .wcfm_welcomebox_header {
+    border-radius: 5px
+}
+
+.woocommerce .woo-button-area .masked_coupon, .woocommerce a.woo_loop_btn, .woocommerce .button.checkout, .woocommerce input.button.alt, .woocommerce a.add_to_cart_button:not(.flat-woo-btn), .woocommerce-page a.add_to_cart_button:not(.flat-woo-btn), .woocommerce .single_add_to_cart_button, .woocommerce div.product form.cart .button, .woocommerce .checkout-button.button, .woofiltersbig .prdctfltr_buttons a.prdctfltr_woocommerce_filter_submit, .priced_block .btn_offer_block, .priced_block .button, .rh-deal-compact-btn, input.mdf_button, #buddypress input[type="submit"], #buddypress input[type="button"], #buddypress input[type="reset"], #buddypress button.submit, .wpsm-button.rehub_main_btn, .wcv-grid a.button, input.gmw-submit, #ws-plugin--s2member-profile-submit, #rtmedia_create_new_album, input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme, #wcfm_membership_container a.wcfm_submit_button, .woocommerce button.button, .rehub-main-btn-bg {
+    background: none #63a121 !important;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    border: none !important;
+    text-decoration: none !important;
+    outline: 0;
+    box-shadow: -1px 6px 19px rgba(99, 161, 33, 0.2) !important;
+    border-radius: 4px !important;
+}
+
+.rehub-main-btn-bg > a {
+    color: #ffffff !important;
+}
+
+.woocommerce a.woo_loop_btn:hover, .woocommerce .button.checkout:hover, .woocommerce input.button.alt:hover, .woocommerce a.add_to_cart_button:not(.flat-woo-btn):hover, .woocommerce-page a.add_to_cart_button:not(.flat-woo-btn):hover, .woocommerce a.single_add_to_cart_button:hover, .woocommerce-page a.single_add_to_cart_button:hover, .woocommerce div.product form.cart .button:hover, .woocommerce-page div.product form.cart .button:hover, .woocommerce .checkout-button.button:hover, .woofiltersbig .prdctfltr_buttons a.prdctfltr_woocommerce_filter_submit:hover, .priced_block .btn_offer_block:hover, .wpsm-button.rehub_main_btn:hover, #buddypress input[type="submit"]:hover, #buddypress input[type="button"]:hover, #buddypress input[type="reset"]:hover, #buddypress button.submit:hover, .small_post .btn:hover, .ap-pro-form-field-wrapper input[type="submit"]:hover, .wcv-grid a.button:hover, #ws-plugin--s2member-profile-submit:hover, .rething_button .btn_more:hover, #wcfm_membership_container a.wcfm_submit_button:hover, .woocommerce button.button:hover, .rehub-main-btn-bg:hover, .rehub-main-btn-bg:hover > a {
+    background: none #3c6a02 !important;
+    color: #ffffff !important;
+    box-shadow: -1px 6px 13px rgba(60, 106, 2, 0.4) !important;
+    border-color: transparent;
+}
+
+.rehub_offer_coupon:hover {
+    border: 1px dashed #3c6a02;
+}
+
+.rehub_offer_coupon:hover i.far, .rehub_offer_coupon:hover i.fal, .rehub_offer_coupon:hover i.fas {
+    color: #3c6a02
+}
+
+.re_thing_btn .rehub_offer_coupon.not_masked_coupon:hover {
+    color: #3c6a02 !important
+}
+
+.woocommerce a.woo_loop_btn:active, .woocommerce .button.checkout:active, .woocommerce .button.alt:active, .woocommerce a.add_to_cart_button:not(.flat-woo-btn):active, .woocommerce-page a.add_to_cart_button:not(.flat-woo-btn):active, .woocommerce a.single_add_to_cart_button:active, .woocommerce-page a.single_add_to_cart_button:active, .woocommerce div.product form.cart .button:active, .woocommerce-page div.product form.cart .button:active, .woocommerce .checkout-button.button:active, .woofiltersbig .prdctfltr_buttons a.prdctfltr_woocommerce_filter_submit:active, .wpsm-button.rehub_main_btn:active, #buddypress input[type="submit"]:active, #buddypress input[type="button"]:active, #buddypress input[type="reset"]:active, #buddypress button.submit:active, .ap-pro-form-field-wrapper input[type="submit"]:active, .wcv-grid a.button:active, #ws-plugin--s2member-profile-submit:active, input[type="submit"].dokan-btn-theme:active, a.dokan-btn-theme:active, .dokan-btn-theme:active, .woocommerce button.button:active, .rehub-main-btn-bg:active {
+    background: none #63a121 !important;
+    box-shadow: 0 1px 0 #999 !important;
+    top: 2px;
+    color: #ffffff !important;
+}
+
+.rehub_btn_color {
+    background-color: #63a121;
+    border: 1px solid #63a121;
+    color: #ffffff;
+    text-shadow: none
+}
+
+.rehub_btn_color:hover {
+    color: #ffffff;
+    background-color: #3c6a02;
+    border: 1px solid #3c6a02;
+}
+
+.rething_button .btn_more {
+    border: 1px solid #63a121;
+    color: #63a121;
+}
+
+.rething_button .priced_block.block_btnblock .price_count {
+    color: #63a121;
+    font-weight: normal;
+}
+
+.widget_merchant_list .buttons_col {
+    background-color: #63a121 !important;
+}
+
+.widget_merchant_list .buttons_col a {
+    color: #ffffff !important;
+}
+
+.rehub-svg-btn-fill svg {
+    fill: #63a121;
+}
+
+.rehub-svg-btn-stroke svg {
+    stroke: #63a121;
+}
+
+@media (max-width: 767px) {
+    #float-panel-woo-area {
+        border-top: 1px solid #63a121
+    }
+}
+
+.rh_post_layout_big_offer .priced_block .btn_offer_block {
+    text-shadow: none
+}
+
+body, body.dark_body {
+    background-color: #f5f5f5;
+    background-position: left top;
+    background-repeat: repeat;
+    background-image: none
+}
+
+
+ body {
+     background: #f1f1f1;
+ }
+
+ @media only screen and (max-width: 767px) {
+     .col_item.two_column_mobile {
+         margin: 0 0% 5px 0% !important;
+     }
+ }
+
+ @media (max-width: 479px) {
+     body:not(.dark_body) {
+         background: #f1f1f1 !important;
+     }
+
+     .woocommerce .products.grid_woo .product {
+         border-radius: 0 !important;
+     }
+
+     .col_item.two_column_mobile {
+         margin: 0 0% 5px 0% !important;
+     }
+
+     .col_item.two_column_mobile {
+         width: 50% !important;
+     }
+ }
+
+ .vc_column_container > .vc_column-inner {
+     padding-left: 0px !important;
+     padding-right: 0px !important;
+ }
+
+ .rh-hover-up:hover {
+     transform: none !important;
+ }
+
+ .vc_col-has-fill > .vc_column-inner, .vc_row-has-fill + .vc_row-full-width + .vc_row > .vc_column_container > .vc_column-inner, .vc_row-has-fill + .vc_row > .vc_column_container > .vc_column-inner, .vc_row-has-fill > .vc_column_container > .vc_column-inner {
+     padding-top: 0;
+ }
+
+ .widget_nav_menu li {
+     margin-bottom: 0px;
+     line-height: 34px;
+     height: 34px;
+
+ }
+
+ .menu-danhmuc-container {
+     border: 1px solid #E65100;
+ }
+
+ .widget_nav_menu li a {
+     text-decoration: none;
+     line-height: 34px;
+     height: 34px;
+     display: block;
+     padding-left: 10px;
+ }
+
+ .widget_nav_menu li:hover {
+
+     color: #fff;
+ }
+
+ .widget_nav_menu li a:hover {
+     color: #fff;
+     background: #E65100;
+ }
+
+ .vc_column_container > .vc_column-inner {
+     padding-left: 0;
+
+     padding-right: 0;
+ }
+
+ .icon1 {
+     color: #D0011B;
+     padding-left: 10px;
+ }
+
+
+
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,300,700,600);
+
+ .tp-caption.medium_bg_red a {
+     color: #fff;
+     text-decoration: none
+ }
+
+ .tp-caption.medium_bg_red a:hover {
+     color: #fff;
+     text-decoration: underline
+ }
+
+ .tp-caption.roundedimage img {
+     -webkit-border-radius: 300px;
+     -moz-border-radius: 300px;
+     border-radius: 300px
+ }
+
+ .tp-bullets.simplebullets.navbar {
+     height: 35px;
+     padding: 0px 0px
+ }
+
+ .tp-bullets.simplebullets .bullet {
+     cursor: pointer;
+     position: relative !important;
+     background: rgba(0, 0, 0, 0.5) !important;
+     -webkit-border-radius: 10px;
+     border-radius: 10px;
+     -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+     box-shadow: none;
+     width: 6px !important;
+     height: 6px !important;
+     border: 5px solid rgba(0, 0, 0, 0) !important;
+     display: inline-block;
+     margin-right: 2px !important;
+     margin-bottom: 14px !important;
+     -webkit-transition: background-color 0.2s, border-color 0.2s;
+     -moz-transition: background-color 0.2s, border-color 0.2s;
+     -o-transition: background-color 0.2s, border-color 0.2s;
+     -ms-transition: background-color 0.2s, border-color 0.2s;
+     transition: background-color 0.2s, border-color 0.2s;
+     float: none !important
+ }
+
+ .tp-bullets.simplebullets .bullet.last {
+     margin-right: 0px
+ }
+
+ .tp-bullets.simplebullets .bullet:hover, .tp-bullets.simplebullets .bullet.selected {
+     -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+     box-shadow: none;
+     background: rgba(255, 255, 255, 1) !important;
+     width: 6px !important;
+     height: 6px !important;
+     border: 5px solid rgba(0, 0, 0, 1) !important
+ }
+
+ .tparrows:before {
+     font-family: 'revicons';
+     color: #fff;
+     font-style: normal;
+     font-weight: normal;
+     speak: none;
+     display: inline-block;
+     text-decoration: inherit;
+     margin-right: 0;
+     margin-top: 9px;
+     text-align: center;
+     width: 40px;
+     font-size: 20px
+ }
+
+ .tparrows {
+     cursor: pointer;
+     background: rgba(0, 0, 0, 0.5) !important;
+     -webkit-border-radius: 5px;
+     border-radius: 5px;
+     width: 40px !important;
+     height: 40px !important
+ }
+
+ .tparrows:hover {
+     color: #fff
+ }
+
+ .tp-leftarrow:before {
+     content: '\e824'
+ }
+
+ .tp-rightarrow:before {
+     content: '\e825'
+ }
+
+ .tparrows.tp-rightarrow:before {
+     margin-left: 1px
+ }
+
+ .tparrows:hover {
+     background: rgba(0, 0, 0, 1) !important
+ }
+
+
+ img.wp-smiley,
+ img.emoji {
+     display: inline !important;
+     border: none !important;
+     box-shadow: none !important;
+     height: 1em !important;
+     width: 1em !important;
+     margin: 0 .07em !important;
+     vertical-align: -0.1em !important;
+     background: none !important;
+     padding: 0 !important;
+ }

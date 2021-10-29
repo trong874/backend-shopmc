@@ -1,0 +1,72 @@
+.woocommerce-billing-fields__field-wrapper,
+.woocommerce-shipping-fields__field-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#billing_first_name_field,
+#shipping_first_name_field {
+    order: 1;
+    width: 100%;
+}
+
+#billing_last_name_field,
+#shipping_last_name_field {
+    order: 2;
+    width: 100%;
+}
+
+#billing_company_field,
+#shipping_company_field {
+    order: 3;
+    width: 100%;
+}
+
+#billing_country_field,
+#shipping_country_field {
+    order: 4;
+    width: 100%;
+    display: none;
+}
+
+#billing_state_field,
+#shipping_state_field {
+    order: 5;
+    width: 100%;
+}
+
+#billing_city_field,
+#shipping_city_field {
+    order: 6;
+    width: 100%;
+}
+
+#billing_address_1_field,
+#shipping_address_1_field {
+    order: 7;
+    width: 100%;
+}
+
+#billing_address_2_field,
+#shipping_address_2_field {
+    order: 8;
+    width: 100%;
+}
+
+#billing_postcode_field,
+#shipping_postcode_field {
+    order: 9;
+    width: 100%;
+}
+
+#billing_phone_field,
+#shipping_phone_field {
+    order: 10;
+    width: 100%;
+}
+
+#billing_email_field,
+#shipping_email_field {
+    order: 11;
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+/*
+	Theme Name: Rehub child theme
+	Theme URI: https://wpsoul.com
+	Description: A Hybrid magazine/shop/review/news Wordpress Theme
+	Author: Sizam
+	Author URI: https://wpsoul.com
+	Version: 9.4
+	Template: rehub-theme
+*/
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+h3 {
+    margin: 0 !important;
+}
