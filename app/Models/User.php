@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image_path',
     ];
 
     /**
@@ -41,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function item(){
+        return $this->hasMany(Item::class,'author_id','id');
+    }
+
+    function group(){
+        return $this->hasMany(Group::class,'author_id','id');
+    }
 }

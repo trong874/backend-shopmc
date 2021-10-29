@@ -1,18 +1,33 @@
 <?php
 
+use App\Http\Controllers\Backend\GroupController;
+use App\Http\Controllers\Backend\ItemController;
+use App\Http\Controllers\Backend\PagesController;
+
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/quick-search', [PagesController::class, 'quickSearch'])->name('quick-search');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('backend.pages.dashboard');
+    })->name('dashboard');
+
+    Route::resource('products', ItemController::class);
+
+    Route::resource('category-products', GroupController::class);
+
+    Route::get('{module}/filter',[PagesController::class,'filter']);
+
+    Route::post('/delete-many-item',[ItemController::class,'destroyMuch'])->name('items.destroy_many');
+
+    Route::post('delete-many-group',[GroupController::class,'destroyMuch'])->name('groups.destroy_many');
+
+    Route::post('/update-list',[GroupController::class,'saveList'])->name('groups.update_list');
+
+
+
 });
+
+require __DIR__ . '/auth.php';
