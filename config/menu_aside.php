@@ -8,7 +8,7 @@ return [
             'title' => 'Dashboard',
             'root' => true,
             'icon' => 'media/svg/icons/Design/Layers.svg', // or can be 'flaticon-home' or any flaticon-*
-            'page' => '/',
+            'page' => '/admin',
             'new-tab' => false,
         ],
 
@@ -20,14 +20,14 @@ return [
             'title' => 'All Product',
             'root' => true,
             'icon' => 'media/svg/icons/Design/Layers.svg', // or can be 'flaticon-home' or any flaticon-*
-            'page' => '/products',
+            'page' => '/admin/products',
             'new-tab' => false,
         ],
         [
             'title' => 'Category Product',
             'root' => true,
             'icon' => 'media/svg/icons/Design/Layers.svg', // or can be 'flaticon-home' or any flaticon-*
-            'page' => '/category-products',
+            'page' => '/admin/category-products',
             'new-tab' => false,
         ],
     ]

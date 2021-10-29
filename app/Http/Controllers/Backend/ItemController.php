@@ -13,7 +13,7 @@ class ItemController extends Controller
 
     public function __construct(Request $request)
     {
-        $this->module = $request->segment(1);
+        $this->module = $request->segment(2);
     }
 
     public function index()

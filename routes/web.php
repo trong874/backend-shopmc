@@ -9,10 +9,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/quick-search', [PagesController::class, 'quickSearch'])->name('quick-search');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('backend.pages.dashboard');
-    })->name('dashboard');
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/',[PagesController::class,'index'])->name('dashboard');
 
     Route::resource('products', ItemController::class);
 
