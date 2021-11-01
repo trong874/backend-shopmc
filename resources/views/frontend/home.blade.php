@@ -2371,7 +2371,6 @@
                 </div>
             </div>
             <!-- /Main Side -->
-
         </div>
     </div>
 @endsection

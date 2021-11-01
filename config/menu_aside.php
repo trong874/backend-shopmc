@@ -5,29 +5,66 @@ return [
     'items' => [
         // Dashboard
         [
-            'title' => 'Dashboard',
+            'title' => 'Bảng điều khiển',
             'root' => true,
-            'icon' => 'media/svg/icons/Design/Layers.svg', // or can be 'flaticon-home' or any flaticon-*
+            'icon' => 'media/svg/icons/Communication/Dial-numbers.svg', // or can be 'flaticon-home' or any flaticon-*
             'page' => '/admin',
             'new-tab' => false,
         ],
 
         // Custom
         [
-            'section' => 'PRODUCT',
+            'section' => 'Sản phẩm',
         ],
         [
-            'title' => 'All Product',
+            'title' => 'Tất cả sản phẩm',
             'root' => true,
-            'icon' => 'media/svg/icons/Design/Layers.svg', // or can be 'flaticon-home' or any flaticon-*
+            'icon' => 'media/svg/icons/Clothes/Shirt.svg', // or can be 'flaticon-home' or any flaticon-*
             'page' => '/admin/products',
             'new-tab' => false,
         ],
         [
-            'title' => 'Category Product',
+            'title' => 'Danh mục sản phẩm',
             'root' => true,
-            'icon' => 'media/svg/icons/Design/Layers.svg', // or can be 'flaticon-home' or any flaticon-*
+            'icon' => 'media/svg/icons/Media/Playlist2.svg', // or can be 'flaticon-home' or any flaticon-*
             'page' => '/admin/category-products',
+            'new-tab' => false,
+        ],
+        [
+            'section' => 'Tin tức',
+        ],
+        [
+            'title' => 'Tất cả tin tức',
+            'root' => true,
+            'icon' => 'media/svg/icons/Communication/Chat6.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/news',
+            'new-tab' => false,
+        ],
+        [
+            'title' => 'Danh mục tin tức',
+            'root' => true,
+            'icon' => 'media/svg/icons/General/Thunder-move.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/category-news',
+            'new-tab' => false,
+        ],
+        [
+            'section' => 'Người dùng',
+        ],
+        [
+            'title' => 'Quản lí người dùng',
+            'root' => true,
+            'icon' => 'media/svg/icons/Communication/Group.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/user-manage',
+            'new-tab' => false,
+        ],
+        [
+            'section' => 'Hệ thống',
+        ],
+        [
+            'title' => 'Cấu hình chung',
+            'root' => true,
+            'icon' => 'media/svg/icons/General/Settings-1.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/general-config',
             'new-tab' => false,
         ],
     ]

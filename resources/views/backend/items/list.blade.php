@@ -1,6 +1,9 @@
 @extends('backend.layout.default')
+@section('styles')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@endsection
 @section('content')
-    <form action="{{"$module/filter"}}" method="GET" class="card">
+    <form id="form-filter" action="{{route('items.filter',$module)}}" method="GET" class="card">
         <div class="card-header">
             <span>{{__('Bộ lọc')}}</span>
         </div>
@@ -10,7 +13,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
-                    <input type="text" name="id" class="form-control" placeholder="ID" value="{{$old_data['id'] ?? ''}}">
+                    <input type="text" name="id" class="form-control" placeholder="ID"
+                           value="{{$old_data['id'] ?? ''}}">
                 </div>
             </div>
             <div class="col-3">
@@ -18,7 +22,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
-                    <input type="text" name="title" class="form-control" placeholder="{{__('Tiêu đề')}}" value="{{$old_data['title'] ?? ''}}">
+                    <input type="text" name="title" class="form-control" placeholder="{{__('Tiêu đề')}}"
+                           value="{{$old_data['title'] ?? ''}}">
                 </div>
             </div>
             <div class="col-3">
@@ -44,7 +49,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
-                        <input type="text" name="position" class="form-control" placeholder="{{__('Vị trí')}}" value="{{$old_data['position'] ?? ''}}">
+                    <input type="text" name="position" class="form-control" placeholder="{{__('Vị trí')}}"
+                           value="{{$old_data['position'] ?? ''}}">
                 </div>
             </div>
             <div class="col-3 mt-3">
@@ -52,7 +58,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">{{__('Từ')}}</span>
                     </div>
-                    <input type="datetime-local" name="date_form" class="form-control" placeholder="Từ thời gian" value="{{$old_data['date_form'] ?? ''}}">
+                    <input type="datetime-local" name="date_form" class="form-control" placeholder="Từ thời gian"
+                           value="{{$old_data['date_form'] ?? ''}}">
                 </div>
             </div>
             <div class="col-3 mt-3">
@@ -60,7 +67,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">{{__('Đến')}}</span>
                     </div>
-                    <input type="datetime-local" name="date_to" class="form-control" placeholder="đến đến" value="{{$old_data['date_to'] ?? ''}}">
+                    <input type="datetime-local" name="date_to" class="form-control" placeholder="đến đến"
+                           value="{{$old_data['date_to'] ?? ''}}">
                 </div>
             </div>
             <div class="col-3 mt-3"></div>
@@ -71,13 +79,55 @@
             </div>
         </div>
     </form>
+    <script>
 
+        $('#form-filter').on('submit',function (event) {
+            event.preventDefault();
+            let param = $('#form-filter').serialize()
+            const link = "{{route('items.filter',$module)}}"+'?'+param
+                console.log(link)
+            const url = new URL(link);
+
+            let id = url.searchParams.get('id');
+            let title = url.searchParams.get('title');
+            let group_id = url.searchParams.get('group_id');
+            let position = url.searchParams.get('position');
+            let date_form = url.searchParams.get('date_form');
+            let date_to = url.searchParams.get('date_to');
+
+            if (typeof URLSearchParams !== 'undefined') {
+                const params = new URLSearchParams(param)
+                if(id === ''){
+                    params.delete('id')
+                }
+                if(title === ''){
+                    params.delete('title')
+                }
+                if(group_id === ''){
+                    params.delete('group_id')
+                }
+                if(position === ''){
+                    params.delete('position')
+                }
+                if(date_form === ''){
+                    params.delete('date_form')
+                }
+                if(date_to === ''){
+                    params.delete('date_to')
+                }
+                window.location.replace( "{{route('items.filter',$module)}}"+'?'+params)
+            } else {
+                console.log(`Your browser ${navigator.appVersion} does not support URLSearchParams`)
+            }
+        })
+
+    </script>
     <div class="card card-custom">
         <div class="card-header">
             <div class="card-title">
-											<span class="card-icon">
-												<i class="flaticon2-favourite text-primary"></i>
-											</span>
+                <span class="card-icon">
+                    <i class="flaticon2-favourite text-primary"></i>
+                </span>
                 <h3 class="card-label">HTML(DOM) Sourced Data</h3>
             </div>
             <div class="card-toolbar">
@@ -219,17 +269,17 @@
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
 
-                if ($old_data != []) {
-                    if ($old_data['group_id'] == $item->id){
+                if (isset($old_data['group_id'])) {
+                    if ($old_data['group_id'] == $item->id) {
                         echo '<option value="' . $item->id . '" selected>' . $item->id . $char . $item->title . '</option>';
-                    }else{
+                    } else {
                         echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
                     }
                 } else {
                     echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
                 }
                 // Tiếp tục đệ quy để tìm chuyên mục con của chuyên mục đang lặp
-                showCategories($categories,$old_data, $item->id, $char . '--');
+                showCategories($categories, $old_data, $item->id, $char . '--');
             }
         }
     }

@@ -25,7 +25,6 @@
         <!-- /top -->
 
 
-
         <!-- Logo section -->
         <div class="logo_section_wrap hideontablet">
             <div class="rh-container">
@@ -80,29 +79,14 @@
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                             <a href="#"><i class="fas fa-chevron-down"></i> Danh mục sản phẩm</a>
                             <ul class="sub-menu">
-                                <li id="menu-item-8140"
-                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                        href="https://shopmc.com.vn/danh-muc/mo-hinh-figure/">Mô Hình / Figure</a>
-                                </li>
-                                <li id="menu-item-8135"
-                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                        href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">Balo Túi Xách</a></li>
-                                <li id="menu-item-8501"
-                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                        href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">Kiếm Cuốc Rìu
-                                        Minecraft</a></li>
-                                <li id="menu-item-8137"
-                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                        href="https://shopmc.com.vn/danh-muc/mu-quan-ao/">Mũ Quần Áo</a></li>
-                                <li id="menu-item-8139"
-                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                        href="https://shopmc.com.vn/danh-muc/nhoi-bong/">Nhồi Bông</a></li>
-                                <li id="menu-item-8141"
-                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                        href="https://shopmc.com.vn/danh-muc/dong-ho/">Đồng Hồ</a></li>
-                                <li id="menu-item-8136"
-                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                        href="https://shopmc.com.vn/danh-muc/phu-kien-khac/">Phụ Kiện Khác</a></li>
+                                @if(isset($categories_product))
+                                    @foreach($categories_product as $item)
+                                    <li id="menu-item-{{$item->id}}"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
+                                            href="{{$item->url}}">{{$item->title}}</a>
+                                    </li>
+                                    @endforeach
+                                @endif
                             </ul>
                         </li>
                         <li id="menu-item-9558" class="menu-item menu-item-type-custom menu-item-object-custom"><a

@@ -3,29 +3,35 @@
 use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\PagesController;
-
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[\App\Http\Controllers\Frontend\PagesController::class,'index'])->name('page.index');
-Route::get('/quick-search', [PagesController::class, 'quickSearch'])->name('quick-search');
 
-Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::get('/',[PagesController::class,'index'])->name('dashboard');
+Route::group(['middleware' => 'language'], function () {
+    Route::get('/', [\App\Http\Controllers\Frontend\PagesController::class, 'index'])->name('page.index');
 
-    Route::resource('products', ItemController::class);
+    Route::prefix('admin')->middleware(['auth'])->group(function () {
+        Route::get('/', [PagesController::class, 'index'])->name('dashboard');
 
-    Route::resource('category-products', GroupController::class);
+        Route::resource('products', ItemController::class);
 
-    Route::get('{module}/filter',[PagesController::class,'filter']);
+        Route::resource('news', ItemController::class);
 
-    Route::post('/delete-many-item',[ItemController::class,'destroyMuch'])->name('items.destroy_many');
+        Route::resource('category-products', GroupController::class);
 
-    Route::post('delete-many-group',[GroupController::class,'destroyMuch'])->name('groups.destroy_many');
+        Route::resource('category-news', GroupController::class);
 
-    Route::post('/update-list',[GroupController::class,'saveList'])->name('groups.update_list');
+        Route::get('{module}/filter/item', [ItemController::class, 'filter'])->name('items.filter');
 
+        Route::post('/delete-many-item', [ItemController::class, 'destroyMuch'])->name('items.destroy_many');
 
+        Route::post('delete-many-group', [GroupController::class, 'destroyMuch'])->name('groups.destroy_many');
 
+        Route::post('/update-list', [GroupController::class, 'saveList'])->name('groups.update_list');
+
+        Route::get('set-locale/{locale}', [PagesController::class, 'changeLanguage'])->name('setLocale');
+
+//        Route::get('user-manage');
+
+    });
 });
-
 require __DIR__ . '/auth.php';
