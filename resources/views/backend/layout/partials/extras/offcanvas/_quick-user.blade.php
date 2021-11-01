@@ -106,7 +106,7 @@
 		    </a>
 
 		    {{-- Item --}}
-		    <form action="{{'logout'}}" method="POST" class="navi-item">
+		    <form action="{{route('logout')}}" method="POST" class="navi-item">
                 @csrf
 		        <div class="navi-link">
 					<div class="symbol symbol-40 bg-light mr-3">
