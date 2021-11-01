@@ -2,11 +2,9 @@
     <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
         <div class="vc_column-inner">
             <div class="wpb_wrapper"><h4
-                    style="font-size: 16px;line-height: 18px;text-align: left"
-                    class="vc_custom_heading">Quần áo</h4>
+                    style="margin-block-start: 1em; margin-left: 15px"
+                    class="vc_custom_heading post vc_custom_1607448849913">Quần áo</h4>
                 <div class="woocommerce">
-
-
                     <div
                         class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
                         data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["116"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'

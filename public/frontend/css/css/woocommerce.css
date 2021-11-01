@@ -3202,8 +3202,9 @@ mark.count {
 }
 
 .rh_woocartmenu-icon {
-    display: inline-block ;
+
     position: relative;
+    display: none;
 
 }
 

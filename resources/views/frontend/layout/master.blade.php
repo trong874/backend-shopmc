@@ -13,8 +13,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="https://shopmc.com.vn/xmlrpc.php"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- This site is optimized with the Yoast SEO plugin v15.9 - https://yoast.com/wordpress/plugins/seo/ -->
     <title>{{$page_title ?? "SHOP MC"}}</title>
@@ -175,7 +174,7 @@
 <div class="rh-outer-wrap">
     <div id="top_ankor"></div>
     <!-- HEADER -->
-@include('frontend.layout.core.hearder');
+@include('frontend.layout.core.hearder')
     <!-- CONTENT -->
 @yield('content')
     <!-- /CONTENT -->

@@ -1,27 +1,28 @@
-<div class="vc_row wpb_row vc_row-fluid vc_custom_1607449069956 vc_row-has-fill centered-container">
-    <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
+<div class="vc_row wpb_row vc_row-fluid vc_custom_1607449069956 vc_row-has-fill centered-container ">
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs ">
         <div class="vc_column-inner">
             <div class="wpb_wrapper">
-                <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                <div class="vc_row wpb_row vc_inner vc_row-fluid ">
                     <div class="wpb_column vc_column_container vc_col-sm-4">
-                        <div class="vc_column-inner">
-                            <div class="wpb_wrapper"><h4
-                                    style="font-size: 16px;line-height: 18px;text-align: left"
-                                    class="vc_custom_heading">Đồ Chơi Minecraft</h4></div>
+                        <div class="vc_column-inner ">
+                            <div class="wpb_wrapper">
+                                <h4 style="margin-block-start: 1em; margin-left: 15px"
+                                    class="vc_custom_heading post ">Đồ Chơi Minecraft</h4>
+                            </div>
                         </div>
                     </div>
                     <div class="wpb_column vc_column_container vc_col-sm-8">
                         <div class="vc_column-inner">
                             <div class="wpb_wrapper">
-                                <article class="post wpb_content_element ">
-                                    <div class="wpb_wrapper">
-                                        <p style="text-align: right; padding-top: 10px;"><i
-                                                class="fas fa-check-circle icon1"></i> 100% Hàng
-                                            chính hãng <i
-                                                class="far fa-shipping-fast icon1"></i> Giao
-                                            hàng toàn quốc <i class="fas fa-history icon1"></i>
+                                <article class="post wpb_content_element">
+                                    <div class="wpb_wrapper ">
+                                        <p style="text-align: right; padding-top: 16px; margin-right: 10px" >
+                                            <i class="fas fa-check-circle icon1"></i>
+                                            100% Hàng chính hãng
+                                            <i class="far fa-shipping-fast icon1"></i>
+                                            Giao hàng toàn quốc
+                                            <i class="fas fa-history icon1"></i>
                                             7 ngày trả hàng miễn phí</p>
-
                                     </div>
                                 </article>
                             </div>
@@ -29,16 +30,12 @@
                     </div>
                 </div>
                 <div class="woocommerce">
-
-
-                    <div
-                        class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
+                    <div class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
                         data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["463","125"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'
                         data-template="woogridpart" id="rh_woogrid_2031402312"
                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
 
-                        <div
-                            class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                             <span class="onsale"><span>- 29%</span></span>
                             <figure class="mb5 mt25 position-relative notresized">
                                 <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
@@ -583,4 +580,3 @@ echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" c
         </div>
     </div>
 </div>
-
