@@ -27,6 +27,14 @@
             @csrf
             <div class="card-body">
                 <div class="form-group row mt-3">
+                    @if(Session::has('message'))
+                        <h3 class="text-center" style="color: red">
+                            {{Session::get('message')}}
+                            {{Session::forget('message')}}
+                        </h3>
+                    @endif
+                </div>
+                <div class="form-group row mt-3">
                     <label class="col-lg-1 col-form-label text-right">Title</label>
                     <div class="col-lg-3">
                         <input type="text" name="title" id="title" class="form-control" placeholder="Title"
@@ -61,7 +69,8 @@
                     <label class="col-lg-1 col-form-label text-right">Giá cũ</label>
                     <div class="col-lg-3">
                         <div class="input-group mb-3">
-                            <input type="number" class="form-control" name="price_old" placeholder="Giá cũ sản phẩm" value="{{$item->price_old ?? null}}">
+                            <input type="number" class="form-control" name="price_old" placeholder="Giá cũ sản phẩm"
+                                   value="{{$item->price_old ?? null}}">
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
                         <script>
@@ -76,10 +85,26 @@
                     <label class="col-lg-1 col-form-label text-right">Giá</label>
                     <div class="col-lg-3">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Giá sản phẩm" name="price" value="{{$item->price}}" required>
+                            <input type="text" class="form-control" placeholder="Giá sản phẩm" name="price"
+                                   value="{{$item->price ?? null}}" required>
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
                         <span class="form-text text-muted">Nhập vào giá của sản phẩm</span>
+                    </div>
+                    <label class="col-lg-1 col-form-label text-right">Ảnh</label>
+                    <!-- end: Example Code-->
+                    <div class="card card-custom card-collapse col-lg-1" data-card="true" id="kt_card_1"
+                         style="border: 1px #ccc solid">
+                        <div class="card-toolbar" style="position: absolute;top:0;right: 0;margin: 5px">
+                            <i aria-hidden="true" class="ki ki-close" onclick="deleteImage()"></i>
+                        </div>
+                        <div class="card-img">
+                            <img
+                                src="{{$item->image??'https://fermasenoval.ru/wp-content/uploads/2018/12/empty-photo.jpg'}}"
+                                id="image-display" onclick="selectFileWithCKFinder('image-display')"
+                                style="height: 100%;width: 100%;padding: 15px">
+                            <input type="hidden" name="image" id="image_path" value="{{$item->image??null}}">
+                        </div>
                     </div>
                 </div>
                 <div class="separator separator-dashed my-10"></div>
@@ -93,9 +118,9 @@
                             // instance, using default configuration.
                             var editor = CKEDITOR.replace('description_input', {
                                 filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-                                    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                                    filebrowserWindowWidth: '1000',
-                                    filebrowserWindowHeight: '700'
+                                filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                                filebrowserWindowWidth: '1000',
+                                filebrowserWindowHeight: '700'
                             });
                             CKFinder.setupCKEditor(editor);
                         </script>
@@ -123,21 +148,6 @@
                 <div class="separator separator-dashed my-10"></div>
                 <input type="hidden" name="author_id" value="{{ Auth::user()->id}}">
                 <div class="form-group row mt-3">
-                    <label class="col-lg-1 col-form-label text-right">Ảnh</label>
-                    <!-- end: Example Code-->
-                    <div class="card card-custom card-collapse col-lg-1" data-card="true" id="kt_card_1"
-                         style="border: 1px #ccc solid">
-                        <div class="card-toolbar" style="position: absolute;top:0;right: 0;margin: 5px">
-                            <i aria-hidden="true" class="ki ki-close" onclick="deleteImage()"></i>
-                        </div>
-                        <div class="card-img">
-                            <img
-                                src="{{$item->image??'https://fermasenoval.ru/wp-content/uploads/2018/12/empty-photo.jpg'}}"
-                                id="image-display" onclick="selectFileWithCKFinder('image-display')"
-                                style="height: 100%;width: 100%;padding: 15px">
-                            <input type="hidden" name="image" id="image_path" value="{{$item->image??null}}">
-                        </div>
-                    </div>
                     <label class="col-lg-1 col-form-label text-right">URL</label>
                     <div class="col-lg-3">
                         <input type="text" name="url" class="form-control" id="url" placeholder="URL"

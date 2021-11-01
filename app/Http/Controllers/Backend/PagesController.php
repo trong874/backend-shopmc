@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PagesController extends Controller
 {
@@ -11,13 +11,12 @@ class PagesController extends Controller
     {
         $page_title = 'Dashboard';
         $page_description = 'Some description for the page';
-
         return view('backend.pages.dashboard', compact('page_title', 'page_description'));
     }
 
-    // Quicksearch Result
-    public function quickSearch()
+    public function changeLanguage($locale)
     {
-        return view('backend.layout.partials.extras._quick_search_result');
+        Session::put('locale',$locale);
+        return back();
     }
 }

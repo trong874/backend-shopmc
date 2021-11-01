@@ -24,7 +24,7 @@ class Menu
             echo '<li class="menu-separator"><span></span></li>';
         } elseif (isset($item['section'])) {
             echo '<li class="menu-section ' . ($rec === 0 ? 'menu-section--first' : '') . '">
-                <h4 class="menu-text">' . $item['section'] . '</h4>
+                <h4 class="menu-text">' . __($item['section']) . '</h4>
                 <i class="menu-icon flaticon-more-v2"></i>
             </li>';
         } elseif (isset($item['title'])) {
@@ -83,7 +83,6 @@ class Menu
                 if (isset($item['new-tab']) && $item['new-tab'] == true) {
                     $target = 'target="_blank"';
                 }
-
                 echo '<a ' . $target . ' href="' . $url . '" class="menu-link ' . (isset($item['submenu']) ? 'menu-toggle' : '') . '">';
             }
 
@@ -111,7 +110,7 @@ class Menu
             }
 
             // Badge
-            echo '<span class="menu-text">' . $item['title'] . '</span>';
+            echo '<span class="menu-text">' . __($item['title']) . '</span>';
             if (isset($item['label'])) {
                 echo '<span class="menu-badge"><span class="label ' . $item['label']['type'] . '">' . $item['label']['value'] . '</span></span>';
             }

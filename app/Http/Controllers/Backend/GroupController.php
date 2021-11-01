@@ -12,7 +12,7 @@ class GroupController extends Controller
 
     public function __construct(Request $request)
     {
-        $this->module = $request->segment(1);
+        $this->module = $request->segment(2);
     }
 
     public function index()
@@ -22,6 +22,7 @@ class GroupController extends Controller
             ->orderBy('order', 'ASC')
             ->get(['id', 'title', 'parent_id']);
         return view('backend.groups.list', [
+            'page_title'=>'Category '.$this->module,
             'module' => $this->module,
             'groups' => $groups]);
     }

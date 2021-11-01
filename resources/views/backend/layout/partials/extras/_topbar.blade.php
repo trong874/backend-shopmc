@@ -1,11 +1,19 @@
 {{-- Topbar --}}
 <div class="topbar">
+
     {{-- Languages --}}
     @if (config('layout.extras.languages.display'))
         <div class="dropdown">
             <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
                 <div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
-                    <img class="h-20px w-20px rounded-sm" src="{{ asset('media/svg/flags/226-united-states.svg') }}" alt=""/>
+                    <img class="h-20px w-20px rounded-sm" src="
+                    @if(Session::has('locale'))
+                    @if   (Session::get('locale') == 'vi'){{  asset('media/svg/flags/220-vietnam.svg') }}@endif
+                    @if (Session::get('locale') == 'en'){{  asset('media/svg/flags/226-united-states.svg') }}@endif
+                    @else {{  asset('media/svg/flags/220-vietnam.svg') }}
+                    @endif "
+                         alt=""/>
+
                 </div>
             </div>
 
@@ -19,9 +27,11 @@
     @if (config('layout.extras.user.display'))
         @if (config('layout.extras.user.layout') == 'offcanvas')
             <div class="topbar-item">
-                <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
-                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-                    <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{Auth::user()->name}}</span>
+                <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2"
+                     id="kt_quick_user_toggle">
+                    <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">{{__("Xin chào")}},</span>
+                    <span
+                        class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{Auth::user()->name}}</span>
                     <span class="symbol symbol-35 symbol-light-success">
                         <span class="symbol-label font-size-h5 font-weight-bold">S</span>
                     </span>

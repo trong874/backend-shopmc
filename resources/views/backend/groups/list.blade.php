@@ -12,13 +12,13 @@
         <div class="row">
             <div class="col-lg-12 mb-4">
                 <div class="row" style="margin: 20px;float: right">
-                    <button type="button" class="btn btn-outline-primary" data-action="expand-all">Expand All</button>
-                    <button type="button" class="btn btn-outline-primary" data-action="collapse-all">Collapse All
+                    <button type="button" class="btn btn-outline-primary" data-action="expand-all">{{__('Mở rộng tất cả')}}</button>
+                    <button type="button" class="btn btn-outline-primary" data-action="collapse-all">{{__('Thu gọn tất cả')}}
                     </button>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm_delete_all">
-                        Xóa mục đã chọn
+                       {{__('Xoá lựa chọn')}}
                     </button>
-                    <a href="{{route("$module.create")}}" class="btn btn-success">Add Group</a>
+                    <a href="{{route("$module.create")}}" class="btn btn-success">{{__('Thêm danh mục')}}</a>
                 </div>
             </div>
             <!-- Modal -->
