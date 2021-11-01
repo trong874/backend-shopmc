@@ -185,6 +185,7 @@ article, .post {
     font-size: 16px;
     line-height: 28px;
     color: #333;
+
 }
 
 p strong {
@@ -3547,6 +3548,8 @@ span.comm_count_meta:before {
     margin-bottom: 15px;
     counter-reset: wpsmtop;
     word-wrap: break-word;
+
+
 }
 
 .post .comment_two, .stream_title .comment_two {

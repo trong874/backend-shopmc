@@ -2,13 +2,11 @@
 @section('content')
     <div class="rh-container full_width">
         <div class="rh-content-wrap clearfix">
-
             <!-- Main Side -->
             <div class="main-side page clearfix full_width" id="content">
                 <div class="rh-post-wrapper">
                     <article class="post mb0" id="page-9004">
-                        <div
-                            class="vc_row wpb_row vc_row-fluid vc_custom_1564761728966 vc_row-has-fill centered-container">
+                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1564761728966 vc_row-has-fill centered-container">
                             <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
@@ -16,217 +14,33 @@
                                             <div class="wpb_column vc_column_container vc_col-sm-12">
                                                 <div class="vc_column-inner">
                                                     <div class="wpb_wrapper">
-                                                        <!-- START Slider 1 REVOLUTION SLIDER 6.2.23 --><p
-                                                            class="rs-p-wp-fix"></p>
-                                                        <rs-module-wrap id="rev_slider_24_1_wrapper"
-                                                                        data-source="gallery"
-                                                                        style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-                                                            <rs-module id="rev_slider_24_1" style=""
-                                                                       data-version="6.2.23">
-                                                                <rs-slides>
-                                                                    <rs-slide data-key="rs-34" data-title="Slide"
-                                                                              data-anim="ei:d;eo:d;s:d;r:0;t:parallaxtoright;sl:d;">
-                                                                        <img
-                                                                            src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png"
-                                                                            alt="Slide" title="Trang chủ"
-                                                                            data-parallax="off" class="rev-slidebg"
-                                                                            data-no-retina>
-                                                                        <!--
-							-->
-                                                                        <rs-layer
-                                                                            id="slider-24-slide-34-layer-2"
-                                                                            data-type="image"
-                                                                            data-rsp_ch="on"
-                                                                            data-xy="yo:-2px,-2px,-2px,0;"
-                                                                            data-text="w:normal;s:20,20,20,7;l:0,0,0,9;"
-                                                                            data-dim="w:1200px,1200px,1200px,480px;h:240px,240px,240px,95px;"
-                                                                            data-frame_0="x:right;"
-                                                                            data-frame_1="sp:1000;"
-                                                                            data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        >
-                                                                            <img
-                                                                                src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-ninjago.jpg"
-                                                                                width="1200" height="240"
-                                                                                data-no-retina>
-                                                                        </rs-layer><!--
--->                        </rs-slide>
-                                                                    <rs-slide data-key="rs-36" data-title="Slide"
-                                                                              data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
-                                                                        <img
-                                                                            src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png"
-                                                                            alt="Slide" title="Trang chủ"
-                                                                            data-parallax="off" class="rev-slidebg"
-                                                                            data-no-retina>
-                                                                        <!--
-							-->
-                                                                        <rs-layer
-                                                                            id="slider-24-slide-36-layer-3"
-                                                                            data-type="image"
-                                                                            data-rsp_ch="on"
-                                                                            data-text="w:normal;s:20,20,20,7;l:0,0,0,9;"
-                                                                            data-dim="w:1200px,1200px,1200px,480px;h:240px,240px,240px,95px;"
-                                                                            data-frame_0="x:right;"
-                                                                            data-frame_1="sp:1000;"
-                                                                            data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        >
-                                                                            <img
-                                                                                src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-friends.jpg"
-                                                                                width="1200" height="240"
-                                                                                data-no-retina>
-                                                                        </rs-layer><!--
--->                        </rs-slide>
-                                                                    <rs-slide data-key="rs-33" data-title="Slide"
-                                                                              data-anim="ei:d;eo:d;s:d;r:0;t:slideoverup;sl:d;">
-                                                                        <img
-                                                                            src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png"
-                                                                            alt="Slide" title="Trang chủ"
-                                                                            data-parallax="off" class="rev-slidebg"
-                                                                            data-no-retina>
-                                                                        <!--
-							-->
-                                                                        <rs-layer
-                                                                            id="slider-24-slide-33-layer-1"
-                                                                            data-type="image"
-                                                                            data-rsp_ch="on"
-                                                                            data-xy="yo:-2px,-2px,-2px,0;"
-                                                                            data-text="w:normal;s:20,20,20,7;l:0,0,0,9;"
-                                                                            data-dim="w:1200px,1200px,1200px,480px;h:240px,240px,240px,95px;"
-                                                                            data-frame_0="x:right;"
-                                                                            data-frame_1="sp:1000;"
-                                                                            data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        >
-                                                                            <img
-                                                                                src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-minecraft.jpg"
-                                                                                width="1200" height="240"
-                                                                                data-no-retina>
-                                                                        </rs-layer><!--
--->                        </rs-slide>
-                                                                    <rs-slide data-key="rs-37" data-title="Slide"
-                                                                              data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
-                                                                        <img
-                                                                            src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png"
-                                                                            alt="Slide" title="Trang chủ"
-                                                                            data-parallax="off" class="rev-slidebg"
-                                                                            data-no-retina>
-                                                                        <!--
-							-->
-                                                                        <rs-layer
-                                                                            id="slider-24-slide-37-layer-4"
-                                                                            data-type="image"
-                                                                            data-rsp_ch="on"
-                                                                            data-xy="xo:-2px,-2px,-2px,0;"
-                                                                            data-text="w:normal;s:20,20,20,7;l:0,0,0,9;"
-                                                                            data-dim="w:1200px,1200px,1200px,480px;h:240px,240px,240px,95px;"
-                                                                            data-frame_0="x:right;"
-                                                                            data-frame_1="sp:1000;"
-                                                                            data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        >
-                                                                            <img
-                                                                                src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-city.jpg"
-                                                                                width="1200" height="240"
-                                                                                data-no-retina>
-                                                                        </rs-layer><!--
--->                        </rs-slide>
-                                                                </rs-slides>
-                                                            </rs-module>
-                                                            <script type="text/javascript">
-                                                                setREVStartSize({
-                                                                    c: 'rev_slider_24_1',
-                                                                    rl: [1200, 1200, 1200, 480],
-                                                                    el: [240, 240, 240, 720],
-                                                                    gw: [1200, 1200, 1200, 480],
-                                                                    gh: [240, 240, 240, 720],
-                                                                    type: 'standard',
-                                                                    justify: '',
-                                                                    layout: 'fullwidth',
-                                                                    mh: "0"
-                                                                });
-                                                                var revapi24,
-                                                                    tpj;
-
-                                                                function revinit_revslider241() {
-                                                                    jQuery(function () {
-                                                                        tpj = jQuery;
-                                                                        revapi24 = tpj("#rev_slider_24_1");
-                                                                        if (revapi24 == undefined || revapi24.revolution == undefined) {
-                                                                            revslider_showDoubleJqueryError("rev_slider_24_1");
-                                                                        } else {
-                                                                            revapi24.revolution({
-                                                                                sliderLayout: "fullwidth",
-                                                                                visibilityLevels: "1200,1200,1200,480",
-                                                                                gridwidth: "1200,1200,1200,480",
-                                                                                gridheight: "240,240,240,720",
-                                                                                spinner: "spinner0",
-                                                                                perspective: 600,
-                                                                                perspectiveType: "global",
-                                                                                editorheight: "240,768,960,720",
-                                                                                responsiveLevels: "1200,1200,1200,480",
-                                                                                progressBar: {disableProgressBar: true},
-                                                                                navigation: {
-                                                                                    onHoverStop: false,
-                                                                                    arrows: {
-                                                                                        enable: true,
-                                                                                        style: "custom",
-                                                                                        left: {
-                                                                                            anim: "left",
-                                                                                            container: "layergrid",
-                                                                                            h_offset: 30
-                                                                                        },
-                                                                                        right: {
-                                                                                            anim: "right",
-                                                                                            container: "layergrid",
-                                                                                            h_offset: 30
-                                                                                        }
-                                                                                    },
-                                                                                    bullets: {
-                                                                                        enable: true,
-                                                                                        tmp:"<span class=\"tp-bullet-title\">alo</span>",
-                                                                                        style: "ares"
-                                                                                    }
-                                                                                },
-                                                                                parallax: {
-                                                                                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 30],
-                                                                                    type: "scroll",
-                                                                                    origo: "slidercenter",
-                                                                                    speed: 0
-                                                                                },
-                                                                                scrolleffect: {
-                                                                                    set: true,
-                                                                                    multiplicator: 1.3,
-                                                                                    multiplicator_layers: 1.3
-                                                                                },
-                                                                                sbtimeline: {
-                                                                                    set: true,
-                                                                                    ease: "elastic.out"
-                                                                                },
-                                                                                fallbacks: {
-                                                                                    allowHTML5AutoPlayOnAndroid: true
-                                                                                },
-                                                                            });
-                                                                        }
-
-                                                                    });
-                                                                } // End of RevInitScript
-                                                                var once_revslider241 = false;
-                                                                if (document.readyState === "loading") {
-                                                                    document.addEventListener('readystatechange', function () {
-                                                                        if ((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider241) {
-                                                                            once_revslider241 = true;
-                                                                            revinit_revslider241();
-                                                                        }
-                                                                    });
-                                                                } else {
-                                                                    once_revslider241 = true;
-                                                                    revinit_revslider241();
-                                                                }
-                                                            </script>
-
-
-                                                        </rs-module-wrap>
+                                                        <!-- START Slider 1 REVOLUTION SLIDER 6.2.23 -->
+                                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                                            <ol class="carousel-indicators">
+                                                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                                            </ol>
+                                                            <div class="carousel-inner">
+                                                                <div class="carousel-item active">
+                                                                    <img class="d-block w-100" src="{{asset('frontend/image/lego-ninjago.jpg')}}" alt="First slide" width="1200px" height="240px">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img class="d-block w-100" src="{{asset('frontend/image/lego-minecraft.jpg')}}" alt="Second slide" width="1200px" height="240px">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img class="d-block w-100" src="{{asset('frontend/image/lego-friends')}}" alt="Third slide" width="1200px" height="240px">
+                                                                </div>
+                                                            </div>
+                                                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                                <span class="sr-only">Previous</span>
+                                                            </a>
+                                                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                <span class="sr-only">Next</span>
+                                                            </a>
+                                                        </div>
                                                         <!-- END REVOLUTION SLIDER -->
                                                     </div>
                                                 </div>
@@ -2155,14 +1969,14 @@
                         </div>
                         @include('frontend.position.backpacks_handbags')
                         @include('frontend.position.clothes')
-                        @include('frontend.position.lego_minecraft');
+                        @include('frontend.position.lego_minecraft')
                         <div
                             class="vc_row wpb_row vc_row-fluid vc_custom_1607449273831 vc_row-has-fill centered-container">
                             <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
-                                <div class="vc_column-inner">
+                                <div class="vc_column-inner post">
                                     <div class="wpb_wrapper"><h4
-                                            style="font-size: 16px;line-height: 18px;text-align: left"
-                                            class="vc_custom_heading">Tin tức cộng đồng</h4></div>
+                                            style="margin-block-start: 1em;  margin-left: 15px"
+                                            class="vc_custom_heading vc_custom_1607448849913">Tin tức cộng đồng</h4></div>
                                 </div>
                             </div>
                         </div>
