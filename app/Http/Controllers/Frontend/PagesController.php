@@ -27,4 +27,8 @@ class PagesController extends Controller
                         'title'
                     ]);
     }
+
+    public function detail(){
+   return view('frontend.detail.home');
+    }
 }
