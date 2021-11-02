@@ -19,4 +19,5 @@ class PagesController extends Controller
         Session::put('locale',$locale);
         return back();
     }
+
 }

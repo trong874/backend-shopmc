@@ -64,7 +64,7 @@ return [
             'title' => 'Cấu hình chung',
             'root' => true,
             'icon' => 'media/svg/icons/General/Settings-1.svg', // or can be 'flaticon-home' or any flaticon-*
-            'page' => '/admin/general-config',
+            'page' => '/admin/setting',
             'new-tab' => false,
         ],
     ]

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\PagesController;
+use App\Http\Controllers\Backend\SettingController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,6 +16,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('products', ItemController::class);
 
         Route::resource('news', ItemController::class);
+
+        Route::resource('setting',SettingController::class);
 
         Route::resource('category-products', GroupController::class);
 
@@ -29,6 +32,7 @@ Route::group(['middleware' => 'language'], function () {
         Route::post('/update-list', [GroupController::class, 'saveList'])->name('groups.update_list');
 
         Route::get('set-locale/{locale}', [PagesController::class, 'changeLanguage'])->name('setLocale');
+
 
 //        Route::get('user-manage');
 

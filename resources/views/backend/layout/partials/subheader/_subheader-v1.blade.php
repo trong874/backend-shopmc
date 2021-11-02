@@ -8,7 +8,7 @@
 
 			{{-- Page Title --}}
             <h5 class="text-dark font-weight-bold my-2 mr-5">
-                {{ @$page_title }}
+                {{ __($page_title) ?? ''}}
 
                 @if (isset($page_description) && config('layout.subheader.displayDesc'))
                     <small>{{ @$page_description }}</small>
