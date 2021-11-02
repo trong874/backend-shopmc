@@ -264,7 +264,7 @@
     </div>
 
     <!-- FOOTER -->
-@include('frontend.layout.core.footer');
+@include('frontend.layout.core.footer')
     <!-- FOOTER -->
 
 
