@@ -100,5 +100,8 @@ class PagesController extends Controller
         ]);
         return view('frontend.position.detail-news', ['newDetail' => $newDetail]);
     }
+    public function category(){
+        return view('frontend.category_product');
+    }
 
 }

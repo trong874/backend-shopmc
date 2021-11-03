@@ -53,8 +53,8 @@
                                 <div class="celldisplay rh_woocartmenu_cell text-center"><span
                                         class="inlinestyle rehub-main-btn-bg rehub-main-smooth menu-cart-btn "><a
                                             class="rh-header-icon rh-flex-center-align rh_woocartmenu-link cart-contents cart_count_0"
-                                            href="https://shopmc.com.vn/cart/"><i class="fas fa-cart-plus"></i><span
-                                                class="rh_woocartmenu-icon"><span
+                                            href="https://shopmc.com.vn/cart/"><i class="fas fa-cart-plus"></i>
+                                            <span class="rh_woocartmenu-icon"><span
                                                     class="rh-icon-notice rehub-main-color-bg">0</span></span><span
                                                 class="rh_woocartmenu-amount"><span
                                                     class="woocommerce-Price-amount amount"><bdi>0&nbsp;<span
