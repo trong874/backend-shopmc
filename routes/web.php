@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'language'], function () {
     Route::get('/', [\App\Http\Controllers\Frontend\PagesController::class, 'index'])->name('page.index');
+    Route::get('/news', [\App\Http\Controllers\Frontend\PagesController::class, 'getNews'])->name('news.index');
+    Route::get('/news/{url}', [\App\Http\Controllers\Frontend\PagesController::class, 'getNewsDetail'])->name('news.detail');
+    Route::get('/product/{url}', [\App\Http\Controllers\Frontend\PagesController::class, 'getProductDetail'])->name('product.detail');
+
 
     Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/', [PagesController::class, 'index'])->name('dashboard');

@@ -3574,7 +3574,7 @@ h2.ext_link {
 }
 
 .post ul li {
-    list-style: disc outside none;
+    list-style:  none;
 }
 
 .post li {
@@ -16566,3 +16566,30 @@ pre.wpsm-code.wpsm_code_2 {
 .wpsm-itinerary-content h2, .wpsm-itinerary-content h3, .wpsm-itinerary-content h4, .wpsm-itinerary-content h5 {
     margin-top: 0
 }
+
+.sidebar .title{
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    color: #111;
+    margin: 0 0 22px;
+}
+
+.sidebar .title:after {
+    border-bottom: 2px solid #8035be;
+}
+
+.sidebar .title:after {
+    content: ' ';
+    width: 75px;
+    display: block;
+    position: absolute;
+    bottom: -1px;
+}
+.sidebar li {
+    margin-top: 20px;
+}
+

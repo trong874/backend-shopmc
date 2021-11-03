@@ -30,7 +30,7 @@
             <div class="rh-container">
                 <div class="logo-section rh-flex-center-align tabletblockdisplay header_seven_style clearfix">
                     <div class="logo">
-                        <a href="https://shopmc.com.vn" class="logo_image">
+                        <a href="{{route('page.index')}}" class="logo_image">
                             <img src="https://shopmc.com.vn/wp-content/uploads/2019/02/Minecraft_logo.png"
                                  alt="Shop MC" height="" width=""/>
                         </a>

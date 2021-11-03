@@ -60,7 +60,8 @@
 
         .quick_buy_button_tag{}
 
-        .quick_buy_button{}</style><title>LEGO Friends Baby Elephant Jungle Rescue 41421 - Giải cứu voi con - Đồ chơi Minecraft chính hãng</title>
+        .quick_buy_button{}</style>
+    <title>LEGO Friends Baby Elephant Jungle Rescue 41421 - Giải cứu voi con - Đồ chơi Minecraft chính hãng</title>
     <link rel="canonical" href="https://shopmc.vn/san-pham/lego-friends-baby-elephant-jungle-rescue-41421-giai-cuu-voi-con/" />
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="article" />

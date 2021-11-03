@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if IE 8]>
 <html class="ie8" lang="vi"> <![endif]-->
@@ -275,7 +274,7 @@
 
 <div id="rhmobpnlcustom" class="rhhidden">
     <div id="rhmobtoppnl" style="background-color: #ffffff;" class="pr15 pl15 pb15 pt15">
-        <div class="text-center"><a href="https://shopmc.com.vn"><img id="mobpanelimg"
+        <div class="text-center"><a href=""><img id="mobpanelimg"
                                                                       src="{{asset('frontend/image/Minecraft_logo.png')}}"
                                                                       alt="Logo"/></a></div>
     </div>
