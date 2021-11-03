@@ -17283,3 +17283,13 @@ ul.menu-bottom li.level0 span.click-mobile.active {
     }
 }
 
+/*detail news*/
+.woocommerce-Price-amount span{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+

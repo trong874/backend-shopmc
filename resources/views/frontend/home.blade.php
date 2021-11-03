@@ -6,7 +6,8 @@
             <div class="main-side page clearfix full_width" id="content">
                 <div class="rh-post-wrapper">
                     <article class="post mb0" id="page-9004">
-                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1564761728966 vc_row-has-fill centered-container">
+                        <div
+                            class="vc_row wpb_row vc_row-fluid vc_custom_1564761728966 vc_row-has-fill centered-container">
                             <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
@@ -15,29 +16,48 @@
                                                 <div class="vc_column-inner">
                                                     <div class="wpb_wrapper">
                                                         <!-- START Slider 1 REVOLUTION SLIDER 6.2.23 -->
-                                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                                        <div id="carouselExampleIndicators" class="carousel slide"
+                                                             data-ride="carousel">
                                                             <ol class="carousel-indicators">
-                                                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                                                <li data-target="#carouselExampleIndicators"
+                                                                    data-slide-to="0" class="active"></li>
+                                                                <li data-target="#carouselExampleIndicators"
+                                                                    data-slide-to="1"></li>
+                                                                <li data-target="#carouselExampleIndicators"
+                                                                    data-slide-to="2"></li>
                                                             </ol>
                                                             <div class="carousel-inner">
                                                                 <div class="carousel-item active">
-                                                                    <img class="d-block w-100" src="{{asset('frontend/image/lego-ninjago.jpg')}}" alt="First slide" width="1200px" height="240px">
+                                                                    <img class="d-block w-100"
+                                                                         src="{{asset('frontend/image/lego-ninjago.jpg')}}"
+                                                                         alt="First slide" width="1200px"
+                                                                         height="240px">
                                                                 </div>
                                                                 <div class="carousel-item">
-                                                                    <img class="d-block w-100" src="{{asset('frontend/image/lego-minecraft.jpg')}}" alt="Second slide" width="1200px" height="240px">
+                                                                    <img class="d-block w-100"
+                                                                         src="{{asset('frontend/image/lego-minecraft.jpg')}}"
+                                                                         alt="Second slide" width="1200px"
+                                                                         height="240px">
                                                                 </div>
                                                                 <div class="carousel-item">
-                                                                    <img class="d-block w-100" src="{{asset('frontend/image/lego-friends')}}" alt="Third slide" width="1200px" height="240px">
+                                                                    <img class="d-block w-100"
+                                                                         src="{{asset('frontend/image/lego-friends')}}"
+                                                                         alt="Third slide" width="1200px"
+                                                                         height="240px">
                                                                 </div>
                                                             </div>
-                                                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                            <a class="carousel-control-prev"
+                                                               href="#carouselExampleIndicators" role="button"
+                                                               data-slide="prev">
+                                                                <span class="carousel-control-prev-icon"
+                                                                      aria-hidden="true"></span>
                                                                 <span class="sr-only">Previous</span>
                                                             </a>
-                                                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                            <a class="carousel-control-next"
+                                                               href="#carouselExampleIndicators" role="button"
+                                                               data-slide="next">
+                                                                <span class="carousel-control-next-icon"
+                                                                      aria-hidden="true"></span>
                                                                 <span class="sr-only">Next</span>
                                                             </a>
                                                         </div>
@@ -87,6 +107,7 @@
                                 </div>
                             </div>
                         </div>
+
                             @include('frontend.position.flash_Sale')
                             @include('frontend.position.minecraft')
                         <div class="vc_row wpb_row vc_row-fluid centered-container">
@@ -1647,6 +1668,10 @@
                                 </div>
                             </div>
                         </div>
+=======
+                        @include('frontend.position.flash_Sale')
+                        @include('frontend.position.minecraft')
+>>>>>>> 5bffd6a46e63ab745b61abea0a6d1af2287cbfb8
                         @include('frontend.position.backpacks_handbags')
                         @include('frontend.position.clothes')
                         @include('frontend.position.lego_minecraft')
@@ -1656,7 +1681,8 @@
                                 <div class="vc_column-inner post">
                                     <div class="wpb_wrapper"><h4
                                             style="margin-block-start: 1em;  margin-left: 15px"
-                                            class="vc_custom_heading vc_custom_1607448849913">Tin tức cộng đồng</h4></div>
+                                            class="vc_custom_heading vc_custom_1607448849913">Tin tức cộng đồng</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1669,70 +1695,43 @@
                                              data-template="query_type1" id="rh_filterid_2085933268"
                                              data-innerargs='{"type":"1"}'>
 
+                                            @foreach($news as $new)
+                                                <div class="news-community clearfix">
 
-                                            <div class="news-community clearfix">
+                                                    <div class="rh_grid_image_wrapper">
+                                                        <div class="newsimage rh_gr_img">
+                                                            <figure>
+                                                                <div class="favorrightside wishonimage"></div>
 
-                                                <div class="rh_grid_image_wrapper">
-                                                    <div class="newsimage rh_gr_img">
-                                                        <figure>
-                                                            <div class="favorrightside wishonimage"></div>
-
-                                                            <a href="https://shopmc.com.vn/minecraft-la-gi/">
-                                                                <img class="lazyload"
-                                                                     data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/d1d89ec35057cca89fc030629a8c11d5-1uz88ifr8qwseov7v4ki0m0w0kkyhq4a2aoqhh653vxg.png"
-                                                                     width="160" height="160" alt="Minecraft là gì?"
-                                                                     src="https://shopmc.com.vn/wp-content/themes/rehub-theme/images/default/blank.gif"/>
-                                                            </a>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newsdetail rh_gr_top_right mb5">
-                                                        <div class="hotmeter_wrap">
-                                                            <div class="hotmeter"><span
-                                                                    class="table_cell_hot first_cell"><span
-                                                                        id="temperatur9188" class="temperatur">1<span
-                                                                            class="gradus_icon"></span></span></span>
-                                                                <span class="table_cell_hot cell_minus_hot"><button
-                                                                        class="hotminus alreadyhot" alt="Vote down"
-                                                                        title="Vote down" data-post_id="9188"
-                                                                        data-informer="1"></button></span><span
-                                                                    class="table_cell_hot cell_plus_hot"><button
-                                                                        class="hotplus alreadyhot" alt="Vote up"
-                                                                        title="Vote up" data-post_id="9188"
-                                                                        data-informer="1"></button></span><span
-                                                                    id="textinfo9188"
-                                                                    class="textinfo table_cell_hot"></span>
-                                                                <div class="table_cell_hot fullwidth_cell">
-                                                                    <div id="fonscale9188" class="fonscale">
-                                                                        <div id="scaleperc9188" class="scaleperc"
-                                                                             style="width:10%"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                                <a href="{{$new->url}}">
+                                                                    <img src="{{$new->image}}"
+                                                                         style="max-height: 225px;max-width: 300px;"
+                                                                         class="img-fluid" alt="">
+                                                                </a>
+                                                            </figure>
                                                         </div>
-                                                    </div>
-                                                    <div class="newsdetail newstitleblock rh_gr_right_sec">
-                                                        <h2 class="font130 mt0 mb10 mobfont120 lineheight20"><a
-                                                                href="https://shopmc.com.vn/minecraft-la-gi/">Minecraft
-                                                                là gì?</a></h2>
+                                                        <div class="newsdetail rh_gr_top_right mb5">
+
+                                                        </div>
+                                                        <div class="newsdetail newstitleblock rh_gr_right_sec">
+                                                            <h2 class="font130 mt0 mb10 mobfont120 lineheight20"><a
+                                                                    href="{{$new->url}}">{{$new->title}}</a></h2>
 
 
-                                                        <span
-                                                            class="more-from-store-a floatleft ml0 mr10 mb5 lineheight20"><span
-                                                                class="tag_post_store_meta"></span></span>
+                                                            <span
+                                                                class="more-from-store-a floatleft ml0 mr10 mb5 lineheight20"><span
+                                                                    class="tag_post_store_meta"></span></span>
 
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                    <div class="newsdetail rh_gr_right_desc">
-                                                        <p class="font90 mobfont80 lineheight20 moblineheight15 mb15">
-                                                            Giới Thiệu Minecraft
-                                                            Minecraft&nbsp;là một&nbsp;trò chơi điện tử độc lập&nbsp;trong
-                                                            một&nbsp;thế giới mở. Ban đầu nó được tạo ra bởi lập trình
-                                                            viên người Thụy ...</p>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="newsdetail rh_gr_right_desc">
+                                                            <p class="font90 mobfont80 lineheight20 moblineheight15 mb15">
+                                                                {!! $new->description !!}</p>
 
-                                                    </div>
-                                                    <div class="newsdetail newsbtn rh_gr_right_btn">
-                                                        <div class="rh-flex-center-align mobileblockdisplay">
-                                                            <div class="meta post-meta">
+                                                        </div>
+                                                        <div class="newsdetail newsbtn rh_gr_right_btn">
+                                                            <div class="rh-flex-center-align mobileblockdisplay">
+                                                                <div class="meta post-meta">
 			            				<span class="admin_meta">
 			<a class="admin" href="https://shopmc.com.vn/author/admin/">
 				<img src="https://shopmc.com.vn/wp-content/uploads/2020/11/anonymous_logo-300x300-1-100x100.png"
@@ -1741,118 +1740,25 @@
 				admin
 			</a>
 		</span>
-                                                                <span class="date_meta">
-  			 				 Tháng Tư 3, 2019 			 		</span>
+                                                                    <span class="date_meta">{{$new->created_at}}</span>
 
-                                                            </div>
-                                                            <div class="rh-flex-right-align">
-
-
-                                                                <a href="https://shopmc.com.vn/minecraft-la-gi/"
-                                                                   class="btn_more">Xem Thêm</a>
+                                                                </div>
+                                                                <div class="rh-flex-right-align">
 
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="newscom_head_ajax"></div>
-                                                <div class="newscom_content_ajax"></div>
+                                                                    <a href="https://shopmc.com.vn/minecraft-la-gi/"
+                                                                       class="btn_more">Xem Thêm</a>
 
-                                            </div>
 
-                                            <div class="news-community clearfix">
-
-                                                <div class="rh_grid_image_wrapper">
-                                                    <div class="newsimage rh_gr_img">
-                                                        <figure>
-                                                            <div class="favorrightside wishonimage"></div>
-
-                                                            <a href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/">
-                                                                <img class="lazyload"
-                                                                     data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/maxresdefault-1uz7p5asfyegjwbulx875by0rsp28vkoug6a7x7sl790.jpg"
-                                                                     width="160" height="160"
-                                                                     alt="Hướng dẫn tải và cài đặt Minecraft Launcher"
-                                                                     src="https://shopmc.com.vn/wp-content/themes/rehub-theme/images/default/blank.gif"/>
-                                                            </a>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newsdetail rh_gr_top_right mb5">
-                                                        <div class="hotmeter_wrap">
-                                                            <div class="hotmeter"><span
-                                                                    class="table_cell_hot first_cell"><span
-                                                                        id="temperatur9085" class="temperatur">1<span
-                                                                            class="gradus_icon"></span></span></span>
-                                                                <span class="table_cell_hot cell_minus_hot"><button
-                                                                        class="hotminus alreadyhot" alt="Vote down"
-                                                                        title="Vote down" data-post_id="9085"
-                                                                        data-informer="1"></button></span><span
-                                                                    class="table_cell_hot cell_plus_hot"><button
-                                                                        class="hotplus alreadyhot" alt="Vote up"
-                                                                        title="Vote up" data-post_id="9085"
-                                                                        data-informer="1"></button></span><span
-                                                                    id="textinfo9085"
-                                                                    class="textinfo table_cell_hot"></span>
-                                                                <div class="table_cell_hot fullwidth_cell">
-                                                                    <div id="fonscale9085" class="fonscale">
-                                                                        <div id="scaleperc9085" class="scaleperc"
-                                                                             style="width:10%"></div>
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="newsdetail newstitleblock rh_gr_right_sec">
-                                                        <h2 class="font130 mt0 mb10 mobfont120 lineheight20"><a
-                                                                href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/">Hướng
-                                                                dẫn tải và cài đặt Minecraft Launcher</a></h2>
+                                                    <div class="newscom_head_ajax"></div>
+                                                    <div class="newscom_content_ajax"></div>
 
-
-                                                        <span
-                                                            class="more-from-store-a floatleft ml0 mr10 mb5 lineheight20"><span
-                                                                class="tag_post_store_meta"></span></span>
-
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                    <div class="newsdetail rh_gr_right_desc">
-                                                        <p class="font90 mobfont80 lineheight20 moblineheight15 mb15">
-                                                            Minecraft là một trò chơi điện tử độc lập trong một thế giới
-                                                            mở. Ban đầu nó được tạo ra bởi lập trình viên người Thụy
-                                                            Điển Markus “Notch” Persson và sau đó ...</p>
-
-                                                    </div>
-                                                    <div class="newsdetail newsbtn rh_gr_right_btn">
-                                                        <div class="rh-flex-center-align mobileblockdisplay">
-                                                            <div class="meta post-meta">
-			            				<span class="admin_meta">
-			<a class="admin" href="https://shopmc.com.vn/author/admin/">
-				<img src="https://shopmc.com.vn/wp-content/uploads/2020/11/anonymous_logo-300x300-1-100x100.png"
-                     width="22" height="22" alt="admin"
-                     class="avatar avatar-22 wp-user-avatar wp-user-avatar-22 alignnone photo"/>
-				admin
-			</a>
-		</span>
-                                                                <span class="date_meta">
-  			 				 Tháng Hai 25, 2019 			 		</span>
-
-                                                            </div>
-                                                            <div class="rh-flex-right-align">
-
-
-                                                                <a href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/"
-                                                                   class="btn_more">Xem Thêm</a>
-
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
-                                                <div class="newscom_head_ajax"></div>
-                                                <div class="newscom_content_ajax"></div>
-
-                                            </div>
-
-
+                                            @endforeach
                                         </div>
                                         <div class="clearfix"></div>
 

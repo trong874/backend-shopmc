@@ -113,4 +113,5 @@ class   PagesController extends Controller
     public function category(){
         return view('frontend.category_product');
     }
+
 }

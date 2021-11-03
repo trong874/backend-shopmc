@@ -60,13 +60,13 @@
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
                         <select class="form-control form-control-solid" name="position">
-                            <option>---Vị trí đặt--- </option>
+
                             <option value="category">Danh mục sản phẩm</option>
-                            <option value="flashsale">FlashSale</option>
-                            <option value="toy-minecraft">Đồ chơi Minecraft</option>
-                            <option value="balo-bag">Balo Túi xách</option>
+                            <option value="flashsale">Flash Sale</option>
+                            <option value="toy-minecraft">Đồ Chơi Minecraft</option>
+                            <option value="balo-bag">Balo Túi Xách</option>
                             <option value="clothes">Quần áo</option>
-                            <option value="lego ">Mô hình/ Lego Minecraft</option>
+                            <option value="lego">Mô hình/ Lego Minecraft</option>
                             <option value="news">Tin tức cộng đồng</option>
                         </select>
                         <span class="form-text text-muted">Please enter your Position</span>
