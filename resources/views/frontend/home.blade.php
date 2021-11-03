@@ -58,347 +58,27 @@
                                             <div class="wpb_wrapper">
                                                 <div class="cate_home">
                                                     <ul class="ul_cate">
+                                                        @foreach($categories as $category)
                                                         <li class="li_cate">
                                                             <div class="li_a">
                                                                 <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
+                                                                   href="{{$category->url}}">
                                                                     <div class="buttom_cat">
                                                                         <div class="buttom_cat_img">
                                                                             <div class="buttom_cat_img_sub">
                                                                                 <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2018/04/cobo-ki%E1%BA%BFm-cup-diamond.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
+                                                                                     style="background-image: url(&quot;{{$category->image}}&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Đồ chơi
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/balo-bp2.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Balo túi
-                                                                                xách
+                                                                            <div class="buttom_cat_text-h3">{{$category->title}}
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </a>
                                                             </div>
                                                         </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/mu-quan-ao/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.vn/wp-content/uploads/2017/02/ao-khoac-TNT-minecraft-1.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Quần áo
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/do-dung-minecraft/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.vn/wp-content/uploads/2018/07/36765348_1824729317592635_471477067095998464_n.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Đồ dùng học
-                                                                                tập
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/mo-hinh-figure/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/mo-hinh-steve-1-1.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Mô hình
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/dong-ho/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/dong-ho-minecraft.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Đồng hồ
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/nhoi-bong/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/dog-nho-minecraft.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Nhồi bông
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a" href="#">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/giayluoiminecraft1.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Giày dép
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a" href="#">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/Minecraft-hangersseries-2-1.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Phụ kiện
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/lego-ninjago/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/img160x210_ninjago-2015.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Lego
-                                                                                Ninjago
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a" href="#">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/dau-steve-kim-cuong.jpg&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Đồ hóa
-                                                                                trang
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/lego-minecraft/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://thegioilego.com.vn/wp-content/uploads/thumbs_dir/img160x210_minecraft-1rbmi26jgaw9acz8n5fulgaoh0wsvr81cy9c6hss13j0.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Lego
-                                                                                Minecraft
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/thuong-hieu/schleich/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/schleich.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Schleich
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/lego-city/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/img160x210_city-2015.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Lego City
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/thuong-hieu/mojang/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/mojang.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Mojang</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/lego-duplo/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/img160x210_duplo-2015.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Lego Duplo
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/thuong-hieu/jinx/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/jinx.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Jinx</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/lego-nexo-knight/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/img160x210_nexo-knights.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Lego Nexo
-                                                                                Knight
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li_cate">
-                                                            <div class="li_a">
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/thuong-hieu/mattel/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/mattel.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Mattel</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a class="link_a"
-                                                                   href="https://shopmc.com.vn/danh-muc/lego-friends/">
-                                                                    <div class="buttom_cat">
-                                                                        <div class="buttom_cat_img">
-                                                                            <div class="buttom_cat_img_sub">
-                                                                                <div class="buttom_cat_img_sub_link"
-                                                                                     style="background-image: url(&quot;https://shopmc.com.vn/wp-content/uploads/2020/11/img160x210_friends-2015.png&quot;); background-size: contain; background-repeat: no-repeat;background-position: center;"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="buttom_cat_text">
-                                                                            <div class="buttom_cat_text-h3">Lego
-                                                                                Friends
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -407,8 +87,8 @@
                                 </div>
                             </div>
                         </div>
-@include('frontend.position.flash_Sale')
-@include('frontend.position.minecraft')
+                            @include('frontend.position.flash_Sale')
+                            @include('frontend.position.minecraft')
                         <div class="vc_row wpb_row vc_row-fluid centered-container">
                             <div
                                 class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-lg vc_hidden-md vc_hidden-sm">
