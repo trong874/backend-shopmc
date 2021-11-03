@@ -155,9 +155,10 @@
 
                                                 </form>
 
-                                                <div class="quick_buy_container quick_buy_20521_container "
+                                                <div class="quick_buy_container quick_buy_20521_container"
                                                      id="quick_buy_20521_container">
-                                                    <button id="quick_buy_20521_button" data-product-id="20521"
+                                                    <button id="quick_buy_20521_button"
+                                                            data-product-id="20521"
                                                             data-product-type="simple"
                                                             class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
                                                             type="button">Mua Ngay
