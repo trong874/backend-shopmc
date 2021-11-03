@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -34,8 +35,7 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::get('set-locale/{locale}', [PagesController::class, 'changeLanguage'])->name('setLocale');
 
-
-//        Route::get('user-manage');
+        Route::get('user-manage',[UserController::class,'index'])->name('user.index');
 
     });
 });
