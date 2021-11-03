@@ -31,4 +31,8 @@ class PagesController extends Controller
     public function detail(){
    return view('frontend.detail.home');
     }
+
+    public function category(){
+        return view('frontend.category_product');
+    }
 }
