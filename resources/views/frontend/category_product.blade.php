@@ -5,7 +5,7 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <!-- SIDEBAR WIDGET AREA -->
-        <div id="rehub_better_menu-3" class="widget better_menu"><div class="simple_menu_widget"><div class="title"><i class="rhicon rhi-bolt"></i>Danh mục sản phẩm</div>
+        <div id="rehub_better_menu-3" class="widget better_menu"><div class="simple_menu_widget"><div class="title"><i class="fas fa-bolt"></i>Danh mục sản phẩm</div>
                 <ul id="menu-danhmuc" class="menu"><li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">Balo Túi Xách</a></li>
                     <li id="menu-item-9322" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9322"><a href="https://shopmc.com.vn/danh-muc/dong-ho/">Đồng Hồ</a></li>
                     <li id="menu-item-9323" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-item menu-item-9323"><a href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/" aria-current="page">Kiếm Cuốc Rìu Minecraft</a></li>
@@ -40,7 +40,7 @@
     <!-- Main Side -->
     <div class="main-side woocommerce page clearfix" id="content">
         <article class="post" id="page-8507">
-            <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>Kiếm Cuốc Rìu Minecraft</nav>
+            <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span class="delimiter"><i class="fas fa-angle-double-right"></i></span>Kiếm Cuốc Rìu Minecraft</nav>
             <h1 class="arc-main-title">Kiếm Cuốc Rìu Minecraft</h1>
             <div class="border-grey cursorpointer floatright font90 ml10 pl10 pr10 rehub-main-color rtlmr10 rhhidden" id="mobile-trigger-sidebar"><i class="fa-sliders-v fal"></i> Filter</div>
             <div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
@@ -53,17 +53,27 @@
                     <option value="date">Mới nhất</option>
                     <option value="price">Thứ tự theo giá: thấp đến cao</option>
                     <option value="price-desc">Thứ tự theo giá: cao xuống thấp</option>
-                </select><div class="nice-select orderby" tabindex="0"><span class="current">Thứ tự mặc định</span><ul class="list"><li data-value="menu_order" class="option selected">Thứ tự mặc định</li><li data-value="popularity" class="option">Thứ tự theo mức độ phổ biến</li><li data-value="rating" class="option">Thứ tự theo điểm đánh giá</li><li data-value="date" class="option">Mới nhất</li><li data-value="price" class="option">Thứ tự theo giá: thấp đến cao</li><li data-value="price-desc" class="option">Thứ tự theo giá: cao xuống thấp</li></ul></div>
+                </select>
+                <div class="nice-select orderby" tabindex="0">
+                    <span class="current">Thứ tự mặc định</span>
+                    <ul class="list">
+                        <li data-value="menu_order" class="option selected">Thứ tự mặc định</li>
+                        <li data-value="popularity" class="option">Thứ tự theo mức độ phổ biến</li>
+                        <li data-value="rating" class="option">Thứ tự theo điểm đánh giá</li>
+                        <li data-value="date" class="option">Mới nhất</li>
+                        <li data-value="price" class="option">Thứ tự theo giá: thấp đến cao</li>
+                        <li data-value="price-desc" class="option">Thứ tự theo giá: cao xuống thấp</li>
+                    </ul>
+                </div>
                 <input type="hidden" name="paged" value="1">
             </form>
-            <div class="clear"></div>
-
-
-
             <div class="columns-5 products col_wrap_fifth rh-flex-eq-height grid_woo">
-
                 <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                    <span class="onsale"><span>- 35%</span></span>            <figure class="mb5 mt25 position-relative notresized">
+                    <span class="onsale">
+                        <span>- 35%</span>
+                    </span>
+
+                    <figure class="mb5 mt25 position-relative notresized">
                         <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/combo-3-kiem-minecraft/">
                             <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg" width="300" alt="Combo 3 Kiếm Minecraft" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg">                    </a>
                         <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
@@ -717,14 +727,13 @@
                         <a href="https://shopmc.com.vn/san-pham/kiem-bong-sat-minecraft/">Kiếm Bông Sắt Minecraft</a>
                     </h3>
 
-
                     <div class="border-top pt10 pr10 pl10 pb10">
                         <div class="price_for_grid floatleft rehub-btn-font mr10">
-
                             <span class="price"><span class="woocommerce-Price-amount amount"><bdi>200,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></span>
                         </div>
                         <div class="floatright product-meta">
-                            <span class="greycolor postview">Đã bán 189</span>        </div>
+                            <span class="greycolor postview">Đã bán 189</span>
+                        </div>
                         <div class="rh-flex-right-align btn_for_grid floatright">
                         </div>
                     </div>
