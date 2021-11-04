@@ -22,7 +22,8 @@
                                                                     <rs-slide data-key="rs-34" data-title="Slide" data-anim="ei:d;eo:d;s:d;r:0;t:parallaxtoright;sl:d;">
                                                                         <img src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
                                                                         <!--
-                                                                                                    --><rs-layer
+                                                                                                    -->
+                                                                        <rs-layer
                                                                             id="slider-24-slide-34-layer-2"
                                                                             data-type="image"
                                                                             data-rsp_ch="on"
@@ -32,8 +33,8 @@
                                                                             data-frame_0="x:right;"
                                                                             data-frame_1="sp:1000;"
                                                                             data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        ><img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-ninjago.jpg" width="1200" height="240" data-no-retina>
+                                                                            style="z-index:5;">
+                                                                            <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-ninjago.jpg" width="1200" height="240" data-no-retina>
                                                                         </rs-layer><!--
 -->						                                                 </rs-slide>
                                                                     <rs-slide data-key="rs-36" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
@@ -49,8 +50,8 @@
                                                                             data-frame_0="x:right;"
                                                                             data-frame_1="sp:1000;"
                                                                             data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        ><img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-friends.jpg" width="1200" height="240" data-no-retina>
+                                                                            style="z-index:5;">
+                                                                            <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-friends.jpg" width="1200" height="240" data-no-retina>
                                                                         </rs-layer><!--
 -->						                                               </rs-slide>
                                                                     <rs-slide data-key="rs-33" data-title="Slide" data-anim="ei:d;eo:d;s:d;r:0;t:slideoverup;sl:d;">
@@ -67,8 +68,8 @@
                                                                             data-frame_0="x:right;"
                                                                             data-frame_1="sp:1000;"
                                                                             data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        ><img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-minecraft.jpg" width="1200" height="240" data-no-retina>
+                                                                            style="z-index:5;">
+                                                                            <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-minecraft.jpg" width="1200" height="240" data-no-retina>
                                                                         </rs-layer><!--
 -->						                                            </rs-slide>
                                                                     <rs-slide data-key="rs-37" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
@@ -85,8 +86,8 @@
                                                                             data-frame_0="x:right;"
                                                                             data-frame_1="sp:1000;"
                                                                             data-frame_999="o:0;st:w;"
-                                                                            style="z-index:5;"
-                                                                        ><img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-city.jpg" width="1200" height="240" data-no-retina>
+                                                                            style="z-index:5;">
+                                                                            <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-city.jpg" width="1200" height="240" data-no-retina>
                                                                         </rs-layer><!--
 -->						                                          </rs-slide>
                                                                 </rs-slides>
@@ -117,7 +118,7 @@
                                                                                     onHoverStop:false,
                                                                                     bullets: {
                                                                                         enable:true,
-                                                                                        tmp:"<span class=\"tp-bullet-title\">alo</span>",
+                                                                                        tmp:"<span class=\"tp-bullet-title\">next</span>",
                                                                                         style:"ares"
                                                                                     }
                                                                                 },

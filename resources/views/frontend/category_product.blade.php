@@ -5,8 +5,12 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <!-- SIDEBAR WIDGET AREA -->
-        <div id="rehub_better_menu-3" class="widget better_menu"><div class="simple_menu_widget"><div class="title"><i class="fas fa-bolt"></i>Danh mục sản phẩm</div>
-                <ul id="menu-danhmuc" class="menu"><li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">Balo Túi Xách</a></li>
+        <div id="rehub_better_menu-3" class="widget better_menu">
+            <div class="simple_menu_widget">
+                <div class="title">
+                    <i class="fas fa-bolt"></i>Danh mục sản phẩm</div>
+                <ul id="menu-danhmuc" class="menu">
+                    <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">Balo Túi Xách</a></li>
                     <li id="menu-item-9322" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9322"><a href="https://shopmc.com.vn/danh-muc/dong-ho/">Đồng Hồ</a></li>
                     <li id="menu-item-9323" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-item menu-item-9323"><a href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/" aria-current="page">Kiếm Cuốc Rìu Minecraft</a></li>
                     <li id="menu-item-9324" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9324"><a href="https://shopmc.com.vn/danh-muc/lego-lap-rap/">Lego Lắp Rắp</a></li>
@@ -16,9 +20,10 @@
                     <li id="menu-item-9519" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9519"><a href="https://shopmc.com.vn/danh-muc/do-dung-minecraft/">Đồ Dùng Minecraft</a></li>
                     <li id="menu-item-9328" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9328"><a href="https://shopmc.com.vn/danh-muc/phu-kien-khac/">Phụ Kiện Khác</a></li>
                 </ul>
+            </div>
+        </div>
 
-
-            </div></div><div id="woocommerce_price_filter-5" class="widget woocommerce widget_price_filter"><div class="title">Giá</div>
+        <div id="woocommerce_price_filter-5" class="widget woocommerce widget_price_filter"><div class="title">Giá</div>
             <form method="get" action="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
                 <div class="price_slider_wrapper">
                     <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style=""><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
@@ -33,9 +38,9 @@
                     </div>
                 </div>
             </form>
-
         </div><div id="woocommerce_rating_filter-2" class="widget woocommerce widget_rating_filter"><div class="title">Average rating</div><ul><li class="wc-layered-nav-rating"><a href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/?rating_filter=5"><span class="star-rating"><span class="rhwoostar rhwoostar1 active">★</span><span class="rhwoostar rhwoostar2 active">★</span><span class="rhwoostar rhwoostar3 active">★</span><span class="rhwoostar rhwoostar4 active">★</span><span class="rhwoostar rhwoostar5 active">★</span></span> (13)</a></li></ul></div>
-    </aside>            <!-- /Sidebar -->
+    </aside>
+    <!-- /Sidebar -->
 
     <!-- Main Side -->
     <div class="main-side woocommerce page clearfix" id="content">
