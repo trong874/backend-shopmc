@@ -4,7 +4,8 @@ use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\SettingController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\UserQTVController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,9 +27,15 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('category-news', GroupController::class);
 
+        Route::resource('user-qtv',UserQTVController::class)->middleware('user_qtv');
+
+        Route::get('/user-qtv/filter/item',[UserQTVController::class,'filter'])->name('user_qtv.filter');
+
         Route::get('{module}/filter/item', [ItemController::class, 'filter'])->name('items.filter');
 
         Route::post('/delete-many-item', [ItemController::class, 'destroyMuch'])->name('items.destroy_many');
+
+        Route::post('/delete-many-user', [UserQTVController::class, 'destroyMuch'])->name('user_qtv.destroy_many');
 
         Route::post('delete-many-group', [GroupController::class, 'destroyMuch'])->name('groups.destroy_many');
 

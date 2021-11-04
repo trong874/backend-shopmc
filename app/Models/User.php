@@ -18,10 +18,19 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
+        'fullname',
+        'username',
+        'birtday',
+        'gender',
+        'phone',
         'email',
+        'account_type',
+        'created_by',
         'password',
-        'image_path',
+        'status',
+        'image',
     ];
 
     /**
@@ -50,4 +59,9 @@ class User extends Authenticatable
     function group(){
         return $this->hasMany(Group::class,'author_id','id');
     }
+
+    function users(){
+        return $this->belongsTo(User::class,'created_by','id');
+    }
+
 }

@@ -1,1 +1,1 @@
-<?php
+@extends('backend.layout.default')
