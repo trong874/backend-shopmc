@@ -10,6 +10,10 @@
     "Quản lí người dùng": "User manage",
     "Bộ lọc": "Filter",
     "Tiêu đề": "Title",
+    "Mô tả": "Description",
+    "Từ khoá": "Keyword",
+    "Địa chỉ": "Address",
+    "Điện thoại": "Phone",
     "Vị trí": "Position",
     "Từ": "From",
     "Đến": "To",
@@ -28,5 +32,9 @@
     "Cấu hình chung": "General config",
     "Thêm danh mục": "Add category",
     "Thu gọn tất cả": "Collapse all",
-    "Mở rộng tất cả": "Expand all"
+    "Mở rộng tất cả": "Expand all",
+    "Cấu hình hệ thống": "System config",
+    "Thông tin website": "Website Info",
+    "Cập nhật": "Update",
+    "Quản lí quản trị viên": "Admin manage"
 }

@@ -51,6 +51,13 @@ return [
             'section' => 'Người dùng',
         ],
         [
+            'title' => 'Quản lí quản trị viên',
+            'root' => true,
+            'icon' => 'media/svg/icons/Communication/Add-user.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/user-qtv',
+            'new-tab' => false,
+        ],
+        [
             'title' => 'Quản lí người dùng',
             'root' => true,
             'icon' => 'media/svg/icons/Communication/Group.svg', // or can be 'flaticon-home' or any flaticon-*
@@ -64,7 +71,7 @@ return [
             'title' => 'Cấu hình chung',
             'root' => true,
             'icon' => 'media/svg/icons/General/Settings-1.svg', // or can be 'flaticon-home' or any flaticon-*
-            'page' => '/admin/general-config',
+            'page' => '/admin/setting',
             'new-tab' => false,
         ],
     ]
