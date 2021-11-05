@@ -22,7 +22,7 @@
                                                                     <rs-slide data-key="rs-34" data-title="Slide" data-anim="ei:d;eo:d;s:d;r:0;t:parallaxtoright;sl:d;">
                                                                         <img src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
                                                                         <!--
-                                                                                                    -->
+                                                                                                   -->
                                                                         <rs-layer
                                                                             id="slider-24-slide-34-layer-2"
                                                                             data-type="image"

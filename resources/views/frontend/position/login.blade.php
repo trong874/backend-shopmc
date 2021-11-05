@@ -1,7 +1,6 @@
 <div id="rehub-login-popup">
     <div class="rehub-login-popup">
         <div class="re_title_inmodal">Đăng Nhập</div>
-
         <form id="rehub_login_form_modal" action="https://shopmc.com.vn/" method="post">
             <div class="re-form-group mb20">
                 <label>Tên Đăng Nhập</label>
