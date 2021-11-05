@@ -37,8 +37,6 @@
                         <option value="">--Kiểu tài khoản--</option>
                         <option value="1">Quản lí quản trị viên</option>
                         <option value="2">Quản lí người dùng</option>
-                        <option value="3">Quản lí bài viết</option>
-                        <option value="4">Quản lí order</option>
                     </select>
                 </div>
             </div>
@@ -130,17 +128,11 @@
                                 <a href="#">{{$user->username}}</a></td>
                             <td>
                                 @switch($user->account_type)
+                                    @case(0)
+                                {{__('Người dùng')}}
+                                    @break
                                     @case(1)
-                                Quản lí quản trị viên
-                                    @break
-                                    @case(2)
-                                Quản lí thành viên
-                                    @break
-                                    @case(3)
-                                Quản lí bài viết
-                                    @break
-                                    @case(4)
-                                Quản lí order
+                                    {{__('Quản trị viên')}}
                                     @break
                                 @endswitch
                             </td>

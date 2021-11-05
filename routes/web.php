@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,9 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/detail', [\App\Http\Controllers\Frontend\PagesController::class, 'detail'])->name('page.detail');
     Route::get('/category/{url}', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategory'])->name('page.category');
 
-
+    Route::prefix('admin')->group(function () {
+        Route::resource('user-manage', UserController::class);
+    });
     Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/', [PagesController::class, 'index'])->name('dashboard');
 
@@ -35,12 +38,6 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('category-news', GroupController::class);
 
         Route::resource('admin-manage',UserQTVController::class);
-
-        Route::resource('user-manage',UserQTVController::class);
-
-        Route::resource('post-manage',UserQTVController::class);
-
-        Route::resource('order-manage',UserQTVController::class);
 
         Route::get('/{account_type}/filter/item',[UserQTVController::class,'filter'])->name('user_qtv.filter');
 

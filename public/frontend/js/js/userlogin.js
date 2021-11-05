@@ -84,48 +84,48 @@ jQuery(document).ready(function($) {
     });
 
     // Post login form submit
-    $(document).on('submit','.re-user-popup-wrap #rehub_login_form_modal',function(e){
-        e.preventDefault();
-        var button = $(this).find('button.rehub_main_btn');
-        button.addClass('loading');
-        $.post(translation.ajax_url, $(this).serialize(), function(data){
-            var obj = $.parseJSON(data);
-            $('.rehub-login-popup .rehub-errors').html(obj.message);
-            if(obj.error == false){
-                if(obj.redirecturl){
-                    window.setTimeout(function(){window.location.href = obj.redirecturl;},200);
-                }
-                else{
-                    window.setTimeout(function(){location.reload()},200);
-                }
-                button.hide();
-            }
-            button.removeClass('loading');
-        });
-    });
+    // $(document).on('submit','.re-user-popup-wrap #rehub_login_form_modal',function(e){
+    //     e.preventDefault();
+    //     var button = $(this).find('button.rehub_main_btn');
+    //     button.addClass('loading');
+    //     $.post(translation.ajax_url, $(this).serialize(), function(data){
+    //         var obj = $.parseJSON(data);
+    //         $('.rehub-login-popup .rehub-errors').html(obj.message);
+    //         if(obj.error == false){
+    //             if(obj.redirecturl){
+    //                 window.setTimeout(function(){window.location.href = obj.redirecturl;},200);
+    //             }
+    //             else{
+    //                 window.setTimeout(function(){location.reload()},200);
+    //             }
+    //             button.hide();
+    //         }
+    //         button.removeClass('loading');
+    //     });
+    // });
 
     // Post register form
-    $(document).on('submit','.re-user-popup-wrap #rehub_registration_form_modal',function(e){
-        e.preventDefault();
-        var button = $(this).find('button.rehub_main_btn');
-        button.addClass('loading');
-        $.post(translation.ajax_url, $(this).serialize(), function(data){
-            var obj = $.parseJSON(data);
-            $('.rehub-register-popup .rehub-errors').html(obj.message);
-            if(obj.error == false){
-                $('.rehub-register-popup').addClass('registration-complete');
-                if(obj.redirecturl){
-                    window.setTimeout(function(){window.location.href = obj.redirecturl;},4000);
-                }
-                else{
-                    window.setTimeout(function(){location.reload()},4000);
-                }
-                //button.hide();
-            }
-            $('.rehub-register-popup').removeClass('registration-complete');
-            button.removeClass('loading');
-        });
-    });
+    // $(document).on('submit','.re-user-popup-wrap #rehub_registration_form_modal',function(e){
+    //     e.preventDefault();
+    //     var button = $(this).find('button.rehub_main_btn');
+    //     button.addClass('loading');
+    //     $.post(translation.ajax_url, $(this).serialize(), function(data){
+    //         var obj = $.parseJSON(data);
+    //         $('.rehub-register-popup .rehub-errors').html(obj.message);
+    //         if(obj.error == false){
+    //             $('.rehub-register-popup').addClass('registration-complete');
+    //             if(obj.redirecturl){
+    //                 window.setTimeout(function(){window.location.href = obj.redirecturl;},4000);
+    //             }
+    //             else{
+    //                 window.setTimeout(function(){location.reload()},4000);
+    //             }
+    //             //button.hide();
+    //         }
+    //         $('.rehub-register-popup').removeClass('registration-complete');
+    //         button.removeClass('loading');
+    //     });
+    // });
 
     // Reset Password
     $(document).on('submit','.re-user-popup-wrap #rehub_reset_password_form_modal',function(e){

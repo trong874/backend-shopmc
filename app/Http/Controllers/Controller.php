@@ -11,4 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    const STATUS_ACTIVE = 1;
+    const ACCOUNT_TYPE_USER = 0;
+    const ACCOUNT_TYPE_ADMIN = 1;
 }
