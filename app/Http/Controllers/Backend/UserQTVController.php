@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Validator;
 
 class UserQTVController extends Controller
 {
-
     protected $account_type_number = null;
 
     protected $account_type = null;
@@ -20,16 +19,10 @@ class UserQTVController extends Controller
         $this->account_type = $request->segment(2);
         switch ($request->segment(2)){
             case ('admin-manage'):
-                $this->account_type_number = 1;
+                $this->account_type_number = self::ACCOUNT_TYPE_ADMIN;
                 break;
             case ('user-manage'):
-                $this->account_type_number = 2;
-                break;
-            case ('post-manage'):
-                $this->account_type_number = 3;
-                break;
-            case ('order-manage'):
-                $this->account_type_number = 4;
+                $this->account_type_number = self::ACCOUNT_TYPE_USER;
                 break;
         };
     }
@@ -51,7 +44,7 @@ class UserQTVController extends Controller
         return view('backend.users-qtv.index', [
             'users'=>$users,
             'account_type'=>$this->account_type,
-            'page_title'=>'Danh sách quản trị viên'
+            'page_title'=>'Quản lí danh sách người dùng'
         ]);
     }
 

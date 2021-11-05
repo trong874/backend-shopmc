@@ -32,12 +32,32 @@
                             <div class="border-top pt10 pr10 pl10 pb10">
                                 <div class="price_for_grid floatleft rehub-btn-font mr10">
 
-                                                            <span class="price"><del><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$baloBag->price_old}}<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$baloBag->price}}<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+                                                            <span class="price"><del>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                            <span id="price_old_{{$baloBag->id}}"></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </del>
+                                                                <ins class="ml-2">
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                             <span id="price_{{$baloBag->id}}"></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                        </span>
+                                                                </ins>
+                                                            </span>
                                 </div>
+                                <script>
+                                    const price_bag_old = "{{$baloBag->price_old}}"
+                                    const price_bag = "{{$baloBag->price}}"
+                                    const format_price_bag_old = price_bag_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                    const format_price_bag = price_bag.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                    document.getElementById("price_old_{{$baloBag->id}}").innerText = format_price_bag_old
+                                    document.getElementById("price_{{$baloBag->id}}").innerText = format_price_bag
+                                </script>
                                 <div class="floatright product-meta">
                                     <div class="rh_woo_star" title="Rated 5 out of 5"><span
                                             class="rhwoostar rhwoostar1 active">&#9733;</span><span
