@@ -10,8 +10,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'language'], function () {
     Route::get('/', [\App\Http\Controllers\Frontend\PagesController::class, 'index'])->name('page.index');
+
+    Route::get('/news', [\App\Http\Controllers\Frontend\PagesController::class, 'getNews'])->name('news.index');
+    Route::get('/news/{url}', [\App\Http\Controllers\Frontend\PagesController::class, 'getNewsDetail'])->name('news.detail');
+    Route::get('/item/{id}', [\App\Http\Controllers\Frontend\PagesController::class, 'getItemDetail'])->name('item.detail');
+    Route::get('/category/{id}', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategoryItems'])->name('category.detail');
+
+
     Route::get('/detail', [\App\Http\Controllers\Frontend\PagesController::class, 'detail'])->name('page.detail');
-    Route::get('/category', [\App\Http\Controllers\Frontend\PagesController::class, 'category'])->name('page.category');
+    Route::get('/category/{url}', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategory'])->name('page.category');
+
 
     Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/', [PagesController::class, 'index'])->name('dashboard');

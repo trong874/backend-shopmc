@@ -59,8 +59,16 @@
                     </div>
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
-                        <input type="text" name="position" id="position" class="form-control" placeholder="Position"
-                               value="{{$item->position??null}}"/>
+                        <select class="form-control form-control-solid" name="position">
+
+                            <option value="category">Danh mục sản phẩm</option>
+                            <option value="flashsale">Flash Sale</option>
+                            <option value="toy-minecraft">Đồ Chơi Minecraft</option>
+                            <option value="balo-bag">Balo Túi Xách</option>
+                            <option value="clothes">Quần áo</option>
+                            <option value="lego">Mô hình/ Lego Minecraft</option>
+                            <option value="news">Tin tức cộng đồng</option>
+                        </select>
                         <span class="form-text text-muted">Please enter your Position</span>
                     </div>
                 </div>
@@ -276,7 +284,7 @@
             slug = slug.replace(/\@\-|\-\@|\@/gi, '');
             //In slug ra textbox có id “slug”
             document.getElementById('slug').value = slug;
-            document.getElementById('url').value = "{{url('')}}/news/" + slug;
+            document.getElementById('url').value = "{{url('')}}//" + slug;
         }
     </script>
 @endsection

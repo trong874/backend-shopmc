@@ -1,10 +1,7 @@
-
 <!DOCTYPE html>
 <!--[if IE 8]>
 <html class="ie8" lang="vi"> <![endif]-->
-<!--[if IE 9]>
-<html class="ie9" lang="vi"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)] lang="vi"><![endif]-->
+
 <html lang="vi">
 <head>
     <meta charset="UTF-8"/>
@@ -38,8 +35,6 @@
     </script>
     <!-- / Yoast SEO plugin. -->
 
-
-    <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
     <link rel='dns-prefetch' href='//s.w.org'/>
     <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Shop MC &raquo;"
           href="https://shopmc.com.vn/feed/"/>
@@ -275,7 +270,7 @@
 
 <div id="rhmobpnlcustom" class="rhhidden">
     <div id="rhmobtoppnl" style="background-color: #ffffff;" class="pr15 pl15 pb15 pt15">
-        <div class="text-center"><a href="https://shopmc.com.vn"><img id="mobpanelimg"
+        <div class="text-center"><a href=""><img id="mobpanelimg"
                                                                       src="{{asset('frontend/image/Minecraft_logo.png')}}"
                                                                       alt="Logo"/></a></div>
     </div>
@@ -300,11 +295,9 @@
 
 @include('frontend.position.register')
     <!-- Login form -->
-  @include('frontend.position.login')
-
+@include('frontend.position.login')
     <!-- Lost Password form -->
-    @include('frontend.position.login')
-
+@include('frontend.position.lost-password')
 </div>
 
 <script type="text/html" id="wpb-modifications"></script>
@@ -455,6 +448,60 @@
 <script type='text/javascript'
         src='{{asset('frontend/js/dist/js_composer_front.min.js')}}'
         id='wpb_composer_front_js-js'></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+
+        // Make the code work after page load.
+        $(document).ready(function () {
+            QtyChng();
+        });
+
+        // Make the code work after executing AJAX.
+        $(document).ajaxComplete(function () {
+            QtyChng();
+        });
+
+        function QtyChng() {
+            $(document).off("click", ".qib-button").on("click", ".qib-button", function () {
+                // Find quantity input field corresponding to increment button clicked.
+                var qty = $(this).siblings(".quantity").find(".qty");
+                // Read value and attributes min, max, step.
+                var val = parseFloat(qty.val());
+                var max = parseFloat(qty.attr("max"));
+                var min = parseFloat(qty.attr("min"));
+                var step = parseFloat(qty.attr("step"));
+
+                // Change input field value if result is in min and max range.
+                // If the result is above max then change to max and alert user about exceeding max stock.
+                // If the field is empty, fill with min for "-" (0 possible) and step for "+".
+                if ($(this).is(".plus")) {
+                    if (val === max) return false;
+                    if (isNaN(val)) {
+                        qty.val(step);
+                    } else if (val + step > max) {
+                        qty.val(max);
+                    } else {
+                        qty.val(val + step);
+                    }
+                } else {
+                    if (val === min) return false;
+                    if (isNaN(val)) {
+                        qty.val(min);
+                    } else if (val - step < min) {
+                        qty.val(min);
+                    } else {
+                        qty.val(val - step);
+                    }
+                }
+
+                qty.val(Math.round(qty.val() * 100) / 100);
+                qty.trigger("change");
+                $("body").removeClass("sf-input-focused");
+            });
+        }
+
+    });
+</script>
 </body>
 </html>
 
