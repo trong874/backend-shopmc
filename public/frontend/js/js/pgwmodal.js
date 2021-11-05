@@ -10,7 +10,7 @@
             closable: true,
             closeOnEscape: true,
             closeOnBackgroundClick: true,
-            closeContent: '<i class="rhicon rhi-times whitebg roundborder50p rh-shadow4 abdposleft"></i>',
+            closeContent: '<i class="fas  whitebg roundborder50p fa-times abdposleft"></i>',
             loadingContent: '<span class="re_loadingbefore"></span>',
             errorContent: "An error has occured. Please try again in a few moments."
         };
