@@ -1,3 +1,6 @@
+@section('styles')
+
+@endsection
 <div class="vc_row wpb_row vc_row-fluid vc_custom_1607449069956 vc_row-has-fill centered-container ">
     <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs ">
         <div class="vc_column-inner">
@@ -62,12 +65,33 @@
                             <div class="border-top pt10 pr10 pl10 pb10">
                                 <div class="price_for_grid floatleft rehub-btn-font mr10">
 
-                                                            <span class="price"><del><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$toyMinecraft->price_old}}<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$toyMinecraft->price}}<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+                                                            <span class="price">
+                                                                <del>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                                <script>
+        function formatCash(str) {
+            return str.split('').reverse().reduce((prev, next, index) => {
+                return ((index % 3) ? next : (next + ',')) + prev
+            })
+        }
+    </script>
+                                                                            <span id="price_old_{{$toyMinecraft->id}}"><script>alert(formatCash("53453454"))</script></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </del>
+                                                                <ins class="ml-2">
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                            <span id="price_{{$toyMinecraft->id}}"></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </ins>
+                                                            </span>
                                 </div>
+
                                 <div class="floatright product-meta">
                                     <span class="greycolor postview">{!! $toyMinecraft->description !!}</span></div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
@@ -88,3 +112,4 @@
         </div>
     </div>
 </div>
+
