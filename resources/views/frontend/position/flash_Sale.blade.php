@@ -33,12 +33,32 @@
                             <div class="border-top pt10 pr10 pl10 pb10">
                                 <div class="price_for_grid floatleft rehub-btn-font mr10">
 
-                                                            <span class="price"><del><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$flashSale->price_old}}<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$flashSale->price}}<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+                                                            <span class="price"><del>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                             <span id="price_old_{{$flashSale->id}}"></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </del>
+                                                                <ins class="ml-2">
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                            <span id="price_{{$flashSale->id}}"></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </ins>
+                                                            </span>
                                 </div>
+                                <script>
+                                    const price_old = "{{$flashSale->price_old}}"
+                                    const price = "{{$flashSale->price}}"
+                                    const format_price_old = price_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                    const format_price = price.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                    document.getElementById("price_old_{{$flashSale->id}}").innerText = format_price_old
+                                    document.getElementById("price_{{$flashSale->id}}").innerText = format_price
+                                </script>
                                 <div class="floatright product-meta">
                                     <div class="rh_woo_star" title="Rated 5 out of 5"><span
                                             class="rhwoostar rhwoostar1 active">&#9733;</span><span

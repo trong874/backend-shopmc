@@ -32,11 +32,23 @@
                             <div class="border-top pt10 pr10 pl10 pb10">
                                 <div class="price_for_grid floatleft rehub-btn-font mr10">
 
-                                                            <span class="price"><del><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$lego->price}} <span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$lego->price_old}}&nbsp;<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+                                                            <span class="price"><del>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                            <span id="price_old_{{$lego->id}}"><script>document.write(formatCash("{{$lego->price_old}}"))</script></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </del>
+                                                                <ins class="ml-2">
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                            <span id="price_{{$lego->id}}"><script>document.write(formatCash("{{$lego->price}}"))</script></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </ins>
+                                                            </span>
                                 </div>
                                 <div class="floatright product-meta">
                                     <span class="greycolor postview">{!! $lego->description !!}</span></div>
