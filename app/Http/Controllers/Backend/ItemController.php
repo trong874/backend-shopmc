@@ -99,7 +99,7 @@ class ItemController extends Controller
             $q->whereBetween('created_at', [$request->date_from, $request->date_to]);
         }
         if ($request->date_from) {
-            $q->where('created_at', '>=', $request->date_from);
+             $q->where('created_at', '>=', $request->date_from);
         }
         $items = $q->paginate(5);
         $old_data = $request->all();

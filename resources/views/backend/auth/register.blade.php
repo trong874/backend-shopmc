@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang đăng nhập</title>
+    <title>Trang đăng kí</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="{{asset('assets/css/login.css')}}" />
 </head>
 <body>
 <div class="container">
-    <h1>Đăng nhập</h1>
+    <h1>Đăng kí</h1>
     <form method="post" action="{{route('register')}}">
         @csrf
         <p>
             <label for="username">Name:</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="username" id="name">
         </p>
         <p>
             <label for="username">Email:</label>

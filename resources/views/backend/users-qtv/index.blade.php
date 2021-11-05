@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection
 @section('content')
-    <form id="form-filter" action="{{route('items.filter',$module)}}" method="GET" class="card">
+    <form id="form-filter" action="{{route('user_qtv.filter',$account_type)}}" method="GET" class="card">
         <div class="card-header">
             <span>{{__('Bộ lọc')}}</span>
         </div>
@@ -17,7 +17,7 @@
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
                     <input type="text" name="id" class="form-control" placeholder="ID"
-                           value="{{$old_data['id'] ?? ''}}">
+                           value="{{@$old_data['id']}}">
                 </div>
             </div>
             <div class="col-3">
@@ -25,8 +25,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
-                    <input type="text" name="title" class="form-control" placeholder="{{__('Tiêu đề')}}"
-                           value="{{$old_data['title'] ?? ''}}">
+                    <input type="text" name="username" class="form-control" placeholder="{{__('Tên tài khoản')}}" value="{{@$old_data['username']}}">
                 </div>
             </div>
             <div class="col-3">
@@ -34,15 +33,12 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
-                    <select name="group_id" id="group_id" class="form-control">
-                        <option value="">--Group ID--</option>
-                        @if(isset($groups))
-                            @if(isset($old_data))
-                                {{showCategories($groups,$old_data)}}
-                            @else
-                                {{showCategories($groups)}}
-                            @endif
-                        @endif
+                    <select name="account_type" id="account_type" class="form-control">
+                        <option value="">--Kiểu tài khoản--</option>
+                        <option value="1">Quản lí quản trị viên</option>
+                        <option value="2">Quản lí người dùng</option>
+                        <option value="3">Quản lí bài viết</option>
+                        <option value="4">Quản lí order</option>
                     </select>
                 </div>
             </div>
@@ -52,37 +48,15 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
-                    <input type="text" name="position" class="form-control" placeholder="{{__('Vị trí')}}"
-                           value="{{$old_data['position'] ?? ''}}">
+                    <input type="text" name="email" class="form-control" placeholder="{{__('Email')}}" value="{{@$old_data['email']}}">
                 </div>
             </div>
-            <div class="col-3 mt-3">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">{{__('Từ')}}</span>
-                    </div>
-                    <input type="datetime-local" name="date_form" class="form-control" placeholder="Từ thời gian"
-                           value="{{$old_data['date_form'] ?? ''}}">
-                </div>
-            </div>
-            <div class="col-3 mt-3">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">{{__('Đến')}}</span>
-                    </div>
-                    <input type="datetime-local" name="date_to" class="form-control" placeholder="đến đến"
-                           value="{{$old_data['date_to'] ?? ''}}">
-                </div>
-            </div>
-            <div class="col-3 mt-3"></div>
-            <div class="col-3 mt-3"></div>
             <div class="col-3 mt-3">
                 <button class="btn btn-success" type="submit">{{__('Tìm kiếm')}}</button>
                 <button type="reset" class="btn btn-outline-warning">{{__('Đặt lại')}}</button>
             </div>
         </div>
     </form>
-
     <div class="card card-custom">
         <div class="card-header">
             <div class="card-title">
@@ -109,21 +83,21 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Xác nhận thao tác xóa item đã chọn ?
+                                Xác nhận thao tác xóa người dùng đã chọn ?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-light-primary font-weight-bold"
                                         data-dismiss="modal">Close
                                 </button>
                                 <p class="btn btn-danger font-weight-bold" id="delete_all"
-                                   data-url="{{ route('items.destroy_many') }}">Xóa</p>
+                                   data-url="{{ route('user_qtv.destroy_many') }}">Xóa</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!--begin::Button-->
-                <a href='{{route("$module.create")}}' class="btn btn-primary font-weight-bolder">
+                <a href='{{route("$account_type.create")}}' class="btn btn-primary font-weight-bolder">
                     <i class="la la-plus"></i>{{__('Thêm bản ghi')}}</a>
                 <!--end::Button-->
             </div>
@@ -136,40 +110,55 @@
                 <tr>
                     <th><input type="checkbox" id="master"></th>
                     <th>ID</th>
-                    <th>{{__('Tiêu đề')}}</th>
-                    <th>{{__('Danh mục')}}</th>
+                    <th>{{__('Tên tài khoản')}}</th>
+                    <th>{{__('Kiểu tài khoản')}}</th>
                     <th>{{__('Ảnh')}}</th>
-                    <th>{{__('Vị trí')}}</th>
-                    <th>{{__('Thứ tự')}}    </th>
+                    <th>{{__('Email')}}</th>
                     <th>{{__('Trạng thái')}}</th>
+                    <th>{{__('Được tạo bởi')}}</th>
                     <th>{{__('Thời gian tạo')}}</th>
                     <th>{{__('Thao tác')}}</th>
                 </tr>
                 </thead>
                 <tbody class="data_table">
-                @if(isset($items))
-                    @foreach($items as $item)
+                @if(isset($users))
+                    @foreach($users as $user)
                         <tr>
-                            <td><input type="checkbox" class="sub_chk" data-id="{{$item->id}}"></td>
-                            <td>{{$item->id}}</td>
+                            <td><input type="checkbox" class="sub_chk" data-id="{{$user->id}}"></td>
+                            <td>{{$user->id}}</td>
                             <td style="text-overflow: Ellipsis;max-width: 200px;max-height: 50px;overflow: hidden;white-space: nowrap;">
-                                <a href="{{$item->url}}">{{$item->title}}</a></td>
-                            <td>{{$item->groups[0]->id.'-'.$item->groups[0]->title}}</td>
-                            <td><img src="{{$item->image}}" alt="" style="max-height: 50px"></td>
-                            <td>{{$item->position}}</td>
-                            <td>{{$item->order}}</td>
+                                <a href="#">{{$user->username}}</a></td>
                             <td>
-                                @if($item->status == 1)
+                                @switch($user->account_type)
+                                    @case(1)
+                                Quản lí quản trị viên
+                                    @break
+                                    @case(2)
+                                Quản lí thành viên
+                                    @break
+                                    @case(3)
+                                Quản lí bài viết
+                                    @break
+                                    @case(4)
+                                Quản lí order
+                                    @break
+                                @endswitch
+                            </td>
+                            <td><img src="{{$user->image}}" alt="" style="max-height: 50px"></td>
+                            <td>{{$user->email}}</td>
+                            <td>
+                                @if($user->status == 1)
                                     <span class="label label-outline-success label-inline">đang hoạt động</span>
                                 @else
                                     <span class="label label-outline-danger label-inline">không hoạt động</span>
                                 @endif
                             </td>
-                            <td>{{$item->created_at}}</td>
+                            <td>{{@$user->users->username}}</td>
+                            <td>{{$user->created_at}}</td>
                             <td nowrap="nowrap">
                                 <!-- Button trigger modal-->
                                 <!-- Modal-->
-                                <div class="modal fade" id="form_delete-{{$item->id}}" data-backdrop="static"
+                                <div class="modal fade" id="form_delete-{{$user->id}}" data-backdrop="static"
                                      tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -181,10 +170,10 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                Xác nhận thao tác xóa item {{$item->title}}
+                                                Xác nhận thao tác xóa người dùng {{$user->username}}
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="{{route("$module.destroy",$item)}}" method="POST">
+                                                <form action="{{route("$account_type.destroy",$user)}}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="button" class="btn btn-light-primary font-weight-bold"
@@ -197,11 +186,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route("$module.edit",$item)}}">
+                                <a href="{{route("$account_type.edit",$user)}}">
                                     <i class="flaticon-edit m-2 link_edit"></i>
                                 </a>
                                 <i class="flaticon2-rubbish-bin-delete-button m-2 link_delete" data-toggle="modal"
-                                   data-target="#form_delete-{{$item->id}}"></i>
+                                   data-target="#form_delete-{{$user->id}}"></i>
                                 <style>
                                     .link_delete:hover {
                                         color: red;
@@ -218,33 +207,11 @@
                 </tbody>
             </table>
             <div class="row" style="float:right">
-                {{ $items->links('pagination::default') }}
+{{--                {{ @$items->links('pagination::default') }}--}}
             </div>
             <!--end: Datatable-->
         </div>
     </div>
-    <?php
-    function showCategories($categories, $old_data = [], $parent_id = 0, $char = ' ')
-    {
-        foreach ($categories as $key => $item) {
-            // Nếu là chuyên mục con thì hiển thị
-            if ($item->parent_id == $parent_id) {
-
-                if (isset($old_data['group_id'])) {
-                    if ($old_data['group_id'] == $item->id) {
-                        echo '<option value="' . $item->id . '" selected>' . $item->id . $char . $item->title . '</option>';
-                    } else {
-                        echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
-                    }
-                } else {
-                    echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
-                }
-                // Tiếp tục đệ quy để tìm chuyên mục con của chuyên mục đang lặp
-                showCategories($categories, $old_data, $item->id, $char . '--');
-            }
-        }
-    }
-    ?>
 @endsection
 @section('scripts')
     <script src="{{asset('assets/js/backend.js')}}"></script>
@@ -252,38 +219,30 @@
         $('#form-filter').on('submit',function (event) {
             event.preventDefault();
             let param = $('#form-filter').serialize()
-            const link = "{{route('items.filter',$module)}}"+'?'+param
-            console.log(link)
+            const link = "{{route('user_qtv.filter',$account_type)}}"+'?'+param
             const url = new URL(link);
 
             let id = url.searchParams.get('id');
-            let title = url.searchParams.get('title');
-            let group_id = url.searchParams.get('group_id');
-            let position = url.searchParams.get('position');
-            let date_form = url.searchParams.get('date_form');
-            let date_to = url.searchParams.get('date_to');
+            let username = url.searchParams.get('username');
+            let account_type = url.searchParams.get('account_type');
+            let email = url.searchParams.get('email');
 
             if (typeof URLSearchParams !== 'undefined') {
                 const params = new URLSearchParams(param)
                 if(id === ''){
                     params.delete('id')
                 }
-                if(title === ''){
-                    params.delete('title')
+                if(username === ''){
+                    params.delete('username')
                 }
-                if(group_id === ''){
-                    params.delete('group_id')
+                if(account_type === ''){
+                    params.delete('account_type')
                 }
-                if(position === ''){
-                    params.delete('position')
+                if(email === ''){
+                    params.delete('email')
                 }
-                if(date_form === ''){
-                    params.delete('date_form')
-                }
-                if(date_to === ''){
-                    params.delete('date_to')
-                }
-                window.location.replace( "{{route('items.filter',$module)}}"+'?'+params)
+
+                window.location.replace( "{{route('user_qtv.filter',$account_type)}}"+'?'+params)
             } else {
                 console.log(`Your browser ${navigator.appVersion} does not support URLSearchParams`)
             }
