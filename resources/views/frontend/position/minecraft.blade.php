@@ -1,3 +1,6 @@
+@section('styles')
+
+@endsection
 <div class="vc_row wpb_row vc_row-fluid vc_custom_1607449069956 vc_row-has-fill centered-container ">
     <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs ">
         <div class="vc_column-inner">
@@ -59,7 +62,14 @@
                                                                 <del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                            <span id="price_old_{{$toyMinecraft->id}}"></span>
+                                                                                <script>
+        function formatCash(str) {
+            return str.split('').reverse().reduce((prev, next, index) => {
+                return ((index % 3) ? next : (next + ',')) + prev
+            })
+        }
+    </script>
+                                                                            <span id="price_old_{{$toyMinecraft->id}}"><script>alert(formatCash("53453454"))</script></span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                     </span>
@@ -74,14 +84,7 @@
                                                                 </ins>
                                                             </span>
                                 </div>
-                                <script>
-                                    const price_old = "{{$toyMinecraft->price_old}}"
-                                    const price = "{{$toyMinecraft->price}}"
-                                    const format_price_old = price_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    const format_price = price.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    document.getElementById("price_old_{{$toyMinecraft->id}}").innerText = format_price_old
-                                    document.getElementById("price_{{$toyMinecraft->id}}").innerText = format_price
-                                </script>
+
                                 <div class="floatright product-meta">
                                     <span class="greycolor postview">{!! $toyMinecraft->description !!}</span></div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
@@ -102,3 +105,4 @@
         </div>
     </div>
 </div>
+
