@@ -4,7 +4,6 @@ use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\SettingController;
-use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,9 +26,15 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('category-news', GroupController::class);
 
-        Route::resource('user-qtv',UserQTVController::class)->middleware('user_qtv');
+        Route::resource('admin-manage',UserQTVController::class);
 
-        Route::get('/user-qtv/filter/item',[UserQTVController::class,'filter'])->name('user_qtv.filter');
+        Route::resource('user-manage',UserQTVController::class);
+
+        Route::resource('post-manage',UserQTVController::class);
+
+        Route::resource('order-manage',UserQTVController::class);
+
+        Route::get('/{account_type}/filter/item',[UserQTVController::class,'filter'])->name('user_qtv.filter');
 
         Route::get('{module}/filter/item', [ItemController::class, 'filter'])->name('items.filter');
 
@@ -42,8 +47,6 @@ Route::group(['middleware' => 'language'], function () {
         Route::post('/update-list', [GroupController::class, 'saveList'])->name('groups.update_list');
 
         Route::get('set-locale/{locale}', [PagesController::class, 'changeLanguage'])->name('setLocale');
-
-        Route::get('user-manage',[UserController::class,'index'])->name('user.index');
 
     });
 });

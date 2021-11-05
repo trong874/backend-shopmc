@@ -54,7 +54,7 @@ return [
             'title' => 'Quản lí quản trị viên',
             'root' => true,
             'icon' => 'media/svg/icons/Communication/Add-user.svg', // or can be 'flaticon-home' or any flaticon-*
-            'page' => '/admin/user-qtv',
+            'page' => '/admin/admin-manage',
             'new-tab' => false,
         ],
         [
