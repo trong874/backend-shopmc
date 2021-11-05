@@ -61,7 +61,7 @@
                     <div class="col-lg-3">
                         <select class="form-control form-control-solid" name="position">
                             <option value="category">Danh mục sản phẩm</option>
-                            <option value="category">Slide</option>
+                            <option value="slide">Slide</option>
                             <option value="flashsale">Flash Sale</option>
                             <option value="toy-minecraft">Đồ Chơi Minecraft</option>
                             <option value="balo-bag">Balo Túi Xách</option>

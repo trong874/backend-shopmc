@@ -18,6 +18,7 @@ class   PagesController extends Controller
         $legos = $this->getProductLego();
         $clotheses = $this->getProductClothes();
         $categories = $this->getCategory();
+        $slides = $this->getSlide();
         return view('frontend.home', [
             'categories_product' => $this->getCategoryProduct(),
             'news' => $news,
@@ -26,7 +27,8 @@ class   PagesController extends Controller
             'baloBags'=> $baloBags,
             'legos' => $legos,
             'clotheses' => $clotheses,
-            'categories' => $categories
+            'categories' => $categories,
+            'slides' => $slides
         ]);
     }
 
@@ -87,6 +89,14 @@ class   PagesController extends Controller
         ]);
 
     }
+    public function getSlide()
+    {
+
+        return Item::where('position', 'slide')->get([
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
+        ]);
+
+    }
     public function getCategoryItems($id)
     {
 
@@ -96,6 +106,7 @@ class   PagesController extends Controller
         return view('frontend.category_product', ['newDetail' => $categoryDetail]);
 
     }
+
     public function getItemDetail($id)
     {
         $itemDetail = Item::where('id',$id)->get([
