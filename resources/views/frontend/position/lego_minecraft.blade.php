@@ -17,23 +17,15 @@
                             <span class="onsale"><span>- 26%</span></span>
                             <figure class="mb5 mt25 position-relative notresized">
                                 <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                   href="https://shopmc.com.vn/san-pham/mo-hinh-eldrador-42454-gau-da/">
+                                   href="{{route('item.detail',$lego->id)}}">
                                     <img class="lazyload"
                                          data-src="{{$lego->image}}"
                                          width="300" alt="{{$lego->title}}"
                                          src="{{$lego->image}}"/>
                                 </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
                             </figure>
-                            <!--div class="cat_for_grid lineheight15">
-<!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-<!?php if (!empty($categories)) {
-$first_cat = $categories[0]->term_id;
-echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-} ?>
-</div-->
                             <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/mo-hinh-eldrador-42454-gau-da/">{{$lego->title}}</a>
+                                <a href="{{route('item.detail',$lego->id)}}">{{$lego->title}}</a>
                             </h3>
 
 

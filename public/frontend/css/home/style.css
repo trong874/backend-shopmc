@@ -650,6 +650,9 @@ blockquote:not(.wp-block-quote) p {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.content-detail{
+    color: black;
+}
 
 .re_wooinner_title_compact {
     border-bottom: 1px solid #eee;

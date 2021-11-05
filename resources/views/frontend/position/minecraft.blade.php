@@ -39,7 +39,7 @@
                             <span class="onsale"><span>- 29%</span></span>
                             <figure class="mb5 mt25 position-relative notresized">
                                 <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                   href="{{$toyMinecraft->url}}">
+                                   href="{{route('item.detail',$toyMinecraft->id)}}">
                                     <img class="lazyload"
                                          width="300" alt="{{$toyMinecraft->title}}"
                                          src="{{$toyMinecraft->image}}"/>
@@ -48,7 +48,7 @@
                             </figure>
 
                             <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/">{{$toyMinecraft->title}}</a>
+                                <a href="{{route('item.detail',$toyMinecraft->id)}}">{{$toyMinecraft->title}}</a>
                             </h3>
 
 

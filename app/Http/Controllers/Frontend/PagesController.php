@@ -39,14 +39,14 @@ class   PagesController extends Controller
     {
         return Item::where('module', 'products')
             ->get([
-                'title'
+                'title', 'description', 'image', 'url', 'price', 'price_old','id'
             ]);
     }
 
     public function getProductFlashSale()
     {
         return Item::where('position', 'flashsale')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old'
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
         ]);
 
     }
@@ -54,64 +54,79 @@ class   PagesController extends Controller
     public function getProductToyMinecraft()
     {
         return Item::where('position', 'toy-minecraft')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old'
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
         ]);
 
     }
     public function getProductBalo()
     {
         return Item::where('position', 'balo-bag')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old'
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
         ]);
 
     }
     public function getProductLego()
     {
         return Item::where('position', 'lego')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old'
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
         ]);
 
     }
     public function getProductClothes()
     {
         return Item::where('position', 'clothes')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old'
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
         ]);
 
     }
     public function getCategory()
     {
+
         return Item::where('position', 'category')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old'
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
         ]);
 
     }
-    public function getProductDetail($url)
+    public function getCategoryItems($id)
     {
-        $productDetail = Item::where('url', $url)->get([
-            'title', 'content', 'description', 'image', 'url'
+
+        $categoryDetails = Item::where('id', $id)->get([
+            'title', 'content', 'description', 'image', 'url','price','price_old','id'
         ]);
-        return view('frontend.position.detail-news', ['productDetail' => $productDetail]);
+        return view('frontend.category_product', ['newDetail' => $categoryDetail]);
+
+    }
+    public function getItemDetail($id)
+    {
+        $itemDetail = Item::where('id',$id)->get([
+            'title', 'content', 'description', 'image', 'url','price','price_old','id'
+        ]);
+
+        $flashSales = Item::where('position', 'flashsale')->get([
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
+        ]);
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'flashSales'=>$flashSales]);
     }
 
     public function getNews()
     {
         return Item::where('module', 'news')
             ->get([
-                'title', 'content', 'description', 'image', 'url'
+                'title', 'content', 'description', 'image', 'url','id'
             ]);
     }
 
-    public function getNewsDetail($url)
+    public function getNewsDetail($id)
     {
-        $newDetail = Item::where('url', $url)->get([
-            'title', 'content', 'description', 'image', 'url'
+        $newDetail = Item::where('id', $id)->get([
+            'title', 'content', 'description', 'image', 'url','id'
         ]);
-        return view('frontend.position.detail-news', ['newDetail' => $newDetail]);
+        $flashSales =  Item::where('position', 'flashsale')->get([
+            'title', 'description', 'image', 'url', 'price', 'price_old','id'
+        ]);
+
+        return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
     }
 
-    public function category(){
-        return view('frontend.category_product');
-    }
 
 }

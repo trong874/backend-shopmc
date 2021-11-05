@@ -16,24 +16,18 @@
                             <span class="onsale"><span>- 15%</span></span>
                             <figure class="mb5 mt25 position-relative notresized">
                                 <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                   href="https://shopmc.com.vn/san-pham/mu-soi-minecraft-chinh-hang-mojang/">
+                                   href="{{route('item.detail',$clothes->id)}}">
                                     <img class="lazyload"
                                          data-src="{{$clothes->image}}"
                                          width="300"
                                          alt="{{$clothes->title}}"
                                          src="{{$clothes->image}}"/>
                                 </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
+
                             </figure>
-                            <!--div class="cat_for_grid lineheight15">
-<!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-<!?php if (!empty($categories)) {
-$first_cat = $categories[0]->term_id;
-echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-} ?>
-</div-->
+
                             <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/mu-soi-minecraft-chinh-hang-mojang/">{{$clothes->title}}</a>
+                                <a href="{{route('item.detail',$clothes->id)}}">{{$clothes->title}}</a>
                             </h3>
 
 
