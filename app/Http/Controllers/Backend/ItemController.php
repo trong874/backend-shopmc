@@ -59,6 +59,7 @@ class ItemController extends Controller
     public function update(Request $request, $id)
     {
         $item = Item::findOrFail($id);
+        $item->groups()->sync($request->group_id);
         $item->update($request->all());
         Session::put('message', 'Cập nhật thay đổi thành công');
         return back();
@@ -66,7 +67,9 @@ class ItemController extends Controller
 
     public function destroy($item)
     {
-        Item::destroy($item);
+        $item = Item::findOrFail($item);
+        $item->groups()->detach();
+        $item->delete();
         return back();
     }
 
@@ -79,7 +82,7 @@ class ItemController extends Controller
     public function filter(Request $request, $module)
     {
         $q = Item::query();
-        $q->where('module',$module);
+        $q->where('module', $module);
         if (isset($request->group_id)) {
             $q->whereHas('groups', function (\Illuminate\Database\Eloquent\Builder $q) use ($request) {
                 $group_id = $request->group_id;
@@ -99,12 +102,12 @@ class ItemController extends Controller
             $q->whereBetween('created_at', [$request->date_from, $request->date_to]);
         }
         if ($request->date_from) {
-             $q->where('created_at', '>=', $request->date_from);
+            $q->where('created_at', '>=', $request->date_from);
         }
         $items = $q->paginate(5);
         $old_data = $request->all();
         return view('backend.items.list', [
-            'old_data'=>$old_data,
+            'old_data' => $old_data,
             'page_title' => $this->module,
             'items' => $items,
             'groups' => $this->getGroupsByModule(),
