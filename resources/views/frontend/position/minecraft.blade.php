@@ -48,6 +48,13 @@
                             </figure>
 
                             <h3 class=" text-clamp text-clamp-2">
+                                <div class="rh_woo_star" title="Rated 5 out of 5"><span
+                                        class="rhwoostar rhwoostar1 active">&#9733;</span><span
+                                        class="rhwoostar rhwoostar2 active">&#9733;</span><span
+                                        class="rhwoostar rhwoostar3 active">&#9733;</span><span
+                                        class="rhwoostar rhwoostar4 active">&#9733;</span><span
+                                        class="rhwoostar rhwoostar5 active">&#9733;</span>
+                                </div>
                                 <a href="{{route('item.detail',$toyMinecraft->id)}}">{{$toyMinecraft->title}}</a>
                             </h3>
 

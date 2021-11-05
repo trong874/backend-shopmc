@@ -45,7 +45,7 @@
                     <input type="hidden" name="module" value="{{$item->module??$module}}"/>
                     <label class="col-lg-1 col-form-label text-right">Danh mục</label>
                     <div class="col-lg-3">
-                        <select class="form-control" name="group_id" required>
+                        <select class="form-control" name="group_id">
                             <?php
                             echo '<option value="">--không chọn--</option>';
                             if (isset($groups) && isset($item)) {
@@ -60,8 +60,8 @@
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
                         <select class="form-control form-control-solid" name="position">
-
                             <option value="category">Danh mục sản phẩm</option>
+                            <option value="category">Slide</option>
                             <option value="flashsale">Flash Sale</option>
                             <option value="toy-minecraft">Đồ Chơi Minecraft</option>
                             <option value="balo-bag">Balo Túi Xách</option>
