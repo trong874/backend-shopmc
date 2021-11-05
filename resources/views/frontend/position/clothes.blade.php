@@ -34,11 +34,23 @@
                             <div class="border-top pt10 pr10 pl10 pb10">
                                 <div class="price_for_grid floatleft rehub-btn-font mr10">
 
-                                                            <span class="price"><del><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$clothes->price_old}}&nbsp;<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span
-                                                                        class="woocommerce-Price-amount amount"><bdi>{{$clothes->price}}&nbsp;<span
-                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+                                                            <span class="price"><del>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>&nbsp;
+                                                                            <span id="price_old_{{$clothes->id}}"><script>document.write(formatCash("{{$clothes->price_old}}"))</script></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </del>
+                                                                <ins class="ml-2">
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <bdi>
+                                                                            <span id="price_{{$clothes->id}}"><script>document.write(formatCash("{{$clothes->price}}"))</script></span>
+                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                        </bdi>
+                                                                    </span>
+                                                                </ins>
+                                                            </span>
                                 </div>
                                 <div class="floatright product-meta">
                                     <div class="rh_woo_star" title="Rated 5 out of 5"><span
