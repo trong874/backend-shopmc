@@ -10,9 +10,35 @@ use Illuminate\Support\Facades\Validator;
 
 class UserQTVController extends Controller
 {
+
+    protected $account_type_number = null;
+
+    protected $account_type = null;
+
+    public function __construct(Request $request)
+    {
+        $this->account_type = $request->segment(2);
+        switch ($request->segment(2)){
+            case ('admin-manage'):
+                $this->account_type_number = 1;
+                break;
+            case ('user-manage'):
+                $this->account_type_number = 2;
+                break;
+            case ('post-manage'):
+                $this->account_type_number = 3;
+                break;
+            case ('order-manage'):
+                $this->account_type_number = 4;
+                break;
+        };
+    }
+
     public function index()
     {
-        $users = User::with(['users:username,id'])->get([
+        $users = User::with(['users:username,id'])
+            ->where('account_type',$this->account_type_number)
+            ->get([
             'id',
             'username',
             'account_type',
@@ -24,6 +50,7 @@ class UserQTVController extends Controller
         ]);
         return view('backend.users-qtv.index', [
             'users'=>$users,
+            'account_type'=>$this->account_type,
             'page_title'=>'Danh sách quản trị viên'
         ]);
     }
@@ -31,7 +58,8 @@ class UserQTVController extends Controller
     public function create()
     {
         return view('backend.users-qtv.form-data',[
-            'action'=>route('user-qtv.store'),
+            'action'=>route("$this->account_type.store"),
+            'account_type_number'=>$this->account_type_number,
             'page_title'=>'Tạo mới tài khoản'
         ]);
     }
@@ -56,6 +84,7 @@ class UserQTVController extends Controller
             'username' => $request->username,
             'birtday' => $request->birtday,
             'gender' => $request->gender,
+            'status'=>$request->status,
             'phone' => $request->phone,
             'email' => $request->email,
             'account_type'=>$request->account_type,
@@ -96,7 +125,8 @@ class UserQTVController extends Controller
         ]);
         return view('backend.users-qtv.form-data', [
             'user'=>$user,
-            'action'=>route('user-qtv.update',$user),
+            'action'=>route("$this->account_type.update",$user),
+            'account_type_number'=>$this->account_type_number,
             'page_title'=>'Chỉnh sửa thông tin tài khoản '.$user->id
         ]);
     }
@@ -133,7 +163,7 @@ class UserQTVController extends Controller
     public function filter(Request $request)
     {
         $q = User::query();
-
+        $q->where('account_type',$this->account_type_number);
         if ($request->id) {
             $q->where('id', $request->id);
         }
@@ -151,6 +181,7 @@ class UserQTVController extends Controller
         $old_data = $request->all();
         return view('backend.users-qtv.index', [
             'old_data'=>$old_data,
+            'account_type'=>$this->account_type,
             'page_title' => "Danh sách quản trị viên",
             'users' => $users,
            ]);

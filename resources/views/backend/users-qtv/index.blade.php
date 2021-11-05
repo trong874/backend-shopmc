@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection
 @section('content')
-    <form id="form-filter" action="{{route('user_qtv.filter')}}" method="GET" class="card">
+    <form id="form-filter" action="{{route('user_qtv.filter',$account_type)}}" method="GET" class="card">
         <div class="card-header">
             <span>{{__('Bộ lọc')}}</span>
         </div>
@@ -97,7 +97,7 @@
                 </div>
 
                 <!--begin::Button-->
-                <a href='{{route('user-qtv.create')}}' class="btn btn-primary font-weight-bolder">
+                <a href='{{route("$account_type.create")}}' class="btn btn-primary font-weight-bolder">
                     <i class="la la-plus"></i>{{__('Thêm bản ghi')}}</a>
                 <!--end::Button-->
             </div>
@@ -173,7 +173,7 @@
                                                 Xác nhận thao tác xóa người dùng {{$user->username}}
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="{{route('user-qtv.destroy',$user)}}" method="POST">
+                                                <form action="{{route("$account_type.destroy",$user)}}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="button" class="btn btn-light-primary font-weight-bold"
@@ -186,7 +186,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('user-qtv.edit',$user)}}">
+                                <a href="{{route("$account_type.edit",$user)}}">
                                     <i class="flaticon-edit m-2 link_edit"></i>
                                 </a>
                                 <i class="flaticon2-rubbish-bin-delete-button m-2 link_delete" data-toggle="modal"
@@ -219,7 +219,7 @@
         $('#form-filter').on('submit',function (event) {
             event.preventDefault();
             let param = $('#form-filter').serialize()
-            const link = "{{route('user_qtv.filter')}}"+'?'+param
+            const link = "{{route('user_qtv.filter',$account_type)}}"+'?'+param
             const url = new URL(link);
 
             let id = url.searchParams.get('id');
@@ -242,7 +242,7 @@
                     params.delete('email')
                 }
 
-                window.location.replace( "{{route('user_qtv.filter')}}"+'?'+params)
+                window.location.replace( "{{route('user_qtv.filter',$account_type)}}"+'?'+params)
             } else {
                 console.log(`Your browser ${navigator.appVersion} does not support URLSearchParams`)
             }

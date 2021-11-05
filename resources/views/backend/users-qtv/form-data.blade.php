@@ -102,28 +102,29 @@
                                     </div>
                                     <!--end::Group-->
                                     <!--begin::Group-->
-                                    <div class="form-group row">
-                                        <label
-                                            class="col-xl-3 col-lg-3 col-form-label">{{__('Loại tài khoản')}}</label>
-                                        <div class="col-9">
-                                            <select class="form-control form-control-lg form-control-solid"
-                                                    name="account_type" required>
-                                                <option value="">Chọn loại tài khoản...</option>
-                                                <option value="1" @if(@$user->account_type == 1) selected @endif>Quản lí
-                                                    quản trị viên
-                                                </option>
-                                                <option value="2" @if(@$user->account_type == 2) selected @endif>Quản lí
-                                                    người dùng
-                                                </option>
-                                                <option value="3" @if(@$user->account_type == 3) selected @endif>Quản lí
-                                                    bài viết..
-                                                </option>
-                                                <option value="4" @if(@$user->account_type == 4) selected @endif>Quản lí
-                                                    Order
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
+{{--                                    <div class="form-group row">--}}
+{{--                                        <label--}}
+{{--                                            class="col-xl-3 col-lg-3 col-form-label">{{__('Loại tài khoản')}}</label>--}}
+{{--                                        <div class="col-9">--}}
+{{--                                            <select class="form-control form-control-lg form-control-solid"--}}
+{{--                                                    name="account_type" required>--}}
+{{--                                                <option value="">Chọn loại tài khoản...</option>--}}
+{{--                                                <option value="1" @if(@$user->account_type == 1) selected @endif>Quản lí--}}
+{{--                                                    quản trị viên--}}
+{{--                                                </option>--}}
+{{--                                                <option value="2" @if(@$user->account_type == 2) selected @endif>Quản lí--}}
+{{--                                                    người dùng--}}
+{{--                                                </option>--}}
+{{--                                                <option value="3" @if(@$user->account_type == 3) selected @endif>Quản lí--}}
+{{--                                                    bài viết..--}}
+{{--                                                </option>--}}
+{{--                                                <option value="4" @if(@$user->account_type == 4) selected @endif>Quản lí--}}
+{{--                                                    Order--}}
+{{--                                                </option>--}}
+{{--                                            </select>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+                                    <input type="hidden" name="account_type" value="{{$account_type_number}}">
                                     <!--end::Group-->
                                     <!--begin::Group-->
                                     <div
@@ -175,8 +176,9 @@
                                               <span class="switch switch-primary">
 																<label>
 																	<input type="checkbox"
-                                                                           value="{{$user->status ?? 1}}"
-                                                                           name="status" onclick="toggle(this);"
+                                                                           value="{{@$user->status}}"
+                                                                           name="status"
+                                                                           onclick="toggle(this);"
                                                                            @if(@$user->status == 1)
                                                                                checked
                                                                            @endif
@@ -191,9 +193,9 @@
                                         function toggle(button) {
                                             switch (button.value) {
                                                 case "1":
-                                                    button.value = "0";
+                                                    button.value = "";
                                                     break;
-                                                case "0":
+                                                case "":
                                                     button.value = "1";
                                                     break;
                                             }
