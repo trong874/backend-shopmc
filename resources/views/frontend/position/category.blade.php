@@ -1,47 +1,33 @@
-
-<div class="woocommerce" style=" margin-top: 10px;margin-bottom: 10px">
-    <div class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
-         data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["463","125"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'
-         data-template="woogridpart" id="rh_woogrid_2031402312"
-         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
-        @foreach($categories as $category)
-            <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                <div class="vc_column-inner vc_custom_1511653182242">
+<div class="vc_row wpb_row vc_row-fluid centered-container">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="wpb_raw_code wpb_content_element wpb_raw_html">
                     <div class="wpb_wrapper">
-                        <div class="rh-cartbox catboxmodule">
-                            <div class="rh-flex-center-align">
-                                <div class="rh-cbox-left floatleft mr20">
-                                    <div class="lineheight20 rehub-main-font mb10">
-                                        {{$category->title}}
+                        <div class="cate_home">
+                            <ul class="ul_cate">
+                                <li class="li_cate">
+                                    <div class="li_a">
+                                        @foreach($categories as $category)
+                                        <a class="link_a" href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
+                                            <div class="buttom_cat">
+                                                <div class="buttom_cat_img">
+                                                    <div class="buttom_cat_img_sub">
+
+                                                        <img src="{{$category->image}}" alt="">                                                      </div>
+                                                   </div>
+                                                <div class="buttom_cat_text"><div class="buttom_cat_text-h3">{{$category->title}}</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        @endforeach
                                     </div>
-                                    <div class="lineheight15 font80 mb10"></div>
-{{--                                    <div class="lineheight15 font85 fontbold">--}}
-{{--                                        <a target=" _blank" rel=""--}}
-{{--                                            href="{{route('category.detail',$category->id)}}">Xem--}}
-{{--                                            Ngay</a>--}}
-{{--                                    </div>--}}
-                                </div>
-                                <div
-                                    class="rh-cbox-right rh-flex-right-align text-center">
-                                    <a target=" _blank" rel=""
-                                       href="{{route('category.detail',$category->id)}}">
-                                        <noscript
-                                            data-img="{{$category->image}}"
-                                            data-alt="{{$category->title}}" class=""><img
-                                                src="{{$category->image}}"
-                                                alt="{{$category->title}}" data-eio="j"/>
-                                        </noscript>
-                                        <img
-                                            src="{{$category->image}}"
-                                            alt="{{$category->title}}"></a></div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        @endforeach
-
+        </div>
     </div>
 </div>
-
-
