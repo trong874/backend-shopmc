@@ -51,7 +51,7 @@
                     <input type="hidden" name="module" value="{{$item->module??$module}}"/>
                     <label class="col-lg-1 col-form-label text-right">Danh mục</label>
                     <div class="col-lg-3">
-                        <select class="form-control" name="group_id" required>
+                        <select class="form-control" name="group_id">
                             <?php
                             echo '<option value="">--không chọn--</option>';
                             if (isset($groups) && isset($item)) {
@@ -87,20 +87,13 @@
                                    value="{{$item->price_old ?? null}}">
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
-                        <script>
-                            function formatCash(str) {
-                                return str.split('').reverse().reduce((prev, next, index) => {
-                                    return ((index % 3) ? next : (next + ',')) + prev
-                                })
-                            }
-                        </script>
                         <span class="form-text text-muted">Nhập vào giá cũ của sản phẩm</span>
                     </div>
                     <label class="col-lg-1 col-form-label text-right">Giá</label>
                     <div class="col-lg-3">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Giá sản phẩm" name="price"
-                                   value="{{$item->price ?? null}}" required>
+                                   value="{{$item->price ?? null}}">
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
                         <span class="form-text text-muted">Nhập vào giá của sản phẩm</span>
