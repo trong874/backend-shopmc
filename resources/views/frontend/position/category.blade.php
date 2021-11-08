@@ -8,21 +8,12 @@
                             <ul class="ul_cate">
                                 <li class="li_cate">
                                     <div class="li_a">
-                                        @foreach($categories as $category)
-                                        <a class="link_a" href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
-                                            <div class="buttom_cat">
-                                                <div class="buttom_cat_img">
-                                                    <div class="buttom_cat_img_sub">
-
-                                                        <img src="{{$category->image}}" alt="">                                                      </div>
-                                                   </div>
-                                                <div class="buttom_cat_text"><div class="buttom_cat_text-h3">{{$category->title}}</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        @endforeach
+                                        @if($categories)
+                                            {{showCategories($categories)}}
+                                        @endif
                                     </div>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -31,3 +22,39 @@
         </div>
     </div>
 </div>
+<?php
+function showCategories($categories)
+{
+    $flag = 0;
+    echo '<li class="li_cate">';
+    echo '<div class="li_a">';
+    foreach ($categories as $key => $category) {
+        ++$flag;
+        if ($flag <= 2) {
+            echo '<a class="link_a" href="#">
+                <div class="buttom_cat">
+                    <div class="buttom_cat_img">
+                        <div class="buttom_cat_img_sub">
+                        <img src="' . $category->image . '" alt="">
+                        </div>
+                    </div>
+                  <div class="buttom_cat_text">
+                        <div class="buttom_cat_text-h3">' . $category->title . '</div>
+                  </div>
+                </div>
+              </a>';
+            //xoá phần tử đã hiển thị khỏi mảng
+            unset($categories[$key]);
+        }
+
+        if ($flag == 2) {
+            echo '</div>';
+            echo '</li>';
+            showCategories($categories);
+        }
+
+    }
+
+}
+?>
+
