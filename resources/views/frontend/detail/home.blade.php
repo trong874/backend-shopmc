@@ -162,6 +162,10 @@
                                                             data-product-type="simple"
                                                             class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
                                                             type="button">Mua Ngay
+{{--                                                        <form action="" method="post">--}}
+{{--                                                            <input type="hidden" name="item_id" >--}}
+{{--                                                            <input type="number" name="quantity" >--}}
+{{--                                                        </form>--}}
                                                     </button>
                                                 </div>
                                             </div>
