@@ -218,7 +218,7 @@
                 </tbody>
             </table>
             <div class="row" style="float:right">
-                {{ $items->links('pagination::default') }}
+                {{ $items->links('pagination::bootstrap-4') }}
             </div>
             <!--end: Datatable-->
         </div>
