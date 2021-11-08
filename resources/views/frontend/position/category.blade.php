@@ -6,9 +6,14 @@
                     <div class="wpb_wrapper">
                         <div class="cate_home">
                             <ul class="ul_cate">
-                                @if($categories)
-                                    {{showCategories($categories)}}
-                                @endif
+                                <li class="li_cate">
+                                    <div class="li_a">
+                                        @if($categories)
+                                            {{showCategories($categories)}}
+                                        @endif
+                                    </div>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -52,3 +57,4 @@ function showCategories($categories)
 
 }
 ?>
+

@@ -35,7 +35,7 @@
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                            <span id="price_old_{{$baloBag->id}}"></span>
+                                                                            <span>{{number_format($baloBag->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                     </span>
@@ -43,7 +43,7 @@
                                                                 <ins class="ml-2">
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                             <span id="price_{{$baloBag->id}}"></span>
+                                                                             <span>{{number_format($baloBag->price)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                         </span>
@@ -66,13 +66,10 @@
                         </div>
                         @endforeach
 
-
-
-
-
-                        <div class="re_ajax_pagination"><span data-offset="12"
-                                                              data-containerid="rh_woogrid_1813845785"
-                                                              class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
+                        <div class="re_ajax_pagination mt-3">
+                            <span data-offset="12"
+                                  data-containerid="rh_woogrid_1813845785"
+                                  class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
                         </div>
                     </div>
                 </div>

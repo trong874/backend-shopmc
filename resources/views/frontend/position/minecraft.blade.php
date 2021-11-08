@@ -59,7 +59,7 @@
                                                                 <del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                            <span id="price_old_{{$toyMinecraft->id}}">{{$toyMinecraft->price_old}}</span>
+                                                                            <span>{{number_format($toyMinecraft->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                     </span>
@@ -90,6 +90,7 @@
                 </div>
 
                 <div class="clearfix"></div>
+
             </div>
         </div>
     </div>
