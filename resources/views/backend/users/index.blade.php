@@ -90,7 +90,7 @@
                                         data-dismiss="modal">Close
                                 </button>
                                 <p class="btn btn-danger font-weight-bold" id="delete_all"
-                                   data-url="{{ route('user_qtv.destroy_many') }}">Xóa</p>
+                                   data-url="/admin/delete-many-user">Xóa</p>
                             </div>
                         </div>
                     </div>
