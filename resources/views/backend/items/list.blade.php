@@ -154,7 +154,7 @@
                             <td>{{$item->id}}</td>
                             <td style="text-overflow: Ellipsis;max-width: 200px;max-height: 50px;overflow: hidden;white-space: nowrap;">
                                 <a href="{{$item->url}}">{{$item->title}}</a></td>
-                            <td>{{$item->groups[0]->id.'-'.$item->groups[0]->title}}</td>
+                            <td>{{@$item->groups[0]->id.'-'.@$item->groups[0]->title}}</td>
                             <td><img src="{{$item->image}}" alt="" style="max-height: 50px"></td>
                             <td>{{$item->position}}</td>
                             <td>{{$item->order}}</td>
