@@ -54,7 +54,7 @@
                         <select class="form-control" name="group_id">
                             <?php
                             echo '<option value="">--không chọn--</option>';
-                            if (isset($groups) && isset($item)) {
+                            if (isset($groups) && isset($item->groups[0])) {
                                 showOldCategories($groups, $item);
                             } else {
                                 showCategories($groups);
@@ -193,7 +193,7 @@
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
-                if ($current_data->groups[0]->id == $item->id) {
+                    if ($current_data->groups[0]->id == $item->id) {
                     echo '<option value="' . $item->id . '" selected>' . $item->id . $char . $item->title . '</option>';
                 } else {
                     echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
