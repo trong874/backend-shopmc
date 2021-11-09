@@ -59,15 +59,17 @@
                                                                 <del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
+                                                                            @if(isset($toyMinecraft->price_old))
                                                                             <span>{{number_format($toyMinecraft->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                @endif
                                                                         </bdi>
                                                                     </span>
                                                                 </del>
                                                                 <ins class="ml-2">
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                            <span id="price_{{$toyMinecraft->id}}"><script>document.write(formatCash("{{$toyMinecraft->price}}"))</script></span>
+                                                                            <span id="price_{{$toyMinecraft->id}}">{{number_format($toyMinecraft->price)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                     </span>

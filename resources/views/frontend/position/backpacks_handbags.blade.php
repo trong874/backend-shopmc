@@ -50,14 +50,6 @@
                                                                 </ins>
                                                             </span>
                                 </div>
-                                <script>
-                                    const price_bag_old = "{{$baloBag->price_old}}"
-                                    const price_bag = "{{$baloBag->price}}"
-                                    const format_price_bag_old = price_bag_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    const format_price_bag = price_bag.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    document.getElementById("price_old_{{$baloBag->id}}").innerText = format_price_bag_old
-                                    document.getElementById("price_{{$baloBag->id}}").innerText = format_price_bag
-                                </script>
                                 <div class="floatright product-meta">
                                     <span class="greycolor postview">{!! $baloBag->description !!}</span></div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
