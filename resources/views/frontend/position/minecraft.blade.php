@@ -47,17 +47,11 @@
                                 </a>
                                 <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
                             </figure>
-
                             <h3 class=" text-clamp text-clamp-2">
-                                <div class="rh_woo_star" title="Rated 5 out of 5"><span
-                                        class="rhwoostar rhwoostar1 active">&#9733;</span><span
-                                        class="rhwoostar rhwoostar2 active">&#9733;</span><span
-                                        class="rhwoostar rhwoostar3 active">&#9733;</span><span
-                                        class="rhwoostar rhwoostar4 active">&#9733;</span><span
-                                        class="rhwoostar rhwoostar5 active">&#9733;</span>
-                                </div>
                                 <a href="{{route('item.detail',$toyMinecraft->id)}}">{{$toyMinecraft->title}}</a>
                             </h3>
+
+
 
 
                             <div class="border-top pt10 pr10 pl10 pb10">
@@ -83,6 +77,13 @@
                                 </div>
 
                                 <div class="floatright product-meta">
+                                    <div class="rh_woo_star" title="Rated 5 out of 5"><span
+                                            class="rhwoostar rhwoostar1 active">&#9733;</span><span
+                                            class="rhwoostar rhwoostar2 active">&#9733;</span><span
+                                            class="rhwoostar rhwoostar3 active">&#9733;</span><span
+                                            class="rhwoostar rhwoostar4 active">&#9733;</span><span
+                                            class="rhwoostar rhwoostar5 active">&#9733;</span>
+                                    </div>
                                     <span class="greycolor postview">{!! $toyMinecraft->description !!}</span></div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>

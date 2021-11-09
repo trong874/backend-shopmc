@@ -13609,7 +13609,7 @@ nav.top_menu > ul > li.hovered > .sub-menu, .top-nav > ul > li.hovered ul.sub-me
     top: 22px
 }
 
-nav.top_menu > ul > li > ul.sub-menu > li:first-child > a:after, .top-nav > ul > li > ul.sub-menu > li:first-child > a:after, .rh_woocartmenu_cell .widget_shopping_cart:after {
+nav.top_menu > ul > li > ul.sub-menu > li:first-child > a:after, .top-nav > ul > li > ul.sub-menu > li:first-child > a:after, .rh_woocartmenu_cell .G13090widget_shopping_cart:after {
     position: absolute;
     content: "";
     width: 0;
