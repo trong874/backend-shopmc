@@ -35,8 +35,10 @@
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
+                                                                            @if(isset($lego->price_old))
                                                                             <span>{{number_format($lego->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                @endif
                                                                         </bdi>
                                                                     </span>
                                                                 </del>
