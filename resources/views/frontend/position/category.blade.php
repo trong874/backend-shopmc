@@ -6,14 +6,9 @@
                     <div class="wpb_wrapper">
                         <div class="cate_home">
                             <ul class="ul_cate">
-                                <li class="li_cate">
-                                    <div class="li_a">
                                         @if($categories_banner)
                                             {{showCategories($categories_banner)}}
                                         @endif
-                                    </div>
-                                </li>
-
                             </ul>
                         </div>
                     </div>
@@ -29,8 +24,7 @@ function showCategories($categories)
     echo '<li class="li_cate">';
     echo '<div class="li_a">';
     foreach ($categories as $key => $category) {
-        ++$flag;
-        if ($flag <= 2) {
+        if ($flag < 2) {
             echo '<a class="link_a" href="#">
                 <div class="buttom_cat">
                     <div class="buttom_cat_img">
@@ -44,17 +38,15 @@ function showCategories($categories)
                 </div>
               </a>';
             //xoá phần tử đã hiển thị khỏi mảng
-            unset($categories[$key]);
+//            unset($categories[$key]);
+            $flag++;
         }
-
-        if ($flag == 2) {
-            echo '</div>';
-            echo '</li>';
+        if ($flag == 2){
+           echo '</div>';
+           echo '</li>';
             showCategories($categories);
         }
-
     }
-
 }
 ?>
 
