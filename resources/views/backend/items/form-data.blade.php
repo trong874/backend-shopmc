@@ -66,14 +66,12 @@
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
                         <select class="form-control form-control-solid" name="position">
-
-                            <option value="category">Danh mục sản phẩm</option>
-                            <option value="flashsale">Flash Sale</option>
-                            <option value="toy-minecraft">Đồ Chơi Minecraft</option>
-                            <option value="balo-bag">Balo Túi Xách</option>
-                            <option value="clothes">Quần áo</option>
-                            <option value="lego">Mô hình/ Lego Minecraft</option>
-                            <option value="news">Tin tức cộng đồng</option>
+                            <option value="category" @if(isset($item))@if($item->position == 'category') selected @endif @endif>Danh mục sản phẩm</option>
+                            <option value="flashsale"  @if(isset($item))@if($item->position == 'flashsale') selected @endif @endif>Flash Sale</option>
+                            <option value="toy-minecraft"  @if(isset($item))@if($item->position == 'toy-minecraft') selected @endif @endif>Đồ Chơi Minecraft</option>
+                            <option value="balo-bag"  @if(isset($item))@if($item->position == 'balo-bag') selected @endif @endif>Balo Túi Xách</option>
+                            <option value="clothes"  @if(isset($item))@if($item->position == 'clothes') selected @endif @endif>Quần áo</option>
+                            <option value="lego"  @if(isset($item))@if($item->position == 'lego') selected @endif @endif>Mô hình/ Lego Minecraft</option>
                         </select>
                         <span class="form-text text-muted">Please enter your Position</span>
                     </div>
