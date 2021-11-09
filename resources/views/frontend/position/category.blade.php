@@ -24,6 +24,7 @@ function showCategories($categories)
     echo '<li class="li_cate">';
     echo '<div class="li_a">';
     foreach ($categories as $key => $category) {
+        $flag++;
         if ($flag <= 2) {
             echo '<a class="link_a" href="#">
                 <div class="buttom_cat">
@@ -39,14 +40,16 @@ function showCategories($categories)
               </a>';
             //xoá phần tử đã hiển thị khỏi mảng
             unset($categories[$key]);
-            $flag++;
         }
-        if ($flag == 2){
-           echo '</div>';
-           echo '</li>';
+        if ($flag == 2) {
+            echo '</div>';
+            echo '</li>';
+            if ($key < 19){
             showCategories($categories);
+            };
         }
     }
+
 }
 ?>
 
