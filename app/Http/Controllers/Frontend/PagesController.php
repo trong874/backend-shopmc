@@ -11,28 +11,23 @@ class   PagesController extends Controller
 {
     public function index()
     {
-        $news = $this->getNews();
-        $flashSales = $this->getProductFlashSale();
-        $toyMinecrafts = $this->getProductToyMinecraft();
-        $baloBags = $this->getProductBalo();
-        $legos = $this->getProductLego();
-        $clotheses = $this->getProductClothes();
-        $categories = $this->getCategory();
         return view('frontend.home', [
             'categories_product' => $this->getCategoryProduct(),
-            'news' => $news,
-            'flashSales' => $flashSales,
-            'toyMinecrafts'=>$toyMinecrafts,
-            'baloBags'=> $baloBags,
-            'legos' => $legos,
-            'clotheses' => $clotheses,
-            'categories' => $categories
+            'news' =>$this->getNews(),
+            'flashSales' => $this->getProductFlashSale(),
+            'toyMinecrafts'=>$this->getProductToyMinecraft(),
+            'baloBags'=> $this->getProductBalo(),
+            'legos' => $this->getProductLego(),
+            'clotheses' => $this->getProductClothes(),
+            'categories_banner' => $this->getCategoryBanner()
         ]);
     }
 
     public function getCategoryProduct()
     {
-        return Group::where('module', 'category-products')->get('title');
+        return Group::where('module', 'category-products')
+                        ->where('position','category_header')
+                        ->get('title');
     }
 
     public function getProducts()
@@ -79,11 +74,11 @@ class   PagesController extends Controller
         ]);
 
     }
-    public function getCategory()
+    public function getCategoryBanner()
     {
 
-        return Item::where('position', 'category')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old','id'
+        return Group::where('position', 'category')->get([
+            'title','image', 'url'
         ]);
 
     }

@@ -8,8 +8,8 @@
                             <ul class="ul_cate">
                                 <li class="li_cate">
                                     <div class="li_a">
-                                        @if($categories)
-                                            {{showCategories($categories)}}
+                                        @if($categories_banner)
+                                            {{showCategories($categories_banner)}}
                                         @endif
                                     </div>
                                 </li>
