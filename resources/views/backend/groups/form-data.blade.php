@@ -1,12 +1,17 @@
 @extends('backend.layout.default')
+@section('styles')
+    <script src="{{asset('ckfinder/ckfinder.js')}}"></script>
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+@endsection
 @section('content')
     <!--begin::Card-->
     <div class="card card-custom example example-compact m-7">
         <div class="card-header">
             <h3 class="card-title">Create New Group</h3>
         </div>
-        @if(isset($message))
-        <h4 style="color: red" class="ml-5">*{{$message}}</h4>
+        @if(Session::has('message'))
+        <h4 style="color: red" class="ml-5">*{{Session::get('message')}}</h4>
+            {{Session::forget('message')}}
         @endif
         <!--begin::Form-->
         <?php
@@ -25,7 +30,7 @@
                 <div class="form-group row mt-3">
                     <label class="col-lg-1 col-form-label text-right">Title</label>
                     <div class="col-lg-3">
-                        <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{$group->title??null}}"/>
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{@$group->title}}"/>
                         <span class="form-text text-muted">Please enter your Title</span>
                     </div>
 {{--                    <input type="hidden" id="slug" name="slug" value="{{$group->slug??null}}">--}}
@@ -43,19 +48,24 @@
                         </select>
                         <span class="form-text text-muted">Please enter your parent_id</span>
                     </div>
-                    <label class="col-lg-1 col-form-label text-right">Ảnh</label>
-                    <!-- end: Example Code-->
-                    <div class="card card-custom card-collapse col-lg-1" data-card="true" id="kt_card_1">
-                        <div class="card-toolbar">
-                            <i aria-hidden="true" class="ki ki-close" onclick="deleteImage()" style="padding-top: 6px;margin-left: 85px;"></i>
-                        </div>
-                        <div class="card-img">
-                            <img
-                                src="{{$group->image??'https://nicolasmelis.com/wp-content/themes/panama/assets/img/empty/600x600.png'}}"
-                                id="image-display" onclick="selectFileWithCKFinder('image-display')"
-                                style="height: 100%;width: 100%">
-                            <input type="hidden" name="image" id="image_path" value="{{$group->image??''}}">
-                        </div>
+                    <label class="col-lg-1 col-form-label text-right">Title</label>
+                    <div class="col-lg-3">
+                        <input type="text" name="position" class="form-control" id="title" placeholder="Posision" value="{{@$group->position}}"/>
+                        <span class="form-text text-muted">Please enter your Title</span>
+                    </div>
+                </div>
+                <label class="col-lg-1 col-form-label text-right">Ảnh</label>
+                <!-- end: Example Code-->
+                <div class="card card-custom card-collapse col-lg-1" data-card="true" id="kt_card_1">
+                    <div class="card-toolbar">
+                        <i aria-hidden="true" class="ki ki-close" onclick="deleteImage()" style="padding-top: 6px;margin-left: 85px;"></i>
+                    </div>
+                    <div class="card-img">
+                        <img
+                            src="{{$group->image??'https://nicolasmelis.com/wp-content/themes/panama/assets/img/empty/600x600.png'}}"
+                            id="image-display" onclick="selectFileWithCKFinder('image-display')"
+                            style="height: 100%;width: 100%">
+                        <input type="hidden" name="image" id="image_path" value="{{$group->image??''}}">
                     </div>
                 </div>
 {{--                <div class="separator separator-dashed my-10"></div>--}}
