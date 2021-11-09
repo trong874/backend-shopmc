@@ -39,7 +39,7 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('admin-manage',UserQTVController::class);
 
-        Route::get('/{account_type}/filter/item',[UserQTVController::class,'filter'])->name('user_qtv.filter');
+        Route::get('/{account_type}/filter/user_qtv',[UserQTVController::class,'filter'])->name('user_qtv.filter');
 
         Route::get('{module}/filter/item', [ItemController::class, 'filter'])->name('items.filter');
 
