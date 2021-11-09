@@ -301,7 +301,7 @@
 </div>
 
 <script type="text/html" id="wpb-modifications"></script>
-<link href="{{asset('frontend/js/assets/css.css')}}" rel="stylesheet" property="stylesheet" media="all"
+<link href="{{asset('frontend/css/assets/css.css')}}" rel="stylesheet" property="stylesheet" media="all"
       type="text/css">
 
 <script type="text/javascript">
