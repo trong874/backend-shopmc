@@ -11,26 +11,26 @@
                         data-template="woogridpart" id="rh_woogrid_1813845785"
                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
                         @foreach($baloBags as $baloBag)
-                        <div
-                            class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale">Sale!</span>
-                            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                   href="{{route('item.detail',$baloBag->id)}}">
-                                    <img class="lazyload"
-                                         data-src="{{$baloBag->image}}"
-                                         width="300" alt="{{$baloBag->title}}" src="{{$baloBag->image}}"/>
-                                </a>
+                            <div
+                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                <span class="onsale">Sale!</span>
+                                <figure class="mb5 mt25 position-relative notresized">
+                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                       href="{{route('item.detail',$baloBag->slug)}}">
+                                        <img class="lazyload"
+                                             data-src="{{$baloBag->image}}"
+                                             width="300" alt="{{$baloBag->title}}" src="{{$baloBag->image}}"/>
+                                    </a>
 
-                            </figure>
+                                </figure>
 
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="{{route('item.detail',$baloBag->id)}}">{{$baloBag->title}}</a>
-                            </h3>
+                                <h3 class=" text-clamp text-clamp-2">
+                                    <a href="{{route('item.detail',$baloBag->slug)}}">{{$baloBag->title}}</a>
+                                </h3>
 
 
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
+                                <div class="border-top pt10 pr10 pl10 pb10">
+                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
@@ -49,21 +49,21 @@
                                                                         </span>
                                                                 </ins>
                                                             </span>
-                                </div>
-                                <script>
-                                    const price_bag_old = "{{$baloBag->price_old}}"
-                                    const price_bag = "{{$baloBag->price}}"
-                                    const format_price_bag_old = price_bag_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    const format_price_bag = price_bag.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    document.getElementById("price_old_{{$baloBag->id}}").innerText = format_price_bag_old
-                                    document.getElementById("price_{{$baloBag->id}}").innerText = format_price_bag
-                                </script>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">{!! $baloBag->description !!}</span></div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
+                                    </div>
+                                    <script>
+                                        const price_bag_old = "{{$baloBag->price_old}}"
+                                        const price_bag = "{{$baloBag->price}}"
+                                        const format_price_bag_old = price_bag_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                        const format_price_bag = price_bag.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                        document.getElementById("price_old_{{$baloBag->id}}").innerText = format_price_bag_old
+                                        document.getElementById("price_{{$baloBag->id}}").innerText = format_price_bag
+                                    </script>
+                                    <div class="floatright product-meta">
+                                        <span class="greycolor postview">{!! $baloBag->description !!}</span></div>
+                                    <div class="rh-flex-right-align btn_for_grid floatright">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
                         <div class="re_ajax_pagination mt-3">
