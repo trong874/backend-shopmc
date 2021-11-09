@@ -36,29 +36,23 @@
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                             <span id="price_old_{{$flashSale->id}}"></span>
+                                                                            @if(isset($flashSale->price_old))
+                                                                            <span>{{number_format($flashSale->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                @endif
                                                                         </bdi>
                                                                     </span>
                                                                 </del>
                                                                 <ins class="ml-2">
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                            <span id="price_{{$flashSale->id}}"></span>
+                                                                            <span>{{number_format($flashSale->price)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                     </span>
                                                                 </ins>
                                                             </span>
                                 </div>
-                                <script>
-                                    const price_old = "{{$flashSale->price_old}}"
-                                    const price = "{{$flashSale->price}}"
-                                    const format_price_old = price_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    const format_price = price.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    document.getElementById("price_old_{{$flashSale->id}}").innerText = format_price_old
-                                    document.getElementById("price_{{$flashSale->id}}").innerText = format_price
-                                </script>
                                 <div class="floatright product-meta">
                                     <div class="rh_woo_star" title="Rated 5 out of 5"><span
                                             class="rhwoostar rhwoostar1 active">&#9733;</span><span
@@ -67,7 +61,8 @@
                                             class="rhwoostar rhwoostar4 active">&#9733;</span><span
                                             class="rhwoostar rhwoostar5 active">&#9733;</span>
                                     </div>
-                                    <span class="greycolor postview">{{$flashSale->décription}}</span></div>
+{{--                                    <span class="greycolor postview">{{$flashSale->décription}}</span>--}}
+                                </div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>

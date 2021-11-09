@@ -35,7 +35,7 @@
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                            <span id="price_old_{{$baloBag->id}}"></span>
+                                                                            <span>{{number_format($baloBag->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                     </span>
@@ -43,21 +43,13 @@
                                                                 <ins class="ml-2">
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
-                                                                             <span id="price_{{$baloBag->id}}"></span>
+                                                                             <span>{{number_format($baloBag->price)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                         </span>
                                                                 </ins>
                                                             </span>
                                 </div>
-                                <script>
-                                    const price_bag_old = "{{$baloBag->price_old}}"
-                                    const price_bag = "{{$baloBag->price}}"
-                                    const format_price_bag_old = price_bag_old.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    const format_price_bag = price_bag.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                    document.getElementById("price_old_{{$baloBag->id}}").innerText = format_price_bag_old
-                                    document.getElementById("price_{{$baloBag->id}}").innerText = format_price_bag
-                                </script>
                                 <div class="floatright product-meta">
                                     <div class="rh_woo_star" title="Rated 5 out of 5"><span
                                             class="rhwoostar rhwoostar1 active">&#9733;</span><span
@@ -73,13 +65,10 @@
                         </div>
                         @endforeach
 
-
-
-
-
-                        <div class="re_ajax_pagination"><span data-offset="12"
-                                                              data-containerid="rh_woogrid_1813845785"
-                                                              class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
+                        <div class="re_ajax_pagination mt-3">
+                            <span data-offset="12"
+                                  data-containerid="rh_woogrid_1813845785"
+                                  class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
                         </div>
                     </div>
                 </div>

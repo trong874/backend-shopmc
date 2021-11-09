@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -31,7 +32,10 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        if (Auth::user()->account_type != self::ACCOUNT_TYPE_ADMIN){
+            Session::put('message','Tuổi gì đòi vào');
+            return redirect()->route('logout');
+        }
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -43,12 +47,16 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
+        $message = null;
+        if (Session::has('message')){
+            $message = Session::get('message');
+        }
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
+        Session::put('message',$message);
         return redirect('/login');
     }
 }

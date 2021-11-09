@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers\Frontend;
 
 use App\Cart;
@@ -28,5 +29,6 @@ class CartController extends Controller
             dd($newCart);
         }
         return view('frontend.cart',['newCart'=>$newCart]);
+
     }
 }
