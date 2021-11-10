@@ -72,6 +72,7 @@
                             <option value="balo-bag"  @if(isset($item))@if($item->position == 'balo-bag') selected @endif @endif>Balo Túi Xách</option>
                             <option value="clothes"  @if(isset($item))@if($item->position == 'clothes') selected @endif @endif>Quần áo</option>
                             <option value="lego"  @if(isset($item))@if($item->position == 'lego') selected @endif @endif>Mô hình/ Lego Minecraft</option>
+                            <option value="news"  @if(isset($item))@if($item->position == 'news') selected @endif @endif>Tin tức cộng đồng</option>
                         </select>
                         <span class="form-text text-muted">Please enter your Position</span>
                     </div>
