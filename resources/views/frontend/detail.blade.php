@@ -108,11 +108,45 @@
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
-                                                        <button type="button" name="add-to-cart" value="20521" onclick="addCart({{$itemDetail[0]->id}})" href="javascript:"
+                                                        <button type="button" name="add-to-cart" id="addToCart" href="javascript:"
                                                          class="btn btn-success">
-                                                            <a>Thêm vào giỏ hàng</a>
+                                                            Thêm vào giỏ hàng
                                                         </button>
+                                                        <script>
+                                                            //  document.getElementById("addToCart").onclick =function(){
+                                                            //      addToCart()
+                                                            //  };
+                                                            // function addToCart() {
+                                                            //     $("#cartDetail").append("<li>Cart Item</li>");
+                                                            //
+                                                            // }
+                                                            $( "#addToCart" ).click(function() {
+
+                                                                $("#cartDetail").append("<div class=\"container\">\n" +
+                                                                    "                    <div class=\"row\">\n" +
+                                                                    "                        <div class=\"col-4\">\n" +
+                                                                    "                            <img src=\"https://brandlogos.net/wp-content/uploads/2016/09/facebook-icon-preview-1.png\" alt=\"\">\n" +
+                                                                    "                        </div>\n" +
+                                                                    "                        <div class=\"col-8\" style=\"width:225px;height: 100%\">\n" +
+                                                                    "                            <span style=\"word-wrap: break-word;\">ghjiokkjhgfdfghkljkhhgcfasdgfdassssasasasassasadasdsadsadsa</span>\n" +
+                                                                    "                            <br>\n" +
+                                                                    "                            <p>1 <span> X 180.000</span></p>\n" +
+                                                                    "                        </div>\n" +
+                                                                    "                    </div>\n" +
+                                                                    "                </div>");
+
+                                                            })
+                                                            function displayCart(){
+                                                                $('#cartDetail').show();
+                                                            }
+
+                                                            function hide() {
+                                                                $('#cartDetail').hide();
+                                                            }
+
+                                                        </script>
                                                     </form>
+
 
                                                     <div class="quick_buy_container quick_buy_20521_container"
                                                          id="quick_buy_20521_container">
@@ -379,15 +413,7 @@
     <script src="{{asset('frontend/detail/js/style2.js')}}"></script>
     <script src="{{asset('frontend/detail/js/style3.js')}}"></script>
     <script>
-        function addCart(id){
 
-            $.ajax({
-                url: '/add-cart/'+id,
-                type:'GET',
-            }).done(function(res){
-            console.log(res);
-            })
-        }
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 @endsection

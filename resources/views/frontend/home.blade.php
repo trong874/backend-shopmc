@@ -25,11 +25,11 @@
                                                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                                                             </div>
                                                             <div class="carousel-inner">
-                                                                @foreach($slides as $slide)
-                                                                <div class="carousel-item active">
-                                                                    <img src="{{$slide->image}}" class="d-block w-100" alt="...">
-                                                                </div>
-                                                                @endforeach
+{{--                                                                @foreach($slides as $slide)--}}
+{{--                                                                <div class="carousel-item active">--}}
+{{--                                                                    <img src="{{$slide->image}}" class="d-block w-100" alt="...">--}}
+{{--                                                                </div>--}}
+{{--                                                                @endforeach--}}
                                                             </div>
                                                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

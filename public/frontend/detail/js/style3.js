@@ -1,14 +1,14 @@
 
 /* <![CDATA[ */
-var wc_add_to_cart_params = {
-    "ajax_url": "\/wp-admin\/admin-ajax.php",
-    "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
-    "i18n_view_cart": "Xem gi\u1ecf h\u00e0ng",
-    "cart_url": "https:\/\/shopmc.vn\/cart\/",
-    "is_cart": "",
-    "cart_redirect_after_add": "yes",
-    "i18n_added_to_cart": "Has been added to cart."
-};
+// var wc_add_to_cart_params = {
+//     "ajax_url": "\/wp-admin\/admin-ajax.php",
+//     "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+//     "i18n_view_cart": "Xem gi\u1ecf h\u00e0ng",
+//     "cart_url": "https:\/\/shopmc.vn\/cart\/",
+//     "is_cart": "",
+//     "cart_redirect_after_add": "yes",
+//     "i18n_added_to_cart": "Has been added to cart."
+// };
 /* ]]> */
 
 
@@ -52,13 +52,13 @@ var wc_add_to_cart_params = {
 
 
     /* <![CDATA[ */
-    var wc_cart_fragments_params = {
-    "ajax_url": "\/wp-admin\/admin-ajax.php",
-    "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
-    "cart_hash_key": "wc_cart_hash_cb369d5df7d757ea6d8ffa40ffd7bd42",
-    "fragment_name": "wc_fragments_cb369d5df7d757ea6d8ffa40ffd7bd42",
-    "request_timeout": "5000"
-};
+//     var wc_cart_fragments_params = {
+//     "ajax_url": "\/wp-admin\/admin-ajax.php",
+//     "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+//     "cart_hash_key": "wc_cart_hash_cb369d5df7d757ea6d8ffa40ffd7bd42",
+//     "fragment_name": "wc_fragments_cb369d5df7d757ea6d8ffa40ffd7bd42",
+//     "request_timeout": "5000"
+// };
     /* ]]> */
 
 
