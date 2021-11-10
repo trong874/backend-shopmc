@@ -48,17 +48,23 @@
                     <div class=" rh-flex-right-align">
                         <div class="header-actions-logo rh-flex-right-align">
                             <div class="tabledisplay">
-
-
-                                <div class="celldisplay rh_woocartmenu_cell text-center"><span
-                                        class="inlinestyle rehub-main-btn-bg rehub-main-smooth menu-cart-btn "><a
-                                            class="rh-header-icon rh-flex-center-align rh_woocartmenu-link cart-contents cart_count_0"
-                                            href="https://shopmc.com.vn/cart/"><i class="fas fa-cart-plus"></i>
-                                            <span class="rh_woocartmenu-icon"><span
-                                                    class="rh-icon-notice rehub-main-color-bg">0</span></span><span
-                                                class="rh_woocartmenu-amount"><span
-                                                    class="woocommerce-Price-amount amount"><bdi>0&nbsp;<span
-                                                            class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span></a></span>
+                                <div class="celldisplay rh_woocartmenu_cell text-center">
+                                    <span class="inlinestyle rehub-main-btn-bg rehub-main-smooth menu-cart-btn ">
+                                        <a class="rh-header-icon rh-flex-center-align rh_woocartmenu-link cart-contents cart_count_0"
+                                            href="https://shopmc.com.vn/cart/">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span class="rh_woocartmenu-icon">
+                                                <span class="rh-icon-notice rehub-main-color-bg">0</span>
+                                            </span>
+                                            <span class="rh_woocartmenu-amount">
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <bdi>0&nbsp
+                                                        <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                    </bdi>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </span>
                                     <div class="woocommerce widget_shopping_cart"></div>
                                 </div>
                             </div>
@@ -92,9 +98,13 @@
                         <li id="menu-item-9558" class="menu-item menu-item-type-custom menu-item-object-custom"><a
                                 href="https://shopmc.com.vn/khuyen-mai/"><i class="far fa-usd-circle"></i> Khuyến
                                 mại</a></li>
+                        @if(isset($newDetail))
+                              @foreach($newDetail as $detail)
                         <li id="menu-item-9664" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                href="https://shopmc.com.vn/chuyen-muc/tin-tuc/"><i class="fas fa-newspaper"></i>
+                                href="{{route('new.list',$detail->id)}}"><i class="fas fa-newspaper"></i>
                                 Tin tức</a></li>
+                           @endforeach
+                        @endif
                         <li id="menu-item-9663"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                             <a href="#"><i class="fas fa-chevron-down"></i> Thương hiệu</a>

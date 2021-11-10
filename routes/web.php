@@ -16,6 +16,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/news/{url}', [\App\Http\Controllers\Frontend\PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/item/{id}', [\App\Http\Controllers\Frontend\PagesController::class, 'getItemDetail'])->name('item.detail');
     Route::get('/category/{id}', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategoryItems'])->name('category.detail');
+    Route::get('/detail_new/{id}', [\App\Http\Controllers\Frontend\PagesController::class, 'getNewsDetail'])->name('new.list');
 
 
     Route::get('/detail', [\App\Http\Controllers\Frontend\PagesController::class, 'detail'])->name('page.detail');

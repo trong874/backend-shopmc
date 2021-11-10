@@ -32,10 +32,21 @@
 
                 <div class="woocommerce">
                     <div class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
-                        data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["463","125"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'
-                        data-template="woogridpart" id="rh_woogrid_2031402312"
-                        data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
+                         data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["463","125"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'
+                         data-template="woogridpart" id="rh_woogrid_2031402312"
+                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
                         @foreach($toyMinecrafts as $toyMinecraft)
+                            <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                <span class="onsale"><span>- 29%</span></span>
+                                <figure class="mb5 mt25 position-relative notresized">
+                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                       href="{{route('item.detail',$toyMinecraft->slug)}}">
+                                        <img class="lazyload"
+                                             width="300" alt="{{$toyMinecraft->title}}"
+                                             src="{{$toyMinecraft->image}}"/>
+                                    </a>
+                                    <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
+                                </figure>
                         <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
 {{--                            <span class="onsale"><span>- 29%</span></span>--}}
                             <figure class="mb5 mt25 position-relative notresized">
@@ -47,14 +58,13 @@
                                 </a>
                                 <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
                             </figure>
+                                <h3 class=" text-clamp text-clamp-2">
+                                    <a href="{{route('item.detail',$toyMinecraft->slug)}}">{{$toyMinecraft->title}}</a>
+                                </h3>
 
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="{{route('item.detail',$toyMinecraft->id)}}">{{$toyMinecraft->title}}</a>
-                            </h3>
 
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
+                                <div class="border-top pt10 pr10 pl10 pb10">
+                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
                                                             <span class="price">
                                                                 <del>
                                                                     <span class="woocommerce-Price-amount amount">
@@ -75,7 +85,11 @@
                                                                     </span>
                                                                 </ins>
                                                             </span>
-                                </div>
+                                    </div>
+                                    <div class="floatright product-meta">
+                                        <span class="greycolor postview">{!! $toyMinecraft->description !!}</span></div>
+                                    <div class="rh-flex-right-align btn_for_grid floatright">
+                                    </div>
 
                                 <div class="floatright product-meta">
 {{--                                    <span class="greycolor postview">{!! $toyMinecraft->description !!}</span>--}}
@@ -83,7 +97,6 @@
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                         <div class="re_ajax_pagination"><span data-offset="12"
                                                               data-containerid="rh_woogrid_2031402312"
@@ -96,5 +109,7 @@
 
             </div>
         </div>
+    </div>
+</div>
     </div>
 </div>
