@@ -39,6 +39,7 @@
           href="https://shopmc.com.vn/feed/"/>
     <link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Shop MC &raquo;"
           href="https://shopmc.com.vn/comments/feed/"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('frontend/js/home/style.js')}}"></script>
     <link rel='stylesheet' id='wp-block-library-css'
           href='{{asset('frontend/css/block-library/style-min.css')}}'

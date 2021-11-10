@@ -3,14 +3,17 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('styles')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{asset('ckfinder/ckfinder.js')}}"></script>
     <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('css/nestable.css')}}">
+    <link rel="stylesheet" href="{{asset('css/product-form.css')}}">
 @endsection
 @section('content')
     <!--begin::Card-->
-    <div class="card card-custom example example-compact m-7">
+    <div class="card card-custom m-7">
         <div class="card-header">
-            <h3 class="card-title">{{$page_title ?? ''}}</h3>
+            <h3 class="card-title">{{@$page_title}}</h3>
         </div>
         <!--begin::Form-->
         <?php
@@ -44,10 +47,10 @@
                     <label class="col-lg-1 col-form-label text-right">Title</label>
                     <div class="col-lg-3">
                         <input type="text" name="title" id="title" class="form-control" placeholder="Title"
-                               value="{{$item->title??null}}" onkeyup="changeTitleToSlug()" required/>
+                               value="{{@$item->title}}" onkeyup="changeTitleToSlug()" required/>
                         <span class="form-text text-muted">Please enter your Title</span>
                     </div>
-                    <input type="hidden" id="slug" name="slug" value="{{$item->slug??null}}">
+                    <input type="hidden" id="slug" name="slug" value="{{@$item->slug}}">
                     <input type="hidden" name="module" value="{{$item->module??$module}}"/>
                     <label class="col-lg-1 col-form-label text-right">Danh mục</label>
                     <div class="col-lg-3">
@@ -83,7 +86,7 @@
                     <div class="col-lg-3">
                         <div class="input-group mb-3">
                             <input type="number" class="form-control" name="price_old" placeholder="Giá cũ sản phẩm"
-                                   value="{{$item->price_old ?? null}}">
+                                   value="{{@$item->price_old}}">
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
                         <span class="form-text text-muted">Nhập vào giá cũ của sản phẩm</span>
@@ -92,25 +95,10 @@
                     <div class="col-lg-3">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Giá sản phẩm" name="price"
-                                   value="{{$item->price ?? null}}">
+                                   value="{{@$item->price}}">
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
                         <span class="form-text text-muted">Nhập vào giá của sản phẩm</span>
-                    </div>
-                    <label class="col-lg-1 col-form-label text-right">Ảnh</label>
-                    <!-- end: Example Code-->
-                    <div class="card card-custom card-collapse col-lg-1" data-card="true" id="kt_card_1"
-                         style="border: 1px #ccc solid">
-                        <div class="card-toolbar" style="position: absolute;top:0;right: 0;margin: 5px">
-                            <i aria-hidden="true" class="ki ki-close" onclick="deleteImage()"></i>
-                        </div>
-                        <div class="card-img">
-                            <img
-                                src="{{$item->image??'https://fermasenoval.ru/wp-content/uploads/2018/12/empty-photo.jpg'}}"
-                                id="image-display" onclick="selectFileWithCKFinder('image-display')"
-                                style="height: 100%;width: 100%;padding: 15px">
-                            <input type="hidden" name="image" id="image_path" value="{{$item->image??null}}">
-                        </div>
                     </div>
                 </div>
                 <div class="separator separator-dashed my-10"></div>
@@ -118,7 +106,7 @@
                     <label class="col-lg-1 col-form-label text-right">Description</label>
                     <div class="col-lg-11">
                         <textarea name="description" id="description_input"
-                                  required>{{$item->description??null}}</textarea>
+                                  required>{{@$item->description}}</textarea>
                         <script>
                             // Replace the <textarea id="editor1"> with a CKEditor 4
                             // instance, using default configuration.
@@ -137,7 +125,7 @@
                 <div class="form-group row mt-3">
                     <label class="col-lg-1 col-form-label text-right">Content</label>
                     <div class="col-lg-11">
-                        <textarea name="content" id="content_input" required>{{$item->content??null}}</textarea>
+                        <textarea name="content" id="content_input">{{@$item->content}}</textarea>
                         <script>
                             // Replace the <textarea id="editor1"> with a CKEditor 4
                             // instance, using default configuration.
@@ -171,6 +159,112 @@
                            @if(isset($item)) @if($item->status == 0) checked @endif @endif>
 
                 </div>
+                <div class="separator separator-dashed my-10"></div>
+                <div class="form-group row mt-3">
+                    <div class="col-md-4">
+                        <label for="locale">Ảnh đại diện:</label>
+                        <div class="">
+                            <div class="fileinput ck-parent" data-provides="fileinput">
+                                <div class="fileinput-new thumbnail" style="width: 100px; height: 100px">
+
+                                    <img class="ck-thumb" id="image_avatar"
+                                         src="{{(isset($item->image))? $item->image : asset('/assets/img/empty-photo.jpg')}}"
+                                         alt="">
+                                    <input class="ck-input" id="image_avatar_input" type="hidden" name="image" value="">
+
+                                </div>
+                                <div class="button-action">
+                                    <button type="button" class="btn btn-outline-success"
+                                            onclick="selectFileWithCKFinder('image_avatar')"> Thay đổi
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger"
+                                            onclick="deleteImage('image_avatar')"> Xóa
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <label for="locale">Ảnh mở rộng:</label>
+                        <div class="card">
+                            <div class="card-body p-3 ck-parent" style="min-height: 148px">
+                                <input class="image_input_text" type="hidden" name="image_extension" value="{{@$item->image_extension}}">
+                                <div class="sortable grid">
+                                    @if(@$item->image_extension)
+                                        @foreach(explode('|',$item->image_extension) as $item)
+                                            <div class="image-preview-box">
+                                                <img src="{{$item}}" alt="" data-input="{{$item}}">
+                                                <a rel="8" class="btn btn-xs  btn-icon btn-danger btn_delete_image" data-toggle="modal" data-target="#deleteModal"><i class="la la-close"></i></a>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
+                                <style>
+
+                                </style>
+                                <a class="btn btn-success ck-popup-multiply" style="margin-top: 15px;">
+                                    <i class="la la-cloud-upload-alt"></i> Chọn hình
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group row mt-3">
+                    <div class="col-md-4">
+                        <label for="locale">Ảnh Banner:</label>
+                        <div class="">
+                            <div class="fileinput ck-parent" data-provides="fileinput">
+                                <div class="fileinput-new thumbnail" style="width: 100px; height: 100px">
+
+                                    <img class="ck-thumb" id="image_banner"
+                                         src="{{(isset($item->image_banner))? $item->image_banner : asset('/assets/img/empty-photo.jpg')}}"
+                                         alt="">
+                                    <input class="ck-input image_banner" id="image_banner_input" type="hidden"
+                                           name="image_banner" value="{{@$item->image_banner}}">
+
+                                </div>
+                                <div class="button-action">
+                                    <button type="button" class="btn btn-outline-success"
+                                            onclick="selectFileWithCKFinder('image_banner')"> Thay đổi
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger"
+                                            onclick="deleteImage('image_banner')"> Xóa
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <label for="locale">Ảnh icon:</label>
+                        <div class="">
+                            <div class="fileinput ck-parent" data-provides="fileinput">
+                                <div class="fileinput-new thumbnail" style="width: 100px; height: 100px">
+                                    <img class="ck-thumb" id="image_icon"
+                                         src="{{(isset($item->image_icon))? $item->image_icon : asset('/assets/img/empty-photo.jpg')}}"
+                                         alt="">
+                                    <input class="ck-input image_icon" id="image_icon_input" type="hidden"
+                                           name="image_icon" value="{{@$item->image_icon}}">
+
+                                </div>
+                                <div class="button-action">
+                                    <button type="button" class="btn btn-outline-success"
+                                            onclick="selectFileWithCKFinder('image_icon')"> Thay đổi
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger"
+                                            onclick="deleteImage('image_icon')"> Xóa
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
 
                 <div class="card-footer">
                     <div class="row">
@@ -192,7 +286,7 @@
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
-                    if ($current_data->groups[0]->id == $item->id) {
+                if ($current_data->groups[0]->id == $item->id) {
                     echo '<option value="' . $item->id . '" selected>' . $item->id . $char . $item->title . '</option>';
                 } else {
                     echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
@@ -222,67 +316,7 @@
     ?>
 @endsection
 @section('scripts')
-    <script>
-        function deleteImage() {
-            document.getElementById('image-display').src = 'https://fermasenoval.ru/wp-content/uploads/2018/12/empty-photo.jpg';
-            document.getElementById('image_path').value = '';
-        }
-
-        function selectFileWithCKFinder(elementId) {
-            CKFinder.modal({
-                chooseFiles: true,
-                width: 800,
-                height: 600,
-                onInit: function (finder) {
-                    finder.on('files:choose', function (evt) {
-                        var file = evt.data.files.first();
-                        var output = document.getElementById(elementId);
-                        output.src = file.getUrl();
-                        document.getElementById('image_path').value = file.getUrl();
-                    });
-
-                    finder.on('file:choose:resizedImage', function (evt) {
-                        var output = document.getElementById(elementId);
-                        output.value = evt.data.resizedUrl;
-                    });
-                }
-            });
-        }
-    </script>
-    <script>
-        function changeTitleToSlug() {
-            var title, slug;
-
-            //Lấy text từ thẻ input title
-            title = document.getElementById("title").value;
-
-            //Đổi chữ hoa thành chữ thường
-            slug = title.toLowerCase();
-
-            //Đổi ký tự có dấu thành không dấu
-            slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
-            slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
-            slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
-            slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
-            slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
-            slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
-            slug = slug.replace(/đ/gi, 'd');
-            //Xóa các ký tự đặt biệt
-            slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
-            //Đổi khoảng trắng thành ký tự gạch ngang
-            slug = slug.replace(/ /gi, "-");
-            //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
-            //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
-            slug = slug.replace(/\-\-\-\-\-/gi, '-');
-            slug = slug.replace(/\-\-\-\-/gi, '-');
-            slug = slug.replace(/\-\-\-/gi, '-');
-            slug = slug.replace(/\-\-/gi, '-');
-            //Xóa các ký tự gạch ngang ở đầu và cuối
-            slug = '@' + slug + '@';
-            slug = slug.replace(/\@\-|\-\@|\@/gi, '');
-            //In slug ra textbox có id “slug”
-            document.getElementById('slug').value = slug;
-            document.getElementById('url').value = "{{url('')}}//" + slug;
-        }
-    </script>
+    <script src="{{asset('js/form-data-item.js')}}"></script>
+    <script src="{{asset('js/jquery.nestable.js')}}"></script>
+    <script src="{{asset('js/jquery.sortable.js')}}"></script>
 @endsection

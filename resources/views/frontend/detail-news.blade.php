@@ -106,11 +106,13 @@
                                  sizes="(max-width: 1280px) 100vw, 1280px" data-eio="j"/>
                             {!! $newDetail->content !!}
                         </p>
-
                     </article>
-                    <div class="clearfix"></div>
-
-                    <div class="post_share">
+                    <div class="clearfix">
+                        <p>
+                            {!! $newDetail->description !!}
+                        </p>
+                    </div>
+                    <div class="post_share" style="margin-top: 10px">
                         <div class="social_icon  row_social_inpost">
                             <div class="favour_in_row favour_btn_red"></div>
                             <span
@@ -132,13 +134,8 @@
                         </div>
                     </div>
                     <!-- PAGER SECTION -->
-                    <p>
-                       {{$newDetail->description}}
-                    </p>
+
                     <!-- /PAGER SECTION -->
-                    <div class="tags mb25">
-                        <p></p>
-                    </div>
                     <div class="related_articles pt25 border-top mb0 clearfix">
                         <div class="related_title rehub-main-font font120 fontbold mb35">
                             Bài viết liên quan
