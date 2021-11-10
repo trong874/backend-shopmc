@@ -12,25 +12,25 @@
                         data-template="woogridpart" id="rh_woogrid_1266572959"
                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
                         @foreach($legos as $lego)
-                        <div
-                            class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 26%</span></span>
-                            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                   href="{{route('item.detail',$lego->id)}}">
-                                    <img class="lazyload"
-                                         data-src="{{$lego->image}}"
-                                         width="300" alt="{{$lego->title}}"
-                                         src="{{$lego->image}}"/>
-                                </a>
-                            </figure>
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="{{route('item.detail',$lego->id)}}">{{$lego->title}}</a>
-                            </h3>
+                            <div
+                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                <span class="onsale"><span>- 26%</span></span>
+                                <figure class="mb5 mt25 position-relative notresized">
+                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                       href="{{route('item.detail',$lego->slug)}}">
+                                        <img class="lazyload"
+                                             data-src="{{$lego->image}}"
+                                             width="300" alt="{{$lego->title}}"
+                                             src="{{$lego->image}}"/>
+                                    </a>
+                                </figure>
+                                <h3 class=" text-clamp text-clamp-2">
+                                    <a href="{{route('item.detail',$lego->slug)}}">{{$lego->title}}</a>
+                                </h3>
 
 
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
+                                <div class="border-top pt10 pr10 pl10 pb10">
+                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
@@ -51,20 +51,15 @@
                                                                     </span>
                                                                 </ins>
                                                             </span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <div class="rh_woo_star" title="Rated 5 out of 5"><span
-                                            class="rhwoostar rhwoostar1 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar2 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar3 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar4 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar5 active">&#9733;</span>
+
                                     </div>
-                                    <span class="greycolor postview">{!! $lego->description !!}</span></div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
+                                    <div class="floatright product-meta">
+                                        <span class="greycolor postview">{!! $lego->description !!}</span></div>
+                                    <div class="rh-flex-right-align btn_for_grid floatright">
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                         <div class="re_ajax_pagination mt-3">
                             <span data-offset="12"
@@ -80,3 +75,4 @@
         </div>
     </div>
 </div>
+

@@ -15,7 +15,7 @@
                                 <div class="woo_bl_title flowhidden mb10">
                                     <div class="woocommerce-notices-wrapper"></div>
 
-                                    <h1 class="floatleft tabletblockdisplay pr20 ">{{$itemDetail[0]->title}}</h1>
+                                    <h1 class="floatleft tabletblockdisplay pr20 ">{{$itemDetail->title}}</h1>
 
                                     <div class="woo-top-actions tabletblockdisplay floatright product_row">
                                         <div class="woo-button-actions-area pl5 pb5 pr5">
@@ -35,7 +35,7 @@
 {{--                                                    data-thumb="{{$itemDetail[0]->image}}"--}}
 {{--                                                    class="woocommerce-product-gallery__image"--}}
 {{--                                                    data-webp-thumb="{{$itemDetail[0]->image}} ">--}}
-                                                       <img src="{{$itemDetail[0]->image}}"/>
+                                                       <img src="{{$itemDetail->image}}"/>
 {{--                                                </div>--}}
                                             </figure>
 
@@ -74,10 +74,10 @@
                                             <div class="compare-button-holder">
 
                                                 <p class="price">
-                                                    <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail[0]->price_old)}}<span
+                                                    <del><span class="woocommerce-Price-amount amount"><bdi>{{$itemDetail->price_old}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </del>
-                                                    <ins><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail[0]->price)}}<span
+                                                    <ins><span class="woocommerce-Price-amount amount"><bdi>{{$itemDetail->price}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>
@@ -169,7 +169,7 @@
                                             <div class="mobilesblockdisplay font90 lineheight20 woo_desc_part">
                                                 <div class="woocommerce-product-details__short-description content-detail">
 
-                                                   {!! $itemDetail[0]->content !!}
+                                                   {!! $itemDetail->content !!}
                                                 </div>
                                                 <div class="rh_woo_code_zone_content content-detail"><strong><i
                                                             class="far fa-phone-plus "></i> LIÊN HỆ</strong><br>
@@ -213,7 +213,6 @@
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="top_share_small top_share notextshare">
-
                                         </div>
 
                                         <div class="footer_product">

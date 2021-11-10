@@ -14,6 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="https://shopmc.com.vn/xmlrpc.php"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -45,6 +47,7 @@
           href="https://shopmc.com.vn/feed/"/>
     <link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Shop MC &raquo;"
           href="https://shopmc.com.vn/comments/feed/"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('frontend/js/home/style.js')}}"></script>
     <link rel='stylesheet' id='wp-block-library-css'
           href='{{asset('frontend/css/block-library/style-min.css')}}'

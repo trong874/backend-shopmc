@@ -13,25 +13,25 @@
                          data-template="woogridpart" id="rh_woogrid_779630174"
                          data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
                         @foreach($flashSales as $flashSale)
-                        <div
-                            class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 28%</span></span>
-                            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                   href="{{route('item.detail',$flashSale->id)}}/">
-                                    <img class="lazyload"
-                                         data-src="{{$flashSale->image}}"
-                                         width="300" alt="{{$flashSale->title}}"
-                                         src="{{$flashSale->image}}"/>
-                                </a>
-                            </figure>
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="{{route('item.detail',$flashSale->id)}}">{{$flashSale->title}}</a>
-                            </h3>
+                            <div
+                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                <span class="onsale"><span>- 28%</span></span>
+                                <figure class="mb5 mt25 position-relative notresized">
+                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                       href="{{route('item.detail',$flashSale->slug)}}/">
+                                        <img class="lazyload"
+                                             data-src="{{$flashSale->image}}"
+                                             width="300" alt="{{$flashSale->title}}"
+                                             src="{{$flashSale->image}}"/>
+                                    </a>
+                                </figure>
+                                <h3 class=" text-clamp text-clamp-2">
+                                    <a href="{{route('item.detail',$flashSale->slug)}}">{{$flashSale->title}}</a>
+                                </h3>
 
 
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
+                                <div class="border-top pt10 pr10 pl10 pb10">
+                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
@@ -52,28 +52,28 @@
                                                                     </span>
                                                                 </ins>
                                                             </span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <div class="rh_woo_star" title="Rated 5 out of 5"><span
-                                            class="rhwoostar rhwoostar1 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar2 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar3 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar4 active">&#9733;</span><span
-                                            class="rhwoostar rhwoostar5 active">&#9733;</span>
+                                    </div>
+                                    <div class="floatright product-meta">
+                                        <div class="rh_woo_star" title="Rated 5 out of 5"><span
+                                                class="rhwoostar rhwoostar1 active">&#9733;</span><span
+                                                class="rhwoostar rhwoostar2 active">&#9733;</span><span
+                                                class="rhwoostar rhwoostar3 active">&#9733;</span><span
+                                                class="rhwoostar rhwoostar4 active">&#9733;</span><span
+                                                class="rhwoostar rhwoostar5 active">&#9733;</span>
+                                        </div>
+                                        <span class="greycolor postview">{{$flashSale->description}}</span></div>
+                                    <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
 {{--                                    <span class="greycolor postview">{{$flashSale->décription}}</span>--}}
                                 </div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
                     </div>
                 </div>
-
                 <div class="clearfix"></div>
-
             </div>
         </div>
     </div>
