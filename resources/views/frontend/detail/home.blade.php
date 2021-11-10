@@ -156,7 +156,7 @@
                                                 </form>
 
                                                 <div class="quick_buy_container quick_buy_20521_container"
-                                                     id="quick_buy_20521_container">
+                                                         id="quick_buy_20521_container">
                                                     <button id="quick_buy_20521_button"
                                                             data-product-id="20521"
                                                             data-product-type="simple"

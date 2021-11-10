@@ -1,0 +1,100 @@
+.button-action {
+    display: flex;
+}
+
+.sortable div {
+    border: 1px solid #CCC;
+    font-family: "Tahoma";
+    margin: 5px 7px;
+    padding: 5px;
+}
+
+div.sortable-placeholder {
+    border: 1px dashed #CCC;
+    background: none;
+}
+
+.sortable .image-preview-box{
+    position: relative;
+
+}
+.sortable .image-preview-box .btn_delete_image{
+    position: absolute;
+    top:-5px;
+    right:-5px;
+    display: none;
+}
+.sortable .image-preview-box:hover .btn_delete_image{
+    display: block;
+}
+.sortable.grid div {
+    float: left;
+    width: 84px;
+    height: 84px;
+}
+
+.sortable.grid div img {
+    float: left;
+    max-width: 100%;
+    max-height: 100%;
+}
+.sortable.grid {
+    overflow: hidden;
+}
+
+
+.fileinput .thumbnail {
+    display: inline-block;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px;
+    line-height: 1.42857;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+}
+
+.fileinput .thumbnail > img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: baseline !important;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sortable.grid div img {
+    float: left;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.sortable.grid {
+    overflow: hidden;
+}
+.image-preview-box>div{
+    display: inline-block;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px;
+    line-height: 1.42857;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+}

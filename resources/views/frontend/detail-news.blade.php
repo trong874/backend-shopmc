@@ -1,11 +1,9 @@
 @extends('frontend.layout.master')
-
 <!-- Outer Start -->
 @section('content')
 <div class="rh-outer-wrap">
     <div id="top_ankor"></div>
     <!-- HEADER -->
-
 
     <!-- CONTENT -->
     <div class="rh-container">
