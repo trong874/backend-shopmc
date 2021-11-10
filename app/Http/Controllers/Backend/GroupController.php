@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Group;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class GroupController extends Controller
 {
@@ -40,13 +41,14 @@ class GroupController extends Controller
     {
         Group::create([
             'title' => $request->title,
+            'position'=>$request->position,
             'module' => $request->module,
             'parent_id' => $request->parent_id,
             'image' => $request->image,
             'author_id' => $request->author_id
         ]);
+        Session::put('message','Tạo mới thành công');
         return view('backend.groups.form-data', [
-            'message'=>"Tạo thành công",
             'groups' => $this->getGroupsByModule(),
             'page_title' => 'Tạo mới danh mục ' . $this->module,
             'module' => $this->module
@@ -57,6 +59,7 @@ class GroupController extends Controller
     {
         $group = Group::findOrFail($group, [
             'id',
+            'position',
             'title',
             'parent_id',
             'image'
@@ -72,21 +75,20 @@ class GroupController extends Controller
 
     public function update(Request $request, $group)
     {
-        $group = Group::findOrFail($group, [
-            'title',
-            'parent_id',
-            'image'
-        ]);
+        $group = Group::findOrFail($group);
         $group->update([
+            'position'=>$request->position,
             'title' => $request->title,
             'parent_id' => $request->parent_id,
             'image' => $request->image
         ]);
+        Session::put('message','chỉnh sửa thành công');
+        return back();
     }
 
     public function getGroupsByModule()
     {
-        return Group::where('module', 'category-' . $this->module)->get(['id', 'title']);
+        return Group::where('module',$this->module)->get(['id', 'title']);
     }
 
     function saveList(Request $list)

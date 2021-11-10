@@ -19,7 +19,7 @@ class ItemController extends Controller
 
     public function index()
     {
-        $items = Item::where('module', $this->module)->paginate(5);
+        $items = Item::where('module', $this->module)->paginate(10);
         return view('backend.items.list', [
             'page_title' => $this->module,
             'items' => $items,
@@ -104,7 +104,7 @@ class ItemController extends Controller
         if ($request->date_from) {
             $q->where('created_at', '>=', $request->date_from);
         }
-        $items = $q->paginate(5);
+        $items = $q->paginate(10);
         $old_data = $request->all();
         return view('backend.items.list', [
             'old_data' => $old_data,

@@ -37,8 +37,10 @@
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>&nbsp;
+                                                                            @if(isset($clothes->price_old))
                                                                             <span>{{number_format($clothes->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                @endif
                                                                         </bdi>
                                                                     </span>
                                                                 </del>

@@ -56,7 +56,7 @@ View::composer('frontend.widget.__logoMinecraft', function ($view) {
 
 
 //getProducts
-//View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view) {
+//View::composer('frontend.home', function ($view) {
 //    $products= Item::where('module', 'products')
 //        ->get([
 //            'title', 'description', 'image', 'url', 'price', 'price_old','id'
@@ -67,15 +67,16 @@ View::composer('frontend.widget.__logoMinecraft', function ($view) {
 
 //getCategory
 View::composer('frontend.position.category', function ($view) {
-    $categories =  Item::where('position', 'category')->get([
+    $categories_banner =  Item::where('position','category')->get([
          'title', 'description', 'image', 'url', 'price', 'price_old','id'
     ]);
-    return $view->with('categories', $categories);
+
+    return $view->with('categories_banner', $categories_banner);
 });
 
 
 //getCategoryProduct
-//View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view) {
+//View::composer('frontend.category_product', function ($view) {
 //    $data = Group::where('module', 'category-products')->get([
 //        'title'
 //    ]);
@@ -102,7 +103,7 @@ View::composer('frontend.widget.__news', function ($view) {
 
 
 //getItemDetail
-//View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view) {
+//View::composer('frontend.detail', function ($view) {
 //    $itemDetail = Item::where('slug',$view->slug)->first([
 //        'title', 'content', 'description', 'image', 'url','price','price_old','id'
 //    ]);
@@ -116,7 +117,7 @@ View::composer('frontend.widget.__news', function ($view) {
 
 
 //getNewsDetail
-//View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view) {
+//View::composer('frontend.detail-news', function ($view) {
 //    $newDetail = Item::where('id', $view->id)->first([
 //        'title', 'content', 'description', 'image', 'url','id'
 //    ]);

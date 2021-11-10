@@ -42,7 +42,7 @@
           href="https://shopmc.com.vn/comments/feed/"/>
     <script type="text/javascript" src="{{asset('frontend/js/home/style.js')}}"></script>
     <link rel='stylesheet' id='wp-block-library-css'
-          href='{{asset('frontend/css/block-library/style.min.css')}}'
+          href='{{asset('frontend/css/block-library/style-min.css')}}'
           media='all'/>
     <link rel='stylesheet' id='wc-block-vendors-style-css'
           href='{{asset('frontend/css/build/vendors-style.css')}}'
@@ -51,7 +51,7 @@
           href='{{asset('frontend/css/build/style.css')}}'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='contact-form-7-css'
-          href='{{asset('frontend/css/css/styles.css')}}' type='text/css'
+          href='{{asset('frontend/css/css/style.css')}}' type='text/css'
           media='all'/>
     <link rel='stylesheet' id='Roboto-css'
           href='//fonts.googleapis.com/css?family=Roboto&#038;subset=latin&#038;ver=5.5.6' type='text/css' media='all'/>
@@ -129,7 +129,7 @@
           href="https://shopmc.com.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fshopmc.com.vn%2F"/>
     <link rel="alternate" type="text/xml+oembed"
           href="https://shopmc.com.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fshopmc.com.vn%2F&#038;format=xml"/>
-    <link rel="preload" href="https://shopmc.com.vn/wp-content/themes/rehub-theme/fonts/rhicons.woff2?leryx9" as="font"
+    <link rel="preload" href="{{asset('frontend/css/rehub-theme/fonts/rhicons.woff2?leryx9')}}" as="font"
           type="font/woff2" crossorigin="crossorigin">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}">
@@ -301,7 +301,7 @@
 </div>
 
 <script type="text/html" id="wpb-modifications"></script>
-<link href="{{asset('frontend/js/assets/css.css')}}" rel="stylesheet" property="stylesheet" media="all"
+<link href="{{asset('frontend/css/assets/css.css')}}" rel="stylesheet" property="stylesheet" media="all"
       type="text/css">
 
 <script type="text/javascript">

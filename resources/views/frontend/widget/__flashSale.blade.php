@@ -1,4 +1,3 @@
-
 <div class="vc_row wpb_row vc_row-fluid vc_custom_1607449230309 vc_row-has-fill centered-container">
     <div class="wpb_column vc_column_container vc_col-sm-12">
         <div class="vc_column-inner">
@@ -37,8 +36,10 @@
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
+                                                                            @if(isset($flashSale->price_old))
                                                                             <span>{{number_format($flashSale->price_old)}}</span>
                                                                             <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                @endif
                                                                         </bdi>
                                                                     </span>
                                                                 </del>
@@ -63,15 +64,16 @@
                                         <span class="greycolor postview">{{$flashSale->description}}</span></div>
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
+{{--                                    <span class="greycolor postview">{{$flashSale->décription}}</span>--}}
+                                </div>
+                                <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>
                         @endforeach
 
                     </div>
                 </div>
-
                 <div class="clearfix"></div>
-
             </div>
         </div>
     </div>

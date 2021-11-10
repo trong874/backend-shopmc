@@ -130,5 +130,4 @@ class   PagesController extends Controller
 //        return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
 //    }
 
-
 }

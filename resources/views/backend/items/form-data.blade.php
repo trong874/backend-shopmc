@@ -51,10 +51,10 @@
                     <input type="hidden" name="module" value="{{$item->module??$module}}"/>
                     <label class="col-lg-1 col-form-label text-right">Danh mục</label>
                     <div class="col-lg-3">
-                        <select class="form-control" name="group_id" required>
+                        <select class="form-control" name="group_id">
                             <?php
                             echo '<option value="">--không chọn--</option>';
-                            if (isset($groups) && isset($item)) {
+                            if (isset($groups) && isset($item->groups[0])) {
                                 showOldCategories($groups, $item);
                             } else {
                                 showCategories($groups);
@@ -66,14 +66,12 @@
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
                         <select class="form-control form-control-solid" name="position">
-
-                            <option value="category">Danh mục sản phẩm</option>
-                            <option value="flashsale">Flash Sale</option>
-                            <option value="toy-minecraft">Đồ Chơi Minecraft</option>
-                            <option value="balo-bag">Balo Túi Xách</option>
-                            <option value="clothes">Quần áo</option>
-                            <option value="lego">Mô hình/ Lego Minecraft</option>
-                            <option value="news">Tin tức cộng đồng</option>
+                            <option value="category" @if(isset($item))@if($item->position == 'category') selected @endif @endif>Danh mục sản phẩm</option>
+                            <option value="flashsale"  @if(isset($item))@if($item->position == 'flashsale') selected @endif @endif>Flash Sale</option>
+                            <option value="toy-minecraft"  @if(isset($item))@if($item->position == 'toy-minecraft') selected @endif @endif>Đồ Chơi Minecraft</option>
+                            <option value="balo-bag"  @if(isset($item))@if($item->position == 'balo-bag') selected @endif @endif>Balo Túi Xách</option>
+                            <option value="clothes"  @if(isset($item))@if($item->position == 'clothes') selected @endif @endif>Quần áo</option>
+                            <option value="lego"  @if(isset($item))@if($item->position == 'lego') selected @endif @endif>Mô hình/ Lego Minecraft</option>
                         </select>
                         <span class="form-text text-muted">Please enter your Position</span>
                     </div>
@@ -87,20 +85,13 @@
                                    value="{{$item->price_old ?? null}}">
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
-                        <script>
-                            function formatCash(str) {
-                                return str.split('').reverse().reduce((prev, next, index) => {
-                                    return ((index % 3) ? next : (next + ',')) + prev
-                                })
-                            }
-                        </script>
                         <span class="form-text text-muted">Nhập vào giá cũ của sản phẩm</span>
                     </div>
                     <label class="col-lg-1 col-form-label text-right">Giá</label>
                     <div class="col-lg-3">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Giá sản phẩm" name="price"
-                                   value="{{$item->price ?? null}}" required>
+                                   value="{{$item->price ?? null}}">
                             <span class="input-group-text" id="basic-addon2">VND</span>
                         </div>
                         <span class="form-text text-muted">Nhập vào giá của sản phẩm</span>
@@ -200,7 +191,7 @@
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
-                if ($current_data->groups[0]->id == $item->id) {
+                    if ($current_data->groups[0]->id == $item->id) {
                     echo '<option value="' . $item->id . '" selected>' . $item->id . $char . $item->title . '</option>';
                 } else {
                     echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';

@@ -172,11 +172,11 @@ class UserQTVController extends Controller
 
         $users = $q->paginate(5);
         $old_data = $request->all();
-        return view('backend.users-qtv.index', [
+        $html = view('backend.users-qtv.tbody',[
+            'users'=>$users,
             'old_data'=>$old_data,
-            'account_type'=>$this->account_type,
-            'page_title' => "Danh sách quản trị viên",
-            'users' => $users,
-           ]);
+            'account_type'=>$this->account_type
+            ])->render();
+        return response()->json($html);
     }
 }
