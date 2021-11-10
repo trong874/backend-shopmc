@@ -37,29 +37,19 @@
                          data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
                         @foreach($toyMinecrafts as $toyMinecraft)
                             <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                                <span class="onsale"><span>- 29%</span></span>
+                                {{--                            <span class="onsale"><span>- 29%</span></span>--}}
                                 <figure class="mb5 mt25 position-relative notresized">
                                     <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                       href="{{route('item.detail',$toyMinecraft->slug)}}">
+                                       href="{{route('item.detail',$toyMinecraft->id)}}">
                                         <img class="lazyload"
                                              width="300" alt="{{$toyMinecraft->title}}"
                                              src="{{$toyMinecraft->image}}"/>
                                     </a>
                                     <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
                                 </figure>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-{{--                            <span class="onsale"><span>- 29%</span></span>--}}
-                            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                   href="{{route('item.detail',$toyMinecraft->id)}}">
-                                    <img class="lazyload"
-                                         width="300" alt="{{$toyMinecraft->title}}"
-                                         src="{{$toyMinecraft->image}}"/>
-                                </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
+
                                 <h3 class=" text-clamp text-clamp-2">
-                                    <a href="{{route('item.detail',$toyMinecraft->slug)}}">{{$toyMinecraft->title}}</a>
+                                    <a href="{{route('item.detail',$toyMinecraft->id)}}">{{$toyMinecraft->title}}</a>
                                 </h3>
 
 
@@ -70,9 +60,9 @@
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
                                                                             @if(isset($toyMinecraft->price_old))
-                                                                            <span>{{number_format($toyMinecraft->price_old)}}</span>
-                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                                                                @endif
+                                                                                <span>{{number_format($toyMinecraft->price_old)}}</span>
+                                                                                <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                            @endif
                                                                         </bdi>
                                                                     </span>
                                                                 </del>
@@ -86,15 +76,12 @@
                                                                 </ins>
                                                             </span>
                                     </div>
+
                                     <div class="floatright product-meta">
-                                        <span class="greycolor postview">{!! $toyMinecraft->description !!}</span></div>
+                                        {{--                                    <span class="greycolor postview">{!! $toyMinecraft->description !!}</span>--}}
+                                    </div>
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
-
-                                <div class="floatright product-meta">
-{{--                                    <span class="greycolor postview">{!! $toyMinecraft->description !!}</span>--}}
-                                </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>
                         @endforeach
@@ -109,7 +96,5 @@
 
             </div>
         </div>
-    </div>
-</div>
     </div>
 </div>
