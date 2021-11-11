@@ -43,6 +43,7 @@ class GroupController extends Controller
             'title' => $request->title,
             'position'=>$request->position,
             'module' => $request->module,
+            'slug'=>$request->slug,
             'parent_id' => $request->parent_id,
             'image' => $request->image,
             'author_id' => $request->author_id
@@ -61,6 +62,7 @@ class GroupController extends Controller
             'id',
             'position',
             'title',
+            'slug',
             'parent_id',
             'image'
         ]);
@@ -79,6 +81,7 @@ class GroupController extends Controller
         $group->update([
             'position'=>$request->position,
             'title' => $request->title,
+            'slug'=>$request->slug,
             'parent_id' => $request->parent_id,
             'image' => $request->image
         ]);
