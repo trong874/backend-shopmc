@@ -120,7 +120,7 @@ a, .carousel-style-deal .deal-item .priced_block .price_count ins, nav.top_menu 
     color: #fff !important;
 }
 
-.rh_tab_links a.active, .rh_tab_links a:hover, .rehub-sec-color-border, nav.top_menu > ul > li.vertical-menu.border-sec-color > .sub-menu, .rh-slider-thumbs-item--active {
+.rh_tab_links a.active, .rh_tab_links a:hover, .rehub-sec-color-border, .vertical-menu.border-sec-color > .sub-menu, .rh-slider-thumbs-item--active {
     border-color: #ff4e0c
 }
 

@@ -111,9 +111,9 @@
 
         <!-- Main Navigation -->
         <div class="search-form-inheader header_icons_menu main-nav mob-logo-enabled rh-stickme dark_style">
-            <div class="rh-container">
+            <div class="container" >
                 <nav class="top_menu">
-                    <ul id="menu-danh-muc-san-pham" class="menu">
+                    <ul id="menu-danh-muc-san-pham" class="menu" style="margin-left: 40px">
                         <li id="menu-item-9029"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                             <a href="#"><i class="fas fa-chevron-down"></i> Danh mục sản phẩm</a>

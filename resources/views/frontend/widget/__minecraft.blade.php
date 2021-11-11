@@ -76,17 +76,12 @@
                                                                 </ins>
                                                             </span>
                                     </div>
-
-<<<<<<< HEAD:resources/views/frontend/position/minecraft.blade.php
-                                <div class="floatright product-meta">
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-=======
                                     <div class="floatright product-meta">
                                         {{--                                    <span class="greycolor postview">{!! $toyMinecraft->description !!}</span>--}}
                                     </div>
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
->>>>>>> 5d772b5b2de3ee267d1bbd01d551b239897f359f:resources/views/frontend/widget/__minecraft.blade.php
+
                                 </div>
                             </div>
                         @endforeach

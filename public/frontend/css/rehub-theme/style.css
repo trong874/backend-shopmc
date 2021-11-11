@@ -14,7 +14,7 @@
 /****************************************************************************
 CSS RESET
 ****************************************************************************/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -25,10 +25,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 article, aside, details, figcaption, figure, footer, header, menu, nav, section {
     display: block;
-}
-
-ul {
-    list-style: none;
 }
 
 blockquote, q {
@@ -45,7 +41,6 @@ table {
 
 * {
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 mark, ins {
@@ -55,14 +50,6 @@ mark, ins {
 /****************************************************************************
 BASIC STYLES
 ****************************************************************************/
-
-body {
-    background-color: #fff;
-    color: #000;
-    font-size: 15px;
-    font-family: Roboto, "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, sans-serif;
-}
-
 a {
     text-decoration: none;
 }
@@ -939,15 +926,6 @@ header .search {
     content: '';
     display: table;
     clear: both;
-}
-
-nav.top_menu {
-    position: relative;
-}
-
-nav.top_menu > ul {
-    display: flex;
-    display: -ms-flexbox;
 }
 
 nav.top_menu ul li {
