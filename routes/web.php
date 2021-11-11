@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'language'], function () {
 
     Route::get('/',[PagesController::class,'index'])->name('page.index');
-    Route::get('/news/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
-    Route::get('/sanpham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
+    Route::get('/tin-tuc/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
+    Route::get('/san-pham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
     Route::get('/danh-muc/{slug}', [PagesController::class, 'getCategoryItems'])->name('category.detail');
-    Route::get('/category_new', [PagesController::class, 'getNewsItem'])->name('new.list');
+    Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
 
 
     Route::get('/detail', [PagesController::class, 'detail'])->name('page.detail');
