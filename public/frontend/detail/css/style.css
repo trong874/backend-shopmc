@@ -103,7 +103,6 @@ a, .carousel-style-deal .deal-item .priced_block .price_count ins, nav.top_menu 
 }
 
 .page-link > span:not(.page-link-title), .postimagetrend .title, .widget.widget_affegg_widget .title, .widget.top_offers .title, .widget.cegg_widget_products .title, header .header_first_style .search form.search-form [type="submit"], header .header_eight_style .search form.search-form [type="submit"], .more_post a, .more_post span, .filter_home_pick span.active, .filter_home_pick span:hover, .filter_product_pick span.active, .filter_product_pick span:hover, .rh_tab_links a.active, .rh_tab_links a:hover, .wcv-navigation ul.menu li.active, .wcv-navigation ul.menu li:hover a, form.search-form [type="submit"], .rehub-sec-color-bg, input#ywqa-submit-question, input#ywqa-send-answer, .woocommerce button.button.alt, .tabsajax span.active.re_filtersort_btn, .wpsm-table.wpsm-table-sec-color table tr th, .rh-slider-arrow {
-    background: #ff4e0c !important;
     color: #fff !important;
     outline: 0
 }
@@ -170,7 +169,6 @@ form.search-form [type="submit"] {
 }
 
 .woocommerce .woo-button-area .masked_coupon, .woocommerce a.woo_loop_btn, .woocommerce .button.checkout, .woocommerce input.button.alt, .woocommerce a.add_to_cart_button:not(.flat-woo-btn), .woocommerce-page a.add_to_cart_button:not(.flat-woo-btn), .woocommerce .single_add_to_cart_button, .woocommerce div.product form.cart .button, .woocommerce .checkout-button.button, .woofiltersbig .prdctfltr_buttons a.prdctfltr_woocommerce_filter_submit, .priced_block .btn_offer_block, .priced_block .button, .rh-deal-compact-btn, input.mdf_button, #buddypress input[type="submit"], #buddypress input[type="button"], #buddypress input[type="reset"], #buddypress button.submit, .wpsm-button.rehub_main_btn, .wcv-grid a.button, input.gmw-submit, #ws-plugin--s2member-profile-submit, #rtmedia_create_new_album, input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme, #wcfm_membership_container a.wcfm_submit_button, .woocommerce button.button, .rehub-main-btn-bg {
-    background: none #f7941d !important;
     color: #ffffff !important;
     fill: #ffffff !important;
     border: none !important;
