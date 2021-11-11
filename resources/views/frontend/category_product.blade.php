@@ -2,12 +2,15 @@
 @section('content')
     <div class="rh-container rh_woo_main_archive">
         <div class="rh-content-wrap clearfix left-sidebar-archive" id="rh_woo_mbl_sidebar">
-
             <!-- Sidebar -->
             <aside class="sidebar">
                 <!-- SIDEBAR WIDGET AREA -->
-                <div id="rehub_better_menu-3" class="widget better_menu"><div class="simple_menu_widget"><div class="title"><i class="rhicon rhi-bolt"></i>Danh mục sản phẩm</div>
-                        <ul id="menu-danhmuc" class="menu"><li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">Balo Túi Xách</a></li>
+                <div id="rehub_better_menu-3" class="widget better_menu">
+                    <div class="simple_menu_widget">
+                        <div class="title">
+                            <i class="rhicon rhi-bolt"></i>Danh mục sản phẩm</div>
+                        <ul id="menu-danhmuc" class="menu">
+                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">Balo Túi Xách</a></li>
                             <li id="menu-item-9322" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9322"><a href="https://shopmc.com.vn/danh-muc/dong-ho/">Đồng Hồ</a></li>
                             <li id="menu-item-9323" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-item menu-item-9323"><a href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/" aria-current="page">Kiếm Cuốc Rìu Minecraft</a></li>
                             <li id="menu-item-9324" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9324"><a href="https://shopmc.com.vn/danh-muc/lego-lap-rap/">Lego Lắp Rắp</a></li>
@@ -17,9 +20,10 @@
                             <li id="menu-item-9519" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9519"><a href="https://shopmc.com.vn/danh-muc/do-dung-minecraft/">Đồ Dùng Minecraft</a></li>
                             <li id="menu-item-9328" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9328"><a href="https://shopmc.com.vn/danh-muc/phu-kien-khac/">Phụ Kiện Khác</a></li>
                         </ul>
-
-
-                    </div></div><div id="woocommerce_price_filter-5" class="widget woocommerce widget_price_filter"><div class="title">Giá</div>
+                    </div>
+                </div>
+                <div id="woocommerce_price_filter-5" class="widget woocommerce widget_price_filter">
+                    <div class="title">Giá</div>
                     <form method="get" action="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
                         <div class="price_slider_wrapper">
                             <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style=""><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
@@ -34,9 +38,9 @@
                             </div>
                         </div>
                     </form>
-
                 </div><div id="woocommerce_rating_filter-2" class="widget woocommerce widget_rating_filter"><div class="title">Average rating</div><ul><li class="wc-layered-nav-rating"><a href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/?rating_filter=5"><span class="star-rating"><span class="rhwoostar rhwoostar1 active">★</span><span class="rhwoostar rhwoostar2 active">★</span><span class="rhwoostar rhwoostar3 active">★</span><span class="rhwoostar rhwoostar4 active">★</span><span class="rhwoostar rhwoostar5 active">★</span></span> (13)</a></li></ul></div>
-            </aside>            <!-- /Sidebar -->
+            </aside>
+            <!-- /Sidebar -->
 
             <!-- Main Side -->
             <div class="main-side woocommerce page clearfix" id="content">
@@ -57,17 +61,12 @@
                         </select><div class="nice-select orderby" tabindex="0"><span class="current">Thứ tự mặc định</span><ul class="list"><li data-value="menu_order" class="option selected">Thứ tự mặc định</li><li data-value="popularity" class="option">Thứ tự theo mức độ phổ biến</li><li data-value="rating" class="option">Thứ tự theo điểm đánh giá</li><li data-value="date" class="option">Mới nhất</li><li data-value="price" class="option">Thứ tự theo giá: thấp đến cao</li><li data-value="price-desc" class="option">Thứ tự theo giá: cao xuống thấp</li></ul></div>
                         <input type="hidden" name="paged" value="1">
                     </form>
-                    <div class="clear"></div>
-
-
-
                     <div class="columns-5 products col_wrap_fifth rh-flex-eq-height grid_woo">
-
                         <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 35%</span></span>            <figure class="mb5 mt25 position-relative notresized">
+                            <span class="onsale"><span>- 35%</span></span>
+                            <figure class="mb5 mt25 position-relative notresized">
                                 <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/combo-3-kiem-minecraft/">
                                     <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg" width="300" alt="Combo 3 Kiếm Minecraft" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
                             </figure>
                             <!--div class="cat_for_grid lineheight15">
                                 <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
@@ -499,151 +498,6 @@
                             </div>
                         </div>
                         <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 40%</span></span>            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/sung-ngan-minecraft/">
-                                    <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/sung-ngan-minecraft-1vlbnc19mrv98vnmlqkze0uo9guj159ym6v6bp7tlvyc.png" width="300" alt="Súng Ngắn Minecraft" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/sung-ngan-minecraft-1vlbnc19mrv98vnmlqkze0uo9guj159ym6v6bp7tlvyc.png">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/sung-ngan-minecraft/">Súng Ngắn Minecraft</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><del><span class="woocommerce-Price-amount amount"><bdi>100,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>60,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 421</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 20%</span></span>            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/xeng-bong-diamond-chinh-hang-mojang/">
-                                    <img class=" ls-is-cached lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/xengkc-1-1vlboeoxkigubwzp4s8jd2hhpuzroxlbfgv9zoaeldvg.jpg" width="300" alt="Xẻng bông diamond chính hãng Mojang" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/xengkc-1-1vlboeoxkigubwzp4s8jd2hhpuzroxlbfgv9zoaeldvg.jpg">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/xeng-bong-diamond-chinh-hang-mojang/">Xẻng bông diamond chính hãng Mojang</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><del><span class="woocommerce-Price-amount amount"><bdi>250,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>200,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 65</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 39%</span></span>            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/xeng-minecraft/">
-                                    <img class=" ls-is-cached lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/xeng-diamond-minecraft-1vlbo88jwwvc7yq6od639g24rg2h26n4we93u95eq1vo.png" width="300" alt="Xẻng Diamond Minecraft" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/xeng-diamond-minecraft-1vlbo88jwwvc7yq6od639g24rg2h26n4we93u95eq1vo.png">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/xeng-minecraft/">Xẻng Diamond Minecraft</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><del><span class="woocommerce-Price-amount amount"><bdi>180,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>110,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 112</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="re-ribbon-badge badge_20"><span>Hết hàng!</span></span>        <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/cup-minecraft-bong-chinh-hang/">
-                                    <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/cup-minecraft-bong-chinh-hang-1vl7zzq3xwck1uz3fewtcuuvvqoflg38cvwkdydv8vx0.png" width="300" alt="Cup Minecraft Bông Chính Hãng" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/cup-minecraft-bong-chinh-hang-1vl7zzq3xwck1uz3fewtcuuvvqoflg38cvwkdydv8vx0.png">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/cup-minecraft-bong-chinh-hang/">Cup Minecraft Bông Chính Hãng</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><span class="woocommerce-Price-amount amount"><bdi>200,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 116</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 11%</span></span>                <span class="re-ribbon-badge badge_20"><span>Hết hàng!</span></span>        <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/kiem-bien-hinh-gold/">
-                                    <img class=" ls-is-cached lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/kiem-bien-hinh-minecraft-gold-1vl814mprbgjxs2cdvxcvd7a12c5b38ai2daf56882nw.jpg" width="300" alt="Kiếm Biến Hình Minecraft Gold" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/kiem-bien-hinh-minecraft-gold-1vl814mprbgjxs2cdvxcvd7a12c5b38ai2daf56882nw.jpg">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/kiem-bien-hinh-gold/">Kiếm Biến Hình Minecraft Gold</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><del><span class="woocommerce-Price-amount amount"><bdi>450,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>400,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 172</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                             <span class="re-ribbon-badge badge_20"><span>Hết hàng!</span></span>        <figure class="mb5 mt25 position-relative notresized">
                                 <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/kiem-bien-hinh-sieu-chat-chinh-hang/">
                                     <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/kiem-bien-hinh-sieu-chat-chinh-hang-1vl875ce70d7ujjk0floc8ijvkfztr0mmj00idswmyos.png" width="300" alt="Kiếm Biến hình Siêu chất chính hãng" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/kiem-bien-hinh-sieu-chat-chinh-hang-1vl875ce70d7ujjk0floc8ijvkfztr0mmj00idswmyos.png">                    </a>
@@ -788,95 +642,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 50%</span></span>                <span class="re-ribbon-badge badge_20"><span>Hết hàng!</span></span>        <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/kiem-go-minecraft-phien-ban-limited/">
-                                    <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/kg1-1xbs6z1sij30tyoz8stw462txg8jl3skjt0wcbcfvbkc.jpg" width="300" alt="Kiếm gỗ minecraft – Phiên bản Limited" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/kg1-1xbs6z1sij30tyoz8stw462txg8jl3skjt0wcbcfvbkc.jpg">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/kiem-go-minecraft-phien-ban-limited/">Kiếm gỗ minecraft – Phiên bản Limited</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><del><span class="woocommerce-Price-amount amount"><bdi>900,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>450,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 246</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="re-ribbon-badge badge_20"><span>Hết hàng!</span></span>        <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/riu-minecraft-phat-sang/">
-                                    <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/riusang5-1v90lnzf307rnb5d448zqlxfztcsjjuf5qjjov121oec.jpg" width="300" alt="Rìu minecraft phát sáng" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/riusang5-1v90lnzf307rnb5d448zqlxfztcsjjuf5qjjov121oec.jpg">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/riu-minecraft-phat-sang/">Rìu minecraft phát sáng</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><span class="woocommerce-Price-amount amount"><bdi>180,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 105</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 25%</span></span>                <span class="re-ribbon-badge badge_20"><span>Hết hàng!</span></span>        <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/xe-dia-hinh-118-dieu-khien-tu-xa/">
-                                    <img class=" lazyloaded" data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/xe-dia-hinh-300x300-1xbs7ad3wsmif1pvledyg6k1o77fz3atkh0xexwzzd50.jpg" width="300" alt="Xe Địa Hình 1:18 Điều Khiển Từ Xa" src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/xe-dia-hinh-300x300-1xbs7ad3wsmif1pvledyg6k1o77fz3atkh0xexwzzd50.jpg">                    </a>
-                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                            </figure>
-                            <!--div class="cat_for_grid lineheight15">
-                                <!?php $categories = wc_get_product_terms($post->ID, 'product_cat');  ?>
-                                <!?php if (!empty($categories)) {
-                                    $first_cat = $categories[0]->term_id;
-                                    echo '<a href="'.get_term_link((int)$categories[0]->term_id, 'product_cat').'" class="woocat">'.$categories[0]->name.'</a>';
-                                } ?>
-                            </div-->
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/xe-dia-hinh-118-dieu-khien-tu-xa/">Xe Địa Hình 1:18 Điều Khiển Từ Xa</a>
-                            </h3>
-
-
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                    <span class="price"><del><span class="woocommerce-Price-amount amount"><bdi>850,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>640,000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <span class="greycolor postview">Đã bán 62</span>        </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
 
                 </article>
             </div>

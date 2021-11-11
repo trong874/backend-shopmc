@@ -74,10 +74,10 @@
                                             <div class="compare-button-holder">
 
                                                 <p class="price">
-                                                    <del><span class="woocommerce-Price-amount amount"><bdi>{{$itemDetail->price_old}}<span
+                                                    <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </del>
-                                                    <ins><span class="woocommerce-Price-amount amount"><bdi>{{$itemDetail->price}}<span
+                                                    <ins style="margin-left: 10px"><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>

@@ -1,24 +1,24 @@
 <?php
-
 use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
-use App\Http\Controllers\Backend\PagesController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
+use App\Http\Controllers\Frontend\PagesController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => 'language'], function () {
-    Route::get('/', [\App\Http\Controllers\Frontend\PagesController::class, 'index'])->name('page.home');
-    Route::get('/news/{slug}', [\App\Http\Controllers\Frontend\PagesController::class, 'getNewsDetail'])->name('news.detail');
-    Route::get('/sanpham/{slug}', [\App\Http\Controllers\Frontend\PagesController::class, 'getItemDetail'])->name('item.detail');
-    Route::get('/danh-muc/{slug}', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategoryItems'])->name('category.detail');
-    Route::get('/category_new', [\App\Http\Controllers\Frontend\PagesController::class, 'getNewsItem'])->name('new.list');
+
+    Route::get('/',[PagesController::class,'index'])->name('page.index');
+    Route::get('/news/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
+    Route::get('/sanpham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
+    Route::get('/danh-muc/{slug}', [PagesController::class, 'getCategoryItems'])->name('category.detail');
+    Route::get('/category_new', [PagesController::class, 'getNewsItem'])->name('new.list');
 
 
-    Route::get('/detail', [\App\Http\Controllers\Frontend\PagesController::class, 'detail'])->name('page.detail');
-    Route::get('/category/{url}', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategory'])->name('page.category');
+    Route::get('/detail', [PagesController::class, 'detail'])->name('page.detail');
+    Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
 
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);

@@ -21,7 +21,6 @@ class   PagesController extends Controller
     return view('frontend.news_item',compact('category_news'));
     }
 
-
 //    public function getProducts()
 //    {
 //        return Item::where('module', 'products')
