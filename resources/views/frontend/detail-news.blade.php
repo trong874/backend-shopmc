@@ -19,12 +19,12 @@
                             <div class="title_single_area">
                                 <div class="breadcrumb"><a href="https://shopmc.vn/">Home</a> &raquo; <span><a
                                             href="https://shopmc.vn/category/tin-tuc/">Tin Tức</a></span> &raquo; <span
-                                        class="current">Hướng dẫn tải và cài đặt Craftmas Resource Pack</span></div>
+                                        class="current">{{$newDetail->title}}</span></div>
                                 <!-- .breadcrumbs -->
                                 <div class="rh-cat-list-title"><a class="rh-cat-label-title rh-cat-187"
                                                                   href="https://shopmc.vn/category/tin-tuc/"
                                                                   title="View all posts in Tin Tức">Tin Tức</a></div>
-                                <h1>Hướng dẫn tải và cài đặt Craftmas Resource Pack</h1>
+                                <h1>{{$newDetail->title}}</h1>
                                 <div class="meta post-meta-big">
                                     <div class="floatleft mr15 rtlml15">
                                         <a href="https://shopmc.vn/author/admin/" class="floatleft mr10 rtlml10">
@@ -80,8 +80,6 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-
-
                             </div>
                         </div>
 
@@ -100,27 +98,21 @@
                                                              sizes="(max-width: 1280px) 100vw, 1280px" data-eio="j"/>
                             </noscript>
                         </figure>
-
-
-                        <h2>{{$newDetail[0]->title}}</h2>
                         <p>
                             <img loading="lazy" class="alignnone size-full wp-image-80169"
                                  src="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg" alt=""
                                  width="1280" height="720"
-                                 srcset="{{$newDetail[0]->image}}"
+                                 srcset="{{$newDetail->image}}"
                                  sizes="(max-width: 1280px) 100vw, 1280px" data-eio="j"/>
-                            {!! $newDetail[0]->content !!}
+                            {!! $newDetail->content !!}
                         </p>
-
-
-
-
-
-
                     </article>
-                    <div class="clearfix"></div>
-
-                    <div class="post_share">
+                    <div class="clearfix">
+                        <p>
+                            {!! $newDetail->description !!}
+                        </p>
+                    </div>
+                    <div class="post_share" style="margin-top: 10px">
                         <div class="social_icon  row_social_inpost">
                             <div class="favour_in_row favour_btn_red"></div>
                             <span
@@ -141,18 +133,9 @@
                                             </span>
                         </div>
                     </div>
-
-
                     <!-- PAGER SECTION -->
 
                     <!-- /PAGER SECTION -->
-
-
-                    <div class="tags mb25">
-                        <p></p>
-                    </div>
-
-
                     <div class="related_articles pt25 border-top mb0 clearfix">
                         <div class="related_title rehub-main-font font120 fontbold mb35">
                             Bài viết liên quan
@@ -180,14 +163,9 @@
                                     <h3 class="mb15 mt0 font110 mobfont100 fontnormal lineheight20"><a
                                             href="https://shopmc.vn/huong-dan-tai-va-cai-dat-autumn-wonder-resource-pack/">Hướng
                                             dẫn tải và cài đặt Autumn Wonder Resource Pack</a></h3>
-
-
                                     <div class="rh-flex-center-align mb10">
                                         <div>
-
-
                                         </div>
-
                                     </div>
 
                                 </div>
@@ -220,9 +198,8 @@
                     <ul class="product_list_widget">
                         @foreach($flashSales as $flashSale)
                         <li>
-
-                            <a href="{{route('item.detail',$flashSale->id)}}">
-                                <img width="300" height="300"
+                            <a href="{{route('item.detail',$flashSale->slug)}}">
+                                <img style="width: 150px;height: 150px"
                                      src="{{$flashSale->image}}"
                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""
                                      loading="lazy"/>

@@ -43,7 +43,7 @@
                                                                         </bdi>
                                                                     </span>
                                                                 </del>
-                                                                <ins class="ml-2">
+                                                                <ins style="margin-left:10px">
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
                                                                             <span>{{number_format($flashSale->price)}}</span>

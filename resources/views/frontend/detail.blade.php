@@ -219,7 +219,7 @@
                                                 </figure>
 
                                                 <h3 class=" text-clamp text-clamp-2">
-                                                    <a href="{{route('item.detail',$flashSale->id)}}">{{$flashSale->title}}</a>
+                                                    <a href="{{route('item.detail',$flashSale->slug)}}">{{$flashSale->title}}</a>
                                                 </h3>
 
 

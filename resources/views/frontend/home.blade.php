@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                         </div>
-                        @include('frontend.position.category')
+                        @include('frontend.widget.__category')
                         @include('frontend.widget.__flashSale')
                         @include('frontend.widget.__minecraft')
                         @include('frontend.widget.__backpacks_handbangs')

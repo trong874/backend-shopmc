@@ -6,9 +6,9 @@
                     <div class="wpb_wrapper">
                         <div class="cate_home">
                             <ul class="ul_cate">
-                                        @if($categories_banner)
-                                            {{showCategories($categories_banner)}}
-                                        @endif
+                                @if($categories_banner)
+                                    {{showCategories($categories_banner)}}
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -45,11 +45,10 @@ function showCategories($categories)
             echo '</div>';
             echo '</li>';
             if ($key < 19){
-            showCategories($categories);
+                showCategories($categories);
             };
         }
     }
-
 }
 ?>
 
