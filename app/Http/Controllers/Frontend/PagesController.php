@@ -12,29 +12,24 @@ class   PagesController extends Controller
     public function index()
     {
         return view('frontend.home');
-//        $news = $this->getNews();
-//        $flashSales = $this->getProductFlashSale();
-//        $toyMinecrafts = $this->getProductToyMinecraft();
-//        $baloBags = $this->getProductBalo();
-//        $legos = $this->getProductLego();
-//        $clotheses = $this->getProductClothes();
-//        $categories = $this->getCategory();
-//        return view('frontend.widget.home', [
-//            'categories_product' => $this->getCategoryProduct(),
-//            'news' => $news,
-//            'flashSales' => $flashSales,
-//            'toyMinecrafts'=>$toyMinecrafts,
-//            'baloBags'=> $baloBags,
-//            'legos' => $legos,
-//            'clotheses' => $clotheses,
-//            'categories' => $categories
-//        ]);
     }
 
-//    public function getCategoryProduct()
-//    {
-//        return Group::where('module', 'category-products')->get('title');
-//    }
+    public function getNewsItem(){
+        $category_news = Item::where('position','news')->get([
+            'title','image','slug'
+        ]);
+        return view('frontend.news_item',compact('category_news'));
+    }
+
+    public function getCategoryProduct()
+    {
+        $categories_product = Group::where('module', 'category-products')
+            ->where('position','category_header')
+            ->get([
+                'title'
+            ]);
+        return view('frontend.home',compact('categories_product'));
+    }
 
 //    public function getProducts()
 //    {
@@ -44,49 +39,6 @@ class   PagesController extends Controller
 //            ]);
 //    }
 
-//    public function getProductFlashSale()
-//    {
-//        return Item::where('position', 'flashsale')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-//        ]);
-//
-//    }
-
-//    public function getProductToyMinecraft()
-//    {
-//        return Item::where('position', 'toy-minecraft')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-//        ]);
-//
-//    }
-//    public function getProductBalo()
-//    {
-//        return Item::where('position', 'balo-bag')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-//        ]);
-//
-//    }
-//    public function getProductLego()
-//    {
-//        return Item::where('position', 'lego')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-//        ]);
-//
-//    }
-//    public function getProductClothes()
-//    {
-//        return Item::where('position', 'clothes')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-//        ]);
-//
-//    }
-//    public function getCategory()
-//    {
-//
-//        return Item::where('position', 'category')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id'
-//        ]);
-//
 //    }
 //    public function getCategoryItems($id)
 //    {
@@ -97,37 +49,29 @@ class   PagesController extends Controller
 //        return view('frontend.category_product', ['newDetail' => $categoryDetail]);
 //
 //    }
-//    public function getItemDetail($slug)
-//    {
-//        $itemDetail = Item::where('slug',$slug)->first([
-//            'title', 'content', 'description', 'image', 'url','price','price_old','id'
-//        ]);
-//
-//        $flashSales = Item::where('position', 'flashsale')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id'
-//        ]);
-//        return view('frontend.detail', ['itemDetail' => $itemDetail, 'flashSales'=>$flashSales]);
-//    }
+    public function getItemDetail($slug)
+    {
+        $itemDetail = Item::where('slug',$slug)->first([
+            'title', 'content', 'description', 'image', 'url','price','price_old','slug'
+        ]);
+        $flashSales = Item::where('position', 'flashsale')->get([
+            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
+        ]);
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'flashSales'=>$flashSales]);
+    }
 
-//    public function getNews()
-//    {
-//        return Item::where('module', 'news')
-//            ->get([
-//                'title', 'content', 'description', 'image', 'url','id'
-//            ]);
-//    }
 
-//    public function getNewsDetail($id)
-//    {
-//        $newDetail = Item::where('id', $id)->first([
-//            'title', 'content', 'description', 'image', 'url','id'
-//        ]);
-//
-//        $flashSales =  Item::where('position', 'flashsale')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id'
-//        ]);
-//
-//        return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
-//    }
+    public function getNewsDetail($slug)
+    {
+        $newDetail = Item::where('slug', $slug)->first([
+            'title', 'content', 'description', 'image', 'url','slug'
+        ]);
+
+        $flashSales =  Item::where('position', 'flashsale')->get([
+            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
+        ]);
+
+        return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
+    }
 
 }
