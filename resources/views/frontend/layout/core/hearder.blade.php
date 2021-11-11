@@ -110,7 +110,7 @@
         <!-- /Logo section -->
 
         <!-- Main Navigation -->
-        <div class="search-form-inheader header_icons_menu main-nav mob-logo-enabled rh-stickme dark_style">
+        <div class="search-form-inheader header_icons_menu main-nav mob-logo-enabled rh-stickme dark_style" style="max-height: 40px">
             <div class="container" >
                 <nav class="top_menu">
                     <ul id="menu-danh-muc-san-pham" class="menu" style="margin-left: 40px">
