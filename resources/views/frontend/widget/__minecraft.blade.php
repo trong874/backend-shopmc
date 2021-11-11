@@ -76,12 +76,12 @@
                                                                 </ins>
                                                             </span>
                                     </div>
-
                                     <div class="floatright product-meta">
                                         {{--                                    <span class="greycolor postview">{!! $toyMinecraft->description !!}</span>--}}
                                     </div>
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
+
                                 </div>
                             </div>
                         @endforeach

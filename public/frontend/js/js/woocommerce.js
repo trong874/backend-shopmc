@@ -36,27 +36,27 @@ jQuery( '.variations_form' ).on( 'click', '.reset_variations', function () {
         });
     });
 });
-jQuery(document).on("mouseenter", "#main_header .rh_woocartmenu_cell", function(){
-    if(typeof wc_cart_fragments_params === 'undefined'){
-        return false;
-    }
-    var widgetCartContent = jQuery(this).find(".widget_shopping_cart");
-    widgetCartContent.addClass("loaded re_loadingbefore");
-    jQuery.ajax({
-        type: "post",
-        url: wc_cart_fragments_params.wc_ajax_url.toString().replace('%%endpoint%%', 'get_refreshed_fragments'),
-        data: {
-            time: new Date().getTime()
-        },
-        timeout: wc_cart_fragments_params.request_timeout,
-        success: function(data){
-            if (data && data.fragments) {
-                widgetCartContent.html(data.fragments["div.widget_shopping_cart_content"]);
-                widgetCartContent.removeClass("re_loadingbefore");
-            }
-        }
-    });
-})
+// jQuery(document).on("mouseenter", "#main_header .rh_woocartmenu_cell", function(){
+//     if(typeof wc_cart_fragments_params === 'undefined'){
+//         return false;
+//     }
+//     var widgetCartContent = jQuery(this).find(".widget_shopping_cart");
+//     widgetCartContent.addClass("loaded re_loadingbefore");
+//     jQuery.ajax({
+//         type: "post",
+//         url: wc_cart_fragments_params.wc_ajax_url.toString().replace('%%endpoint%%', 'get_refreshed_fragments'),
+//         data: {
+//             time: new Date().getTime()
+//         },
+//         timeout: wc_cart_fragments_params.request_timeout,
+//         success: function(data){
+//             if (data && data.fragments) {
+//                 widgetCartContent.html(data.fragments["div.widget_shopping_cart_content"]);
+//                 widgetCartContent.removeClass("re_loadingbefore");
+//             }
+//         }
+//     });
+// })
 jQuery(document).on("mouseleave", "#main_header .rh_woocartmenu_cell", function(){
     var widgetCartContent = jQuery(this).find(".widget_shopping_cart");
     widgetCartContent.removeClass("loaded");

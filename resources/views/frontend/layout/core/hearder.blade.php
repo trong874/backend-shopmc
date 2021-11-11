@@ -44,7 +44,7 @@
                         </form>
                         <div class="re-aj-search-wrap"></div>
                     </div>
-                    <div class=" rh-flex-right-align">
+                    <div class=" rh-flex-right-align" style="position: relative" onmouseover="displayCart(this)" onmouseout="hide(this)">
                         <div class="header-actions-logo rh-flex-right-align">
                             <div class="tabledisplay">
                                 <div class="celldisplay rh_woocartmenu_cell text-center">
@@ -59,26 +59,61 @@
                                                 <span class="woocommerce-Price-amount amount">
                                                     <bdi>0&nbsp
                                                         <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+
                                                     </bdi>
                                                 </span>
                                             </span>
                                         </a>
                                     </span>
+
                                     <div class="woocommerce widget_shopping_cart"></div>
+
                                 </div>
                             </div>
                         </div>
+                        <ul id="cartDetail">
+
+
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+            <div>
+
+
+            <br>
+            </div>
+        <style>
+            #cartDetail{
+                position: absolute;
+                width:350px;
+                display: none;
+                height: auto;
+                background-color: white;
+
+                /*margin-left: 1300px;*/
+                top: 40px;
+                right: 0;
+                border-radius: 4px;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+
+            }
+            #cartDetail img{
+                max-height: 60px;
+            }
+        </style>
+
         <!-- /Logo section -->
 
         <!-- Main Navigation -->
         <div class="search-form-inheader header_icons_menu main-nav mob-logo-enabled rh-stickme dark_style">
-            <div class="rh-container">
+            <div class="container" >
                 <nav class="top_menu">
-                    <ul id="menu-danh-muc-san-pham" class="menu">
+                    <ul id="menu-danh-muc-san-pham" class="menu" style="margin-left: 40px">
                         <li id="menu-item-9029"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                             <a href="#"><i class="fas fa-chevron-down"></i> Danh mục sản phẩm</a>

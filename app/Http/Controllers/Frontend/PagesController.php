@@ -15,10 +15,10 @@ class   PagesController extends Controller
     }
 
     public function getNewsItem(){
-    $category_news = Item::where('position','news')->get([
+        $category_news = Item::where('position','news')->get([
             'title','image','slug'
         ]);
-    return view('frontend.news_item',compact('category_news'));
+        return view('frontend.news_item',compact('category_news'));
     }
 
     public function getCategoryProduct()
@@ -26,8 +26,8 @@ class   PagesController extends Controller
         $categories_product = Group::where('module', 'category-products')
             ->where('position','category_header')
             ->get([
-            'title'
-        ]);
+                'title'
+            ]);
         return view('frontend.home',compact('categories_product'));
     }
 

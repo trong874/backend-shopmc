@@ -1,3 +1,4 @@
+
 #start-resizable-editor-section {
     display: none
 }
@@ -12568,7 +12569,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline
 }
@@ -12602,12 +12602,6 @@ mark, ins {
     text-decoration: none
 }
 
-body {
-    background-color: #fff;
-    color: #000;
-    font-size: 15px;
-    font-family: Roboto, "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, sans-serif
-}
 
 a {
     text-decoration: none
@@ -13478,13 +13472,8 @@ header .search {
     clear: both
 }
 
-nav.top_menu {
-    position: relative
-}
-
 nav.top_menu > ul {
     display: flex;
-    display: -ms-flexbox
 }
 
 nav.top_menu ul li {
@@ -13609,7 +13598,7 @@ nav.top_menu > ul > li.hovered > .sub-menu, .top-nav > ul > li.hovered ul.sub-me
     top: 22px
 }
 
-nav.top_menu > ul > li > ul.sub-menu > li:first-child > a:after, .top-nav > ul > li > ul.sub-menu > li:first-child > a:after, .rh_woocartmenu_cell .widget_shopping_cart:after {
+nav.top_menu > ul > li > ul.sub-menu > li:first-child > a:after, .top-nav > ul > li > ul.sub-menu > li:first-child > a:after, .rh_woocartmenu_cell .G13090widget_shopping_cart:after {
     position: absolute;
     content: "";
     width: 0;
