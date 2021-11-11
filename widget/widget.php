@@ -13,11 +13,10 @@ View::composer('frontend.widget.__clothes', function ($view) {
 });
 
 
-
 //getProductFlashSale
 View::composer('frontend.widget.__flashSale', function ($view) {
     $flashSales = Item::where('position', 'flashsale')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old', 'id', 'slug'
+        'title', 'description', 'image', 'url', 'price', 'price_old', 'id','slug'
     ]);
     return $view->with('flashSales', $flashSales);
 });
@@ -63,9 +62,9 @@ View::composer('frontend.home', function ($view) {
 
 
 //getCategory
-View::composer('frontend.position.category', function ($view) {
-    $categories_banner =  Item::where('position','category')->get([
-         'title', 'description', 'image', 'url', 'price', 'price_old','id'
+View::composer('frontend.widget.__category', function ($view) {
+    $categories_banner =  Group::where('position','category')->get([
+         'title', 'image'
     ]);
 
     return $view->with('categories_banner', $categories_banner);
@@ -83,13 +82,14 @@ View::composer('frontend.category_product', function ($view) {
 
 //getNews
 View::composer('frontend.widget.__news', function ($view) {
-    $news= Item::where('module', 'news')
+    $news= Item::where('position', 'news')
         ->get([
-            'title', 'content', 'description', 'image', 'url','id'
+            'title', 'content', 'description', 'image', 'url','id','slug'
         ]);
     return $view->with('news', $news);
-
 });
+
+
 //getCategoryItems
 View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view) {
     $data = Item::where('id',$view->id)->get([
@@ -99,32 +99,20 @@ View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view
 });
 
 
-//getItemDetail
-View::composer('frontend.detail', function ($view) {
-    $itemDetail = Item::where('slug',$view->slug)->first([
-        'title', 'content', 'description', 'image', 'url','price','price_old','id'
-    ]);
+////getItemDetail
+//View::composer('frontend.detail', function ($view) {
+//    $itemDetail = Item::where('slug',$view->slug)->first([
+//        'title', 'content', 'description', 'image', 'url','price','price_old','id'
+//    ]);
+//
+//    $flashSales = Item::where('position', 'flashsale')->get([
+//        'title', 'description', 'image', 'url', 'price', 'price_old','id'
+//    ]);
+//    return $view->with('data', $itemDetail,$flashSales);
+//
+//});
 
-    $flashSales = Item::where('position', 'flashsale')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old','id'
-    ]);
-    return $view->with('data', $itemDetail,$flashSales);
 
-});
-
-
-//getNewsDetail
-View::composer('frontend.detail-news', function ($view) {
-    $newDetail = Item::where('id', $view->id)->first([
-        'title', 'content', 'description', 'image', 'url','id'
-    ]);
-
-    $flashSales =  Item::where('position', 'flashsale')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old','id'
-    ]);
-    return $view->with('data', $newDetail,$flashSales);
-
-});
 
 
 
