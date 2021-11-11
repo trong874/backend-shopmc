@@ -6,9 +6,9 @@
                     <div class="wpb_wrapper">
                         <div class="cate_home">
                             <ul class="ul_cate">
-                                        @if($categories_banner)
-                                            {{showCategories($categories_banner)}}
-                                        @endif
+                                @if($categories_banner)
+                                    {{showCategories($categories_banner)}}
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -26,7 +26,7 @@ function showCategories($categories)
     foreach ($categories as $key => $category) {
         $flag++;
         if ($flag <= 2) {
-            echo '<a class="link_a" href="#">
+            echo '<a class="link_a" href="/danh-muc/'.$category->slug.'">
                 <div class="buttom_cat">
                     <div class="buttom_cat_img">
                         <div class="buttom_cat_img_sub">
@@ -45,11 +45,10 @@ function showCategories($categories)
             echo '</div>';
             echo '</li>';
             if ($key < 19){
-            showCategories($categories);
+                showCategories($categories);
             };
         }
     }
-
 }
 ?>
 

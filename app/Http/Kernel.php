@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\HttpsProtocol;
 use App\Http\Middleware\Language;
 use App\Http\Middleware\UserQVT;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -25,8 +24,6 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         Language::class,
-        // appending custom middleware
-        HttpsProtocol::class
     ];
 
     /**
@@ -59,6 +56,7 @@ class Kernel extends HttpKernel
      * These middleware may be assigned to groups or used individually.
      *
      * @var array
+     *
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,

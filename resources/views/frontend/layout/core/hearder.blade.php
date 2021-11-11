@@ -30,11 +30,10 @@
             <div class="rh-container">
                 <div class="logo-section rh-flex-center-align tabletblockdisplay header_seven_style clearfix">
                     <div class="logo">
-                        <a href="{{route('page.index')}}" class="logo_image">
+                        <a href="/" class="logo_image">
                             <img src="https://shopmc.com.vn/wp-content/uploads/2019/02/Minecraft_logo.png"
                                  alt="Shop MC" height="" width=""/>
                         </a>
-
                     </div>
                     <div class="search head_search">
                         <form role="search" method="get" class="search-form" action="https://shopmc.com.vn/">
@@ -113,7 +112,6 @@
         <!-- Main Navigation -->
         <div class="search-form-inheader header_icons_menu main-nav mob-logo-enabled rh-stickme dark_style">
             <div class="rh-container">
-
                 <nav class="top_menu">
                     <ul id="menu-danh-muc-san-pham" class="menu">
                         <li id="menu-item-9029"
@@ -133,13 +131,10 @@
                         <li id="menu-item-9558" class="menu-item menu-item-type-custom menu-item-object-custom"><a
                                 href="https://shopmc.com.vn/khuyen-mai/"><i class="far fa-usd-circle"></i> Khuyến
                                 mại</a></li>
-                        @if(isset($newDetail))
-                              @foreach($newDetail as $detail)
                         <li id="menu-item-9664" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                href="{{route('new.list',$detail->id)}}"><i class="fas fa-newspaper"></i>
+                                href="{{route('new.list')}}"><i class="fas fa-newspaper"></i>
                                 Tin tức</a></li>
-                           @endforeach
-                        @endif
+
                         <li id="menu-item-9663"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                             <a href="#"><i class="fas fa-chevron-down"></i> Thương hiệu</a>
