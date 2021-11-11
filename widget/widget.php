@@ -99,17 +99,15 @@ View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view
 
 
 ////getItemDetail
-//View::composer('frontend.detail', function ($view) {
-//    $itemDetail = Item::where('slug',$view->slug)->first([
-//        'title', 'content', 'description', 'image', 'url','price','price_old','id'
-//    ]);
-//
-//    $flashSales = Item::where('position', 'flashsale')->get([
-//        'title', 'description', 'image', 'url', 'price', 'price_old','id'
-//    ]);
-//    return $view->with('data', $itemDetail,$flashSales);
-//
-//});
+View::composer('frontend.home', function ($view) {
+    $categories_product = Group::where('module', 'category-products')
+           ->where('position','category_header')
+           ->get([
+          'title'
+      ]);
+    return $view->with('data', $categories_product);
+
+});
 
 
 

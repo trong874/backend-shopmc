@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'language'], function () {
     Route::get('/', [\App\Http\Controllers\Frontend\PagesController::class, 'index'])->name('page.home');
-
-    Route::get('/', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategoryProduct'])->name('category.header');
     Route::get('/news/{slug}', [\App\Http\Controllers\Frontend\PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/sanpham/{slug}', [\App\Http\Controllers\Frontend\PagesController::class, 'getItemDetail'])->name('item.detail');
     Route::get('/danh-muc/{slug}', [\App\Http\Controllers\Frontend\PagesController::class, 'getCategoryItems'])->name('category.detail');

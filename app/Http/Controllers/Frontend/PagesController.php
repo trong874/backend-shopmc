@@ -21,15 +21,6 @@ class   PagesController extends Controller
     return view('frontend.news_item',compact('category_news'));
     }
 
-    public function getCategoryProduct()
-    {
-        $categories_product = Group::where('module', 'category-products')
-            ->where('position','category_header')
-            ->get([
-            'title'
-        ]);
-        return view('frontend.home',compact('categories_product'));
-    }
 
 //    public function getProducts()
 //    {
