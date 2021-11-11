@@ -23,7 +23,6 @@ class   PagesController extends Controller
 
     public function getCategoryProduct()
     {
-        dd(123);
         $categories_product = Group::where('module', 'category-products')
             ->where('position','category_header')
             ->get([
@@ -39,17 +38,17 @@ class   PagesController extends Controller
 //                'title', 'description', 'image', 'url', 'price', 'price_old','id'
 //            ]);
 //    }
+//    }
 
-//    }
-//    public function getCategoryItems($id)
-//    {
-//
-//        $categoryDetails = Item::where('id', $id)->get([
-//            'title', 'content', 'description', 'image', 'url','price','price_old','id'
-//        ]);
-//        return view('frontend.category_product', ['newDetail' => $categoryDetail]);
-//
-//    }
+    public function getCategoryItems($slug)
+    {
+        $categoryDetails = Item::where('slug', $slug)->get([
+            'title', 'content', 'description', 'image', 'url','price','price_old','slug'
+        ]);
+        return view('frontend.category_product', compact('categoryDetails'));
+    }
+
+
     public function getItemDetail($slug)
     {
         $itemDetail = Item::where('slug',$slug)->first([
