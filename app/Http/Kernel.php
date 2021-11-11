@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
      * These middleware may be assigned to groups or used individually.
      *
      * @var array
+     *
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
