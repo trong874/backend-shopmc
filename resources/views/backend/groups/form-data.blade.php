@@ -30,10 +30,10 @@
                 <div class="form-group row mt-3">
                     <label class="col-lg-1 col-form-label text-right">Title</label>
                     <div class="col-lg-3">
-                        <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{@$group->title}}"/>
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{@$group->title}}" onkeyup="changeTitleToSlug()"/>
                         <span class="form-text text-muted">Please enter your Title</span>
                     </div>
-{{--                    <input type="hidden" id="slug" name="slug" value="{{$group->slug??null}}">--}}
+                    <input type="hidden" id="slug" name="slug" value="{{@$group->slug}}">
                     <input type="hidden" name="module" value="{{$group->module??$module}}"/>
                     <label class="col-lg-1 col-form-label text-right">Parent ID</label>
                     <div class="col-lg-3">
