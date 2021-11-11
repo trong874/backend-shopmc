@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use App\Http\Controllers\Frontend\PagesController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,7 +28,7 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('user-manage', UserController::class);
     });
     Route::prefix('admin')->middleware(['auth'])->group(function () {
-        Route::get('/', [PagesController::class, 'index'])->name('dashboard');
+        Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 
         Route::resource('products', ItemController::class);
 
@@ -55,6 +56,10 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::get('set-locale/{locale}', [PagesController::class, 'changeLanguage'])->name('setLocale');
 
+        Route::get('/cache-clear', function() {
+            Artisan::call('cache:clear');
+            dd("Đã xoá tất cả cache");
+        })->name('cache.clear');
     });
 });
 require __DIR__ . '/auth.php';
