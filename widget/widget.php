@@ -64,9 +64,8 @@ View::composer('frontend.home', function ($view) {
 //getCategory
 View::composer('frontend.widget.__category', function ($view) {
     $categories_banner =  Group::where('position','category')->get([
-         'title', 'image'
+         'title', 'image','slug'
     ]);
-
     return $view->with('categories_banner', $categories_banner);
 });
 
