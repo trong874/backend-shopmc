@@ -14,7 +14,7 @@ Route::group(['middleware' => 'language'], function () {
 
     Route::get('/',[PagesController::class,'index'])->name('page.index');
     Route::get('/news/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
-    Route::get('/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
+    Route::get('/san-pham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
     Route::get('/tin-tuc/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/danh-muc/{slug}', [PagesController::class, 'getCategoryItems'])->name('category.detail');
     Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
@@ -60,5 +60,6 @@ Route::group(['middleware' => 'language'], function () {
             dd("Đã xoá tất cả cache");
         })->name('cache.clear');
     });
+
 });
 require __DIR__ . '/auth.php';

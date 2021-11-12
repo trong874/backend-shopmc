@@ -75,16 +75,11 @@
                         <div id="my_cart" >
 
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-            <div>
 
-
-            <br>
-            </div>
         <style>
             .cart_out:hover  #cartDetail{
                 display: block;

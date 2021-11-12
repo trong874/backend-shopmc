@@ -14,7 +14,9 @@ class CartController extends Controller
 {
     public function cart()
     {
+        $newCart = \session()->get('Cart');
 
+    return view('frontend.cart',['newCart'=>$newCart]);
     }
 
     public function addCart(Request $request,$id)
