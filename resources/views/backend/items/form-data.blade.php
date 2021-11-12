@@ -54,28 +54,40 @@
                     <input type="hidden" name="module" value="{{$item->module??$module}}"/>
                     <label class="col-lg-1 col-form-label text-right">Danh mục</label>
                     <div class="col-lg-3">
-                        <select class="form-control" name="group_id">
-                            <?php
-                            echo '<option value="">--không chọn--</option>';
-                            if (isset($groups) && isset($item->groups[0])) {
-                                showOldCategories($groups, $item);
-                            } else {
-                                showCategories($groups);
-                            }
-                            ?>
+                        <select class="form-control select2" id="kt_select2_3" name="group_id[]" multiple="multiple">
+                            <optgroup label="Central Time Zone">
+                                {{showOldCategories($groups,$item)}}
+                            </optgroup>
                         </select>
-                        <span class="form-text text-muted">Please enter your parent_id</span>
                     </div>
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
                         <select class="form-control form-control-solid" name="position">
-                            <option value="category" @if(isset($item))@if($item->position == 'category') selected @endif @endif>Danh mục sản phẩm</option>
-                            <option value="flashsale"  @if(isset($item))@if($item->position == 'flashsale') selected @endif @endif>Flash Sale</option>
-                            <option value="toy-minecraft"  @if(isset($item))@if($item->position == 'toy-minecraft') selected @endif @endif>Đồ Chơi Minecraft</option>
-                            <option value="balo-bag"  @if(isset($item))@if($item->position == 'balo-bag') selected @endif @endif>Balo Túi Xách</option>
-                            <option value="clothes"  @if(isset($item))@if($item->position == 'clothes') selected @endif @endif>Quần áo</option>
-                            <option value="lego"  @if(isset($item))@if($item->position == 'lego') selected @endif @endif>Mô hình/ Lego Minecraft</option>
-                            <option value="news"  @if(isset($item))@if($item->position == 'news') selected @endif @endif>Tin tức cộng đồng</option>
+                            <option value="category"
+                                    @if(isset($item))@if($item->position == 'category') selected @endif @endif>Danh mục
+                                sản phẩm
+                            </option>
+                            <option value="flashsale"
+                                    @if(isset($item))@if($item->position == 'flashsale') selected @endif @endif>Flash
+                                Sale
+                            </option>
+                            <option value="toy-minecraft"
+                                    @if(isset($item))@if($item->position == 'toy-minecraft') selected @endif @endif>Đồ
+                                Chơi Minecraft
+                            </option>
+                            <option value="balo-bag"
+                                    @if(isset($item))@if($item->position == 'balo-bag') selected @endif @endif>Balo Túi
+                                Xách
+                            </option>
+                            <option value="clothes"
+                                    @if(isset($item))@if($item->position == 'clothes') selected @endif @endif>Quần áo
+                            </option>
+                            <option value="lego" @if(isset($item))@if($item->position == 'lego') selected @endif @endif>
+                                Mô hình/ Lego Minecraft
+                            </option>
+                            <option value="news" @if(isset($item))@if($item->position == 'news') selected @endif @endif>
+                                Tin tức cộng đồng
+                            </option>
                         </select>
                         <span class="form-text text-muted">Please enter your Position</span>
                     </div>
@@ -170,7 +182,8 @@
                                     <img class="ck-thumb" id="image_avatar"
                                          src="{{(isset($item->image))? $item->image : asset('/assets/img/empty-photo.jpg')}}"
                                          alt="">
-                                    <input class="ck-input" id="image_avatar_input" type="hidden" name="image" value="">
+                                    <input class="ck-input" id="image_avatar_input" type="hidden" name="image"
+                                           value="{{@$item->image}}">
 
                                 </div>
                                 <div class="button-action">
@@ -189,13 +202,16 @@
                         <label for="locale">Ảnh mở rộng:</label>
                         <div class="card">
                             <div class="card-body p-3 ck-parent" style="min-height: 148px">
-                                <input class="image_input_text" type="hidden" name="image_extension" value="{{@$item->image_extension}}">
+                                <input class="image_input_text" type="hidden" name="image_extension"
+                                       value="{{@$item->image_extension}}">
                                 <div class="sortable grid">
                                     @if(@$item->image_extension)
                                         @foreach(explode('|',$item->image_extension) as $item)
                                             <div class="image-preview-box">
                                                 <img src="{{$item}}" alt="" data-input="{{$item}}">
-                                                <a rel="8" class="btn btn-xs  btn-icon btn-danger btn_delete_image" data-toggle="modal" data-target="#deleteModal"><i class="la la-close"></i></a>
+                                                <a rel="8" class="btn btn-xs  btn-icon btn-danger btn_delete_image"
+                                                   data-toggle="modal" data-target="#deleteModal"><i
+                                                        class="la la-close"></i></a>
                                             </div>
                                         @endforeach
                                     @endif
@@ -286,18 +302,23 @@
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
-                if ($current_data->groups[0]->id == $item->id) {
-                    echo '<option value="' . $item->id . '" selected>' . $item->id . $char . $item->title . '</option>';
-                } else {
-                    echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
-                }
+                foreach ($current_data->groups as $group)
+                    if ($item->id == $group->id){
+                        echo ' <option value="'.$item->id.'" selected>
+                                   '.$char.$item->title.'
+                                </option>';
+                    }else{
+                        echo ' <option value="'.$item->id.'">
+                                   '.$char.$item->title.'
+                                </option>';
+                    }
                 // Xử lý hiển thị chuyên mục
 
                 // Xóa chuyên mục đã lặp
 //                unset($categories[$key]);
 
                 // Tiếp tục đệ quy để tìm chuyên mục con của chuyên mục đang lặp
-                showOldCategories($categories, $current_data, $item->id, $char . '--');
+                showOldCategories($categories, $current_data, $item->id, $char . '__');
             }
         }
     }
@@ -319,4 +340,5 @@
     <script src="{{asset('js/form-data-item.js')}}"></script>
     <script src="{{asset('js/jquery.nestable.js')}}"></script>
     <script src="{{asset('js/jquery.sortable.js')}}"></script>
+    <script src="{{asset('js/pages/crud/forms/widgets/select2.js')}}"></script>
 @endsection
