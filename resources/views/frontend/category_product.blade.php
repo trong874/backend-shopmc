@@ -10,15 +10,11 @@
                         <div class="title">
                             <i class="rhicon rhi-bolt"></i>Danh mục sản phẩm</div>
                         <ul id="menu-danhmuc" class="menu">
-                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="https://shopmc.com.vn/danh-muc/balo-tui-xach/">Balo Túi Xách</a></li>
-                            <li id="menu-item-9322" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9322"><a href="https://shopmc.com.vn/danh-muc/dong-ho/">Đồng Hồ</a></li>
-                            <li id="menu-item-9323" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-item menu-item-9323"><a href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/" aria-current="page">Kiếm Cuốc Rìu Minecraft</a></li>
-                            <li id="menu-item-9324" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9324"><a href="https://shopmc.com.vn/danh-muc/lego-lap-rap/">Lego Lắp Rắp</a></li>
-                            <li id="menu-item-9325" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9325"><a href="https://shopmc.com.vn/danh-muc/mo-hinh-figure/">Mô Hình / Figure</a></li>
-                            <li id="menu-item-9326" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9326"><a href="https://shopmc.com.vn/danh-muc/mu-quan-ao/">Mũ Quần Áo</a></li>
-                            <li id="menu-item-9327" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9327"><a href="https://shopmc.com.vn/danh-muc/nhoi-bong/">Nhồi Bông</a></li>
-                            <li id="menu-item-9519" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9519"><a href="https://shopmc.com.vn/danh-muc/do-dung-minecraft/">Đồ Dùng Minecraft</a></li>
-                            <li id="menu-item-9328" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9328"><a href="https://shopmc.com.vn/danh-muc/phu-kien-khac/">Phụ Kiện Khác</a></li>
+                            @if($categories_p)
+                                @foreach($categories_p as $category)
+                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="#">{{$category->title}}</a></li>
+                                @endforeach
+                                @endif
                         </ul>
                     </div>
                 </div>
@@ -68,7 +64,7 @@
                         <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                             <span class="onsale"><span>- 35%</span></span>
                             <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="https://shopmc.com.vn/san-pham/combo-3-kiem-minecraft/">
+                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="{{route('item.detail',$items->slug)}}">
                                     <img class=" lazyloaded"
                                          data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg"
                                          width="300" alt="Combo 3 Kiếm Minecraft"
@@ -91,7 +87,7 @@
                                                 </bdi>
                                             </span>
                                         </del>
-                                        <ins>
+                                        <ins style="margin-left: 6px">
                                             <span class="woocommerce-Price-amount amount">
                                                 <bdi>
                                                      <span>{{number_format($items->price)}}</span>

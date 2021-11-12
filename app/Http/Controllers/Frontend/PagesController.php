@@ -32,7 +32,7 @@ class   PagesController extends Controller
 
     public function getCategoryItems($slug)
     {
-        $categoryDetails = Group::where('slug',$slug)->first();
+        $categoryDetails = Group::where('position','category')->where('slug',$slug)->first();
         $products = $categoryDetails->item()->get([
             'title','image','price','price_old','slug'
         ]);
@@ -64,5 +64,6 @@ class   PagesController extends Controller
 
         return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
     }
+
 
 }

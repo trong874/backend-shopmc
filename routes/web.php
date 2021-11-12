@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\PagesController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,8 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/detail', [PagesController::class, 'detail'])->name('page.detail');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
 
-    Route::get('/cart', [\App\Http\Controllers\Frontend\CartController::class, 'cart'])->name('item.cart');
-    Route::get('/add-cart/{id}', [\App\Http\Controllers\Frontend\CartController::class, 'addCart'])->name('add-cart');
+    Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');
+    Route::get('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
 
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
