@@ -32,12 +32,11 @@ class   PagesController extends Controller
 
     public function getCategoryItems($slug)
     {
-        $categoryDetails = Item::where('slug', $slug)
-            ->where('module','products')
-            ->get([
-            'title', 'content', 'description', 'image', 'url','price','price_old','slug'
+        $categoryDetails = Group::where('slug',$slug)->first();
+        $products = $categoryDetails->item()->get([
+            'title','image','price','price_old','slug'
         ]);
-        return view('frontend.category_product', compact('categoryDetails'));
+        return view('frontend.category_product', compact('categoryDetails','products'));
     }
 
 

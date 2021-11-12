@@ -61,9 +61,10 @@
                         </select><div class="nice-select orderby" tabindex="0"><span class="current">Thứ tự mặc định</span><ul class="list"><li data-value="menu_order" class="option selected">Thứ tự mặc định</li><li data-value="popularity" class="option">Thứ tự theo mức độ phổ biến</li><li data-value="rating" class="option">Thứ tự theo điểm đánh giá</li><li data-value="date" class="option">Mới nhất</li><li data-value="price" class="option">Thứ tự theo giá: thấp đến cao</li><li data-value="price-desc" class="option">Thứ tự theo giá: cao xuống thấp</li></ul></div>
                         <input type="hidden" name="paged" value="1">
                     </form>
+
                     <div class="columns-5 products col_wrap_fifth rh-flex-eq-height grid_woo">
-                        @if(isset($categoryDetails))
-                        @foreach($categoryDetails as $cate)
+                        @if(isset($products))
+                        @foreach($products as $items)
                         <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                             <span class="onsale"><span>- 35%</span></span>
                             <figure class="mb5 mt25 position-relative notresized">
@@ -71,21 +72,20 @@
                                     <img class=" lazyloaded"
                                          data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg"
                                          width="300" alt="Combo 3 Kiếm Minecraft"
-                                         src="{{$cate->image}}">
+                                         src="{{$items->image}}">
                                 </a>
                             </figure>
                             <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/combo-3-kiem-minecraft/">{{$cate->title}}</a>
+                                <a href="https://shopmc.com.vn/san-pham/combo-3-kiem-minecraft/">{{$items->title}}</a>
                             </h3>
-
                             <div class="border-top pt10 pr10 pl10 pb10">
                                 <div class="price_for_grid floatleft rehub-btn-font mr10">
                                     <span class="price">
                                         <del>
                                             <span class="woocommerce-Price-amount amount">
                                                 <bdi>
-                                                    @if(isset($cate->price_old))
-                                                        <span>{{number_format($cate->price_old)}}</span>
+                                                    @if(isset($items->price_old))
+                                                        <span>{{number_format($items->price_old)}}</span>
                                                         <span class="woocommerce-Price-currencySymbol">₫</span>
                                                     @endif
                                                 </bdi>
@@ -94,7 +94,7 @@
                                         <ins>
                                             <span class="woocommerce-Price-amount amount">
                                                 <bdi>
-                                                     <span>{{number_format($cate->price)}}</span>
+                                                     <span>{{number_format($items->price)}}</span>
                                                     <span class="woocommerce-Price-currencySymbol">₫</span>
                                                 </bdi>
                                             </span>

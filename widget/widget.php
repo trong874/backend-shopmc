@@ -105,7 +105,7 @@ View::composer('frontend.home', function ($view) {
            ->get([
           'title'
       ]);
-    return $view->with('data', $categories_product);
+    return $view->with('categories_product', $categories_product);
 
 });
 
