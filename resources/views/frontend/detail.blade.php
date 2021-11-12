@@ -14,16 +14,15 @@
                             <div class="ce_woo_block_top_holder">
                                 <div class="woo_bl_title flowhidden mb10">
                                     <div class="woocommerce-notices-wrapper"></div>
-
-                                    <h1 class="floatleft tabletblockdisplay pr20 ">{{$itemDetail->title}}</h1>
-
+                                    <h1 class="floatleft tabletblockdisplay pr20 " style="margin-top: 6px; margin-left: 6px">
+                                        {{$itemDetail->title}}</h1>
                                     <div class="woo-top-actions tabletblockdisplay floatright product_row">
                                         <div class="woo-button-actions-area pl5 pb5 pr5">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="border-grey-bottom clearfix mb15"></div>
-                                <div class="product_content">
+                                <div class="product_content" style="margin-bottom: 25px">
                                     <div
                                         class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
 
@@ -74,10 +73,10 @@
                                             <div class="compare-button-holder">
 
                                                 <p class="price">
-                                                    <del><span class="woocommerce-Price-amount amount"><bdi>{{$itemDetail->price_old}}<span
+                                                    <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </del>
-                                                    <ins><span class="woocommerce-Price-amount amount"><bdi>{{$itemDetail->price}}<span
+                                                    <ins style="margin-left: 10px"><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>
@@ -108,7 +107,7 @@
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
-                                                        <button type="button" name="add-to-cart" id="addToCart" href="javascript:"
+                                                        <button style="vertical-align: top; margin-left: 1em" type="button" name="add-to-cart" id="addToCart" href="javascript:"
                                                          class="btn btn-success">
                                                             Thêm vào giỏ hàng
                                                         </button>
@@ -152,7 +151,7 @@
                                                          id="quick_buy_20521_container">
                                                         <button id="quick_buy_20521_button"
                                                                 data-product-id="20521"
-                                                                style="margin-right: -20px;"
+                                                                style="margin-right: -20px; margin-top: 2px"
                                                                 data-product-type="simple"
                                                                 class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
                                                                 type="button">Mua Ngay
@@ -171,8 +170,9 @@
 
                                                    {!! $itemDetail->content !!}
                                                 </div>
-                                                <div class="rh_woo_code_zone_content content-detail"><strong><i
-                                                            class="far fa-phone-plus "></i> LIÊN HỆ</strong><br>
+                                                <div class="rh_woo_code_zone_content content-detail">
+                                                    <strong>
+                                                        <i class="far fa-phone-plus "></i> LIÊN HỆ</strong><br>
                                                     <strong style="color: #D50000;">
                                                         <noscript
                                                             data-img="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png"
@@ -183,23 +183,25 @@
                                                         48 giờ đổi trả hàng miễn phí</strong><br>
                                                     <p style="color: #0c0f1a">Hotline đặt hàng 0981058326 (Zalo) - 0904568069<br>
                                                         (Miễn phí, 8-21h cả T7, CN)</p>
-                                                    <a target=" _blank" rel="" href="https://m.me/shopmcvnnet">
-                                                        <noscript
+                                                    <div class="mxh">                                                        <noscript
                                                             data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
                                                             data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
                                                             class="ewww_webp"><img
                                                                 src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
-                                                                data-eio="j"/></noscript>
-                                                    </a>
+                                                                data-eio="j"/>
+                                                        </noscript>
+                                                    </div>
                                                     <div class="mxh">
                                                         <noscript
                                                             data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
                                                             data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
                                                             class="ewww_webp"><img
                                                                 src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
-                                                                data-eio="j"/></noscript>
+                                                                data-eio="j"/>
+                                                        </noscript>
                                                     </div>
-                                                    <div class="mxh"><a
+                                                    <div class="mxh">
+                                                        <a
                                                             href="https://www.youtube.com/channel/UCnIm8teXECxqCxTW4OSVZ4A">
                                                             <noscript
                                                                 data-img="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
@@ -207,12 +209,12 @@
                                                                 class="ewww_webp"><img
                                                                     src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
                                                                     data-eio="j"/></noscript>
-                                                        </a></div>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="clearfix"></div>
                                         </div>
-                                        <div class="top_share_small top_share notextshare">
+                                        <div class="top_share_small top_share notextshare mt-8">
                                         </div>
 
                                         <div class="footer_product">

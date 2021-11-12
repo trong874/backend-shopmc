@@ -30,7 +30,13 @@ function showCategories($categories)
                 <div class="buttom_cat">
                     <div class="buttom_cat_img">
                         <div class="buttom_cat_img_sub">
-                        <img src="' . $category->image . '" alt="">
+                        <img src="' . $category->image . '" alt="" style="
+                          max-width: 100%;
+                          height: 85px;
+                          width: 85px;
+                          object-fit: scale-down;
+                          vertical-align: top;
+                          border: 0;">
                         </div>
                     </div>
                   <div class="buttom_cat_text">
