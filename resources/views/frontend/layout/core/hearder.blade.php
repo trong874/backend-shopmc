@@ -44,7 +44,7 @@
                         </form>
                         <div class="re-aj-search-wrap"></div>
                     </div>
-                    <div class=" rh-flex-right-align" style="position: relative" onmouseover="displayCart(this)" onmouseout="hide(this)">
+                    <div class="cart_out rh-flex-right-align" style="position: relative" >
                         <div class="header-actions-logo rh-flex-right-align">
                             <div class="tabledisplay">
                                 <div class="celldisplay rh_woocartmenu_cell text-center">
@@ -71,10 +71,11 @@
                                 </div>
                             </div>
                         </div>
-                        <ul id="cartDetail">
 
+                        <div id="my_cart" >
 
-                        </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -85,9 +86,13 @@
             <br>
             </div>
         <style>
+            .cart_out:hover  #cartDetail{
+                display: block;
+            }
             #cartDetail{
+
                 position: absolute;
-                width:350px;
+                width:450px;
                 display: none;
                 height: auto;
                 background-color: white;
@@ -100,6 +105,9 @@
                 border-top-right-radius: 4px;
                 border-bottom-right-radius: 4px;
                 border-bottom-left-radius: 4px;
+                -webkit-box-shadow: 0 10px 6px -6px #777;
+                -moz-box-shadow: 0 10px 6px -6px #777;
+                box-shadow: 0 10px 6px -6px #777;
 
             }
             #cartDetail img{
