@@ -576,7 +576,7 @@ blockquote:not(.wp-block-quote) p {
 }
 
 .mxh {
-    margin-left: 15px;
+    margin: 6px 16px;
     display: inline-block;
 }
 

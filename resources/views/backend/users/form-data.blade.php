@@ -22,7 +22,7 @@
                             <div class="col-xl-12">
                                 <!--begin::Wizard Step 1-->
                                 <div class="my-5 step" data-wizard-type="step-content">
-                                    <h5 class="text-dark font-weight-bold mb-10">{{__('Chi tiết hồ sơ của người dùng:')}}</h5>
+                                    <h5 class="text-dark font-weight-bold mb-10" >{{__('Chi tiết hồ sơ của người dùng:')}}</h5>
                                     <!--alert-->
                                     @if(Session::has('message'))
                                     <div class="alert alert-custom alert-light-primary fade show mb-5" role="alert">

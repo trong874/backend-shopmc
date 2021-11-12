@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\SettingController;
@@ -7,31 +6,28 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\PagesController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => 'language'], function () {
 
     Route::get('/',[PagesController::class,'index'])->name('page.index');
-//    Route::get('/', [PagesController::class, 'getCategoryProduct'])->name('category.header');
     Route::get('/news/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
+    Route::get('/tin-tuc/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/danh-muc/{slug}', [PagesController::class, 'getCategoryItems'])->name('category.detail');
-    Route::get('/category_new', [PagesController::class, 'getNewsItem'])->name('new.list');
-
-
+    Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
     Route::get('/detail', [PagesController::class, 'detail'])->name('page.detail');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
-
     Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');
     Route::get('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
     Route::get('/delete-cart/{id}', [CartController::class, 'deleteItemCart'])->name('delete-cart');
-
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
     });
     Route::prefix('admin')->middleware(['auth'])->group(function () {
-        Route::get('/', [PagesController::class, 'index'])->name('dashboard');
+        Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 
         Route::resource('products', ItemController::class);
 
@@ -59,6 +55,10 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::get('set-locale/{locale}', [PagesController::class, 'changeLanguage'])->name('setLocale');
 
+        Route::get('/cache-clear', function() {
+            Artisan::call('cache:clear');
+            dd("Đã xoá tất cả cache");
+        })->name('cache.clear');
     });
 });
 require __DIR__ . '/auth.php';

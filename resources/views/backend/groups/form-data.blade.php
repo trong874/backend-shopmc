@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <!--begin::Card-->
-    <div class="card card-custom example example-compact m-7">
+    <div class="card card-custom m-7">
         <div class="card-header">
             <h3 class="card-title">Create New Group</h3>
         </div>

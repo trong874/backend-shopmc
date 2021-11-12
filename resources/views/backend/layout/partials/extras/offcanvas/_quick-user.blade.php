@@ -6,8 +6,8 @@
 	{{-- Header --}}
 	<div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
 		<h3 class="font-weight-bold m-0">
-			User Profile
-			<small class="text-muted font-size-sm ml-2">12 messages</small>
+			Hồ sơ của tôi
+{{--			<small class="text-muted font-size-sm ml-2">12 messages</small>--}}
 		</h3>
 		<a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
 			<i class="ki ki-close icon-xs text-muted"></i>
@@ -19,7 +19,7 @@
 		{{-- Header --}}
         <div class="d-flex align-items-center mt-5">
             <div class="symbol symbol-100 mr-5">
-                <div class="symbol-label" style="background-image:url('{{ asset('media/users/300_21.jpg') }}')"></div>
+                <div class="symbol-label" style="background-image:url('{{ asset(Auth::user()->image) }}')"></div>
 				<i class="symbol-badge bg-success"></i>
             </div>
             <div class="d-flex flex-column">
@@ -27,17 +27,21 @@
                     {{Auth::user()->username}}
 				</a>
                 <div class="text-muted mt-1">
-                    Application Developer
+                    {{Auth::user()->fullname}}
                 </div>
                 <div class="navi mt-2">
                     <a href="#" class="navi-item">
                         <span class="navi-link p-0 pb-2">
                             <span class="navi-icon mr-1">
-								{{ Metronic::getSVG("media/svg/icons/Communication/Mail-notification.svg", "svg-icon-lg svg-icon-primary") }}
+								<i class="flaticon-email"></i>
 							</span>
                             <span class="navi-text text-muted text-hover-primary">  {{Auth::user()->email}}</span>
                         </span>
                     </a>
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Đăng xuất</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -52,32 +56,32 @@
 		        <div class="navi-link">
 		            <div class="symbol symbol-40 bg-light mr-3">
 		                <div class="symbol-label">
-							{{ Metronic::getSVG("media/svg/icons/General/Notification2.svg", "svg-icon-md svg-icon-success") }}
+                            {{ Metronic::getSVG("media/svg/icons/Communication/Shield-user.svg", "svg-icon-lg svg-icon-primary") }}
 						</div>
 		            </div>
 		            <div class="navi-text">
 		                <div class="font-weight-bold">
-		                    My Profile
+                            Trang cá nhân
 		                </div>
 		                <div class="text-muted">
 		                    Account settings and more
-		                    <span class="label label-light-danger label-inline font-weight-bold">update</span>
+		                    <span class="label label-light-danger label-inline font-weight-bold">cập nhật</span>
 		                </div>
 		            </div>
 		        </div>
 		    </a>
 
 		    {{-- Item --}}
-		    <a href="#"  class="navi-item">
+		    <a href="#change_password" data-toggle="modal" class="navi-item">
 		        <div class="navi-link">
 					<div class="symbol symbol-40 bg-light mr-3">
 						<div class="symbol-label">
- 						   {{ Metronic::getSVG("media/svg/icons/Shopping/Chart-bar1.svg", "svg-icon-md svg-icon-warning") }}
+                            {{ Metronic::getSVG("media/svg/icons/General/Lock.svg", "svg-icon-lg svg-icon-primary") }}
  					   </div>
 				   	</div>
 		            <div class="navi-text">
 		                <div class="font-weight-bold">
-		                    My Messages
+		                    Đổi mật khẩu
 		                </div>
 		                <div class="text-muted">
 		                    Inbox and tasks
@@ -85,45 +89,38 @@
 		            </div>
 		        </div>
 		    </a>
-
-		    {{-- Item --}}
-		    <a href="#"  class="navi-item">
-		        <div class="navi-link">
-					<div class="symbol symbol-40 bg-light mr-3">
-						<div class="symbol-label">
-							{{ Metronic::getSVG("media/svg/icons/Files/Selected-file.svg", "svg-icon-md svg-icon-danger") }}
-						</div>
-				   	</div>
-		            <div class="navi-text">
-		                <div class="font-weight-bold">
-		                    My Activities
-		                </div>
-		                <div class="text-muted">
-		                    Logs and notifications
-		                </div>
-		            </div>
-		        </div>
-		    </a>
-
-		    {{-- Item --}}
-		    <form action="{{route('logout')}}" method="POST" class="navi-item">
-                @csrf
-		        <div class="navi-link">
-					<div class="symbol symbol-40 bg-light mr-3">
-						<div class="symbol-label">
-							{{ Metronic::getSVG("media/svg/icons/Communication/Mail-opened.svg", "svg-icon-md svg-icon-primary") }}
-						</div>
-				   	</div>
-		            <div class="navi-text">
-		                <button type="submit" class="font-weight-bold" style="background-color: rgba(0,0,0,0);border: 0">
-		                    Logout
-		                </button>
-		                <div class="text-muted">
-		                    Logout your account
-		                </div>
-		            </div>
-		        </div>
-		    </form>
+            <div class="modal fade" id="change_password" tabindex="-1" aria-labelledby="exampleModalSizeLg">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Thay đổi mật khẩu</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i aria-hidden="true" class="ki ki-close"></i>
+                            </button>
+                        </div>
+                        <form action="" method="POST">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Mật khẩu cũ</label>
+                            <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu cũ</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu cũ</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary font-weight-bold">Save changes</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 		</div>
 
 		{{-- Separator --}}
