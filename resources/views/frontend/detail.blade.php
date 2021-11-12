@@ -108,7 +108,7 @@
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
 
-                                                        <a onclick="addToCart({{$itemDetail->id}})" style="vertical-align: top; margin-left: 1em" type="button" name="add-to-cart" id="addToCart" href="javascript:"
+                                                        <a onclick="addToCart({{$itemDetail->id}})" style="vertical-align: top; margin-left: 1em;background-color: #3c6a02" name="add-to-cart" id="addToCart" href="javascript:"
 
                                                          class="btn btn-success">
                                                             Thêm vào giỏ hàng
@@ -118,7 +118,7 @@
                                                             function addToCart(id) {
                                                                 console.log(id);
                                                                 $.ajax({
-                                                                    url:'add-cart/'+id,
+                                                                    url:'/add-cart/'+id,
                                                                     type:'GET',
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
@@ -131,7 +131,7 @@
 
                                                                 $.ajax({
                                                                     data: {csrfmiddlewaretoken: window.CSRF_TOKEN},
-                                                                    url:'delete-cart/'+$(this).data("id"),
+                                                                    url:'/delete-cart/'+$(this).data("id"),
                                                                     type:'GET',
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
@@ -139,8 +139,6 @@
                                                                         alert('Đã xóa vật phẩm khỏi giỏ hàng');
                                                                     }
                                                                 });
-
-
                                                             })
 
                                                         </script>

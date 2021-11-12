@@ -5,7 +5,7 @@
         <div class="row" style="margin-bottom: 5px">
             <div class="col-3">
                 <img
-                    src="https://brandlogos.net/wp-content/uploads/2016/09/facebook-icon-preview-1.png"
+                    src="{{$item['itemInfo']->image}}"
                     alt="">
             </div>
             <div class="col-6" style="width:225px;height: 100%">
@@ -32,10 +32,12 @@
         </div>
         <div class="row">
             <div class="col-6" style="margin-bottom: 20px">
-                <button class="btn btn-success">Xem giỏ hàng</button>
+                <button class="btn btn-success">
+                    <a href="{{route('item.cart')}}" style="color: white">Xem giỏ hàng</a></button>
             </div>
             <div class="col-6">
-                <button class="btn btn-danger"> Thanh toán</button>
+                <button class="btn btn-danger">
+                    <a href="{{route('item.cart')}}" style="color: white">Thanh toán</a></button>
             </div>
         </div>
     </div>
