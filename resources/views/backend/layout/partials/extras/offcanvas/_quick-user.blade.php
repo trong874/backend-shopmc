@@ -40,7 +40,7 @@
                     </a>
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</button>
+                        <button type="submit" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Đăng xuất</button>
                     </form>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 		    </a>
 
 		    {{-- Item --}}
-		    <a href="#"  class="navi-item">
+		    <a href="#change_password" data-toggle="modal" class="navi-item">
 		        <div class="navi-link">
 					<div class="symbol symbol-40 bg-light mr-3">
 						<div class="symbol-label">
@@ -89,6 +89,38 @@
 		            </div>
 		        </div>
 		    </a>
+            <div class="modal fade" id="change_password" tabindex="-1" aria-labelledby="exampleModalSizeLg">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Thay đổi mật khẩu</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i aria-hidden="true" class="ki ki-close"></i>
+                            </button>
+                        </div>
+                        <form action="" method="POST">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Mật khẩu cũ</label>
+                            <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu cũ</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu cũ</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary font-weight-bold">Save changes</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 		</div>
 
 		{{-- Separator --}}

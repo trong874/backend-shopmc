@@ -40,14 +40,16 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $item = Item::create($request->all());
-        $item->groups()->attach($request->group_id);
+        foreach ($request->group_id as $group_id){
+            $item->groups()->attach($group_id);
+        }
         Session::put('message', 'Tạo mới thành công');
         return back();
     }
 
     public function edit($item)
     {
-        $item = Item::findOrFail($item);
+        $item = Item::with('groups')->findOrFail($item);
         return view('backend.items.form-data', [
             'item' => $item,
             'module' => $this->module,
@@ -59,7 +61,9 @@ class ItemController extends Controller
     public function update(Request $request, $id)
     {
         $item = Item::findOrFail($id);
-        $item->groups()->sync($request->group_id);
+        foreach ($request->group_id as $group_id){
+            $item->groups()->sync($group_id);
+        }
         $item->update($request->all());
         Session::put('message', 'Cập nhật thay đổi thành công');
         return back();
@@ -116,6 +120,6 @@ class ItemController extends Controller
 
     public function getGroupsByModule()
     {
-        return Group::where('module', 'category-' . $this->module)->get(['id', 'title']);
+        return Group::where('module', 'category-' . $this->module)->get(['id', 'title','parent_id']);
     }
 }
