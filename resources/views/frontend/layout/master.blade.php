@@ -207,6 +207,20 @@
         .goingay {
             text-align: center;
         }
+        @media screen and (max-width: 480px) {
+            #slider_home #rev_slider_24_1_forcefullwidth,#slider_home #rev_slider_24_1_wrapper,#slider_home #rev_slider_24_1 {
+                height: 60px !important;
+            }
+            #slider_home #rev_slider_24_1 rs-bullets{
+                top: 76px !important
+            }
+            #slider_home #rev_slider_24_1_wrapper .ares .tp-bullet{
+                width: 6px;
+                height: 6px;
+                left: 8px;
+            }
+        }
+
     </style>
     <div class="codinh">
         <div class="buttom_home">

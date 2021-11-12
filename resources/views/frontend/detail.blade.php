@@ -239,7 +239,7 @@
                                                 class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                                                 <figure class="mb5 mt25 position-relative">
                                                     <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                                       href="https://shopmc.vn/san-pham/cup-sat-bat-bia-minecraft/">
+                                                       href="{{route('item.detail',$flashSale->slug)}}">
                                                         <img
                                                             src="{{$flashSale->image}}"
                                                             data-src="{{$flashSale->image}}"
@@ -248,7 +248,6 @@
                                                             height="300"
                                                             data-src-webp="{{$flashSale->image}}">
                                                     </a>
-
                                                 </figure>
 
                                                 <h3 class=" text-clamp text-clamp-2">

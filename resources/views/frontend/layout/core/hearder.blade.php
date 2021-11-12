@@ -121,8 +121,8 @@
                                 @if(isset($categories_product))
                                     @foreach($categories_product as $item)
                                     <li id="menu-item-{{$item->id}}"
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-                                            href="{{$item->url}}">{{$item->title}}</a>
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
+                                        <a href="{{route('category.detail',$item->slug)}}">{{$item->title}}</a>
                                     </li>
                                     @endforeach
                                 @endif
