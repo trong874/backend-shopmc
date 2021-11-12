@@ -56,7 +56,11 @@
                     <div class="col-lg-3">
                         <select class="form-control select2" id="kt_select2_3" name="group_id[]" multiple="multiple">
                             <optgroup label="Central Time Zone">
+                                @if(isset($item))
                                 {{showOldCategories($groups,$item)}}
+                                @else
+                                {{showCategories($groups)}}
+                                @endif
                             </optgroup>
                         </select>
                     </div>
@@ -328,7 +332,7 @@
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
-                echo '<option value="' . $item->id . '">' . $item->id . $char . $item->title . '</option>';
+                echo '<option value="' . $item->id . '">'.$char . $item->title . '</option>';
                 // Tiếp tục đệ quy để tìm chuyên mục con của chuyên mục đang lặp
                 showCategories($categories, $item->id, $char . '__');
             }
