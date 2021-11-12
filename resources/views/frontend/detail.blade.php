@@ -107,41 +107,41 @@
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
-                                                        <button style="vertical-align: top; margin-left: 1em" type="button" name="add-to-cart" id="addToCart" href="javascript:"
+
+                                                        <a onclick="addToCart({{$itemDetail->id}})" style="vertical-align: top; margin-left: 1em" type="button" name="add-to-cart" id="addToCart" href="javascript:"
+
                                                          class="btn btn-success">
                                                             Thêm vào giỏ hàng
-                                                        </button>
+                                                        </a>
                                                         <script>
-                                                            //  document.getElementById("addToCart").onclick =function(){
-                                                            //      addToCart()
-                                                            //  };
-                                                            // function addToCart() {
-                                                            //     $("#cartDetail").append("<li>Cart Item</li>");
-                                                            //
-                                                            // }
-                                                            $( "#addToCart" ).click(function() {
 
-                                                                $("#cartDetail").append("<div class=\"container\">\n" +
-                                                                    "                    <div class=\"row\">\n" +
-                                                                    "                        <div class=\"col-4\">\n" +
-                                                                    "                            <img src=\"https://brandlogos.net/wp-content/uploads/2016/09/facebook-icon-preview-1.png\" alt=\"\">\n" +
-                                                                    "                        </div>\n" +
-                                                                    "                        <div class=\"col-8\" style=\"width:225px;height: 100%\">\n" +
-                                                                    "                            <span style=\"word-wrap: break-word;\">ghjiokkjhgfdfghkljkhhgcfasdgfdassssasasasassasadasdsadsadsa</span>\n" +
-                                                                    "                            <br>\n" +
-                                                                    "                            <p>1 <span> X 180.000</span></p>\n" +
-                                                                    "                        </div>\n" +
-                                                                    "                    </div>\n" +
-                                                                    "                </div>");
+                                                            function addToCart(id) {
+                                                                console.log(id);
+                                                                $.ajax({
+                                                                    url:'add-cart/'+id,
+                                                                    type:'GET',
+                                                                    success:function (res) {
+                                                                        $("#my_cart").empty();
+                                                                        $("#my_cart").html(res);
+                                                                        alert('Đã thêm vật phẩm này vào giỏ hàng');
+                                                                    }
+                                                                });
+                                                            }
+                                                            $("#my_cart").on("click",".close-item i",function () {
+
+                                                                $.ajax({
+                                                                    data: {csrfmiddlewaretoken: window.CSRF_TOKEN},
+                                                                    url:'delete-cart/'+$(this).data("id"),
+                                                                    type:'GET',
+                                                                    success:function (res) {
+                                                                        $("#my_cart").empty();
+                                                                        $("#my_cart").html(res);
+                                                                        alert('Đã xóa vật phẩm khỏi giỏ hàng');
+                                                                    }
+                                                                });
+
 
                                                             })
-                                                            function displayCart(){
-                                                                $('#cartDetail').show();
-                                                            }
-
-                                                            function hide() {
-                                                                $('#cartDetail').hide();
-                                                            }
 
                                                         </script>
                                                     </form>

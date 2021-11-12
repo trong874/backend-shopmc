@@ -46,7 +46,7 @@ class   PagesController extends Controller
     public function getItemDetail($slug)
     {
         $itemDetail = Item::where('slug',$slug)->first([
-            'title', 'content', 'description', 'image', 'url','price','price_old','slug'
+            'title', 'content', 'description', 'image', 'url','price','price_old','slug','id'
         ]);
         $flashSales = Item::where('position', 'flashsale')->get([
             'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
@@ -58,7 +58,7 @@ class   PagesController extends Controller
     public function getNewsDetail($slug)
     {
         $newDetail = Item::where('slug', $slug)->first([
-            'title', 'content', 'description', 'image', 'url','slug'
+            'title', 'content', 'description', 'image', 'url','slug','id'
         ]);
 
         $flashSales =  Item::where('position', 'flashsale')->get([
