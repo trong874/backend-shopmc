@@ -10,15 +10,35 @@
                             <li></li>
                         </ul>
                     </div>
+                    @if(!Auth::check())
                     <div class="rh-flex-right-align top-social">
-
                         <div class="userblockintop"><span class="act-rehub-login-popup" data-type="login">
                                     <i class="fal fa-sign-out"></i><span>Đăng nhập / Đăng ký</span></span>
                             <div class="use_nam">
                             </div>
                         </div>
-
                     </div>
+                    @else
+                        <div class="rh-flex-right-align top-social">
+                            <div class="userblockintop"><div class="user-dropdown-intop">
+                                    <span class="user-ava-intop">
+                                        <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="28" height="28" alt="Avatar" class="avatar avatar-28 wp-user-avatar wp-user-avatar-28 photo avatar-default"></span>
+                                    <ul class="user-dropdown-intop-menu">
+                                        <li class="user-name-and-badges-intop">
+                                            <span class="user-image-in-name">
+                                                <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="35" height="35" alt="Avatar" class="avatar avatar-35 wp-user-avatar wp-user-avatar-35 photo avatar-default"></span>{{Auth::user()->username}}</li>
+                                        <li class="user-editorders-link-intop menu-item">
+                                            <a href="#">
+                                                <i class="rhicon rhi-shopping-bagfeather" aria-hidden="true"></i>
+                                                <span>Tài khoản của tôi</span></a></li>
+                                        <li class="user-logout-link-intop menu-item">
+                                            <a href="{{route('logout')}}">
+                                                <i class="rhicon rhi-lock-alt"></i><span>Đăng xuất</span></a></li></ul></div><div class="use_nam">
+                                {{Auth::user()->username}}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
