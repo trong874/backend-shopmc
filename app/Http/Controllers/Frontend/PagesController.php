@@ -60,13 +60,11 @@ class   PagesController extends Controller
         $newDetail = Item::where('slug', $slug)->first([
             'title', 'content', 'description', 'image', 'url','slug','id'
         ]);
-
         $flashSales =  Item::where('position', 'flashsale')->get([
             'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
         ]);
 
         return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
     }
-
 
 }

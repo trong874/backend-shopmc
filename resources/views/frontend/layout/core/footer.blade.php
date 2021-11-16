@@ -82,7 +82,7 @@
                             <p></div>
                         <div class="clearfix"></div>
                         <p><strong>ĐỊA CHỈ CỬA HÀNG:</strong></p>
-                        <p>số 41, ngõ 1160, đường Láng, Đống Đa, Hà Nội</p>
+                        <p>số 41, ngõ 160, đường Láng, Đống Đa, Hà Nội</p>
                     </div>
                 </div>
             </div>

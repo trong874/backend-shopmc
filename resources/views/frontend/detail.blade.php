@@ -67,11 +67,8 @@
                                         <div class="rh-line mb20 mt10"></div>
                                         <div class="rh_post_layout_rev_price_holder position-relative">
                                             <div class="floatright mobileblockdisplay">
-
                                             </div>
-
                                             <div class="compare-button-holder">
-
                                                 <p class="price">
                                                     <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
@@ -81,8 +78,6 @@
                                                     </ins>
                                                 </p>
                                                 <div class="woo-button-area mb30">
-
-
                                                     <form class="cart">
                                                         <input type="hidden" id="wc_quick_buy_hook_20521"
                                                                value="20521"/>
@@ -226,8 +221,6 @@
                                     <div class="clearfix"></div>
                                     <h3>Flash Sale</h3>
                                     <div class="woocommerce">
-
-
                                         <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
                                              data-filterargs='{"post__in":["4447","17068","13006","20499","5305","13003"],"orderby":"post__in","post_type":"product","posts_per_page":6,"tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}'
                                              data-template="woogridpart" id="rh_woogrid_1397075271"
