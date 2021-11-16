@@ -6,48 +6,63 @@ use Illuminate\Support\Facades\View;
 
 //getProductClothes
 View::composer('frontend.widget.__clothes', function ($view) {
-    $clotheses = Item::where('position', 'clothes')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old', 'id', 'slug'
+    $group_clotheses = Group::with('item')
+        ->where('module','products-group')
+        ->where('slug', 'quan-ao')
+        ->first([
+        'title', 'description', 'image', 'url', 'id', 'slug'
     ]);
-    return $view->with('clotheses', $clotheses);
+    return $view->with('clotheses', $group_clotheses->item);
 });
 
 
 //getProductFlashSale
 View::composer('frontend.widget.__flashSale', function ($view) {
-    $flashSales = Item::where('position', 'flashsale')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old', 'id','slug'
+    $group_flashSales = Group::with('item')
+        ->where('module','products-group')
+        ->where('slug', 'flash-sale')
+        ->first([
+        'title', 'description', 'image', 'url', 'id','slug'
     ]);
-    return $view->with('flashSales', $flashSales);
+    return $view->with('flashSales', $group_flashSales->item);
 });
 
 
 
 //getProductToyMinecraft
 View::composer('frontend.widget.__minecraft', function ($view) {
-    $toyMinecrafts = Item::where('position', 'toy-minecraft')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old', 'id', 'slug'
+    $group_toyMinecrafts = Group::with('item')
+        ->where('module', 'products-group')
+        ->where('slug','do-choi-minecraft')
+        ->first([
+        'title', 'description', 'image', 'url', 'id', 'slug'
     ]);
-    return $view->with('toyMinecrafts', $toyMinecrafts);
+    return $view->with('toyMinecrafts', $group_toyMinecrafts->item);
 });
 
 
 
 //getProductBalo
 View::composer('frontend.widget.__backpacks_handbangs', function ($view) {
-    $baloBags= Item::where('position', 'balo-bag')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
+    $group_balobag= Group::with('item')
+        ->where('module', 'products-group')
+        ->where('slug','balo-tui-xach')
+        ->first([
+        'title', 'description', 'image', 'url','id','slug'
     ]);
-    return $view->with('baloBags', $baloBags);
+    return $view->with('baloBags', $group_balobag->item );
 });
 
 
 //getProductLego
 View::composer('frontend.widget.__logoMinecraft', function ($view) {
-    $legos= Item::where('position', 'lego')->get([
-        'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
+    $group_legos= Group::with('item')
+        ->where('module','products-group')
+        ->where('slug', 'lego-minecraft')
+        ->first([
+        'title', 'description', 'image', 'url','id','slug'
     ]);
-    return $view->with('legos', $legos);
+    return $view->with('legos', $group_legos->item);
 });
 
 
@@ -63,9 +78,12 @@ View::composer('frontend.home', function ($view) {
 
 //getCategory
 View::composer('frontend.widget.__category', function ($view) {
-    $categories_banner =  Group::where('position','category')->get([
-         'title', 'image','slug'
-    ]);
+    $categories_banner =  Group::where('module', 'category-products')
+        ->where('parent_id','!=',null)
+        ->orderBy('order','ASC')
+        ->get([
+            'title','slug','image'
+        ]);
     return $view->with('categories_banner', $categories_banner);
 });
 
@@ -81,11 +99,13 @@ View::composer('frontend.category_product', function ($view) {
 
 //getNews
 View::composer('frontend.widget.__news', function ($view) {
-    $news= Item::where('position', 'news')
-        ->get([
+    $group_news= Group::with('item')
+        ->where('module','news-group')
+        ->where('slug', 'tin-tuc-cong-dong')
+        ->first([
             'title', 'content', 'description', 'image', 'url','id','slug'
         ]);
-    return $view->with('news', $news);
+    return $view->with('news', $group_news->item);
 });
 
 
@@ -101,16 +121,18 @@ View::composer('frontend.pages.advertise.__widget.__sliderhome', function ($view
 //getItemDetail
 View::composer('frontend.layout.core.hearder', function ($view) {
     $categories_product = Group::where('module', 'category-products')
-           ->where('position','category_header')
-           ->get([
-          'title','slug'
-      ]);
+        ->where('parent_id',null)
+        ->orderBy('order','ASC')
+        ->get([
+            'title','slug'
+        ]);
     return $view->with('categories_product', $categories_product);
 });
 
 View::composer('frontend.category_product', function ($view) {
     $categories_p = Group::where('module', 'category-products')
-        ->where('position','category_header')
+        ->where('parent_id',null)
+        ->orderBy('order','ASC')
         ->get([
             'title','slug'
         ]);

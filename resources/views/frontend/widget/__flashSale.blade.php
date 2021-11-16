@@ -61,7 +61,7 @@
                                                 class="rhwoostar rhwoostar4 active">&#9733;</span><span
                                                 class="rhwoostar rhwoostar5 active">&#9733;</span>
                                         </div>
-                                        <span class="greycolor postview">{{$flashSale->description}}</span></div>
+{{--                                        <span class="greycolor postview">{{$flashSale->description}}</span></div>--}}
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
 {{--                                    <span class="greycolor postview">{{$flashSale->décription}}</span>--}}

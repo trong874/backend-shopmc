@@ -18,7 +18,7 @@
                                 <figure class="mb5 mt25 position-relative notresized">
                                     <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
                                        href="{{route('item.detail',$baloBag->slug)}}">
-                                        <img class="lazyload"
+                                        <img class="lazyload "
                                              data-src="{{$baloBag->image}}"
                                              width="300" alt="{{$baloBag->title}}" src="{{$baloBag->image}}"/>
                                     </a>
@@ -47,8 +47,9 @@
                                                                 </ins>
                                                             </span>
                                     </div>
-                                    <div class="floatright product-meta">
-                                        <span class="greycolor postview">{!! $baloBag->description !!}</span></div>
+{{--                                    <div class="floatright product-meta">--}}
+{{--                                        <span class="greycolor postview">{!! $baloBag->description !!}</span>--}}
+{{--                                    </div>--}}
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
                                 </div>
@@ -60,7 +61,8 @@
                                             class="rhwoostar rhwoostar4 active">&#9733;</span><span
                                             class="rhwoostar rhwoostar5 active">&#9733;</span>
                                     </div>
-                                    <span class="greycolor postview">{!! $baloBag->description !!}</span></div>
+{{--                                    <span class="greycolor postview">{!! $baloBag->description !!}</span>--}}
+                                </div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>

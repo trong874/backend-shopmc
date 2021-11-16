@@ -19,12 +19,17 @@
                     </div>
                 </div>
                 <div id="woocommerce_price_filter-5" class="widget woocommerce widget_price_filter">
+                    <div class="title">Giá</div>
                     <form method="get" action="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
                         <div class="price_slider_wrapper">
                             <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style=""><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
                             <div class="price_slider_amount" data-step="10">
                                 <input type="text" id="min_price" name="min_price" value="60000" data-min="60000" placeholder="Giá thấp nhất" style="display: none;">
                                 <input type="text" id="max_price" name="max_price" value="640000" data-max="640000" placeholder="Giá cao nhất" style="display: none;">
+                                <button type="submit" class="button">Lọc</button>
+                                <div class="price_label" style="">
+                                    Giá <span class="from">60,000&nbsp;₫</span> — <span class="to">640,000&nbsp;₫</span>
+                                </div>
                                 <div class="clear"></div>
                             </div>
                         </div>
@@ -36,14 +41,27 @@
             <!-- Main Side -->
             <div class="main-side woocommerce page clearfix" id="content">
                 <article class="post" id="page-8507">
-                    <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>Kiếm Cuốc Rìu Minecraft</nav>
-                    <h1 class="arc-main-title">Kiếm Cuốc Rìu Minecraft</h1>
+                    <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>{{@$categoryDetails->title}}</nav>
+                    <h1 class="arc-main-title">{{@$categoryDetails->title}}</h1>
                     <div class="border-grey cursorpointer floatright font90 ml10 pl10 pr10 rehub-main-color rtlmr10 rhhidden" id="mobile-trigger-sidebar"><i class="fa-sliders-v fal"></i> Filter</div>
                     <div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
+                        Hiển thị tất cả {{count(@$products)}} kết quả</p>
+                    <form class="woocommerce-ordering" method="get">
+                        <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng" style="display: none;">
+                            <option value="menu_order" selected="selected">Thứ tự mặc định</option>
+                            <option value="popularity">Thứ tự theo mức độ phổ biến</option>
+                            <option value="rating">Thứ tự theo điểm đánh giá</option>
+                            <option value="date">Mới nhất</option>
+                            <option value="price">Thứ tự theo giá: thấp đến cao</option>
+                            <option value="price-desc">Thứ tự theo giá: cao xuống thấp</option>
+                        </select><div class="nice-select orderby" tabindex="0"><span class="current">Thứ tự mặc định</span><ul class="list"><li data-value="menu_order" class="option selected">Thứ tự mặc định</li><li data-value="popularity" class="option">Thứ tự theo mức độ phổ biến</li><li data-value="rating" class="option">Thứ tự theo điểm đánh giá</li><li data-value="date" class="option">Mới nhất</li><li data-value="price" class="option">Thứ tự theo giá: thấp đến cao</li><li data-value="price-desc" class="option">Thứ tự theo giá: cao xuống thấp</li></ul></div>
+                        <input type="hidden" name="paged" value="1">
+                    </form>
+
                     <div class="columns-5 products col_wrap_fifth rh-flex-eq-height grid_woo">
                         @if(isset($products))
                         @foreach($products as $items)
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled">
+                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                             <span class="onsale"><span>- 35%</span></span>
                             <figure class="mb5 mt25 position-relative notresized">
                                 <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="{{route('item.detail',$items->slug)}}">

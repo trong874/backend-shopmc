@@ -55,7 +55,7 @@
 
                                     </div>
                                     <div class="floatright product-meta">
-                                        <span class="greycolor postview">{!! $lego->description !!}</span></div>
+{{--                                        <span class="greycolor postview">{!! $lego->description !!}</span></div>--}}
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
 

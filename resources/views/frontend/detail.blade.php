@@ -131,7 +131,7 @@
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
-                                                                        alert('Đã xóa vật phẩm khỏi giỏ hàng');
+                                                                        confirm("Bạn có muốn xóa vật phẩm không ?");
                                                                     }
                                                                 });
                                                             })
@@ -390,8 +390,84 @@
                             </div>
                             <!--/div-->
                             <!--/div-->
+                            {{--Description--}}
+                            <div class="content-woo-area">
+                                <div class="rh-tabletext-block rh-tabletext-wooblock" id="section-description">
+                                    <div class="rh-tabletext-block-heading">
+                                        <span class="toggle-this-table" style="color: black"></span>
+                                        <h4 class="rh-heading-icon">Mô tả</h4>
+                                    </div>
+                                    <div class="rh-tabletext-block-wrapper">
+                                        <style>
+                                            .read_more_less {
+                                                height: 3rem;
+                                                text-align: center;
+                                                border-top: 1px solid #eee;
+                                                padding-top: 10px;
+                                                color: #f7941d;
+                                                font-size: 15px;
+                                            }
+                                            .content_product {
+                                                /*display: flow-root;
+                                                /*height: 100px;*/
+                                            }
+                                            .hide_content {
+                                                position: absolute;
+                                                width: 100%;
+                                                height: 100%;
+                                                top: 0;
+                                                left: 0;
+                                                background: -webkit-gradient(linear,left top,left bottom,color-stop(0,transparent),color-stop(70%,hsla(0,0%,100%,0)),color-stop(90%,#fff));
+                                                background: linear-gradient(transparent,hsla(0,0%,100%,0) 70%,#fff 90%);
+                                            }
+                                            .all_des{
+                                                max-height: 220px;
+                                                overflow: hidden;
+                                                position: relative;
+                                            }
+                                            #readLess{display: none;}
+                                            .span_item{
+                                                width: 12px;
+                                                margin-left: 5px;
+                                                fill: black;
+                                            }
+                                        </style>
+                                        <div class="clearfix"></div>
+                                        <div class="all_des" style="max-height: none;">
+                                            <div class="content_product" style="color: black">
+                                                <p >{!! $itemDetail->description !!}</p>
+                                                <p><img loading="lazy" class="alignnone size-full wp-image-8427" src="{{$itemDetail->image}}" alt="" width="382" height="600" srcset="https://shopmc.com.vn/wp-content/uploads/2018/04/kiem-minecraft_diamond-382x600.jpg 382w, https://shopmc.com.vn/wp-content/uploads/2018/04/kiem-minecraft_diamond-382x600-549x863.jpg 549w, https://shopmc.com.vn/wp-content/uploads/2018/04/kiem-minecraft_diamond-382x600-191x300.jpg 191w" sizes="(max-width: 382px) 100vw, 382px"></p>
+                                            </div>
+                                            <div class="hide_content" style="display: none;"></div>
+                                        </div>
+                                        <div class="read_more_less" id="readMore" style="display: none;color:black">Xem Thêm <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" class="span_item"><path stroke="none" d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path></svg></div>
+                                        <div class="read_more_less" id="readLess" style="display: block; color:black">Thu Gọn <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" class="span_item"><path style="color: black;" stroke="none" d="m11 8.5c0-.1 0-.2-.1-.3l-5-6c-.1-.1-.3-.2-.4-.2s-.3.1-.4.2l-5 6c-.2.2-.1.5.1.7s.5.1.7-.1l4.6-5.5 4.6 5.5c.2.2.5.2.7.1.1-.1.2-.3.2-.4z"></path></svg></div>
+                                        <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+                                        <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v7.0&amp;appId=248671142486453&amp;autoLogAppEvents=1"></script>
+                                        <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="https://shopmc.com.vn/san-pham/kiem-diamond-minecraft-chinh-hang/" data-numposts="5" data-width="auto" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=248671142486453&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 213px;"><iframe name="ff88d50379fa7" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=248671142486453&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3b660b4c391738%26domain%3Dshopmc.com.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fshopmc.com.vn%252Ff355224624632c%26relation%3Dparent.parent&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width=" style="border: none; visibility: visible; width: 100%; height: 213px;" class=""></iframe></span></div>
+                                        <script>
+                                            jQuery(function($) {
+                                                $(document).ready(function() {
+                                                    $("#readMore").click(function(){
+                                                        $(".all_des").css('max-height','none');
+                                                        $(".hide_content").css('display','none');
+                                                        $("#readMore").css('display','none');
+                                                        $("#readLess").css('display','block');
+                                                    });
+                                                    $("#readLess").click(function(){
+                                                        $(".all_des").css('max-height','120px');
+                                                        $(".hide_content").css('display','block');
+                                                        $("#readLess").css('display','none');
+                                                        $("#readMore").css('display','block');
+                                                    });
+                                                });
+                                            });
+                                        </script>
 
+                                    </div>
+                                </div>
 
+                            </div>
                         </div>
                         <!-- #product-20521 -->
 

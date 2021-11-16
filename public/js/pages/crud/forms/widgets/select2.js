@@ -23,6 +23,14 @@ var KTSelect2 = function() {
             allowClear: true
         });
 
+        //position
+        $('#group_id_input').select2({
+            placeholder: 'Chọn danh mục',
+        });
+        $('#position_input').select2({
+            placeholder: 'Chọn vị trí',
+        });
+
         // loading data from array
         var data = [{
             id: 0,
