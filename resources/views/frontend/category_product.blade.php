@@ -42,7 +42,7 @@
             <div class="main-side woocommerce page clearfix" id="content">
                 <article class="post" id="page-8507">
                     <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>{{@$categoryDetails->title}}</nav>
-                    <h1 class="arc-main-title">{{@$categoryDetails->title}}</h1>
+                    <h1 class="arc-main-title " style="margin-top: 10px">{{@$categoryDetails->title}}</h1>
                     <div class="border-grey cursorpointer floatright font90 ml10 pl10 pr10 rehub-main-color rtlmr10 rhhidden" id="mobile-trigger-sidebar"><i class="fa-sliders-v fal"></i> Filter</div>
                     <div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
                         Hiển thị tất cả {{count(@$products)}} kết quả</p>

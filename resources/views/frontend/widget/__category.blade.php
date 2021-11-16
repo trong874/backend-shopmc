@@ -29,7 +29,7 @@ function showCategories($categories)
             echo '<a class="link_a" href="/danh-muc/'.$category->slug.'">
                 <div class="buttom_cat">
                     <div class="buttom_cat_img">
-                        <div class="buttom_cat_img_sub">
+                        <div class="buttom_cat_img_sub image_icon">
                         <img src="' . $category->image . '" alt="" style="
                           max-width: 100%;
                           height: 85px;
