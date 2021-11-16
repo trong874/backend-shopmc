@@ -54,46 +54,45 @@
                     <input type="hidden" name="module" value="{{$item->module??$module}}"/>
                     <label class="col-lg-1 col-form-label text-right">Danh mục</label>
                     <div class="col-lg-3">
-                        <select class="form-control select2" id="kt_select2_3" name="group_id[]" multiple="multiple">
+                        <select class="form-control select2" id="group_id_input" name="group_id[]" multiple="multiple">
                             <optgroup label="Central Time Zone">
                                 @if(isset($item))
-                                {{showOldCategories($groups,$item)}}
+                                    {{showOldCategories($groups,$item)}}
                                 @else
-                                {{showCategories($groups)}}
+                                    {{showCategories($groups)}}
                                 @endif
                             </optgroup>
                         </select>
                     </div>
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
-                        <select class="form-control form-control-solid" name="position">
-                            <option value="category"
-                                    @if(isset($item))@if($item->position == 'category') selected @endif @endif>Danh mục
-                                sản phẩm
-                            </option>
-                            <option value="flashsale"
-                                    @if(isset($item))@if($item->position == 'flashsale') selected @endif @endif>Flash
-                                Sale
-                            </option>
-                            <option value="toy-minecraft"
-                                    @if(isset($item))@if($item->position == 'toy-minecraft') selected @endif @endif>Đồ
-                                Chơi Minecraft
-                            </option>
-                            <option value="balo-bag"
-                                    @if(isset($item))@if($item->position == 'balo-bag') selected @endif @endif>Balo Túi
-                                Xách
-                            </option>
-                            <option value="clothes"
-                                    @if(isset($item))@if($item->position == 'clothes') selected @endif @endif>Quần áo
-                            </option>
-                            <option value="lego" @if(isset($item))@if($item->position == 'lego') selected @endif @endif>
-                                Mô hình/ Lego Minecraft
-                            </option>
-                            <option value="news" @if(isset($item))@if($item->position == 'news') selected @endif @endif>
-                                Tin tức cộng đồng
-                            </option>
+                        <select class="form-control select2" id="position_input" name="position[]" multiple="multiple">
+                            <optgroup label="Vị trí hiển thị">
+                                <option value="category">Danh mục
+                                    sản phẩm
+                                </option>
+                                <option value="flashsale">Flash
+                                    Sale
+                                </option>
+                                <option value="toy-minecraft">Đồ
+                                    Chơi Minecraft
+                                </option>
+                                <option value="category">Danh mục
+                                    sản phẩm
+                                </option>
+                                <option value="balo-bag">Balo Túi
+                                    Xách
+                                </option>
+                                <option value="clothes">Quần áo
+                                </option>
+                                <option value="lego">
+                                    Mô hình/ Lego Minecraft
+                                </option>
+                                <option value="news">
+                                    Tin tức cộng đồng
+                                </option>
+                            </optgroup>
                         </select>
-                        <span class="form-text text-muted">Please enter your Position</span>
                     </div>
                 </div>
                 <div class="separator separator-dashed my-10"></div>
@@ -307,13 +306,13 @@
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
                 foreach ($current_data->groups as $group)
-                    if ($item->id == $group->id){
-                        echo ' <option value="'.$item->id.'" selected>
-                                   '.$char.$item->title.'
+                    if ($item->id == $group->id) {
+                        echo ' <option value="' . $item->id . '" selected>
+                                   ' . $char . $item->title . '
                                 </option>';
-                    }else{
-                        echo ' <option value="'.$item->id.'">
-                                   '.$char.$item->title.'
+                    } else {
+                        echo ' <option value="' . $item->id . '">
+                                   ' . $char . $item->title . '
                                 </option>';
                     }
                 // Xử lý hiển thị chuyên mục
@@ -332,7 +331,7 @@
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
-                echo '<option value="' . $item->id . '">'.$char . $item->title . '</option>';
+                echo '<option value="' . $item->id . '">' . $char . $item->title . '</option>';
                 // Tiếp tục đệ quy để tìm chuyên mục con của chuyên mục đang lặp
                 showCategories($categories, $item->id, $char . '__');
             }

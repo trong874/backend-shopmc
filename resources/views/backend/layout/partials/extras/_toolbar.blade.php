@@ -2,7 +2,7 @@
 <ul class="sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4">
     {{-- Item --}}
     <li class="nav-item mb-2" id="kt_demo_panel_toggle" data-toggle="tooltip"  title="Clear Cache Server" data-placement="right">
-        <a class="btn btn-sm btn-icon btn-bg-light btn-text-success btn-hover-success" href="{{route('cache.clear')}}">
+        <a class="btn btn-sm btn-icon btn-bg-light btn-text-success btn-hover-success" href="">
             <i class="flaticon2-rocket-1"></i>
         </a>
     </li>
