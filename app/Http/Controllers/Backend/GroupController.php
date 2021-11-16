@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Group;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class GroupController extends Controller
 {
-    protected $module = '';
+    protected $module;
 
     public function __construct(Request $request)
     {
@@ -18,113 +19,77 @@ class GroupController extends Controller
 
     public function index()
     {
-        $groups = Group::with('groups')
-            ->where('module', $this->module)
-            ->orderBy('order', 'ASC')
-            ->get(['id', 'title', 'parent_id']);
+        $groups = Group::where('module', $this->module)->paginate(10);
         return view('backend.groups.list', [
-            'page_title'=>'Category '.$this->module,
             'module' => $this->module,
-            'groups' => $groups]);
+            'groups' => $groups
+        ]);
     }
 
     public function create()
     {
         return view('backend.groups.form-data', [
-            'groups' => $this->getGroupsByModule(),
-            'page_title' => 'Tạo mới danh mục ' . $this->module,
-            'module' => $this->module
+            'module' => $this->module,
         ]);
     }
 
     public function store(Request $request)
     {
         Group::create([
+            'status'=>$request->status,
             'title' => $request->title,
-            'position'=>$request->position,
+            'position' => $request->position,
             'module' => $request->module,
-            'slug'=>$request->slug,
+            'slug' => $request->slug,
             'parent_id' => $request->parent_id,
             'image' => $request->image,
             'author_id' => $request->author_id
         ]);
-        Session::put('message','Tạo mới thành công');
+        Session::put('message', 'Tạo mới thành công');
         return view('backend.groups.form-data', [
-            'groups' => $this->getGroupsByModule(),
-            'page_title' => 'Tạo mới danh mục ' . $this->module,
+            'page_title' => 'Tạo mới nhóm ' . $this->module,
             'module' => $this->module
         ]);
     }
 
     public function edit($group)
     {
-        $group = Group::findOrFail($group, [
-            'id',
-            'position',
-            'title',
-            'slug',
-            'parent_id',
-            'image'
-        ]);
-
+        $group = Group::findOrFail($group);
         return view('backend.groups.form-data', [
-            'groups' => $this->getGroupsByModule(),
-            'group' => $group,
-            'page_title' => 'Tạo mới danh mục ' . $this->module,
-            'module' => $this->module
+            'module' => $this->module,
+            'group' => $group
         ]);
     }
 
     public function update(Request $request, $group)
     {
         $group = Group::findOrFail($group);
-        $group->update([
-            'position'=>$request->position,
-            'title' => $request->title,
-            'slug'=>$request->slug,
-            'parent_id' => $request->parent_id,
-            'image' => $request->image
-        ]);
-        Session::put('message','chỉnh sửa thành công');
+        $group->update($request->all());
+        Session::put('message', 'Chỉnh sửa thành công');
         return back();
     }
 
-    public function getGroupsByModule()
+    public function destroy($group)
     {
-        return Group::where('module',$this->module)->get(['id', 'title']);
+        Group::destroy($group);
+        return back();
     }
 
-    function saveList(Request $list)
+    public function addItemIntoGroup(Request $request)
     {
-        $this->recursive($list->all()['list']);
-        return response()->json('cập nhật danh sách thành công', 200);
+        $item = Item::findOrFail($request->item_id);
+        $item->groups()->attach($request->group_id);
+        $group = Group::findOrFail($request->group_id);
+        $html = view('backend.groups.table_item_in_group',compact('group'))->render();
+        return response()->json($html);
     }
 
-    public function recursive($list, $parent_id = null, &$order = 0)
+    public function deleteItemInGroup(Request $request)
     {
-        foreach ($list as $item) {
-            $order++;
-            $group = Group::find($item['id']);
-            $group->order = $order;
-            $group->parent_id = $parent_id;
-            $group->save();
-            if (array_key_exists('children', $item)) {
-                $this->recursive($item["children"], $item["id"], $order);
-            }
-        }
-    }
-
-    public function destroy($id)
-    {
-        $groups = Group::findOrFail($id);
-        $groups->item()->detach();
-        $groups->delete();
-        return redirect()->back();
-    }
-
-    public function destroyMuch(Request $request)
-    {
-        $ids = $request->ids;
-        Group::whereIn('id', explode(",", $ids))->delete();
+        $item = Item::findOrFail($request->item_id);
+        $item->groups()->detach($request->group_id);
+        $group = Group::findOrFail($request->group_id);
+        $html = view('backend.groups.table_item_in_group',compact('group'))->render();
+        return response()->json($html);
     }
 }

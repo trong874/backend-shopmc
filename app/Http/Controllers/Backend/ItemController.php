@@ -40,8 +40,10 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $item = Item::create($request->all());
+        if ($request->group_id){
         foreach ($request->group_id as $group_id){
             $item->groups()->attach($group_id);
+        }
         }
         Session::put('message', 'Tạo mới thành công');
         return back();
@@ -121,5 +123,19 @@ class ItemController extends Controller
     public function getGroupsByModule()
     {
         return Group::where('module', 'category-' . $this->module)->get(['id', 'title','parent_id']);
+    }
+
+    public function searchItemGroup(Request $request)
+    {
+        if (empty($request->search_query)){
+            return [];
+        }
+        $result = Item::where('title','LIKE','%'.$request->search_query.'%')
+                        ->where('module',substr($request->module,0,-6))
+                        ->where('status',self::STATUS_ACTIVE)
+                        ->limit(2)
+                        ->get();
+        $html = view('backend.groups.result-search-item-group',['items'=>$result,'group_id'=>$request->group_id])->render();
+        return response()->json($html);
     }
 }
