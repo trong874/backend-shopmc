@@ -12,9 +12,7 @@
                         <ul id="menu-danhmuc" class="menu">
                             @if($categories_p)
                                 @foreach($categories_p as $category)
-                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320">
-                                <a href="{{route('category.detail',$category->slug)}}">{{$category->title}}</a>
-                            </li>
+                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="{{route('category.detail',$category->slug)}}">{{$category->title}}</a></li>
                                 @endforeach
                                 @endif
                         </ul>
@@ -43,11 +41,11 @@
             <!-- Main Side -->
             <div class="main-side woocommerce page clearfix" id="content">
                 <article class="post" id="page-8507">
-                    <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>Kiếm Cuốc Rìu Minecraft</nav>
-                    <h1 class="arc-main-title">Kiếm Cuốc Rìu Minecraft</h1>
+                    <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>{{@$categoryDetails->title}}</nav>
+                    <h1 class="arc-main-title " style="margin-top: 10px">{{@$categoryDetails->title}}</h1>
                     <div class="border-grey cursorpointer floatright font90 ml10 pl10 pr10 rehub-main-color rtlmr10 rhhidden" id="mobile-trigger-sidebar"><i class="fa-sliders-v fal"></i> Filter</div>
                     <div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
-                        Hiển thị tất cả 28 kết quả</p>
+                        Hiển thị tất cả {{count(@$products)}} kết quả</p>
                     <form class="woocommerce-ordering" method="get">
                         <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng" style="display: none;">
                             <option value="menu_order" selected="selected">Thứ tự mặc định</option>

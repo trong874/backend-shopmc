@@ -68,7 +68,8 @@
                                         srcset="https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang.png 380w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-300x49.png 300w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-766x125.png 766w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-1024x167.png 1024w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-788x128.png 788w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-545x89.png 545w"
                                         sizes="(max-width: 380px) 100vw, 380px"/></p>
                             </div>
-                            <p></div>
+                            <p>
+                        </div>
                         <div class="wpsm-one-half wpsm-column-last">
                             <div class="title">KẾT NỐI VỚI CHÚNG TÔI</div>
                             <div class="widget_recent_entries">
@@ -79,10 +80,12 @@
                                         href="https://www.youtube.com/channel/UCnIm8teXECxqCxTW4OSVZ4A"><img
                                             src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"/></a></p>
                             </div>
-                            <p></div>
-                        <div class="clearfix"></div>
-                        <p><strong>ĐỊA CHỈ CỬA HÀNG:</strong></p>
-                        <p>số 41, ngõ 1160, đường Láng, Đống Đa, Hà Nội</p>
+                            <p>
+                        </div>
+                        <p>
+                            <strong>ĐỊA CHỈ CỬA HÀNG:</strong>
+                        </p>
+                        <p style="margin-top: 10px">số 41, ngõ 160, đường Láng, Đống Đa, Hà Nội</p>
                     </div>
                 </div>
             </div>
@@ -94,7 +97,7 @@
     <div class="rh-container clearfix">
         <div class="footer_most_bottom">
             <div class="f_text">
-                <span class="f_text_span">2019 SHOPMC Design. All rights reserved.</span>
+                <span class="f_text_span">2021 SHOPMC Design</span>
 
             </div>
         </div>

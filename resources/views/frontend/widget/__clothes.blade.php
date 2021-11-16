@@ -1,5 +1,6 @@
 <div class="vc_row wpb_row vc_row-fluid vc_custom_1607449240984 vc_row-has-fill centered-container">
-    <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
+    <div class="wpb_column vc_column_container vc_col-sm-12 ">
+{{--        vc_hidden-xs--}}
         <div class="vc_column-inner">
             <div class="wpb_wrapper"><h4
                     style="margin-block-start: 1em; margin-left: 15px"
@@ -62,7 +63,8 @@
                                                 class="rhwoostar rhwoostar4 active">&#9733;</span><span
                                                 class="rhwoostar rhwoostar5 active">&#9733;</span>
                                         </div>
-                                        <span class="greycolor postview">{!! $clothes->description !!}</span></div>
+{{--                                        <span class="greycolor postview">{!! $clothes->description !!}</span>--}}
+                                    </div>
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
                                 </div>

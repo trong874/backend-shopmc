@@ -7,7 +7,8 @@
                 <div class="rh-post-wrapper">
                     <article class="post mb0" id="page-9004">
                         <div class="vc_row wpb_row vc_row-fluid vc_custom_1564761728966 vc_row-has-fill centered-container">
-                            <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
+                            <div class="wpb_column vc_column_container vc_col-sm-12 ">
+{{--                                vc_hidden-xs--}}
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="vc_row wpb_row vc_inner vc_row-fluid">
