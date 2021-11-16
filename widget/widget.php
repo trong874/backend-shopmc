@@ -112,7 +112,7 @@ View::composer('frontend.category_product', function ($view) {
     $categories_p = Group::where('module', 'category-products')
         ->where('position','category_header')
         ->get([
-            'title'
+            'title','slug'
         ]);
     return $view->with('categories_p', $categories_p);
 });

@@ -31,6 +31,13 @@ return [
             'new-tab' => false,
         ],
         [
+            'title' => 'Nhóm sản phẩm',
+            'root' => true,
+            'icon' => 'media/svg/icons/Media/Playlist2.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/products-group',
+            'new-tab' => false,
+        ],
+        [
             'section' => 'Tin tức',
         ],
         [
@@ -45,6 +52,13 @@ return [
             'root' => true,
             'icon' => 'media/svg/icons/General/Thunder-move.svg', // or can be 'flaticon-home' or any flaticon-*
             'page' => '/admin/category-news',
+            'new-tab' => false,
+        ],
+        [
+            'title' => 'Nhóm tin tức',
+            'root' => true,
+            'icon' => 'media/svg/icons/General/Thunder-move.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/news-group',
             'new-tab' => false,
         ],
         [

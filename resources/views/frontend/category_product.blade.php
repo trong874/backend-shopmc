@@ -12,7 +12,9 @@
                         <ul id="menu-danhmuc" class="menu">
                             @if($categories_p)
                                 @foreach($categories_p as $category)
-                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="#">{{$category->title}}</a></li>
+                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320">
+                                <a href="{{route('category.detail',$category->slug)}}">{{$category->title}}</a>
+                            </li>
                                 @endforeach
                                 @endif
                         </ul>
