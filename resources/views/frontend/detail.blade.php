@@ -114,6 +114,38 @@
                                                             Thêm vào giỏ hàng
                                                         </a>
                                                         <script>
+                                                            if (sessionStorage.getItem('value1').length == 0) {
+
+                                                                alert('A null session variable I be');
+                                                            }
+                                                            else {
+                                                                alert("deo null")
+                                                            }
+
+                                                        </script>
+
+
+                                                        <script>
+
+
+                                                            // var sessionValue = '<%=Session["Time"] != null%>';
+                                                            // if (sessionValue == 'True')
+                                                            // {
+                                                            //     alert('session is not null');
+                                                            //     $("#cart_out").mouseover(function(){
+                                                            //         $('#cartDetail').show();
+                                                            //     })
+                                                            //
+                                                            //
+                                                            // }
+                                                            // else
+                                                            // {
+                                                            //     alert('session is null');
+                                                            //     $("#cart_out").hover(function(){
+                                                            //         $('#cartDetail').hide();
+                                                            //     })
+                                                            //
+                                                            // }
 
                                                             function addToCart(id) {
                                                                 console.log(id);
@@ -136,7 +168,7 @@
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
-                                                                        confirm("Bạn có muốn xóa vật phẩm không ?");
+                                                                        alert("Xóa vật phẩm thành công?");
                                                                     }
                                                                 });
                                                             })
