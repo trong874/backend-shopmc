@@ -33,8 +33,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
         if (Auth::user()->account_type != self::ACCOUNT_TYPE_ADMIN){
-            Session::put('message','Tuổi gì đòi vào');
-            return redirect()->route('logout');
+            return redirect()->route('page.index');
         }
         return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -57,6 +56,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
         Session::put('message',$message);
-        return redirect('/login');
+        return back();
     }
 }

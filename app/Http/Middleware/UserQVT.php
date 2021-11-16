@@ -20,7 +20,7 @@ class UserQVT
     public function handle(Request $request, Closure $next)
     {
         if (Auth::user()->account_type !== self::USER_QTV){
-            return  back();
+            return  redirect()->route('page.index');
         }
         return $next($request);
     }
