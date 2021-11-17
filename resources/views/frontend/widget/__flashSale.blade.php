@@ -69,9 +69,10 @@
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>
-                        @endforeach
+
 
                     </div>
+                        @endforeach
                 </div>
                 <div class="clearfix"></div>
             </div>
