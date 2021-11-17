@@ -20,7 +20,7 @@
                      data-template="query_type1" id="rh_filterid_2085933268"
                      data-innerargs='{"type":"1"}'>
 
-                    @foreach($news as $new)
+                    @foreach($news->item as $new)
                         <div class="news-community clearfix">
                             <div class="rh_grid_image_wrapper">
                                 <div class="newsimage rh_gr_img">

@@ -171,7 +171,7 @@
     <link rel="apple-touch-icon" href="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-180x180.png"/>
     <meta name="msapplication-TileImage"
           content="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-270x270.png"/>
-    <script src="{{'frontend/js/home/style2.js'}}"></script>
+    <script src="{{asset('frontend/js/home/style2.js')}}"></script>
     <noscript>
         <style> .wpb_animate_when_almost_visible {
                 opacity: 1;
