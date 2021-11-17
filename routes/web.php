@@ -19,7 +19,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/san-pham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
     Route::get('/tin-tuc/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/danh-muc/{slug}', [PagesController::class, 'getCategoryItems'])->name('category.detail');
-    Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
+    Route::get('/danh-muc-tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
     Route::get('/detail', [PagesController::class, 'detail'])->name('page.detail');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
     Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');

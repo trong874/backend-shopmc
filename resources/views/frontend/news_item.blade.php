@@ -10,7 +10,7 @@
                  data-filterargs="{&quot;posts_per_page&quot;:&quot;12&quot;,&quot;cat&quot;:200,&quot;paged&quot;:1,&quot;post_type&quot;:&quot;post&quot;}"
                  data-template="column_grid" id="rh_loop_425108458"
                  data-innerargs="{&quot;exerpt_count&quot;:&quot;&quot;,&quot;disable_meta&quot;:&quot;&quot;,&quot;enable_btn&quot;:&quot;&quot;,&quot;disable_btn&quot;:1,&quot;disable_act&quot;:0,&quot;price_meta&quot;:&quot;1&quot;,&quot;aff_link&quot;:0}">
-                @foreach($category_news as $news)
+                @foreach($all_news as $news)
                 <article class="col_item column_grid rh-heading-hover-color rh-bg-hover-color no-padding rh-cartbox">
                     <figure class="mb20 position-relative text-center">
                         <a href="{{route('news.detail',$news->slug)}}" class="">

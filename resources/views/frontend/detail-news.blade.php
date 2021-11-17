@@ -180,7 +180,7 @@
                     </div>
                 </div>
                 <div id="woocommerce_products-2" class="widget woocommerce widget_products">
-                    <div class="title">FlashSale</div>
+                    <div class="title">Sản phẩm liên quan</div>
                     <ul class="product_list_widget">
                         @foreach($flashSales as $flashSale)
                         <li>
