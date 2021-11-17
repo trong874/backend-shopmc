@@ -135,18 +135,18 @@
                             <div class="item-small-news-details">
                                 <h3>
                                     <span id="temperatur9188" class="temperatur">1<span
-                                            class="gradus_icon"></span></span> <a
-                                        href="https://shopmc.com.vn/minecraft-la-gi/">Minecraft là gì?</a>
+                                            class="gradus_icon"></span></span>
+                                    <a href="#">Minecraft là gì?</a>
                                 </h3>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="col_item item-small-news">
                             <div class="item-small-news-details">
-                                <h3><span id="temperatur9085" class="temperatur">1<span
-                                            class="gradus_icon"></span></span> <a
-                                        href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/">Hướng
-                                        dẫn tải và cài đặt Minecraft Launcher</a>
+                                <h3>
+                                    <span id="temperatur9085" class="temperatur">1<span
+                                            class="gradus_icon"></span></span>
+                                    <a href="#">Hướng dẫn tải và cài đặt Minecraft Launcher</a>
                                 </h3>
                             </div>
                         </div>

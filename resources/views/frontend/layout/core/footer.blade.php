@@ -13,11 +13,11 @@
                                         style="color: #c4011a;">090 4568 069</span></a></strong></p>
                         <p class="hotline"><span class="small-text">(Hỗ trợ 24/7, kể cả T7 &#8211; CN)</span></p>
                         <ul>
-                            <li><a href="https://shopmc.com.vn/cac-cau-hoi-thuong-gap/">Các câu hỏi thường gặp</a>
+                            <li><a href="#">Các câu hỏi thường gặp</a>
                             </li>
-                            <li><a href="https://shopmc.com.vn/gui-yeu-cau-ho-tro/">Gửi yêu cầu hỗ trợ</a></li>
-                            <li><a href="https://shopmc.com.vn/huong-dan-dat-hang/">Hướng dẫn đặt hàng</a></li>
-                            <li><a href="https://shopmc.com.vn/chinh-sach-order-san-pham/">Chính sách order sản
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                            <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                            <li><a href="#">Chính sách order sản
                                     phẩm</a></li>
                         </ul>
                     </div>
@@ -30,12 +30,12 @@
                             <div class="title">KHÁCH HÀNG</div>
                             <div class="widget_recent_entries">
                                 <ul>
-                                    <li><a href="https://shopmc.com.vn/chinh-sach-bao-mat/">Chính Sách Bảo Mật</a>
+                                    <li><a href="#">Chính Sách Bảo Mật</a>
                                     </li>
-                                    <li><a href="https://shopmc.com.vn/huong-dan-mua-hang/">Hướng Dẫn Thanh Toán</a>
+                                    <li><a href="#">Hướng Dẫn Thanh Toán</a>
                                     </li>
-                                    <li><a href="https://shopmc.com.vn/doi-tra-hang/">Đổi Trả Hàng</a></li>
-                                    <li><a href="https://shopmc.com.vn/cham-soc-khach-hang/">Chăm Sóc Khách Hàng</a>
+                                    <li><a href="#">Đổi Trả Hàng</a></li>
+                                    <li><a href="#">Chăm Sóc Khách Hàng</a>
                                     </li>
                                 </ul>
                             </div>
@@ -44,10 +44,10 @@
                             <div class="title">SHOPMC</div>
                             <div class="widget_recent_entries">
                                 <ul>
-                                    <li><a href="https://shopmc.com.vn/gioi-thieu-shopmc/">Giới Thiệu</a></li>
-                                    <li><a href="https://shopmc.com.vn/chuyen-muc/tin-tuc/">Tin Tức</a></li>
-                                    <li><a href="https://shopmc.com.vn/chinh-sach-van-chuyen/">Vận Chuyển</a></li>
-                                    <li><a href="https://shopmc.com.vn/contact-us/">Liên Hệ</a></li>
+                                    <li><a href="#">Giới Thiệu</a></li>
+                                    <li><a href="#">Tin Tức</a></li>
+                                    <li><a href="#">Vận Chuyển</a></li>
+                                    <li><a href="#">Liên Hệ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -62,7 +62,8 @@
                         <div class="wpsm-one-half wpsm-column-first">
                             <div class="title">PHƯƠNG THƯC THANH TOÁN</div>
                             <div class="widget_recent_entries">
-                                <p><img loading="lazy" class="alignnone size-full wp-image-9767"
+                                <p>
+                                    <img loading="lazy" class="alignnone size-full wp-image-9767"
                                         src="https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang.png" alt=""
                                         width="380" height="62"
                                         srcset="https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang.png 380w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-300x49.png 300w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-766x125.png 766w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-1024x167.png 1024w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-788x128.png 788w, https://shopmc.com.vn/wp-content/uploads/2019/05/nganhang-545x89.png 545w"
@@ -73,11 +74,12 @@
                         <div class="wpsm-one-half wpsm-column-last">
                             <div class="title">KẾT NỐI VỚI CHÚNG TÔI</div>
                             <div class="widget_recent_entries">
-                                <p><a href="https://m.me/shopmcvnnet" target=" _blank"
-                                      rel="noopener noreferrer"><img
-                                            src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"/></a>
-                                    <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"/> <a
-                                        href="https://www.youtube.com/channel/UCnIm8teXECxqCxTW4OSVZ4A"><img
+                                <p>
+                                    <a href="#" target=" _blank"
+                                      rel="noopener noreferrer">
+                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"/></a>
+                                    <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"/>
+                                    <a href="#"><img
                                             src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"/></a></p>
                             </div>
                             <p>
@@ -97,8 +99,7 @@
     <div class="rh-container clearfix">
         <div class="footer_most_bottom">
             <div class="f_text">
-                <span class="f_text_span">2021 SHOPMC Design</span>
-
+                <span class="f_text_span">2021 WEB PHỤ KIỆN GAME</span>
             </div>
         </div>
     </div>
