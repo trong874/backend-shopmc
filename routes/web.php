@@ -15,18 +15,16 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'language'], function () {
 
     Route::get('/',[PagesController::class,'index'])->name('page.index');
-    Route::get('/tin-tuc/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
+    Route::get('/news/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/san-pham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
+    Route::get('/tin-tuc/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/danh-muc/{slug}', [PagesController::class, 'getCategoryItems'])->name('category.detail');
     Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
-
-
     Route::get('/detail', [PagesController::class, 'detail'])->name('page.detail');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
-
     Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');
     Route::get('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
-
+    Route::get('/delete-cart/{id}', [CartController::class, 'deleteItemCart'])->name('delete-cart');
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
     });
@@ -69,5 +67,6 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::get('detele-item-group',[GroupController::class,'deleteItemInGroup'])->name('group.delete-item');
     });
+
 });
 require __DIR__ . '/auth.php';

@@ -1,6 +1,7 @@
 <div
     class="vc_row wpb_row vc_row-fluid vc_custom_1607449187390 vc_row-has-fill centered-container">
-    <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
+    <div class="wpb_column vc_column_container vc_col-sm-12 ">
+{{--        vc_hidden-xs--}}
         <div class="vc_column-inner">
             <div class="wpb_wrapper"><h4
                     style="margin-block-start: 1em; margin-left: 15px"
@@ -12,8 +13,7 @@
                         data-template="woogridpart" id="rh_woogrid_1266572959"
                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
                         @foreach($legos as $lego)
-                            <div
-                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                            <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                                 <span class="onsale"><span>- 26%</span></span>
                                 <figure class="mb5 mt25 position-relative notresized">
                                     <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
@@ -54,19 +54,20 @@
 
                                     </div>
                                     <div class="floatright product-meta">
-                                        <span class="greycolor postview">{!! $lego->description !!}</span></div>
+{{--                                        <span class="greycolor postview">{!! $lego->description !!}</span></div>--}}
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
 
                                 </div>
                             </div>
-                        @endforeach
+
                         <div class="re_ajax_pagination mt-3">
                             <span data-offset="12"
                                   data-containerid="rh_woogrid_1266572959"
                                   class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
                         </div>
                     </div>
+                        @endforeach
                 </div>
 
                 <div class="clearfix"></div>

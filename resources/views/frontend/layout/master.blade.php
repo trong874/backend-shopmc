@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="https://shopmc.com.vn/xmlrpc.php"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- This site is optimized with the Yoast SEO plugin v15.9 - https://yoast.com/wordpress/plugins/seo/ -->
     <title>{{$page_title ?? "SHOP MC"}}</title>
@@ -207,6 +207,20 @@
         .goingay {
             text-align: center;
         }
+        @media screen and (max-width: 480px) {
+            #slider_home #rev_slider_24_1_forcefullwidth,#slider_home #rev_slider_24_1_wrapper,#slider_home #rev_slider_24_1 {
+                height: 60px !important;
+            }
+            #slider_home #rev_slider_24_1 rs-bullets{
+                top: 76px !important
+            }
+            #slider_home #rev_slider_24_1_wrapper .ares .tp-bullet{
+                width: 6px;
+                height: 6px;
+                left: 8px;
+            }
+        }
+
     </style>
     <div class="codinh">
         <div class="buttom_home">

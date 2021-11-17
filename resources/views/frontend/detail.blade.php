@@ -67,11 +67,8 @@
                                         <div class="rh-line mb20 mt10"></div>
                                         <div class="rh_post_layout_rev_price_holder position-relative">
                                             <div class="floatright mobileblockdisplay">
-
                                             </div>
-
                                             <div class="compare-button-holder">
-
                                                 <p class="price">
                                                     <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
@@ -81,8 +78,6 @@
                                                     </ins>
                                                 </p>
                                                 <div class="woo-button-area mb30">
-
-
                                                     <form class="cart">
                                                         <input type="hidden" id="wc_quick_buy_hook_20521"
                                                                value="20521"/>
@@ -107,41 +102,39 @@
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
-                                                        <button style="vertical-align: top; margin-left: 1em" type="button" name="add-to-cart" id="addToCart" href="javascript:"
+
+                                                        <a onclick="addToCart({{$itemDetail->id}})" style="vertical-align: top; margin-left: 1em;background-color: #3c6a02" name="add-to-cart" id="addToCart" href="javascript:"
+
                                                          class="btn btn-success">
                                                             Thêm vào giỏ hàng
-                                                        </button>
+                                                        </a>
                                                         <script>
-                                                            //  document.getElementById("addToCart").onclick =function(){
-                                                            //      addToCart()
-                                                            //  };
-                                                            // function addToCart() {
-                                                            //     $("#cartDetail").append("<li>Cart Item</li>");
-                                                            //
-                                                            // }
-                                                            $( "#addToCart" ).click(function() {
 
-                                                                $("#cartDetail").append("<div class=\"container\">\n" +
-                                                                    "                    <div class=\"row\">\n" +
-                                                                    "                        <div class=\"col-4\">\n" +
-                                                                    "                            <img src=\"https://brandlogos.net/wp-content/uploads/2016/09/facebook-icon-preview-1.png\" alt=\"\">\n" +
-                                                                    "                        </div>\n" +
-                                                                    "                        <div class=\"col-8\" style=\"width:225px;height: 100%\">\n" +
-                                                                    "                            <span style=\"word-wrap: break-word;\">ghjiokkjhgfdfghkljkhhgcfasdgfdassssasasasassasadasdsadsadsa</span>\n" +
-                                                                    "                            <br>\n" +
-                                                                    "                            <p>1 <span> X 180.000</span></p>\n" +
-                                                                    "                        </div>\n" +
-                                                                    "                    </div>\n" +
-                                                                    "                </div>");
+                                                            function addToCart(id) {
+                                                                console.log(id);
+                                                                $.ajax({
+                                                                    url:'/add-cart/'+id,
+                                                                    type:'GET',
+                                                                    success:function (res) {
+                                                                        $("#my_cart").empty();
+                                                                        $("#my_cart").html(res);
+                                                                        alert('Đã thêm vật phẩm này vào giỏ hàng');
+                                                                    }
+                                                                });
+                                                            }
+                                                            $("#my_cart").on("click",".close-item i",function () {
 
+                                                                $.ajax({
+                                                                    data: {csrfmiddlewaretoken: window.CSRF_TOKEN},
+                                                                    url:'/delete-cart/'+$(this).data("id"),
+                                                                    type:'GET',
+                                                                    success:function (res) {
+                                                                        $("#my_cart").empty();
+                                                                        $("#my_cart").html(res);
+                                                                        confirm("Bạn có muốn xóa vật phẩm không ?");
+                                                                    }
+                                                                });
                                                             })
-                                                            function displayCart(){
-                                                                $('#cartDetail').show();
-                                                            }
-
-                                                            function hide() {
-                                                                $('#cartDetail').hide();
-                                                            }
 
                                                         </script>
                                                     </form>
@@ -223,66 +216,6 @@
 
                                 </div>
                             </div>
-                            <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
-                                <div class="rh-container">
-                                    <div class="clearfix"></div>
-                                    <h3>Flash Sale</h3>
-                                    <div class="woocommerce">
-
-
-                                        <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
-                                             data-filterargs='{"post__in":["4447","17068","13006","20499","5305","13003"],"orderby":"post__in","post_type":"product","posts_per_page":6,"tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}'
-                                             data-template="woogridpart" id="rh_woogrid_1397075271"
-                                             data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
-                                            @foreach($flashSales as $flashSale)
-                                            <div
-                                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                                                <figure class="mb5 mt25 position-relative">
-                                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                                       href="https://shopmc.vn/san-pham/cup-sat-bat-bia-minecraft/">
-                                                        <img
-                                                            src="{{$flashSale->image}}"
-                                                            data-src="{{$flashSale->image}}"
-                                                            alt="{{$flashSale->title}}"
-                                                            class="lazyload  ewww_webp_lazy_load" width="300"
-                                                            height="300"
-                                                            data-src-webp="{{$flashSale->image}}">
-                                                    </a>
-
-                                                </figure>
-
-                                                <h3 class=" text-clamp text-clamp-2">
-                                                    <a href="{{route('item.detail',$flashSale->slug)}}">{{$flashSale->title}}</a>
-                                                </h3>
-
-
-                                                <div class="border-top pt10 pr10 pl10 pb10">
-                                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
-
-                                                        <span class="price"><span
-                                                                class="woocommerce-Price-amount amount"><bdi>{{$flashSale->price}}<span
-                                                                        class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
-                                                    </div>
-                                                    <div class="floatright product-meta">
-                                                        <div class="rh_woo_star" title="Rated 5 out of 5"><span
-                                                                class="rhwoostar rhwoostar1 active">&#9733;</span><span
-                                                                class="rhwoostar rhwoostar2 active">&#9733;</span><span
-                                                                class="rhwoostar rhwoostar3 active">&#9733;</span><span
-                                                                class="rhwoostar rhwoostar4 active">&#9733;</span><span
-                                                                class="rhwoostar rhwoostar5 active">&#9733;</span></div>
-                                                        <span class="greycolor postview">Đã bán 1329</span></div>
-                                                    <div class="rh-flex-right-align btn_for_grid floatright">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-
-                                    <div class="clearfix"></div>
-
-                                </div>
-                            </div>
                             <div class="other-woo-area clearfix">
                                 <div class="rh-container">
                                 </div>
@@ -331,66 +264,7 @@
                                     <div class="product-bottom_space-real"></div>
                                 </div>
                                 <div class="dat-mua">
-{{--                                    <div class="datngay">--}}
-{{--                                        <a href="?add-to-cart=20521" data-product_id="20521" data-product_sku=""--}}
-{{--                                           class="button_datngay" add_to_cart_button ajax_add_to_cart>--}}
-{{--                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"--}}
-{{--                                                 width="446.843px" height="446.843px" viewBox="0 0 446.843 446.843"--}}
-{{--                                                 style="enable-background:new 0 0 446.843 446.843;"--}}
-{{--                                                 xml:space="preserve">--}}
-{{--<g>--}}
-{{--    <path d="M444.09,93.103c-2.698-3.699-7.006-5.888-11.584-5.888H109.92c-0.625,0-1.249,0.038-1.85,0.119l-13.276-38.27--}}
-{{--		c-1.376-3.958-4.406-7.113-8.3-8.646L19.586,14.134c-7.374-2.887-15.695,0.735-18.591,8.1c-2.891,7.369,0.73,15.695,8.1,18.591--}}
-{{--		l60.768,23.872l74.381,214.399c-3.283,1.144-6.065,3.663-7.332,7.187l-21.506,59.739c-1.318,3.663-0.775,7.733,1.468,10.916--}}
-{{--		c2.24,3.183,5.883,5.078,9.773,5.078h11.044c-6.844,7.616-11.044,17.646-11.044,28.675c0,23.718,19.298,43.012,43.012,43.012--}}
-{{--		s43.012-19.294,43.012-43.012c0-11.029-4.2-21.059-11.044-28.675h93.776c-6.847,7.616-11.048,17.646-11.048,28.675--}}
-{{--		c0,23.718,19.294,43.012,43.013,43.012c23.718,0,43.012-19.294,43.012-43.012c0-11.029-4.2-21.059-11.043-28.675h13.433--}}
-{{--		c6.599,0,11.947-5.349,11.947-11.948c0-6.599-5.349-11.947-11.947-11.947H143.647l13.319-36.996--}}
-{{--		c1.72,0.724,3.578,1.152,5.523,1.152h210.278c6.234,0,11.751-4.027,13.65-9.959l59.739-186.387--}}
-{{--		C447.557,101.567,446.788,96.802,444.09,93.103z M169.659,409.807c-10.543,0-19.116-8.573-19.116-19.116--}}
-{{--		s8.573-19.117,19.116-19.117s19.116,8.574,19.116,19.117S180.202,409.807,169.659,409.807z M327.367,409.807--}}
-{{--		c-10.543,0-19.117-8.573-19.117-19.116s8.574-19.117,19.117-19.117c10.542,0,19.116,8.574,19.116,19.117--}}
-{{--		S337.909,409.807,327.367,409.807z M402.52,148.149h-73.161V115.89h83.499L402.52,148.149z M381.453,213.861h-52.094v-37.038--}}
-{{--		h63.967L381.453,213.861z M234.571,213.861v-37.038h66.113v37.038H234.571z M300.684,242.538v31.064h-66.113v-31.064H300.684z--}}
-{{--		 M139.115,176.823h66.784v37.038h-53.933L139.115,176.823z M234.571,148.149V115.89h66.113v32.259H234.571z M205.898,115.89v32.259--}}
-{{--		h-76.734l-11.191-32.259H205.898z M161.916,242.538h43.982v31.064h-33.206L161.916,242.538z M329.359,273.603v-31.064h42.909--}}
-{{--		l-9.955,31.064H329.359z"/>--}}
-{{--</g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--                                                <g>--}}
-{{--                                                </g>--}}
-{{--</svg>--}}
-{{--                                            <div>Đặt hàng</div>--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
+
                                     <div class="muangay">
                                         <input value="Mua Ngay" type="button" id="quick_buy_20521_button" name=""
                                                data-product-type="simple" data-product-id="20521"
@@ -400,10 +274,143 @@
                             </div>
                             <!--/div-->
                             <!--/div-->
+                            {{--Description--}}
+                            <div class="content-woo-area">
+                                <div class="rh-tabletext-block rh-tabletext-wooblock" id="section-description">
+                                    <div class="rh-tabletext-block-heading">
+                                        <span class="toggle-this-table" style="color: black"></span>
+                                        <h4 class="rh-heading-icon">Mô tả</h4>
+                                    </div>
+                                    <div class="rh-tabletext-block-wrapper">
+                                        <style>
+                                            .read_more_less {
+                                                height: 3rem;
+                                                text-align: center;
+                                                border-top: 1px solid #eee;
+                                                padding-top: 10px;
+                                                color: #f7941d;
+                                                font-size: 15px;
+                                            }
+                                            .content_product {
+                                                /*display: flow-root;
+                                                /*height: 100px;*/
+                                            }
+                                            .hide_content {
+                                                position: absolute;
+                                                width: 100%;
+                                                height: 100%;
+                                                top: 0;
+                                                left: 0;
+                                                background: -webkit-gradient(linear,left top,left bottom,color-stop(0,transparent),color-stop(70%,hsla(0,0%,100%,0)),color-stop(90%,#fff));
+                                                background: linear-gradient(transparent,hsla(0,0%,100%,0) 70%,#fff 90%);
+                                            }
+                                            .all_des{
+                                                max-height: 220px;
+                                                overflow: hidden;
+                                                position: relative;
+                                            }
+                                            #readLess{display: none;}
+                                            .span_item{
+                                                width: 12px;
+                                                margin-left: 5px;
+                                                fill: black;
+                                            }
+                                        </style>
+                                        <div class="clearfix"></div>
+                                        <div class="all_des" style="max-height: none;">
+                                            <div class="content_product" style="color: black">
+                                                <p >{!! $itemDetail->description !!}</p>
+                                                <p><img loading="lazy" class="alignnone size-full wp-image-8427" src="{{$itemDetail->image}}" alt="" width="382" height="600" srcset="https://shopmc.com.vn/wp-content/uploads/2018/04/kiem-minecraft_diamond-382x600.jpg 382w, https://shopmc.com.vn/wp-content/uploads/2018/04/kiem-minecraft_diamond-382x600-549x863.jpg 549w, https://shopmc.com.vn/wp-content/uploads/2018/04/kiem-minecraft_diamond-382x600-191x300.jpg 191w" sizes="(max-width: 382px) 100vw, 382px"></p>
+                                            </div>
+                                            <div class="hide_content" style="display: none;"></div>
+                                        </div>
+                                        <div class="read_more_less" id="readMore" style="display: none;color:black">Xem Thêm <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" class="span_item"><path stroke="none" d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path></svg></div>
+                                        <div class="read_more_less" id="readLess" style="display: block; color:black">Thu Gọn <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" class="span_item"><path style="color: black;" stroke="none" d="m11 8.5c0-.1 0-.2-.1-.3l-5-6c-.1-.1-.3-.2-.4-.2s-.3.1-.4.2l-5 6c-.2.2-.1.5.1.7s.5.1.7-.1l4.6-5.5 4.6 5.5c.2.2.5.2.7.1.1-.1.2-.3.2-.4z"></path></svg></div>
+                                        <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+                                        <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v7.0&amp;appId=248671142486453&amp;autoLogAppEvents=1"></script>
+                                        <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="https://shopmc.com.vn/san-pham/kiem-diamond-minecraft-chinh-hang/" data-numposts="5" data-width="auto" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=248671142486453&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 213px;"><iframe name="ff88d50379fa7" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=248671142486453&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3b660b4c391738%26domain%3Dshopmc.com.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fshopmc.com.vn%252Ff355224624632c%26relation%3Dparent.parent&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width=" style="border: none; visibility: visible; width: 100%; height: 213px;" class=""></iframe></span></div>
+                                        <script>
+                                            jQuery(function($) {
+                                                $(document).ready(function() {
+                                                    $("#readMore").click(function(){
+                                                        $(".all_des").css('max-height','none');
+                                                        $(".hide_content").css('display','none');
+                                                        $("#readMore").css('display','none');
+                                                        $("#readLess").css('display','block');
+                                                    });
+                                                    $("#readLess").click(function(){
+                                                        $(".all_des").css('max-height','120px');
+                                                        $(".hide_content").css('display','block');
+                                                        $("#readLess").css('display','none');
+                                                        $("#readMore").css('display','block');
+                                                    });
+                                                });
+                                            });
+                                        </script>
 
+                                    </div>
+                                </div>
 
+                            </div>
                         </div>
                         <!-- #product-20521 -->
+                        <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
+                            <div class="rh-container">
+                                <div class="clearfix"></div>
+                                <h3>Sản phẩm liên quan</h3>
+                                <div class="woocommerce" style="margin-top: 6px">
+                                    <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
+                                         data-filterargs='{"post__in":["4447","17068","13006","20499","5305","13003"],"orderby":"post__in","post_type":"product","posts_per_page":6,"tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}'
+                                         data-template="woogridpart" id="rh_woogrid_1397075271"
+                                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
+                                        @foreach($flashSales as $flashSale)
+                                            <div
+                                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                                <figure class="mb5 mt25 position-relative">
+                                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                                       href="{{route('item.detail',$flashSale->slug)}}">
+                                                        <img
+                                                            src="{{$flashSale->image}}"
+                                                            data-src="{{$flashSale->image}}"
+                                                            alt="{{$flashSale->title}}"
+                                                            class="lazyload  ewww_webp_lazy_load" width="300"
+                                                            height="300"
+                                                            data-src-webp="{{$flashSale->image}}">
+                                                    </a>
+                                                </figure>
+
+                                                <h3 class=" text-clamp text-clamp-2">
+                                                    <a href="{{route('item.detail',$flashSale->slug)}}">{{$flashSale->title}}</a>
+                                                </h3>
+
+
+                                                <div class="border-top pt10 pr10 pl10 pb10">
+                                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
+
+                                                        <span class="price"><span
+                                                                class="woocommerce-Price-amount amount"><bdi>{{$flashSale->price}}<span
+                                                                        class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
+                                                    </div>
+                                                    <div class="floatright product-meta">
+                                                        <div class="rh_woo_star" title="Rated 5 out of 5"><span
+                                                                class="rhwoostar rhwoostar1 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar2 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar3 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar4 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar5 active">&#9733;</span></div>
+                                                        <span class="greycolor postview">Đã bán 1329</span></div>
+                                                    <div class="rh-flex-right-align btn_for_grid floatright">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
