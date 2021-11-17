@@ -1,6 +1,5 @@
 <header id="main_header" class="white_style">
     <div class="header_wrap">
-
         <!-- top -->
         <div class="header_top_wrap white_style">
             <div class="rh-container">
@@ -56,7 +55,7 @@
                         </a>
                     </div>
                     <div class="search head_search">
-                        <form role="search" method="get" class="search-form" action="https://shopmc.com.vn/">
+                        <form role="search" method="get" class="search-form" action="#">
                             <input type="text" name="s" placeholder="Tìm kiếm" class="re-ajax-search"
                                    autocomplete="off" data-posttype="product">
                             <input type="hidden" name="post_type" value="product"/>
@@ -70,7 +69,7 @@
                                 <div class="celldisplay rh_woocartmenu_cell text-center">
                                     <span class="inlinestyle rehub-main-btn-bg rehub-main-smooth menu-cart-btn ">
                                         <a class="rh-header-icon rh-flex-center-align rh_woocartmenu-link cart-contents cart_count_0"
-                                            href="https://shopmc.com.vn/cart/">
+                                            href="#">
                                             <i class="fas fa-cart-plus"></i>
                                             <span class="rh_woocartmenu-icon">
                                                 <span class="rh-icon-notice rehub-main-color-bg">0</span>
@@ -152,7 +151,7 @@
                             </ul>
                         </li>
                         <li id="menu-item-9558" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                href="https://shopmc.com.vn/khuyen-mai/"><i class="far fa-usd-circle"></i> Khuyến
+                                href="#"><i class="far fa-usd-circle"></i> Khuyến
                                 mại</a></li>
                         <li id="menu-item-9664" class="menu-item menu-item-type-custom menu-item-object-custom"><a
                                 href="{{route('new.list')}}"><i class="fas fa-newspaper"></i>
@@ -164,24 +163,24 @@
                             <ul class="sub-menu">
                                 <li id="menu-item-9757"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-store"><a
-                                        href="https://shopmc.com.vn/thuong-hieu/mojang/">Mojang</a></li>
+                                        href="#">Mojang</a></li>
                                 <li id="menu-item-9758"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-store"><a
-                                        href="https://shopmc.com.vn/thuong-hieu/jinx/">Jinx</a></li>
+                                        href="#">Jinx</a></li>
                                 <li id="menu-item-9756"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-store"><a
-                                        href="https://shopmc.com.vn/thuong-hieu/lego-dan-mach/">Lego Đan Mạch</a>
+                                        href="#">Lego Đan Mạch</a>
                                 </li>
                                 <li id="menu-item-9759"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-store"><a
-                                        href="https://shopmc.com.vn/thuong-hieu/thinkgeek/">ThinkGeek</a></li>
+                                        href="#">ThinkGeek</a></li>
                                 <li id="menu-item-9760"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-store"><a
-                                        href="https://shopmc.com.vn/thuong-hieu/mattel/">Mattel</a></li>
+                                        href="#">Mattel</a></li>
                             </ul>
                         </li>
                         <li id="menu-item-9662" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                href="https://shopmc.com.vn/contact-us/"><i class="fas fa-address-book"></i>Liên hệ</a>
+                                href="#"><i class="fas fa-address-book"></i>Liên hệ</a>
                         </li>
                     </ul>
                 </nav>
@@ -202,9 +201,8 @@
                     </div>
                 </div>
                 <div class="search-header-contents">
-                    <form role="search" method="get" class="search-form" action="https://shopmc.com.vn/">
-                        <input type="text" name="s" placeholder="Tìm kiếm" class="re-ajax-search" autocomplete="off"
-                               data-posttype="product">
+                    <form role="search" method="get" class="search-form" action="/">
+                        <input type="text" name="s" placeholder="Tìm kiếm"  autocomplete="off">
                         <input type="hidden" name="post_type" value="product"/>
                         <button type="submit" class="btnsearch"><i class="rhicon rhi-search"></i></button>
                     </form>
