@@ -78,6 +78,7 @@ class ItemController extends Controller
         $item = Item::findOrFail($item);
         $item->groups()->detach();
         $item->delete();
+        Session::put('message','Đã xoá item số ' . $item->id);
         return back();
     }
 

@@ -66,8 +66,7 @@
                     </div>
                     <label class="col-lg-1 col-form-label text-right">Position</label>
                     <div class="col-lg-3">
-                        <select class="form-control select2" id="position_input" name="position[]" multiple="multiple">
-                            <optgroup label="Vị trí hiển thị">
+                        <select class="form-control" name="position">
                                 <option value="category">Danh mục
                                     sản phẩm
                                 </option>
@@ -91,7 +90,6 @@
                                 <option value="news">
                                     Tin tức cộng đồng
                                 </option>
-                            </optgroup>
                         </select>
                     </div>
                 </div>

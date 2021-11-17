@@ -145,5 +145,5 @@ function changeTitleToSlug() {
     slug = slug.replace(/\@\-|\-\@|\@/gi, '');
     //In slug ra textbox có id “slug”
     document.getElementById('slug').value = slug;
-    document.getElementById('url').value = "{{url('')}}//" + slug;
+    document.getElementById('url').value = window.location.hostname +'/'+ slug;
 }
