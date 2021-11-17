@@ -90,10 +90,10 @@
                                                             <button type="button" class="minus qib-button">-</button>
                                                             <div class="quantity buttons_added">
                                                                 <label class="screen-reader-text"
-                                                                       for="quantity_618097ddb411a">Combo Kiếm - Cup -
+                                                                       for="quantity">Combo Kiếm - Cup -
                                                                     Rìu - Xẻng Minecraft số lượng</label> <input
                                                                     type="number"
-                                                                    id="quantity_618097ddb411a"
+                                                                    id="quantity"
                                                                     class="input-text qty text"
                                                                     step="1"
                                                                     min="1"
@@ -113,49 +113,20 @@
                                                          class="btn btn-success">
                                                             Thêm vào giỏ hàng
                                                         </a>
-                                                        <script>
-                                                            if (sessionStorage.getItem('value1').length == 0) {
-
-                                                                alert('A null session variable I be');
-                                                            }
-                                                            else {
-                                                                alert("deo null")
-                                                            }
-
-                                                        </script>
-
 
                                                         <script>
-
-
-                                                            // var sessionValue = '<%=Session["Time"] != null%>';
-                                                            // if (sessionValue == 'True')
-                                                            // {
-                                                            //     alert('session is not null');
-                                                            //     $("#cart_out").mouseover(function(){
-                                                            //         $('#cartDetail').show();
-                                                            //     })
-                                                            //
-                                                            //
-                                                            // }
-                                                            // else
-                                                            // {
-                                                            //     alert('session is null');
-                                                            //     $("#cart_out").hover(function(){
-                                                            //         $('#cartDetail').hide();
-                                                            //     })
-                                                            //
-                                                            // }
 
                                                             function addToCart(id) {
-                                                                console.log(id);
                                                                 $.ajax({
                                                                     url:'/add-cart/'+id,
                                                                     type:'GET',
+                                                                    data:{
+                                                                        quantity:$('#quantity').val(),
+                                                                    },
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
-                                                                        alert('Đã thêm vật phẩm này vào giỏ hàng');
+                                                                        alertify.success('Đã thêm vật phẩm này vào giỏ hàng');
                                                                     }
                                                                 });
                                                             }
@@ -168,7 +139,7 @@
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
-                                                                        alert("Xóa vật phẩm thành công?");
+                                                                        alertify.success("Xóa vật phẩm thành công?");
                                                                     }
                                                                 });
                                                             })
@@ -506,7 +477,6 @@
 
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <!-- #product-20521 -->

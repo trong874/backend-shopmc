@@ -9,6 +9,7 @@ class Cart extends Model
 {
     use HasFactory;
 
+    protected  $table = 'Cart';
     protected $fillable = [
         'idkey',
         'shop_id',
@@ -22,4 +23,8 @@ class Cart extends Model
     function items(){
         return $this->belongsToMany(Item::class,'cart_item','cart_id','item_id');
     }
+    function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }
