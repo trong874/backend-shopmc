@@ -26,7 +26,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
     });
-    Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
         Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 
         Route::resource('products', ItemController::class);
