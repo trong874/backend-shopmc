@@ -72,7 +72,6 @@ class   PagesController extends Controller
             'title', 'content', 'description', 'image', 'url','slug','id'
         ]);
         $related = $newDetail->groups()->with('item')->where('module','news-group')->first();
-
         return view('frontend.detail-news',[ 'newDetail'=> $newDetail, 'related'=> $related ]);
     }
 

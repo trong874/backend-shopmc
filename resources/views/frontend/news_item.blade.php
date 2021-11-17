@@ -22,7 +22,7 @@
                     </figure>
                     <div class="content_constructor pb0 pr20 pl20">
                         <h3 class="mb15 mt0 font110 mobfont100 fontnormal lineheight20"><a
-                                href="https://shopmc.com.vn/minecraft-la-gi/">{{$news->title}}</a></h3>
+                                href="{{route('news.detail',$news->slug)}}">{{$news->title}}</a></h3>
                         <div class="rh-flex-center-align mb10">
                             <div class="post-meta mb0">
                                 <span class="cat_link_meta"><a href="{{route('news.detail',$news->slug)}}"
