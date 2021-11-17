@@ -123,7 +123,7 @@
                                 <article
                                     class="col_item column_grid rh-heading-hover-color rh-bg-hover-color no-padding">
                                     <figure class="mb20 position-relative text-center">
-                                        <a href="#" class="">
+                                        <a href="{{route('news.detail',$news->slug)}}" class="">
                                             <img class=" ls-is-cached lazyloaded"
                                                  data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/d1d89ec35057cca89fc030629a8c11d5-1uz88ifrf6d83tv4xgysm5pq1s2ywphgui33p0tlext0.png"
                                                  width="350" height="200" alt="Minecraft là gì?"
@@ -132,7 +132,7 @@
                                     </figure>
                                     <div class="content_constructor">
                                         <h3 class="mb15 mt0 font110 mobfont100 fontnormal lineheight20"><a
-                                                href="#">{{$news->title}}</a></h3>
+                                                href="{{route('news.detail',$news->slug)}}">{{$news->title}}</a></h3>
                                     </div>
                                 </article>
                                     @endif
