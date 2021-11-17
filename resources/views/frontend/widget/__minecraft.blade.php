@@ -86,9 +86,10 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="re_ajax_pagination"><span data-offset="12"
-                                                              data-containerid="rh_woogrid_2031402312"
-                                                              class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
+                        <div class="re_ajax_pagination mt-3">
+                            <span data-offset="12"
+                                  data-containerid="rh_woogrid_2031402312"
+                                  class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
                         </div>
                     </div>
                 </div>
