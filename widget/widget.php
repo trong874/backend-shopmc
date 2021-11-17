@@ -24,7 +24,7 @@ View::composer('frontend.widget.__flashSale', function ($view) {
         ->first([
         'title', 'description', 'image', 'url', 'id','slug'
     ]);
-    return $view->with('flashSales', $group_flashSales->item);
+    return $view->with('flashSales', $group_flashSales);
 });
 
 
@@ -105,7 +105,7 @@ View::composer('frontend.widget.__news', function ($view) {
         ->first([
             'title', 'content', 'description', 'image', 'url','id','slug'
         ]);
-    return $view->with('news', $group_news->item);
+    return $view->with('news', $group_news);
 });
 
 

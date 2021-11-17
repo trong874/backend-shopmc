@@ -71,11 +71,9 @@ class   PagesController extends Controller
             ->first([
             'title', 'content', 'description', 'image', 'url','slug','id'
         ]);
-        $flashSales =  Item::where('position', 'flashsale')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-        ]);
+        $related = $newDetail->groups()->with('item')->where('module','news-group')->first();
 
-        return view('frontend.detail-news',[ 'newDetail'=> $newDetail], [ 'flashSales'=> $flashSales ]);
+        return view('frontend.detail-news',[ 'newDetail'=> $newDetail, 'related'=> $related ]);
     }
 
 
