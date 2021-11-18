@@ -86,6 +86,7 @@ class ItemController extends Controller
     {
         $ids = $request->ids;
         Item::whereIn('id', explode(",", $ids))->delete();
+        Session::put('message','Đã xoá những item '.$ids);
     }
 
     public function filter(Request $request, $module)
@@ -140,5 +141,13 @@ class ItemController extends Controller
             ->get();
         $html = view('backend.groups.result-search-item-group', ['items' => $result, 'group_id' => $request->group_id])->render();
         return response()->json($html);
+    }
+
+    public function replication($id)
+    {
+        $item = Item::find($id);
+        $item->replicate()->save();
+        Session::put('message','Đã nhân bản item số '.$id);
+        return back();
     }
 }

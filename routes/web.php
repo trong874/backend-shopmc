@@ -49,6 +49,8 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::get('{module}/filter/item', [ItemController::class, 'filter'])->name('items.filter');
 
+        Route::get('replication-item/{id}',[ItemController::class,'replication'])->name('replication.item');
+
         Route::post('/delete-many-item', [ItemController::class, 'destroyMuch'])->name('items.destroy_many');
 
         Route::post('/delete-many-user', [UserQTVController::class, 'destroyMuch'])->name('user_qtv.destroy_many');
