@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SettingController extends Controller
 {
@@ -28,7 +29,7 @@ class SettingController extends Controller
             $config = Setting::where('id',$key)->first();
             $config->update(['val'=>$item]);
         }
-
+        Session::put('message','Đã cập nhật thay đổi');
         return back();
     }
 }
