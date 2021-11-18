@@ -5,13 +5,15 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Group;
 use App\Models\Item;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class   PagesController extends Controller
 {
     public function index()
     {
-        return view('frontend.home');
+        $page_title = Setting::whereName('Tiêu đề')->first()->val;
+        return view('frontend.home',compact('page_title'));
     }
 
     public function getNewsItem(){
