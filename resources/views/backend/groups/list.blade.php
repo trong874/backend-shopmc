@@ -197,11 +197,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route("$module.edit",$group)}}">
-                                    <i class="flaticon-edit m-2 link_edit"></i>
-                                </a>
-                                <i class="flaticon-signs-1 list-item-group" data-toggle="modal"
-                                   data-target="#list-item-{{$group->id}}"></i>
+
                                 {{--                                List Item Modal--}}
                                 <div class="modal fade modal_delete_8" id="list-item-{{$group->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalSizeSm" aria-hidden="true" >
@@ -256,8 +252,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <i class="flaticon2-rubbish-bin-delete-button m-2 link_delete" data-toggle="modal"
-                                   data-target="#form_delete-{{$group->id}}"></i>
+                                <a href="{{route("$module.edit",$group)}}" class="btn btn-sm btn-clean btn-icon">
+                                        <i class="la la-cog"></i>
+                                </a>
+                                <a href="#list-item-{{$group->id}}" data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                                    <i class="la la-edit"></i>
+                                </a>
+                                <a href="#form_delete-{{$group->id}}"  data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                    <i class="la la-trash"></i>
+                                </a>
                                 <style>
                                     .link_delete:hover {
                                         color: red;
@@ -308,6 +311,20 @@
 @endsection
 @section('scripts')
     <script src="{{asset('assets/js/backend.js')}}"></script>
+    <script src="{{asset('js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+    @if(Session::has('message'))
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: "success",
+                    title: "{{Session::get('message')}}",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+        </script>
+        {{Session::forget('message')}}
+    @endif
     <script>
         $('#form-filter').on('submit', function (event) {
             event.preventDefault();

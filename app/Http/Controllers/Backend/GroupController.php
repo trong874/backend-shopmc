@@ -72,6 +72,7 @@ class GroupController extends Controller
     public function destroy($group)
     {
         Group::destroy($group);
+        Session::put('message', 'Xoá thành công group số '.$group);
         return back();
     }
 

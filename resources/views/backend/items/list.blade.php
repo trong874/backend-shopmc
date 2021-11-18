@@ -197,11 +197,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route("$module.edit",$item)}}">
-                                    <i class="flaticon-edit m-2 link_edit"></i>
+                                <a href="{{route("$module.edit",$item)}}" class="btn btn-sm btn-clean btn-icon">
+                                    <i class="la la-cog"></i>
                                 </a>
-                                <i class="flaticon2-rubbish-bin-delete-button m-2 link_delete" data-toggle="modal"
-                                   data-target="#form_delete-{{$item->id}}"></i>
+                                <a href="#form_delete-{{$item->id}}"  data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                    <i class="la la-trash"></i>
+                                </a>
                                 <style>
                                     .link_delete:hover {
                                         color: red;
