@@ -236,7 +236,7 @@
     </style>
     <div class="codinh">
         <div class="buttom_home">
-            <a class="buttom_home_a" href="https://shopmc.com.vn">
+            <a class="buttom_home_a" href="/">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="home"
                      class="svg-inline--fa fa-home fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 576 512">
@@ -247,7 +247,7 @@
             </a>
         </div>
         <div class="buttom_home">
-            <a class="buttom_home_a" href="tel://0981058326">
+            <a class="buttom_home_a" href="#">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="phone-volume"
                      class="svg-inline--fa fa-phone-volume fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 384 512">
@@ -258,7 +258,7 @@
             </a>
         </div>
         <div class="buttom_home">
-            <a class="buttom_home_a" href="/khuyen-mai">
+            <a class="buttom_home_a" href="#">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="gift"
                      class="svg-inline--fa fa-gift fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 512 512">
@@ -269,7 +269,7 @@
             </a>
         </div>
         <div class="buttom_home">
-            <a class="buttom_home_a" href="https://zalo.me/0981058326">
+            <a class="buttom_home_a" href="#">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="comment-dots"
                      class="svg-inline--fa fa-comment-dots fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 512 512">
