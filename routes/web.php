@@ -39,7 +39,7 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('category-products', CategoryController::class);
 
-        Route::resource('category-news', CartController::class);
+        Route::resource('category-news', CategoryController::class);
 
         Route::resource('products-group',GroupController::class);
 

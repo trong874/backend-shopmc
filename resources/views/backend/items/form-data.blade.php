@@ -30,20 +30,6 @@
             @csrf
             <div class="card-body">
                 <div class="form-group row mt-3">
-                    @if(Session::has('message'))
-                        <div class="alert alert-custom alert-light-primary fade show mb-5" role="alert">
-                            <div class="alert-icon"><i class="flaticon-alert"></i></div>
-                            <div class="alert-text"> {{Session::get('message')}}
-                                {{Session::forget('message')}}</div>
-                            <div class="alert-close">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="ki ki-close"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                    @endif
-                </div>
-                <div class="form-group row mt-3">
                     <label class="col-lg-1 col-form-label text-right">Title</label>
                     <div class="col-lg-3">
                         <input type="text" name="title" id="title" class="form-control" placeholder="Title"
@@ -55,7 +41,7 @@
                     <label class="col-lg-1 col-form-label text-right">Danh mục</label>
                     <div class="col-lg-3">
                         <select class="form-control select2" id="group_id_input" name="group_id[]" multiple="multiple">
-                            <optgroup label="Central Time Zone">
+                            <optgroup label="Chọn danh mục">
                                 @if(isset($item))
                                     {{showOldCategories($groups,$item)}}
                                 @else
@@ -64,33 +50,9 @@
                             </optgroup>
                         </select>
                     </div>
-                    <label class="col-lg-1 col-form-label text-right">Position</label>
+                    <label class="col-lg-1 col-form-label text-right">Vị trí</label>
                     <div class="col-lg-3">
-                        <select class="form-control" name="position">
-                                <option value="category">Danh mục
-                                    sản phẩm
-                                </option>
-                                <option value="flashsale">Flash
-                                    Sale
-                                </option>
-                                <option value="toy-minecraft">Đồ
-                                    Chơi Minecraft
-                                </option>
-                                <option value="category">Danh mục
-                                    sản phẩm
-                                </option>
-                                <option value="balo-bag">Balo Túi
-                                    Xách
-                                </option>
-                                <option value="clothes">Quần áo
-                                </option>
-                                <option value="lego">
-                                    Mô hình/ Lego Minecraft
-                                </option>
-                                <option value="news">
-                                    Tin tức cộng đồng
-                                </option>
-                        </select>
+                        <input type="text" name="position" class="form-control" placeholder="Vị trí...">
                     </div>
                 </div>
                 <div class="separator separator-dashed my-10"></div>
@@ -342,4 +304,18 @@
     <script src="{{asset('js/jquery.nestable.js')}}"></script>
     <script src="{{asset('js/jquery.sortable.js')}}"></script>
     <script src="{{asset('js/pages/crud/forms/widgets/select2.js')}}"></script>
+    <script src="{{asset('js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+    @if(Session::has('message'))
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: "success",
+                    title: "{{Session::get('message')}}",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+        </script>
+        {{Session::forget('message')}}
+    @endif
 @endsection
