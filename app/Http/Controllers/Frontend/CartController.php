@@ -34,7 +34,6 @@ class CartController extends Controller
         if ($cart){
             $oldCart = Cart::with('items')->get();
         }else{
-//            nếu chưa có cart thì tạo cart theo user
             Cart::create([
                 'user_id'=> Auth::user()->id
             ]);
@@ -54,7 +53,6 @@ class CartController extends Controller
                 $flag = false;
             }
         }
-
 
     if ($flag) {
         $cart->items()->attach($item_id);
