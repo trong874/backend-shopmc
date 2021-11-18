@@ -251,10 +251,10 @@
                                     </div>
                                 </div>
                                 <a href="{{route("$module.edit",$group)}}" class="btn btn-sm btn-clean btn-icon">
-                                        <i class="la la-cog"></i>
+                                        <i class="la la-edit"></i>
                                 </a>
                                 <a href="#list-item-{{$group->id}}" data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Edit details">
-                                    <i class="la la-edit"></i>
+                                    <i class="la la-list-ol"></i>
                                 </a>
                                 <a href="#form_delete-{{$group->id}}"  data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Delete">
                                     <i class="la la-trash"></i>

@@ -197,24 +197,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route("$module.edit",$item)}}" class="btn btn-sm btn-clean btn-icon">
-                                    <i class="la la-cog"></i>
+                                <a href="{{route("$module.edit",$item)}}" class="btn btn-sm btn-clean btn-icon" title="Edit">
+                                    <i class="la la-edit"></i>
                                 </a>
                                 <a href="#form_delete-{{$item->id}}"  data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Delete">
                                     <i class="la la-trash"></i>
                                 </a>
-                                <a href="{{route('replication.item',$item->id)}}" class="btn btn-sm btn-clean btn-icon" title="Delete">
-                                    <i class="la la-trash"></i>
+                                <a href="{{route('replication.item',$item->id)}}" class="btn btn-sm btn-clean btn-icon" title="Replicate">
+                                    <i class="la la-copy"></i>
                                 </a>
-                                <style>
-                                    .link_delete:hover {
-                                        color: red;
-                                    }
-
-                                    .link_edit:hover {
-                                        color: #ffa500;
-                                    }
-                                </style>
                             </td>
                         </tr>
                     @endforeach
