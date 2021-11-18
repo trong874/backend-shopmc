@@ -2441,7 +2441,7 @@
                                             </div>
                                         </div>
                                         <div>
-                                            @foreach($newCart->items as $item)
+                                            @foreach($data_cart['items'] as $key => $item)
                                             <div class="woocommerce-cart-form__cart-item cart_item">
                                                 <div class="cot1">
                                                     <div class="product-remove">
@@ -2461,7 +2461,7 @@
                                                     <div class="product-thumbnail">
                                                         <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/"><img
                                                                 width="380" height="434"
-                                                                src="{{$item['itemInfo']->image}}"
+                                                                src="{{$item->image}}"
                                                                 class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                 alt="" loading="lazy"/>
 
@@ -2470,10 +2470,10 @@
                                                 </div>
                                                 <div class="cot2">
                                                     <div class="product-name" data-title="Sản phẩm">
-                                                        <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/">{{$item['itemInfo']->title}}</a></div>
+                                                        <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/">{{$item->title}}</a></div>
 
                                                     <div class="product-price" data-title="Giá">
-                                                        <span class="woocommerce-Price-amount amount"><bdi>{{number_format($item['itemInfo']->price)}}<span
+                                                        <span class="woocommerce-Price-amount amount"><bdi>{{number_format($item->price)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </div>
 
@@ -2491,7 +2491,7 @@
                                                                     min="0"
                                                                     max=""
                                                                     name="cart[185c61d8cf01c01ddf5f7ba337f72084][qty]"
-                                                                    value="{{$item['quanty']}}"
+                                                                    value="{{$data_cart['cart_items'][$key]->quantity}}"
                                                                     title="SL"
                                                                     size="4"
                                                                     placeholder=""
@@ -2503,7 +2503,7 @@
 
                                                     <div class="product-subtotal tamtinh" data-title="Tạm tính">
                                                         <span class="woocommerce-Price-amount amount"><bdi><span
-                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                                                    class="woocommerce-Price-currencySymbol">{{number_format($data_cart['cart_items'][$key]->price)}}&#8363;</span></bdi></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2544,7 +2544,7 @@
                                             <div class="cart-subtotal">
                                                 <div class="colum_cart">Tạm tính</div>
                                                 <div data-title="Tạm tính"><span
-                                                        class="woocommerce-Price-amount amount"><bdi>{{number_format($newCart->totalPrice)}}&nbsp;<span
+                                                        class="woocommerce-Price-amount amount"><bdi>{{number_format($data_cart['total_price'])}}<span
                                                                 class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                 </div>
                                             </div>
