@@ -24,17 +24,12 @@
                                              alt="{{$clothes->title}}"
                                              src="{{$clothes->image}}"/>
                                     </a>
-
                                 </figure>
-
                                 <h3 class=" text-clamp text-clamp-2">
                                     <a href="{{route('item.detail',$clothes->slug)}}">{{$clothes->title}}</a>
                                 </h3>
-
-
                                 <div class="border-top pt10 pr10 pl10 pb10">
                                     <div class="price_for_grid floatleft rehub-btn-font mr10">
-
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>&nbsp;

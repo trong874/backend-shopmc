@@ -123,7 +123,7 @@
                                     data-containerid="rh_simplepostid_2012517100">Popular in month</span></li>
                             <li><span
                                     data-sorttype="{&quot;filtertype&quot;:&quot;meta&quot;,&quot;filterorder&quot;:&quot;DESC&quot;,&quot;filterdate&quot;:&quot;all&quot;,&quot;filtermetakey&quot;:&quot;post_hot_count&quot;}"
-                                    class="re_filtersort_btn resort_1" data-containerid="rh_simplepostid_2012517100">Hottest</span>
+                                    class="" data-containerid="rh_simplepostid_2012517100">Hottest</span>
                             </li>
                         </ul>
                     </div>
