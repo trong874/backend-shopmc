@@ -131,9 +131,8 @@
                                                                 });
                                                             }
                                                             $("#my_cart").on("click",".close-item i",function () {
-
                                                                 $.ajax({
-                                                                    data: {csrfmiddlewaretoken: window.CSRF_TOKEN},
+                                                                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                                                                     url:'/delete-cart/'+$(this).data("id"),
                                                                     type:'GET',
                                                                     success:function (res) {

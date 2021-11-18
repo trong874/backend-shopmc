@@ -111,7 +111,6 @@
                 display: none;
                 height: auto;
                 background-color: white;
-
                 /*margin-left: 1300px;*/
                 top: 40px;
                 right: 0;
@@ -123,7 +122,6 @@
                 -webkit-box-shadow: 0 10px 6px -6px #777;
                 -moz-box-shadow: 0 10px 6px -6px #777;
                 box-shadow: 0 10px 6px -6px #777;
-
             }
             #cartDetail img{
                 max-height: 60px;
