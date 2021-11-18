@@ -40,7 +40,7 @@
                                         class="more-from-store-a floatleft ml0 mr10 mb5 lineheight20"><span
                                             class="tag_post_store_meta"></span></span>
                                 </div>
-                                <div class="newsdetail rh_gr_right_desc limit">
+                                <div class="newsdetail rh_gr_right_desc limit_news">
                                     <p class="font90 mobfont80 lineheight20 moblineheight15 mb15 ">
                                         {!! $new->description !!}</p>
                                 </div>

@@ -493,7 +493,7 @@ body, body.dark_body {
  }
 
 
-.limit{
+.limit_news{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
