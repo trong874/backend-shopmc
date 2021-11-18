@@ -203,6 +203,9 @@
                                 <a href="#form_delete-{{$item->id}}"  data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Delete">
                                     <i class="la la-trash"></i>
                                 </a>
+                                <a href="{{route('replication.item',$item->id)}}" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                    <i class="la la-trash"></i>
+                                </a>
                                 <style>
                                     .link_delete:hover {
                                         color: red;

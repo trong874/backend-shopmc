@@ -141,4 +141,12 @@ class ItemController extends Controller
         $html = view('backend.groups.result-search-item-group', ['items' => $result, 'group_id' => $request->group_id])->render();
         return response()->json($html);
     }
+
+    public function replication($id)
+    {
+        $item = Item::find($id);
+        $new_item = $item->replicate()->save();
+        Session::put('message','Đã nhân bản item số '.$item->id  .'thành item số' .$new_item->id);
+        return back();
+    }
 }

@@ -35,7 +35,7 @@
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
                     <select name="group_id" id="group_id" class="form-control">
-                        <option value="">--Group ID--</option>
+                        <option value="">--Danh mục--</option>
                         @if(isset($groups))
                             @if(isset($old_data))
                                 {{showCategories($groups,$old_data)}}
@@ -137,7 +137,6 @@
                     <th><input type="checkbox" id="master"></th>
                     <th>ID</th>
                     <th>{{__('Tiêu đề')}}</th>
-                    <th>{{__('Danh mục')}}</th>
                     <th>{{__('Ảnh')}}</th>
                     <th>{{__('Vị trí')}}</th>
                     <th>{{__('Thứ tự')}}    </th>
@@ -154,7 +153,6 @@
                             <td>{{$group->id}}</td>
                             <td style="text-overflow: Ellipsis;max-width: 200px;max-height: 50px;overflow: hidden;white-space: nowrap;">
                                 <a href="{{$group->url}}">{{$group->title}}</a></td>
-                            <td>{{@$group->groups[0]->id.'-'.@$group->groups[0]->title}}</td>
                             <td><img src="{{$group->image}}" alt="" style="max-height: 50px"></td>
                             <td>{{$group->position}}</td>
                             <td>{{$group->order}}</td>
