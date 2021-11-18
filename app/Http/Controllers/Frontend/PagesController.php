@@ -54,13 +54,15 @@ class   PagesController extends Controller
 
     public function getItemDetail($slug)
     {
-        $itemDetail = Item::where('slug',$slug)->first([
+        $itemDetail = Item::where('slug',$slug)
+            ->first([
             'title', 'content', 'description', 'image', 'url','price','price_old','slug','id'
         ]);
-        $flashSales = Item::where('position', 'flashsale')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-        ]);
-        return view('frontend.detail', ['itemDetail' => $itemDetail, 'flashSales'=>$flashSales]);
+//        $flashSales = Item::where('position', 'flashsale')->get([
+//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
+//        ]);
+        $related = $itemDetail->groups()->with('item')->where('module','products-group')->first();
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related'=>$related]);
     }
 
 
