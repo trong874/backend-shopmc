@@ -15,10 +15,11 @@ class   PagesController extends Controller
     }
 
     public function getNewsItem(){
-    $category_news = Item::where('position','news')->get([
-            'title','image','slug'
-        ]);
-    return view('frontend.news_item',compact('category_news'));
+    $all_news = Item::where('module','news')
+        ->get([
+        'image','title','slug'
+    ]);
+    return view('frontend.news_item',['all_news'=>$all_news]);
     }
 
 //    public function getProducts()
@@ -53,27 +54,27 @@ class   PagesController extends Controller
 
     public function getItemDetail($slug)
     {
-        $itemDetail = Item::where('slug',$slug)->first([
+        $itemDetail = Item::where('slug',$slug)
+            ->first([
             'title', 'content', 'description', 'image', 'url','price','price_old','slug','id'
         ]);
-        $flashSales = Item::where('position', 'flashsale')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-        ]);
-        return view('frontend.detail', ['itemDetail' => $itemDetail, 'flashSales'=>$flashSales]);
+//        $flashSales = Item::where('position', 'flashsale')->get([
+//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
+//        ]);
+        $related = $itemDetail->groups()->with('item')->where('module','products-group')->first();
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related'=>$related]);
     }
 
 
     public function getNewsDetail($slug)
     {
-        $newDetail = Item::where('slug', $slug)->first([
+        $newDetail = Item::where('module','news')
+            ->where('slug', $slug)
+            ->first([
             'title', 'content', 'description', 'image', 'url','slug','id'
         ]);
-
-        $flashSales =  Item::where('position', 'flashsale')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-        ]);
-
-        return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
+        $related = $newDetail->groups()->with('item')->where('module','news-group')->first();
+        return view('frontend.detail-news',[ 'newDetail'=> $newDetail, 'related'=> $related ]);
     }
 
 

@@ -1,211 +1,287 @@
 @extends('frontend.layout.master')
 <!-- Outer Start -->
 @section('content')
-<div class="rh-outer-wrap">
-    <div id="top_ankor"></div>
-    <!-- HEADER -->
+    <div class="rh-outer-wrap">
+        <div id="top_ankor"></div>
+        <!-- HEADER -->
 
-    <!-- CONTENT -->
-    <div class="rh-container">
-        <div class="rh-content-wrap clearfix">
-            <!-- Main Side -->
-            <div class="main-side single clearfix">
-                <div class="rh-post-wrapper">
-                    <article
-                        class="post-inner post post-80168 type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc"
-                        id="post-80168">
-                        <!-- Title area -->
-                        <div class="rh_post_layout_metabig">
-                            <div class="title_single_area">
-                                <div class="breadcrumb"><a href="https://shopmc.vn/">Home</a> &raquo; <span><a
-                                            href="https://shopmc.vn/category/tin-tuc/">Tin Tức</a></span> &raquo; <span
-                                        class="current">{{$newDetail->title}}</span></div>
-                                <!-- .breadcrumbs -->
-                                <div class="rh-cat-list-title">
-                                    <a class="rh-cat-label-title rh-cat-187"
-                                       href="https://shopmc.vn/category/tin-tuc/"
-                                       title="View all posts in Tin Tức">Tin Tức</a>
-                                </div>
-                                <h1>{{$newDetail->title}}</h1>
-                                <div class="meta post-meta-big">
-                                    <div class="floatleft mr15 rtlml15">
-                                        <a href="https://shopmc.vn/author/admin/" class="floatleft mr10 rtlml10">
-                                            <img
-                                                src="https://secure.gravatar.com/avatar/5d6000a6a1002d316ecdf57b6554c35d?s=40&#038;d=mm&#038;r=g"
-                                                width="40" height="40" alt="Avatar"
-                                                class="avatar avatar-40 wp-user-avatar wp-user-avatar-40 photo avatar-default"/>
-                                        </a>
-                                        <span class="floatleft authortimemeta">
-									<a href="https://shopmc.vn/author/admin/">
-						admin
-					</a>
+        <!-- CONTENT -->
+        <div class="rh-container">
+            <div class="rh-content-wrap clearfix">
+                <!-- Main Side -->
+                <div class="main-side single clearfix">
+                    <div class="rh-post-wrapper">
+                        <article
+                            class="post-inner post post-9085 type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc"
+                            id="post-9085">
+                            <!-- Title area -->
+                            <div class="rh_post_layout_metabig">
+                                <div class="title_single_area">
+                                    <div class="breadcrumb"><a href="https://shopmc.com.vn/">Home</a> » <span><a
+                                                href="https://shopmc.com.vn/chuyen-muc/tin-tuc/">Tin Tức</a></span> »
+                                        <span class="current">{{$newDetail->title}}</span></div>
+                                    <!-- .breadcrumbs -->
+                                    <div class="rh-cat-list-title"><a class="rh-cat-label-title rh-cat-200"
+                                                                      href="https://shopmc.com.vn/chuyen-muc/tin-tuc/"
+                                                                      title="View all posts in Tin Tức">Tin Tức</a>
+                                    </div>
+                                    <h1>{{$newDetail->title}}</h1>
+                                    <div class="meta post-meta-big">
+                                        <div class="floatleft mr15 rtlml15">
+                                            <a href="https://shopmc.com.vn/author/admin/"
+                                               class="floatleft mr10 rtlml10">
+                                                <img
+                                                    src="https://shopmc.com.vn/wp-content/uploads/2020/11/anonymous_logo-300x300-1-100x100.png"
+                                                    width="40" height="40" alt="admin"
+                                                    class="avatar avatar-40 wp-user-avatar wp-user-avatar-40 alignnone photo">
+                                            </a>
+                                            <span class="floatleft authortimemeta">
+									          <a href="https://shopmc.com.vn/author/admin/">
+						                       admin
+					                        </a>
 													<div class="date_time_post">
-			 						 				 20 Tháng Mười Một, 2020			 								</div>
-							</span>
+			 						 				 Tháng Hai 25, 2019
+                                                    </div>
+							                   </span>
 
-                                    </div>
-                                    <div class="floatright ml15 postviewcomm mt5">
-                                        <i class="fas fa-bolt"></i><strong>267</strong> Views
-                                        <i class="far fa-comment-dots"></i><strong><a
-                                                    href="https://shopmc.vn/craftmas-resource-pack-2/#respond"
-                                                    class="comm_meta">0</a></strong>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="top_share">
-                                    <div class="post_share">
-                                        <div class="social_icon  row_social_inpost">
-                                            <div class="favour_in_row favour_btn_red">
-
-                                            </div>
-                                            <span
-                                                data-href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F"
-                                                class="fb share-link-image" data-service="facebook"><i class="fab fa-facebook"></i>
-                                            </span>
-                                            <span
-                                                data-href="https://twitter.com/share?url=https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F&text=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Craftmas+Resource+Pack"
-                                                class="tw share-link-image" data-service="twitter"><i class="fab fa-twitter"></i>
-                                            </span>
-                                            <span
-                                                data-href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F&amp;media=https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg&amp;description=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Craftmas+Resource+Pack"
-                                                class="pn share-link-image" data-service="pinterest"><i class="fab fa-pinterest"></i>
-                                            </span>
-                                            <span
-                                                data-href="mailto:?subject=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Craftmas+Resource+Pack&body=Check out: https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F - %C4%90%E1%BB%93+ch%C6%A1i+Minecraft+ch%C3%ADnh+h%C3%A3ng"
-                                                class="in share-link-image" data-service="email"><i class="far fa-envelope"></i>
-                                            </span>
                                         </div>
+                                        <div class="floatright ml15 postviewcomm mt5">
+                                            <span class="postview_meta mr15 ml15"><strong>615</strong> Views</span>
+
+
+                                            <span class="comm_count_meta"><strong><a
+                                                        href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/#respond"
+                                                        class="comm_meta">0</a></strong></span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <figure class="top_featured_image">
+                                <img src="{{$newDetail->image}}" style="width: 100%">
+                            </figure>
+                            {!! $newDetail->description !!}
+                        </article>
+                        <div class="clearfix"></div>
+
+                        <div class="post_share">
+                            <div class="social_icon  row_social_inpost">
+                                <div class="favour_in_row favour_btn_red"></div>
+                                <span
+                                    data-href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F"
+                                    class="fb share-link-image" data-service="facebook"><i
+                                        class="rhicon rhi-facebook"></i></span><span
+                                    data-href="https://twitter.com/share?url=https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F&amp;text=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Minecraft+Launcher"
+                                    class="tw share-link-image" data-service="twitter"><i
+                                        class="rhicon rhi-twitter"></i></span><span
+                                    data-href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F&amp;media=https://shopmc.com.vn/wp-content/uploads/2019/02/maxresdefault.jpg&amp;description=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Minecraft+Launcher"
+                                    class="pn share-link-image" data-service="pinterest"><i
+                                        class="rhicon rhi-pinterest-p"></i></span><span
+                                    data-href="mailto:?subject=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Minecraft+Launcher&amp;body=Check out: https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F - Shop+MC"
+                                    class="in share-link-image" data-service="email"><i class="rhicon rhi-envelope"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- PAGER SECTION -->
+                        <div class="float-posts-nav" id="float-posts-nav">
+                            <div class="postNavigation prevPostBox">
+                            </div>
+                            <div class="postNavigation nextPostBox">
+                                <a href="https://shopmc.com.vn/minecraft-la-gi/">
+                                    <div class="inner-prevnext">
+                                        <div class="thumbnail">
+
+                                            <img class=" lazyloaded"
+                                                 data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/d1d89ec35057cca89fc030629a8c11d5-o41iwk2krtgbecj9r3pydjaf436v8lz2eild2g583g.png"
+                                                 width="70" height="70"
+                                                 alt="Hướng dẫn tải và cài đặt Minecraft Launcher"
+                                                 src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/d1d89ec35057cca89fc030629a8c11d5-o41iwk2krtgbecj9r3pydjaf436v8lz2eild2g583g.png">
+                                        </div>
+                                        <div class="headline"><span>Next</span><h4>Minecraft là gì?</h4></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /PAGER SECTION -->
+                        <div class="related_articles pt25 border-top mb0 clearfix">
+                            <div class="related_title rehub-main-font font120 fontbold mb35">
+                                 Bài viết liên quan
+                            </div>
+                            @if(@$related->item)
+                            <div class="columned_grid_module rh-flex-eq-height col_wrap_fourth mb0">
+                                @foreach($related->item as $news)
+                                    @if($news->id != $newDetail->id)
+                                <article
+                                    class="col_item column_grid rh-heading-hover-color rh-bg-hover-color no-padding">
+                                    <figure class="mb20 position-relative text-center">
+                                        <a href="{{route('news.detail',$news->slug)}}" class="">
+                                            <img class=" ls-is-cached lazyloaded"
+                                                 data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/d1d89ec35057cca89fc030629a8c11d5-1uz88ifrf6d83tv4xgysm5pq1s2ywphgui33p0tlext0.png"
+                                                 width="350" height="200" alt="Minecraft là gì?"
+                                                 src="{{$news->image}}">
+                                        </a>
+                                    </figure>
+                                    <div class="content_constructor">
+                                        <h3 class="mb15 mt0 font110 mobfont100 fontnormal lineheight20"><a
+                                                href="{{route('news.detail',$news->slug)}}">{{$news->title}}</a></h3>
+                                    </div>
+                                </article>
+                                    @endif
+                                @endforeach
+                            </div>
+                            @else
+                                không có bài viết liên quan !
+                                @endif
+                        </div>
+                    </div>
+                </div>
+                <!-- /Main Side -->
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- SIDEBAR WIDGET AREA -->
+                    <div id="custom_html-1" class="widget_text widget widget_custom_html">
+                        <div class="textwidget custom-html-widget">
+                            <style type="text/css">
+                                .text1 {
+                                    padding-bottom: 14px;
+                                }
+
+                                .text {
+                                    margin: 0 0 5px;
+                                }
+
+                                .text2 {
+                                    padding: 10px;
+                                    border-bottom: 1px solid #eee;
+                                }
+
+                                .text21 {
+                                    padding: 10px
+                                }
+
+                                .anh1 {
+                                    padding-right: 10px;
+                                    height: 30px;
+                                    margin-bottom: 10px;
+                                }
+
+                                b {
+                                    font-weight: bold;
+                                }
+                            </style>
+                            <img src="https://thegioilego.com.vn/wp-content/uploads/2019/02/ezgif.com-webp-to-jpg.jpg">
+                            <div class="text2">
+                                <div class="text1">
+                                    <img class="anh1"
+                                         src="https://thegioilego.com.vn/wp-content/uploads/2019/02/shop-icon.png"
+                                         style="float: left;">
+                                    <div class="text3">
+                                        <b>Shopmc</b><br>
+                                        Cam kết chính hãng 100%
+                                    </div>
+                                </div>
+                                <div class="text1">
+                                    <img class="anh1"
+                                         src="https://thegioilego.com.vn/wp-content/uploads/2019/02/money-circle-green-3-512.png"
+                                         style="float: left;">
+                                    <div class="text3"><b>Hoàn tiền 100%</b><br>
+                                        Nếu phát hiện hàng giả
+                                    </div>
+                                </div>
+                                <div class="text1">
+                                    <img class="anh1"
+                                         src="https://thegioilego.com.vn/wp-content/uploads/2019/02/security.png"
+                                         style="float: left;">
+                                    <div class="text3"><b>Giao Hàng Miễn Phí</b><br>
+                                        Miễn phí giao hàng nội thành HN
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text21">
+                                <div class="text1">
+                                    <img class="anh1"
+                                         src="https://thegioilego.com.vn/wp-content/uploads/2019/02/phone-512.png"
+                                         style="float: left;">
+                                    <div class="text3">
+                                        <b>Liên Hệ</b><br>
+                                        Hotline đặt hàng 0904568069
+                                        (hỗ trợ 24/7 cả T7, CN)
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <figure class="top_featured_image">
-                            <noscript data-img="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg"
-                                      data-webp="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg.webp"
-                                      data-srcset-webp="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg.webp 1280w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-300x169.jpg.webp 300w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-768x432.jpg.webp 768w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-1024x576.jpg.webp 1024w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-788x443.jpg.webp 788w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-599x337.jpg.webp 599w"
-                                      data-srcset-img="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg 1280w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-300x169.jpg 300w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-768x432.jpg 768w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-1024x576.jpg 1024w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-788x443.jpg 788w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-599x337.jpg 599w"
-                                      data-class="attachment-full size-full wp-post-image" data-height="720"
-                                      data-sizes="(max-width: 1280px) 100vw, 1280px" data-width="1280"
-                                      class="ewww_webp">
-                                <img width="1280" height="720"
-                                     src="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg"
-                                     class="attachment-full size-full wp-post-image" alt=""
-                                     loading="lazy"
-                                     srcset="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg 1280w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-300x169.jpg 300w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-768x432.jpg 768w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-1024x576.jpg 1024w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-788x443.jpg 788w, https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack-599x337.jpg 599w"
-                                     sizes="(max-width: 1280px) 100vw, 1280px" data-eio="j"/>
-                            </noscript>
-                        </figure>
-                        <p>
-                            <img loading="lazy" class="alignnone size-full wp-image-80169"
-                                 src="https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg" alt=""
-                                 width="1280" height="720"
-                                 srcset="{{$newDetail->image}}"
-                                 sizes="(max-width: 1280px) 100vw, 1280px" data-eio="j"/>
-                            {!! $newDetail->content !!}
-                        </p>
-                    </article>
-                    <div class="clearfix">
-                        <p>
-                            {!! $newDetail->description !!}
-                        </p>
                     </div>
-                    <div class="post_share" style="margin-top: 10px">
-                        <div class="social_icon  row_social_inpost">
-                            <div class="favour_in_row favour_btn_red"></div>
-                            <span
-                                data-href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F"
-                                class="fb share-link-image" data-service="facebook"><i class="fab fa-facebook"></i>
-                                            </span>
-                            <span
-                                data-href="https://twitter.com/share?url=https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F&text=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Craftmas+Resource+Pack"
-                                class="tw share-link-image" data-service="twitter"><i class="fab fa-twitter"></i>
-                                            </span>
-                            <span
-                                data-href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F&amp;media=https://shopmc.vn/wp-content/uploads/2020/11/CraftMas-Resource-Pack.jpg&amp;description=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Craftmas+Resource+Pack"
-                                class="pn share-link-image" data-service="pinterest"><i class="fab fa-pinterest"></i>
-                                            </span>
-                            <span
-                                data-href="mailto:?subject=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Craftmas+Resource+Pack&body=Check out: https%3A%2F%2Fshopmc.vn%2Fcraftmas-resource-pack-2%2F - %C4%90%E1%BB%93+ch%C6%A1i+Minecraft+ch%C3%ADnh+h%C3%A3ng"
-                                class="in share-link-image" data-service="email"><i class="far fa-envelope"></i>
-                                            </span>
-                        </div>
-                    </div>
-                    <!-- PAGER SECTION -->
-
-                    <!-- /PAGER SECTION -->
-                    <div class="related_articles pt25 border-top mb0 clearfix">
-                        <div class="related_title rehub-main-font font120 fontbold mb35">
-                            Bài viết liên quan
-                        </div>
-                        <div class="columned_grid_module rh-flex-eq-height col_wrap_fourth mb0">
-                            <article class="col_item column_grid rh-heading-hover-color rh-bg-hover-color no-padding">
-                                <figure class="mb20 position-relative text-center">
-                                    <a href="https://shopmc.vn/huong-dan-tai-va-cai-dat-autumn-wonder-resource-pack/"
-                                       class="">
-                                        <img class="lazyload"
-                                             data-src="https://shopmc.vn/wp-content/uploads/thumbs_dir/Autumn-Wonder-Mod-1xbs7262e8bgdv5dbk98fgy8189nywkw84ll21l4ph9g.jpg"
-                                             width="350" height="200"
-                                             alt="Hướng dẫn tải và cài đặt Autumn Wonder Resource Pack"
-                                             src="https://shopmc.vn/wp-content/themes/rehub-theme/images/default/blank.gif"/>
-                                    </a>
-                                </figure>
-                                <div class="content_constructor">
-                                    <h3 class="mb15 mt0 font110 mobfont100 fontnormal lineheight20"><a
-                                            href="https://shopmc.vn/huong-dan-tai-va-cai-dat-autumn-wonder-resource-pack/">Hướng
-                                            dẫn tải và cài đặt Autumn Wonder Resource Pack</a></h3>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Main Side -->
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <!-- SIDEBAR WIDGET AREA -->
-                <div id="custom_html-2" class="widget_text widget widget_custom_html">
-                    <div class="textwidget custom-html-widget">
-                        <div id="fb-root"></div>
-                        <script async defer
-                                src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=1083159281759680&autoLogAppEvents=1"></script>
-                        <div class="fb-page" data-href="https://www.facebook.com/shopmcvnnet/" data-width="330"
-                             data-hide-cover="false" data-show-facepile="false" data-show-posts="false">
-                            <div class="fb-xfbml-parse-ignore">
-                                <blockquote cite="https://www.facebook.com/shopmcvnnet/"><a
-                                        href="https://www.facebook.com/shopmcvnnet/">Shop MC</a></blockquote>
+                    <div id="rehub_tabsajax_widget-1" class="widget tabsajax">
+                        <div class="ajaxed_post_widget rh_col_tabs_2">
+                            <div class="rh-flex-center-align tabletblockdisplay re_filter_panel">
+                                <ul class="re_filter_ul">
+                                    <li><span
+                                            data-sorttype="{&quot;filtertype&quot;:&quot;meta&quot;,&quot;filterorder&quot;:&quot;DESC&quot;,&quot;filterdate&quot;:&quot;all&quot;,&quot;filtermetakey&quot;:&quot;rehub_views_mon&quot;}"
+                                            class="active re_filtersort_btn resort_0"
+                                            data-containerid="rh_simplepostid_812292761">Popular in month</span></li>
+                                    <li><span
+                                            data-sorttype="{&quot;filtertype&quot;:&quot;meta&quot;,&quot;filterorder&quot;:&quot;DESC&quot;,&quot;filterdate&quot;:&quot;all&quot;,&quot;filtermetakey&quot;:&quot;post_hot_count&quot;}"
+                                            class="re_filtersort_btn resort_1"
+                                            data-containerid="rh_simplepostid_812292761">Hottest</span></li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="woocommerce_products-2" class="widget woocommerce widget_products">
-                    <div class="title">FlashSale</div>
-                    <ul class="product_list_widget">
-                        @foreach($flashSales as $flashSale)
-                        <li>
-                            <a href="{{route('item.detail',$flashSale->slug)}}">
-                                <img style="width: 150px;height: 150px"
-                                     src="{{$flashSale->image}}"
-                                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""
-                                     loading="lazy"/>
-                                <span class="product-title">{{$flashSale->title}}</span>
-                            </a>
-                            <span class="woocommerce-Price-amount amount">
-                                <bdi>{{$flashSale->price}}<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
-                            </span>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </aside>
-            <!-- /Sidebar -->
-        </div>
-    </div>
-    <!-- /CONTENT -->
-    <!-- FOOTER -->
+                            <div class="wpsm_recent_posts_list mb0 "
+                                 data-filterargs="{&quot;post_type&quot;:&quot;post&quot;,&quot;posts_per_page&quot;:6,&quot;order&quot;:&quot;DESC&quot;,&quot;meta_key&quot;:&quot;rehub_views_mon&quot;,&quot;orderby&quot;:&quot;meta_value_num&quot;,&quot;no_found_rows&quot;:1}"
+                                 data-template="simplepostlist" id="rh_simplepostid_812292761"
+                                 data-innerargs="{&quot;nometa&quot;:1,&quot;image&quot;:&quot;&quot;,&quot;border&quot;:&quot;&quot;,&quot;excerpt&quot;:&quot;&quot;,&quot;priceenable&quot;:&quot;true&quot;,&quot;compareenable&quot;:&quot;&quot;,&quot;hotenable&quot;:&quot;true&quot;,&quot;maximage&quot;:&quot;&quot;,&quot;center&quot;:&quot;&quot;}">
 
-</div>
-<!-- Outer End -->
+
+                                <div class="col_item item-small-news">
+
+                                    <div class="item-small-news-details">
+                                        <h3><span id="temperatur9188" class="temperatur">1<span
+                                                    class="gradus_icon"></span></span> <a
+                                                href="https://shopmc.com.vn/minecraft-la-gi/">Minecraft là gì?</a>
+
+
+                                        </h3>
+
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="col_item item-small-news">
+
+                                    <div class="item-small-news-details">
+                                        <h3><span id="temperatur9085" class="temperatur">1<span
+                                                    class="gradus_icon"></span></span> <a
+                                                href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/">Hướng
+                                                dẫn tải và cài đặt Minecraft Launcher</a>
+
+
+                                        </h3>
+
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                        </div>
+
+                    </div>
+                    <div id="rehub_sticky_on_scroll-1" class="widget stickyscroll_widget"
+                         style="position: static; width: auto; top: 0px;"><img
+                            src="https://shopmc.com.vn/wp-content/uploads/2019/08/image.jpg" width="336"
+                            alt="best wordpress theme">
+
+                    </div>
+                </aside>        <!-- /Sidebar -->
+            </div>
+        </div>
+        <!-- /CONTENT -->
+        <!-- FOOTER -->
+
+    </div>
+    <!-- Outer End -->
 @endsection
 

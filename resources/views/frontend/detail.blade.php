@@ -85,10 +85,10 @@
                                                             <button type="button" class="minus qib-button">-</button>
                                                             <div class="quantity buttons_added">
                                                                 <label class="screen-reader-text"
-                                                                       for="quantity_618097ddb411a">Combo Kiếm - Cup -
+                                                                       for="quantity">Combo Kiếm - Cup -
                                                                     Rìu - Xẻng Minecraft số lượng</label> <input
                                                                     type="number"
-                                                                    id="quantity_618097ddb411a"
+                                                                    id="quantity"
                                                                     class="input-text qty text"
                                                                     step="1"
                                                                     min="1"
@@ -108,17 +108,20 @@
                                                          class="btn btn-success">
                                                             Thêm vào giỏ hàng
                                                         </a>
+
                                                         <script>
 
                                                             function addToCart(id) {
-                                                                console.log(id);
                                                                 $.ajax({
                                                                     url:'/add-cart/'+id,
                                                                     type:'GET',
+                                                                    data:{
+                                                                        quantity:$('#quantity').val(),
+                                                                    },
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
-                                                                        alert('Đã thêm vật phẩm này vào giỏ hàng');
+                                                                        alertify.success('Đã thêm vật phẩm này vào giỏ hàng');
                                                                     }
                                                                 });
                                                             }
@@ -131,7 +134,7 @@
                                                                     success:function (res) {
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
-                                                                        confirm("Bạn có muốn xóa vật phẩm không ?");
+                                                                        alertify.success("Xóa vật phẩm thành công?");
                                                                     }
                                                                 });
                                                             })
@@ -350,7 +353,6 @@
 
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <!-- #product-20521 -->
@@ -363,24 +365,26 @@
                                          data-filterargs='{"post__in":["4447","17068","13006","20499","5305","13003"],"orderby":"post__in","post_type":"product","posts_per_page":6,"tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}'
                                          data-template="woogridpart" id="rh_woogrid_1397075271"
                                          data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
-                                        @foreach($flashSales as $flashSale)
+                                      @if(@$related->item)
+                                            @foreach($related->item as $products)
+                                                @if($products->id != $itemDetail->id)
                                             <div
                                                 class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                                                 <figure class="mb5 mt25 position-relative">
                                                     <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                                       href="{{route('item.detail',$flashSale->slug)}}">
+                                                       href="{{route('item.detail',$products->slug)}}">
                                                         <img
-                                                            src="{{$flashSale->image}}"
-                                                            data-src="{{$flashSale->image}}"
-                                                            alt="{{$flashSale->title}}"
+                                                            src="{{$products->image}}"
+                                                            data-src="{{$products->image}}"
+                                                            alt="{{$products->title}}"
                                                             class="lazyload  ewww_webp_lazy_load" width="300"
                                                             height="300"
-                                                            data-src-webp="{{$flashSale->image}}">
+                                                            data-src-webp="{{$products->image}}">
                                                     </a>
                                                 </figure>
 
                                                 <h3 class=" text-clamp text-clamp-2">
-                                                    <a href="{{route('item.detail',$flashSale->slug)}}">{{$flashSale->title}}</a>
+                                                    <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
                                                 </h3>
 
 
@@ -388,7 +392,7 @@
                                                     <div class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                         <span class="price"><span
-                                                                class="woocommerce-Price-amount amount"><bdi>{{$flashSale->price}}<span
+                                                                class="woocommerce-Price-amount amount"><bdi>{{$products->price}}<span
                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
                                                     </div>
                                                     <div class="floatright product-meta">
@@ -403,8 +407,13 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                                @endif
                                         @endforeach
+                                        @else
+                                            Không có sản phẩm liên quan !
+                                          @endif
                                     </div>
+
                                 </div>
 
                                 <div class="clearfix"></div>

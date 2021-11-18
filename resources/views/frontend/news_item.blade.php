@@ -10,7 +10,7 @@
                  data-filterargs="{&quot;posts_per_page&quot;:&quot;12&quot;,&quot;cat&quot;:200,&quot;paged&quot;:1,&quot;post_type&quot;:&quot;post&quot;}"
                  data-template="column_grid" id="rh_loop_425108458"
                  data-innerargs="{&quot;exerpt_count&quot;:&quot;&quot;,&quot;disable_meta&quot;:&quot;&quot;,&quot;enable_btn&quot;:&quot;&quot;,&quot;disable_btn&quot;:1,&quot;disable_act&quot;:0,&quot;price_meta&quot;:&quot;1&quot;,&quot;aff_link&quot;:0}">
-                @foreach($category_news as $news)
+                @foreach($all_news as $news)
                 <article class="col_item column_grid rh-heading-hover-color rh-bg-hover-color no-padding rh-cartbox">
                     <figure class="mb20 position-relative text-center">
                         <a href="{{route('news.detail',$news->slug)}}" class="">
@@ -22,7 +22,7 @@
                     </figure>
                     <div class="content_constructor pb0 pr20 pl20">
                         <h3 class="mb15 mt0 font110 mobfont100 fontnormal lineheight20"><a
-                                href="https://shopmc.com.vn/minecraft-la-gi/">{{$news->title}}</a></h3>
+                                href="{{route('news.detail',$news->slug)}}">{{$news->title}}</a></h3>
                         <div class="rh-flex-center-align mb10">
                             <div class="post-meta mb0">
                                 <span class="cat_link_meta"><a href="{{route('news.detail',$news->slug)}}"
@@ -135,18 +135,18 @@
                             <div class="item-small-news-details">
                                 <h3>
                                     <span id="temperatur9188" class="temperatur">1<span
-                                            class="gradus_icon"></span></span> <a
-                                        href="https://shopmc.com.vn/minecraft-la-gi/">Minecraft là gì?</a>
+                                            class="gradus_icon"></span></span>
+                                    <a href="#">Minecraft là gì?</a>
                                 </h3>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="col_item item-small-news">
                             <div class="item-small-news-details">
-                                <h3><span id="temperatur9085" class="temperatur">1<span
-                                            class="gradus_icon"></span></span> <a
-                                        href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/">Hướng
-                                        dẫn tải và cài đặt Minecraft Launcher</a>
+                                <h3>
+                                    <span id="temperatur9085" class="temperatur">1<span
+                                            class="gradus_icon"></span></span>
+                                    <a href="#">Hướng dẫn tải và cài đặt Minecraft Launcher</a>
                                 </h3>
                             </div>
                         </div>

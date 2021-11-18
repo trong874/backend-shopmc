@@ -20,7 +20,7 @@
                      data-template="query_type1" id="rh_filterid_2085933268"
                      data-innerargs='{"type":"1"}'>
 
-                    @foreach($news as $new)
+                    @foreach($news->item as $new)
                         <div class="news-community clearfix">
                             <div class="rh_grid_image_wrapper">
                                 <div class="newsimage rh_gr_img">
@@ -39,17 +39,16 @@
                                     <span
                                         class="more-from-store-a floatleft ml0 mr10 mb5 lineheight20"><span
                                             class="tag_post_store_meta"></span></span>
-                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="newsdetail rh_gr_right_desc">
-                                    <p class="font90 mobfont80 lineheight20 moblineheight15 mb15">
+                                <div class="newsdetail rh_gr_right_desc limit">
+                                    <p class="font90 mobfont80 lineheight20 moblineheight15 mb15 ">
                                         {!! $new->description !!}</p>
                                 </div>
                                 <div class="newsdetail newsbtn rh_gr_right_btn">
                                     <div class="rh-flex-center-align mobileblockdisplay">
                                         <div class="meta post-meta">
 			            				<span class="admin_meta">
-			<a class="admin" href="https://shopmc.com.vn/author/admin/">
+			<a class="admin" href="#">
 				<img src="https://shopmc.com.vn/wp-content/uploads/2020/11/anonymous_logo-300x300-1-100x100.png"
                      width="22" height="22" alt="admin"
                      class="avatar avatar-22 wp-user-avatar wp-user-avatar-22 alignnone photo"/>
