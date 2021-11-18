@@ -3,7 +3,7 @@
         <div class="rh-flex-eq-height col_wrap_three">
             <div class="footer_widget col_item">
                 <div id="text-2" class="widget widget_text">
-                    <div class="title">VỀ SHOPMC</div>
+                    <div class="title">VỀ SHOP</div>
                     <div class="textwidget"><p class="hotline"><span style="color: #c4011a;"><strong>Hotline đặt hàng: </strong></span><a
                                 href="tel:0981058326"><strong><span
                                         style="color: #c4011a;">0981 058 326</span></strong></a></p>
@@ -41,7 +41,7 @@
                             </div>
                             <p></div>
                         <div class="wpsm-one-half wpsm-column-last">
-                            <div class="title">SHOPMC</div>
+                            <div class="title">SHOP</div>
                             <div class="widget_recent_entries">
                                 <ul>
                                     <li><a href="#">Giới Thiệu</a></li>

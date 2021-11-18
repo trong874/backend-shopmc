@@ -4,7 +4,6 @@
     <div class="rh-outer-wrap">
         <div id="top_ankor"></div>
         <!-- HEADER -->
-
         <!-- CONTENT -->
         <div class="rh-container">
             <div class="rh-content-wrap clearfix">
@@ -17,18 +16,18 @@
                             <!-- Title area -->
                             <div class="rh_post_layout_metabig">
                                 <div class="title_single_area">
-                                    <div class="breadcrumb"><a href="https://shopmc.com.vn/">Home</a> » <span><a
-                                                href="https://shopmc.com.vn/chuyen-muc/tin-tuc/">Tin Tức</a></span> »
+                                    <div class="breadcrumb"><a href="#">Home</a> » <span><a
+                                                href="#">Tin Tức</a></span> »
                                         <span class="current">{{$newDetail->title}}</span></div>
                                     <!-- .breadcrumbs -->
                                     <div class="rh-cat-list-title"><a class="rh-cat-label-title rh-cat-200"
-                                                                      href="https://shopmc.com.vn/chuyen-muc/tin-tuc/"
+                                                                      href="#"
                                                                       title="View all posts in Tin Tức">Tin Tức</a>
                                     </div>
                                     <h1>{{$newDetail->title}}</h1>
                                     <div class="meta post-meta-big">
                                         <div class="floatleft mr15 rtlml15">
-                                            <a href="https://shopmc.com.vn/author/admin/"
+                                            <a href="#"
                                                class="floatleft mr10 rtlml10">
                                                 <img
                                                     src="https://shopmc.com.vn/wp-content/uploads/2020/11/anonymous_logo-300x300-1-100x100.png"
@@ -36,23 +35,19 @@
                                                     class="avatar avatar-40 wp-user-avatar wp-user-avatar-40 alignnone photo">
                                             </a>
                                             <span class="floatleft authortimemeta">
-									          <a href="https://shopmc.com.vn/author/admin/">
+									          <a href="#">
 						                       admin
 					                        </a>
 													<div class="date_time_post">
 			 						 				 Tháng Hai 25, 2019
                                                     </div>
 							                   </span>
-
                                         </div>
                                         <div class="floatright ml15 postviewcomm mt5">
                                             <span class="postview_meta mr15 ml15"><strong>615</strong> Views</span>
-
-
                                             <span class="comm_count_meta"><strong><a
-                                                        href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/#respond"
+                                                        href="#"
                                                         class="comm_meta">0</a></strong></span>
-
                                         </div>
 
                                     </div>
@@ -71,14 +66,14 @@
                                 <div class="favour_in_row favour_btn_red"></div>
                                 <span
                                     data-href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F"
-                                    class="fb share-link-image" data-service="facebook"><i
-                                        class="rhicon rhi-facebook"></i></span><span
+                                    class="fb share-link-image" data-service="facebook">
+                                    <i class="rhicon rhi-facebook"></i></span><span
                                     data-href="https://twitter.com/share?url=https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F&amp;text=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Minecraft+Launcher"
-                                    class="tw share-link-image" data-service="twitter"><i
-                                        class="rhicon rhi-twitter"></i></span><span
+                                    class="tw share-link-image" data-service="twitter">
+                                    <i class="rhicon rhi-twitter"></i></span><span
                                     data-href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F&amp;media=https://shopmc.com.vn/wp-content/uploads/2019/02/maxresdefault.jpg&amp;description=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Minecraft+Launcher"
-                                    class="pn share-link-image" data-service="pinterest"><i
-                                        class="rhicon rhi-pinterest-p"></i></span><span
+                                    class="pn share-link-image" data-service="pinterest">
+                                    <i class="rhicon rhi-pinterest-p"></i></span><span
                                     data-href="mailto:?subject=H%C6%B0%E1%BB%9Bng+d%E1%BA%ABn+t%E1%BA%A3i+v%C3%A0+c%C3%A0i+%C4%91%E1%BA%B7t+Minecraft+Launcher&amp;body=Check out: https%3A%2F%2Fshopmc.com.vn%2Fhuong-dan-tai-va-cai-dat-minecraft-launcher%2F - Shop+MC"
                                     class="in share-link-image" data-service="email"><i class="rhicon rhi-envelope"></i></span>
                             </div>
@@ -89,7 +84,7 @@
                             <div class="postNavigation prevPostBox">
                             </div>
                             <div class="postNavigation nextPostBox">
-                                <a href="https://shopmc.com.vn/minecraft-la-gi/">
+                                <a href="#">
                                     <div class="inner-prevnext">
                                         <div class="thumbnail">
 
@@ -238,7 +233,7 @@
                                     <div class="item-small-news-details">
                                         <h3><span id="temperatur9188" class="temperatur">1<span
                                                     class="gradus_icon"></span></span> <a
-                                                href="https://shopmc.com.vn/minecraft-la-gi/">Minecraft là gì?</a>
+                                                href="#">Minecraft là gì?</a>
 
 
                                         </h3>
@@ -252,7 +247,7 @@
                                     <div class="item-small-news-details">
                                         <h3><span id="temperatur9085" class="temperatur">1<span
                                                     class="gradus_icon"></span></span> <a
-                                                href="https://shopmc.com.vn/huong-dan-tai-va-cai-dat-minecraft-launcher/">Hướng
+                                                href="#">Hướng
                                                 dẫn tải và cài đặt Minecraft Launcher</a>
 
 
