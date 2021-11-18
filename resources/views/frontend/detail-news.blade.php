@@ -40,7 +40,8 @@
 						                       admin
 					                        </a>
 													<div class="date_time_post">
-			 						 				 Tháng Hai 25, 2019			 								</div>
+			 						 				 Tháng Hai 25, 2019
+                                                    </div>
 							                   </span>
 
                                         </div>
@@ -83,7 +84,6 @@
                             </div>
                         </div>
 
-
                         <!-- PAGER SECTION -->
                         <div class="float-posts-nav" id="float-posts-nav">
                             <div class="postNavigation prevPostBox">
@@ -105,13 +105,6 @@
                             </div>
                         </div>
                         <!-- /PAGER SECTION -->
-
-
-                        <div class="tags mb25">
-                            <p></p>
-                        </div>
-
-
                         <div class="related_articles pt25 border-top mb0 clearfix">
                             <div class="related_title rehub-main-font font120 fontbold mb35">
                                  Bài viết liên quan

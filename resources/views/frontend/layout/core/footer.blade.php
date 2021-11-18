@@ -60,7 +60,7 @@
                 <div id="text-7" class="widget last widget_text">
                     <div class="textwidget">
                         <div class="wpsm-one-half wpsm-column-first">
-                            <div class="title">PHƯƠNG THƯC THANH TOÁN</div>
+                            <div class="title">PHƯƠNG THỨC THANH TOÁN</div>
                             <div class="widget_recent_entries">
                                 <p>
                                     <img loading="lazy" class="alignnone size-full wp-image-9767"
@@ -77,10 +77,13 @@
                                 <p>
                                     <a href="#" target=" _blank"
                                       rel="noopener noreferrer">
-                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"/></a>
+                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"/>
+                                    </a>
                                     <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"/>
-                                    <a href="#"><img
-                                            src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"/></a></p>
+                                    <a href="#">
+                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"/>
+                                    </a>
+                                </p>
                             </div>
                             <p>
                         </div>
