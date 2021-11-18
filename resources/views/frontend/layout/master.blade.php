@@ -172,7 +172,7 @@
     <link rel="apple-touch-icon" href="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-180x180.png"/>
     <meta name="msapplication-TileImage"
           content="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-270x270.png"/>
-    <script src="{{'frontend/js/home/style2.js'}}"></script>
+    <script src="{{asset('frontend/js/home/style2.js')}}"></script>
     <noscript>
         <style> .wpb_animate_when_almost_visible {
                 opacity: 1;
@@ -220,10 +220,24 @@
         .goingay {
             text-align: center;
         }
+        @media screen and (max-width: 480px) {
+            #slider_home #rev_slider_24_1_forcefullwidth,#slider_home #rev_slider_24_1_wrapper,#slider_home #rev_slider_24_1 {
+                height: 60px !important;
+            }
+            #slider_home #rev_slider_24_1 rs-bullets{
+                top: 76px !important
+            }
+            #slider_home #rev_slider_24_1_wrapper .ares .tp-bullet{
+                width: 6px;
+                height: 6px;
+                left: 8px;
+            }
+        }
+
     </style>
     <div class="codinh">
         <div class="buttom_home">
-            <a class="buttom_home_a" href="https://shopmc.com.vn">
+            <a class="buttom_home_a" href="/">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="home"
                      class="svg-inline--fa fa-home fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 576 512">
@@ -234,7 +248,7 @@
             </a>
         </div>
         <div class="buttom_home">
-            <a class="buttom_home_a" href="tel://0981058326">
+            <a class="buttom_home_a" href="#">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="phone-volume"
                      class="svg-inline--fa fa-phone-volume fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 384 512">
@@ -245,7 +259,7 @@
             </a>
         </div>
         <div class="buttom_home">
-            <a class="buttom_home_a" href="/khuyen-mai">
+            <a class="buttom_home_a" href="#">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="gift"
                      class="svg-inline--fa fa-gift fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 512 512">
@@ -256,7 +270,7 @@
             </a>
         </div>
         <div class="buttom_home">
-            <a class="buttom_home_a" href="https://zalo.me/0981058326">
+            <a class="buttom_home_a" href="#">
                 <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="comment-dots"
                      class="svg-inline--fa fa-comment-dots fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 512 512">

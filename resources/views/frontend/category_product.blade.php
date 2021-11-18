@@ -12,54 +12,56 @@
                         <ul id="menu-danhmuc" class="menu">
                             @if($categories_p)
                                 @foreach($categories_p as $category)
-                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320">
-                                <a href="{{route('category.detail',$category->slug)}}">{{$category->title}}</a>
-                            </li>
+                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="{{route('category.detail',$category->slug)}}">{{$category->title}}</a></li>
                                 @endforeach
                                 @endif
                         </ul>
                     </div>
                 </div>
                 <div id="woocommerce_price_filter-5" class="widget woocommerce widget_price_filter">
-                    <div class="title">Giá</div>
                     <form method="get" action="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
                         <div class="price_slider_wrapper">
-                            <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style=""><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
+                            <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="">
+                                <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;">
+                                </div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;">
+                                </span>
+                                <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;">
+                                </span>
+                            </div>
                             <div class="price_slider_amount" data-step="10">
                                 <input type="text" id="min_price" name="min_price" value="60000" data-min="60000" placeholder="Giá thấp nhất" style="display: none;">
                                 <input type="text" id="max_price" name="max_price" value="640000" data-max="640000" placeholder="Giá cao nhất" style="display: none;">
-                                <button type="submit" class="button">Lọc</button>
                                 <div class="price_label" style="">
-                                    Giá <span class="from">60,000&nbsp;₫</span> — <span class="to">640,000&nbsp;₫</span>
+                                 Giá  <span class="from">60,000&nbsp;₫</span> — <span class="to">640,000&nbsp;₫</span>
                                 </div>
                                 <div class="clear"></div>
                             </div>
                         </div>
                     </form>
-                </div><div id="woocommerce_rating_filter-2" class="widget woocommerce widget_rating_filter"><div class="title">Average rating</div><ul><li class="wc-layered-nav-rating"><a href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/?rating_filter=5"><span class="star-rating"><span class="rhwoostar rhwoostar1 active">★</span><span class="rhwoostar rhwoostar2 active">★</span><span class="rhwoostar rhwoostar3 active">★</span><span class="rhwoostar rhwoostar4 active">★</span><span class="rhwoostar rhwoostar5 active">★</span></span> (13)</a></li></ul></div>
+                </div>
+                <div id="woocommerce_rating_filter-2" class="widget woocommerce widget_rating_filter">
+                    <div class="title">Average rating</div>
+                    <ul>
+                        <li class="wc-layered-nav-rating">
+                            <a href="#">
+                                <span class="star-rating">
+                                    <span class="rhwoostar rhwoostar1 active">★</span>
+                                    <span class="rhwoostar rhwoostar2 active">★</span>
+                                    <span class="rhwoostar rhwoostar3 active">★</span>
+                                    <span class="rhwoostar rhwoostar4 active">★</span>
+                                    <span class="rhwoostar rhwoostar5 active">★</span>
+                                </span> (13)</a></li></ul></div>
             </aside>
             <!-- /Sidebar -->
 
             <!-- Main Side -->
             <div class="main-side woocommerce page clearfix" id="content">
                 <article class="post" id="page-8507">
-                    <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>Kiếm Cuốc Rìu Minecraft</nav>
-                    <h1 class="arc-main-title">Kiếm Cuốc Rìu Minecraft</h1>
+                    <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>{{@$categoryDetails->title}}</nav>
+                    <h1 class="arc-main-title " style="margin-top: 10px">{{@$categoryDetails->title}}</h1>
                     <div class="border-grey cursorpointer floatright font90 ml10 pl10 pr10 rehub-main-color rtlmr10 rhhidden" id="mobile-trigger-sidebar"><i class="fa-sliders-v fal"></i> Filter</div>
                     <div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
-                        Hiển thị tất cả 28 kết quả</p>
-                    <form class="woocommerce-ordering" method="get">
-                        <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng" style="display: none;">
-                            <option value="menu_order" selected="selected">Thứ tự mặc định</option>
-                            <option value="popularity">Thứ tự theo mức độ phổ biến</option>
-                            <option value="rating">Thứ tự theo điểm đánh giá</option>
-                            <option value="date">Mới nhất</option>
-                            <option value="price">Thứ tự theo giá: thấp đến cao</option>
-                            <option value="price-desc">Thứ tự theo giá: cao xuống thấp</option>
-                        </select><div class="nice-select orderby" tabindex="0"><span class="current">Thứ tự mặc định</span><ul class="list"><li data-value="menu_order" class="option selected">Thứ tự mặc định</li><li data-value="popularity" class="option">Thứ tự theo mức độ phổ biến</li><li data-value="rating" class="option">Thứ tự theo điểm đánh giá</li><li data-value="date" class="option">Mới nhất</li><li data-value="price" class="option">Thứ tự theo giá: thấp đến cao</li><li data-value="price-desc" class="option">Thứ tự theo giá: cao xuống thấp</li></ul></div>
-                        <input type="hidden" name="paged" value="1">
-                    </form>
-
+                        Hiển thị tất cả {{count(@$products)}} kết quả</p>
                     <div class="columns-5 products col_wrap_fifth rh-flex-eq-height grid_woo">
                         @if(isset($products))
                         @foreach($products as $items)
@@ -74,7 +76,7 @@
                                 </a>
                             </figure>
                             <h3 class=" text-clamp text-clamp-2">
-                                <a href="https://shopmc.com.vn/san-pham/combo-3-kiem-minecraft/">{{$items->title}}</a>
+                                <a href="#">{{$items->title}}</a>
                             </h3>
                             <div class="border-top pt10 pr10 pl10 pb10">
                                 <div class="price_for_grid floatleft rehub-btn-font mr10">
@@ -147,7 +149,7 @@
         </style>
         <div class="codinh">
             <div class="buttom_home">
-                <a class="buttom_home_a" href="https://shopmc.com.vn">
+                <a class="buttom_home_a" href="#">
                     <svg aria-hidden="true" id="Capa_1" focusable="false" data-prefix="fas" data-icon="home" class="svg-inline--fa fa-home fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg>
                     <div class="goingay">Home</div>
                 </a>

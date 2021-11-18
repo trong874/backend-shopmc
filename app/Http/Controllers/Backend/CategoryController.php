@@ -85,7 +85,7 @@ class CategoryController extends Controller
             'parent_id' => $request->parent_id,
             'image' => $request->image
         ]);
-        Session::put('message','chỉnh sửa thành công');
+        Session::put('message','Chỉnh sửa thành công');
         return back();
     }
 
@@ -119,6 +119,7 @@ class CategoryController extends Controller
         $groups = Group::findOrFail($id);
         $groups->item()->detach();
         $groups->delete();
+        Session::put('message','Đã xoá group số '.$id);
         return redirect()->back();
     }
 

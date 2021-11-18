@@ -5,20 +5,23 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Group;
 use App\Models\Item;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class   PagesController extends Controller
 {
     public function index()
     {
-        return view('frontend.home');
+        $page_title = Setting::whereName('Tiêu đề')->first()->val;
+        return view('frontend.home',compact('page_title'));
     }
 
     public function getNewsItem(){
-    $category_news = Item::where('position','news')->get([
-            'title','image','slug'
-        ]);
-    return view('frontend.news_item',compact('category_news'));
+    $all_news = Item::where('module','news')
+        ->get([
+        'image','title','slug'
+    ]);
+    return view('frontend.news_item',['all_news'=>$all_news]);
     }
 
 //    public function getProducts()
@@ -32,37 +35,48 @@ class   PagesController extends Controller
 
     public function getCategoryItems($slug)
     {
-        $categoryDetails = Group::where('slug',$slug)->first();
-        $products = $categoryDetails->item()->get([
-            'title','image','price','price_old','slug'
-        ]);
+        $products = [];
+        $categoryDetails = Group::where('module','category-products')
+                                 ->where('slug',$slug)->first();
+        if ($categoryDetails->parent_id == null){
+           $categories = $categoryDetails->groups()->with('item')->get(['id']);
+           foreach ($categories as $category){
+               foreach ($category->item as $product){
+                   array_push($products,$product);
+               }
+           }
+        }else{
+            $products = $categoryDetails->item()->get([
+                'title','image','price','price_old','slug'
+            ]);
+        }
         return view('frontend.category_product', compact('categoryDetails','products'));
     }
 
 
     public function getItemDetail($slug)
     {
-        $itemDetail = Item::where('slug',$slug)->first([
+        $itemDetail = Item::where('slug',$slug)
+            ->first([
             'title', 'content', 'description', 'image', 'url','price','price_old','slug','id'
         ]);
-        $flashSales = Item::where('position', 'flashsale')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-        ]);
-        return view('frontend.detail', ['itemDetail' => $itemDetail, 'flashSales'=>$flashSales]);
+//        $flashSales = Item::where('position', 'flashsale')->get([
+//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
+//        ]);
+        $related = $itemDetail->groups()->with('item')->where('module','products-group')->first();
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related'=>$related]);
     }
 
 
     public function getNewsDetail($slug)
     {
-        $newDetail = Item::where('slug', $slug)->first([
+        $newDetail = Item::where('module','news')
+            ->where('slug', $slug)
+            ->first([
             'title', 'content', 'description', 'image', 'url','slug','id'
         ]);
-
-        $flashSales =  Item::where('position', 'flashsale')->get([
-            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-        ]);
-
-        return view('frontend.detail-news', ['newDetail' => $newDetail, 'flashSales'=> $flashSales ]);
+        $related = $newDetail->groups()->with('item')->where('module','news-group')->first();
+        return view('frontend.detail-news',[ 'newDetail'=> $newDetail, 'related'=> $related ]);
     }
 
 

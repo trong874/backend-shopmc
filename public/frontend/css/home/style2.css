@@ -491,3 +491,14 @@ body, body.dark_body {
      background: none !important;
      padding: 0 !important;
  }
+
+
+.limit_news{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+}
+

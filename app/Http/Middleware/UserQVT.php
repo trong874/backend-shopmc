@@ -10,17 +10,22 @@ class UserQVT
 {
 
     protected const USER_QTV = 1;
+
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->account_type !== self::USER_QTV){
-            return  redirect()->route('page.index');
+        if (Auth::check()) {
+            if (Auth::user()->account_type !== self::USER_QTV) {
+                return redirect()->route('page.index');
+            }
+        }else{
+            return redirect()->route('page.index');
         }
         return $next($request);
     }

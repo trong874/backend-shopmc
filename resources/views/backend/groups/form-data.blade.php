@@ -239,6 +239,20 @@
     <script src="{{asset('js/form-data-item.js')}}"></script>
     <script src="{{asset('js/jquery.nestable.js')}}"></script>
     <script src="{{asset('js/jquery.sortable.js')}}"></script>
+    <script src="{{asset('js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+    @if(Session::has('message'))
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: "success",
+                    title: "{{Session::get('message')}}",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+        </script>
+        {{Session::forget('message')}}
+    @endif
     <script>
         function changeTitleToSlug() {
             var title, slug;

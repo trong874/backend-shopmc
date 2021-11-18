@@ -15,12 +15,10 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'language'], function () {
 
     Route::get('/',[PagesController::class,'index'])->name('page.index');
-    Route::get('/news/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/san-pham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
     Route::get('/tin-tuc/{slug}', [PagesController::class, 'getNewsDetail'])->name('news.detail');
     Route::get('/danh-muc/{slug}', [PagesController::class, 'getCategoryItems'])->name('category.detail');
     Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
-    Route::get('/detail', [PagesController::class, 'detail'])->name('page.detail');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
     Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');
     Route::get('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
@@ -39,7 +37,7 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('category-products', CategoryController::class);
 
-        Route::resource('category-news', CartController::class);
+        Route::resource('category-news', CategoryController::class);
 
         Route::resource('products-group',GroupController::class);
 
@@ -50,6 +48,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::get('/{account_type}/filter/user_qtv',[UserQTVController::class,'filter'])->name('user_qtv.filter');
 
         Route::get('{module}/filter/item', [ItemController::class, 'filter'])->name('items.filter');
+
+        Route::get('replication-item/{id}',[ItemController::class,'replication'])->name('replication.item');
 
         Route::post('/delete-many-item', [ItemController::class, 'destroyMuch'])->name('items.destroy_many');
 

@@ -35,7 +35,7 @@
                         <span class="input-group-text"><i class="far fa-calendar-times"></i></span>
                     </div>
                     <select name="group_id" id="group_id" class="form-control">
-                        <option value="">--Group ID--</option>
+                        <option value="">--Danh mục--</option>
                         @if(isset($groups))
                             @if(isset($old_data))
                                 {{showCategories($groups,$old_data)}}
@@ -137,7 +137,6 @@
                     <th><input type="checkbox" id="master"></th>
                     <th>ID</th>
                     <th>{{__('Tiêu đề')}}</th>
-                    <th>{{__('Danh mục')}}</th>
                     <th>{{__('Ảnh')}}</th>
                     <th>{{__('Vị trí')}}</th>
                     <th>{{__('Thứ tự')}}    </th>
@@ -154,7 +153,6 @@
                             <td>{{$group->id}}</td>
                             <td style="text-overflow: Ellipsis;max-width: 200px;max-height: 50px;overflow: hidden;white-space: nowrap;">
                                 <a href="{{$group->url}}">{{$group->title}}</a></td>
-                            <td>{{@$group->groups[0]->id.'-'.@$group->groups[0]->title}}</td>
                             <td><img src="{{$group->image}}" alt="" style="max-height: 50px"></td>
                             <td>{{$group->position}}</td>
                             <td>{{$group->order}}</td>
@@ -197,11 +195,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route("$module.edit",$group)}}">
-                                    <i class="flaticon-edit m-2 link_edit"></i>
-                                </a>
-                                <i class="flaticon-signs-1 list-item-group" data-toggle="modal"
-                                   data-target="#list-item-{{$group->id}}"></i>
+
                                 {{--                                List Item Modal--}}
                                 <div class="modal fade modal_delete_8" id="list-item-{{$group->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalSizeSm" aria-hidden="true" >
@@ -256,8 +250,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <i class="flaticon2-rubbish-bin-delete-button m-2 link_delete" data-toggle="modal"
-                                   data-target="#form_delete-{{$group->id}}"></i>
+                                <a href="{{route("$module.edit",$group)}}" class="btn btn-sm btn-clean btn-icon">
+                                        <i class="la la-edit"></i>
+                                </a>
+                                <a href="#list-item-{{$group->id}}" data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                                    <i class="la la-list-ol"></i>
+                                </a>
+                                <a href="#form_delete-{{$group->id}}"  data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                    <i class="la la-trash"></i>
+                                </a>
                                 <style>
                                     .link_delete:hover {
                                         color: red;
@@ -308,6 +309,20 @@
 @endsection
 @section('scripts')
     <script src="{{asset('assets/js/backend.js')}}"></script>
+    <script src="{{asset('js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+    @if(Session::has('message'))
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: "success",
+                    title: "{{Session::get('message')}}",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+        </script>
+        {{Session::forget('message')}}
+    @endif
     <script>
         $('#form-filter').on('submit', function (event) {
             event.preventDefault();
