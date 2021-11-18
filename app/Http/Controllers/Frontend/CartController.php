@@ -14,7 +14,15 @@ class CartController extends Controller
 {
     public function cart()
     {
+        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+        $data_cart = [
+            'items'=>$cart->items,
+            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+            'cart_items'=>$cart_item_of_cart,
 
+        ];
+        return view('frontend.cart',['data_cart'=>$data_cart]);
     }
 
     public function addCart(Request $request,$item_id)
