@@ -11,8 +11,9 @@
             <div class="col-6" style="width:225px;height: 100%">
                 <span style="word-wrap: break-word;">{{$item->title}}</span>
                 <br>
-                <p style="color:red;">
-                    <span style="color: black">{{$data_cart['cart_items'][$key]->quantity}} X {{$item->price}}</span></p>
+                <p>
+                    <span style="color: red">{{$data_cart['cart_items'][$key]->quantity}}</span> <span>X {{number_format($item->price)}}</span>
+                </p>
 
             </div>
             <div class="col-1 close-item">
@@ -23,11 +24,11 @@
             </div>
         </div>
         @endforeach
-        <div class="row" style="margin-bottom: 5px">
-            <div class="col-4"><span style="word-wrap: break-word;">Tổng tiền:{{$data_cart['total_price']}}</span></div>
+        <div class="row" style="margin-bottom: 5px;font-weight: bold;">
+            <div class="col-3"><span style="word-wrap: break-word;">Tổng tiền:</span></div>
 
-            <div class="col-8"><span
-                        style="color: black"></span></div>
+            <div class="col-9"><span
+                        style="color: black">{{number_format($data_cart['total_price'])}}</span></div>
 
         </div>
         <div class="row">
