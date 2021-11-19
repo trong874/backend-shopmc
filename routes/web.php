@@ -21,7 +21,8 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
     Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');
-    Route::get('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
+    Route::get('/getCart', [CartController::class, 'getCart'])->name('get.cart');
+    Route::post('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
     Route::get('/delete-cart/{id}', [CartController::class, 'deleteItemCart'])->name('delete-cart');
     Route::get('tim-kiem',[PagesController::class,'filter'])->name('product.search');
     Route::prefix('admin')->group(function () {
