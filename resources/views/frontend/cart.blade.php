@@ -2263,7 +2263,7 @@
                                             margin-top: 0 !important;
                                         }
 
-                                        .top_cart {
+                            $            .top_cart {
                                             display: none;
                                         }
 
@@ -2448,31 +2448,31 @@
                                                             function changeQuantity(id) {
                                                                 $.ajax({
                                                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                                                                    url: '/change_quantity/' + id,
-                                                                    type: 'POST',
-                                                                    data: {
-                                                                        quantity: $('#quantity').val(),
+                                                                    url:'/change_quantity/'+id,
+                                                                    type:'POST',
+                                                                    data:{
+                                                                        quantity:$('#quantity').val(),
                                                                     },
-                                                                    success: function (res) {
-                                                                        $('#item_price').html(new Intl.NumberFormat().format(res.price));
+                                                                    success:function (res) {
+                                                                       $('#item_price').html(new Intl.NumberFormat().format(res.cart_items['price']));
+                                                                        $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
+                                                                        $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
                                                                     }
                                                                 });
-                                                            }
-                                                        </script>
-                                                        <div class="product-subtotal tamtinh" data-title="Tạm tính">
+                                                        }
+                                                    </script>
+                                                    <div class="product-subtotal tamtinh" data-title="Tạm tính" >
                                                         <span class="woocommerce-Price-amount amount">
                                                             <bdi>
-                                                                <span class="woocommerce-Price-currencySymbol"
-                                                                      id="item_price">
+                                                                <span class="woocommerce-Price-currencySymbol" id="item_price">
                                                                     {{number_format($data_cart['cart_items'][$key]->price)}}&#8363;
                                                                 </span>
                                                             </bdi>
                                                         </span>
-                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                             @endforeach
-                                                <input type="hidden" name="total_price" value="{{$data_cart['total_price']}}">
                                             <div>
                                                 <div colspan="6" class="actions">
 
@@ -2488,7 +2488,9 @@
                                                             value="Cập nhật giỏ hàng">Cập nhật giỏ hàng
                                                     </button>
 
-                                                  </div>
+                                                    <input type="hidden" id="woocommerce-cart-nonce"
+                                                           name="woocommerce-cart-nonce" value="55975a86a8"/><input
+                                                        type="hidden" name="_wp_http_referer" value="/cart/"/></div>
                                             </div>
                                         </div>
                                     </div>
@@ -2498,7 +2500,7 @@
                                                 <div class="cart-subtotal">
                                                     <div class="colum_cart">Tạm tính</div>
                                                     <div data-title="Tạm tính"><span
-                                                            class="woocommerce-Price-amount amount"><bdi>{{number_format($data_cart['total_price'])}}<span
+                                                            class="woocommerce-Price-amount amount" id="total_price"><bdi>{{number_format($data_cart['total_price'])}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </div>
                                                 </div>
@@ -2507,7 +2509,7 @@
                                                     <div data-title="Tổng">
                                                         <strong>
                                                         <span class="woocommerce-Price-amount amount">
-                                                            <bdi>&nbsp;<span class="woocommerce-Price-currencySymbol">{{number_format($data_cart['total_price'])}} &#8363;</span>
+                                                            <bdi>&nbsp;<span class="woocommerce-Price-currencySymbol" id="total_price_all">{{number_format($data_cart['total_price'])}} &#8363;</span>
                                                             </bdi>
                                                         </span>
                                                         </strong>
@@ -2623,8 +2625,7 @@
         <div id="rhmobtoppnl" style="background-color: #ffffff;" class="pr15 pl15 pb15 pt15">
             <div class="text-center">
                 <a href="https://shopmc.com.vn">
-                    <img id="mobpanelimg" src="https://shopmc.com.vn/wp-content/uploads/2019/02/Minecraft_logo.png"
-                         alt="Logo"/>
+                    <img id="mobpanelimg" src="https://shopmc.com.vn/wp-content/uploads/2019/02/Minecraft_logo.png" alt="Logo"/>
                 </a>
             </div>
         </div>
