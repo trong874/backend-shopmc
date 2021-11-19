@@ -1966,55 +1966,6 @@
     </style>
     <meta name="generator"
           content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
-    <script type="text/javascript">
-        function setREVStartSize(e) {
-            //window.requestAnimationFrame(function() {
-            window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
-            window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
-            try {
-                var pw = document.getElementById(e.c).parentNode.offsetWidth,
-                    newh;
-                pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
-                e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
-                e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
-                e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
-                e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
-                e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
-                e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
-                e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
-                if (e.layout === "fullscreen" || e.l === "fullscreen")
-                    newh = Math.max(e.mh, window.RSIH);
-                else {
-                    e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-                    for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
-                    e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
-                    e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-                    for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
-
-                    var nl = new Array(e.rl.length),
-                        ix = 0,
-                        sl;
-                    e.tabw = e.tabhide >= pw ? 0 : e.tabw;
-                    e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
-                    e.tabh = e.tabhide >= pw ? 0 : e.tabh;
-                    e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
-                    for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
-                    sl = nl[0];
-                    for (var i in nl) if (sl > nl[i] && nl[i] > 0) {
-                        sl = nl[i];
-                        ix = i;
-                    }
-                    var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
-                    newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
-                }
-                if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));
-                document.getElementById(e.c).height = newh + "px";
-                window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
-            } catch (e) {
-                console.log("Failure at Presize of Slider:" + e)
-            }
-            //});
-        };</script>
     <noscript>
         <style> .wpb_animate_when_almost_visible {
                 opacity: 1;
@@ -2450,7 +2401,9 @@
                                                                         quantity:$('#quantity').val(),
                                                                     },
                                                                     success:function (res) {
-                                                                       $('#item_price').html(new Intl.NumberFormat().format(res.price));
+                                                                       $('#item_price').html(new Intl.NumberFormat().format(res.cart_items['price']));
+                                                                        $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
+                                                                        $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
                                                                     }
                                                                 });
                                                         }
@@ -2494,16 +2447,19 @@
                                         <div class="shop_table shop_table_responsive">
                                             <div class="cart-subtotal">
                                                 <div class="colum_cart">Tạm tính</div>
-                                                <div data-title="Tạm tính"><span
-                                                        class="woocommerce-Price-amount amount"><bdi>{{number_format($data_cart['total_price'])}}<span
-                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                                <div data-title="Tạm tính">
+                                                    <span class="woocommerce-Price-amount amount" id = "total_price">
+                                                        <bdi>{{number_format($data_cart['total_price'])}}
+                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                        </bdi>
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="order-total">
                                                 <div class="colum_cart">Tổng</div>
                                                 <div data-title="Tổng">
                                                     <strong>
-                                                        <span class="woocommerce-Price-amount amount">
+                                                        <span class="woocommerce-Price-amount amount" id = "total_price_all">
                                                             <bdi>&nbsp;<span class="woocommerce-Price-currencySymbol">{{number_format($data_cart['total_price'])}} &#8363;</span>
                                                             </bdi>
                                                         </span>
