@@ -92,9 +92,16 @@ class CartController extends Controller
                 'cart_items'=>$cart_item_of_cart,
             ];
         }
-//        return response()->json();
-
-
         return view('frontend.my-cart', ['data_cart'=> $data_cart]);
+    }
+
+    public function changeQuantity(Request $request,$id)
+    {
+        $this_item = Cart_Item::where('item_id',$id)->first();
+        $product = Item::where('id',$this_item->item_id)->first();
+        $this_item->quantity = $request->quantity;
+        $this_item->price =  $request->quantity * $product->price;
+        $this_item->update($request->all());
+        return response()->json($this_item);
     }
 }

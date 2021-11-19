@@ -68,16 +68,15 @@
                                 <div class="celldisplay rh_woocartmenu_cell text-center">
                                     <span class="inlinestyle rehub-main-btn-bg rehub-main-smooth menu-cart-btn ">
                                         <a class="rh-header-icon rh-flex-center-align rh_woocartmenu-link cart-contents cart_count_0"
-                                            href="#">
+                                            href="{{route('item.cart')}}">
                                             <i class="fas fa-cart-plus"></i>
                                             <span class="rh_woocartmenu-icon">
                                                 <span class="rh-icon-notice rehub-main-color-bg">0</span>
                                             </span>
                                             <span class="rh_woocartmenu-amount">
                                                 <span class="woocommerce-Price-amount amount">
-                                                    <bdi>0&nbsp
+                                                    <bdi>&nbsp
                                                         <span class="woocommerce-Price-currencySymbol">&#8363;</span>
-
                                                     </bdi>
                                                 </span>
                                             </span>
@@ -91,6 +90,9 @@
                         </div>
 {{--mycart--}}
                         <div id="my_cart">
+
+                        </div>
+                        <div id="wai">
 
                         </div>
                     </div>
@@ -125,6 +127,7 @@
             }
         </style>
         <script>
+
             $(".cart_out").mouseenter(function () {
                 $.ajax({
                     url:'/getCart/',
@@ -133,15 +136,27 @@
                         $("#my_cart").empty();
                         $("#my_cart").html(res);
                         $("#my_cart").show();
-
                     }
                 });
             })
+
             $(".cart_out").mouseleave(function () {
                 console.log(1);
                 $("#my_cart").hide();
             })
 
+            $("#my_cart").on("click",".close-item i",function () {
+                $.ajax({
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    url:'/delete-cart/'+$(this).data("id"),
+                    type:'GET',
+                    success:function (res) {
+                        $("#my_cart").empty();
+                        $("#my_cart").html(res);
+                        alertify.success("Xóa vật phẩm thành công?");
+                    }
+                });
+            })
         </script>
 
         <!-- /Logo section -->
@@ -227,6 +242,5 @@
             </div>
         </div>
         <!-- /Main Navigation -->
-
     </div>
 </header>
