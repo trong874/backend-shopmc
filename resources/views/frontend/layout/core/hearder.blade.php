@@ -55,10 +55,9 @@
                         </a>
                     </div>
                     <div class="search head_search">
-                        <form role="search" method="get" class="search-form" action="#">
-                            <input type="text" name="s" placeholder="Tìm kiếm" class="re-ajax-search"
-                                   autocomplete="off" data-posttype="product">
-                            <input type="hidden" name="post_type" value="product"/>
+                        <form role="search" method="get" class="search-form" action="{{route('product.search')}}">
+                            <input type="text" name="keyword" placeholder="Tìm kiếm" class="re-ajax-search"
+                                   autocomplete="off" data-posttype="product" value="{{@$keyword}}">
                             <button type="submit" class="btnsearch"><i class="fas fa-search"></i></button>
                         </form>
                         <div class="re-aj-search-wrap"></div>
