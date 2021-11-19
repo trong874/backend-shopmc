@@ -120,19 +120,6 @@
                                                                     }
                                                                 });
                                                             }
-                                                            $("#my_cart").on("click",".close-item i",function () {
-                                                                $.ajax({
-                                                                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                                                                    url:'/delete-cart/'+$(this).data("id"),
-                                                                    type:'GET',
-                                                                    success:function (res) {
-                                                                        $("#my_cart").empty();
-                                                                        $("#my_cart").html(res);
-                                                                        alertify.success("Xóa vật phẩm thành công?");
-                                                                    }
-                                                                });
-                                                            })
-
                                                         </script>
                                                     </form>
 
