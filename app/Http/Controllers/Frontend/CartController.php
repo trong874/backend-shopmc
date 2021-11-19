@@ -102,6 +102,15 @@ class CartController extends Controller
         $this_item->quantity = $request->quantity;
         $this_item->price =  $request->quantity * $product->price;
         $this_item->update($request->all());
-        return response()->json($this_item);
+
+        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->first();
+        $data_cart = [
+            'items'=>$cart->items,
+            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+            'cart_items'=>$cart_item_of_cart,
+        ];
+
+        return response()->json($data_cart);
     }
 }
