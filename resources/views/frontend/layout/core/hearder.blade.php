@@ -75,7 +75,7 @@
                                             </span>
                                             <span class="rh_woocartmenu-amount">
                                                 <span class="woocommerce-Price-amount amount">
-                                                    <bdi>2&nbsp
+                                                    <bdi>&nbsp
                                                         <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                     </bdi>
                                                 </span>
