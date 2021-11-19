@@ -2391,23 +2391,6 @@
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
                                                     </div>
-                                                    <script>
-                                                        function changeQuantity(id) {
-                                                                $.ajax({
-                                                                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                                                                    url:'/change_quantity/'+id,
-                                                                    type:'POST',
-                                                                    data:{
-                                                                        quantity:$('#quantity').val(),
-                                                                    },
-                                                                    success:function (res) {
-                                                                       $('#item_price').html(new Intl.NumberFormat().format(res.cart_items['price']));
-                                                                        $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
-                                                                        $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
-                                                                    }
-                                                                });
-                                                        }
-                                                    </script>
                                                     <div class="product-subtotal tamtinh" data-title="Tạm tính" >
                                                         <span class="woocommerce-Price-amount amount">
                                                             <bdi>
@@ -2420,6 +2403,25 @@
                                                 </div>
                                             </div>
                                             @endforeach
+                                                <script>
+                                                    function changeQuantity(id) {
+                                                        console.log(id);
+                                                        $.ajax({
+                                                            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                                            url:'/change_quantity/'+id,
+                                                            type:'POST',
+                                                            data:{
+                                                                quantity:$('#quantity').val(),
+                                                            },
+                                                            success:function (res) {
+                                                                console.log(res.cart_items['price']);
+                                                                $('#item_price').html(new Intl.NumberFormat().format(res.cart_items['price']));
+                                                                $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
+                                                                $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
+                                                            }
+                                                        });
+                                                    }
+                                                </script>
                                             <div>
                                                 <div colspan="6" class="actions">
 
