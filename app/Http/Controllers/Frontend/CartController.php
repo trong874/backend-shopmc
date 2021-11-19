@@ -92,9 +92,6 @@ class CartController extends Controller
                 'cart_items'=>$cart_item_of_cart,
             ];
         }
-//        return response()->json();
-
-
         return view('frontend.my-cart', ['data_cart'=> $data_cart]);
     }
 }
