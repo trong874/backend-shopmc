@@ -2365,8 +2365,8 @@
                                         cursor: pointer;
                                     }
                                 </style>
-                                <form class="woocommerce-cart-form" action="https://shopmc.com.vn/cart/" method="post">
-
+                                <form class="woocommerce-cart-form" action="{{route('checkout')}}" method="post">
+                                    @csrf
                                     <div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents"
                                          cellspacing="0">
                                         <div class="top_cart">
@@ -2383,90 +2383,96 @@
                                         </div>
                                         <div>
                                             @foreach($data_cart['items'] as $key => $item)
-                                            <div class="woocommerce-cart-form__cart-item cart_item">
-                                                <div class="cot1">
-                                                    <div class="product-remove">
-                                                        <a href="#"
-                                                           class="remove" aria-label="Xóa sản phẩm này"
-                                                           data-product_id="23053" data-product_sku="">
-                                                            <svg width="15px" aria-hidden="true" focusable="false"
-                                                                 data-prefix="far" data-icon="trash-alt"
-                                                                 class="svg-inline--fa fa-trash-alt fa-w-14" role="img"
-                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                 viewBox="0 0 448 512">
-                                                                <path fill="currentColor"
-                                                                      d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"></path>
-                                                            </svg>
-                                                        </a></div>
-                                                    <div class="product-thumbnail">
-                                                        <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/"><img
-                                                                width="380" height="434"
-                                                                src="{{$item->image}}"
-                                                                class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                                                                alt="" loading="lazy"/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="cot2">
-                                                    <div class="product-name" data-title="Sản phẩm">
-                                                        <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/">{{$item->title}}</a></div>
-
-                                                    <div class="product-price" data-title="Giá">
-                                                        <span class="woocommerce-Price-amount amount"><bdi>{{number_format($item->price)}}<span
-                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
-                                                    </div>
-
-                                                    <div class="product-quantity" data-title="Số lượng">
-                                                        <div class="qib-container">
-                                                            <button type="button" class="minus qib-button">-</button>
-                                                            <div class="quantity buttons_added">
-                                                                <label class="screen-reader-text"
-                                                                       for="quantity">
-{{--                                                                    Kiếm Vàng Minecraft (sword gold) số lượng--}}
-                                                                </label> <input
-                                                                    type="number"
-                                                                    id="quantity"
-                                                                    class="input-text qty text"
-                                                                    step="1"
-                                                                    min="0"
-                                                                    max=""
-                                                                    name="cart[185c61d8cf01c01ddf5f7ba337f72084][qty]"
-                                                                    value="{{$data_cart['cart_items'][$key]->quantity}}"
-                                                                    title="SL"
-                                                                    size="4"
-                                                                    placeholder=""
-                                                                    inputmode="numeric" onchange="changeQuantity({{$data_cart['cart_items'][$key]->item_id}})"/>
-                                                            </div>
-                                                            <button type="button" class="plus qib-button">+</button>
+                                                <div class="woocommerce-cart-form__cart-item cart_item">
+                                                    <div class="cot1">
+                                                        <div class="product-remove">
+                                                            <a href="#"
+                                                               class="remove" aria-label="Xóa sản phẩm này"
+                                                               data-product_id="23053" data-product_sku="">
+                                                                <svg width="15px" aria-hidden="true" focusable="false"
+                                                                     data-prefix="far" data-icon="trash-alt"
+                                                                     class="svg-inline--fa fa-trash-alt fa-w-14"
+                                                                     role="img"
+                                                                     xmlns="http://www.w3.org/2000/svg"
+                                                                     viewBox="0 0 448 512">
+                                                                    <path fill="currentColor"
+                                                                          d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"></path>
+                                                                </svg>
+                                                            </a></div>
+                                                        <div class="product-thumbnail">
+                                                            <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/"><img
+                                                                    width="380" height="434"
+                                                                    src="{{$item->image}}"
+                                                                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                    alt="" loading="lazy"/>
+                                                            </a>
                                                         </div>
                                                     </div>
-                                                    <script>
-                                                        function changeQuantity(id) {
+                                                    <div class="cot2">
+                                                        <div class="product-name" data-title="Sản phẩm">
+                                                            <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/">{{$item->title}}</a>
+                                                        </div>
+
+                                                        <div class="product-price" data-title="Giá">
+                                                        <span class="woocommerce-Price-amount amount"><bdi>{{number_format($item->price)}}<span
+                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                                        </div>
+
+                                                        <div class="product-quantity" data-title="Số lượng">
+                                                            <div class="qib-container">
+                                                                <button type="button" class="minus qib-button">-
+                                                                </button>
+                                                                <div class="quantity buttons_added">
+                                                                    <label class="screen-reader-text"
+                                                                           for="quantity">
+                                                                        {{--                                                                    Kiếm Vàng Minecraft (sword gold) số lượng--}}
+                                                                    </label> <input
+                                                                        type="number"
+                                                                        id="quantity"
+                                                                        class="input-text qty text"
+                                                                        step="1"
+                                                                        min="0"
+                                                                        max=""
+                                                                        name="cart[{{$item->id}}][qty]"
+                                                                        value="{{$data_cart['cart_items'][$key]->quantity}}"
+                                                                        title="SL"
+                                                                        size="4"
+                                                                        placeholder=""
+                                                                        inputmode="numeric"
+                                                                        onchange="changeQuantity({{$data_cart['cart_items'][$key]->item_id}})"/>
+                                                                </div>
+                                                                <button type="button" class="plus qib-button">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            function changeQuantity(id) {
                                                                 $.ajax({
                                                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                                                                    url:'/change_quantity/'+id,
-                                                                    type:'POST',
-                                                                    data:{
-                                                                        quantity:$('#quantity').val(),
+                                                                    url: '/change_quantity/' + id,
+                                                                    type: 'POST',
+                                                                    data: {
+                                                                        quantity: $('#quantity').val(),
                                                                     },
-                                                                    success:function (res) {
-                                                                       $('#item_price').html(new Intl.NumberFormat().format(res.price));
+                                                                    success: function (res) {
+                                                                        $('#item_price').html(new Intl.NumberFormat().format(res.price));
                                                                     }
                                                                 });
-                                                        }
-                                                    </script>
-                                                    <div class="product-subtotal tamtinh" data-title="Tạm tính" >
+                                                            }
+                                                        </script>
+                                                        <div class="product-subtotal tamtinh" data-title="Tạm tính">
                                                         <span class="woocommerce-Price-amount amount">
                                                             <bdi>
-                                                                <span class="woocommerce-Price-currencySymbol" id="item_price">
+                                                                <span class="woocommerce-Price-currencySymbol"
+                                                                      id="item_price">
                                                                     {{number_format($data_cart['cart_items'][$key]->price)}}&#8363;
                                                                 </span>
                                                             </bdi>
                                                         </span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                             @endforeach
+                                                <input type="hidden" name="total_price" value="{{$data_cart['total_price']}}">
                                             <div>
                                                 <div colspan="6" class="actions">
 
@@ -2482,44 +2488,39 @@
                                                             value="Cập nhật giỏ hàng">Cập nhật giỏ hàng
                                                     </button>
 
-                                                    <input type="hidden" id="woocommerce-cart-nonce"
-                                                           name="woocommerce-cart-nonce" value="55975a86a8"/><input
-                                                        type="hidden" name="_wp_http_referer" value="/cart/"/></div>
+                                                  </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                                <div class="cart-collaterals">
-                                    <div class="cart_totals ">
-                                        <div class="shop_table shop_table_responsive">
-                                            <div class="cart-subtotal">
-                                                <div class="colum_cart">Tạm tính</div>
-                                                <div data-title="Tạm tính"><span
-                                                        class="woocommerce-Price-amount amount"><bdi>{{number_format($data_cart['total_price'])}}<span
-                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                    <div class="cart-collaterals">
+                                        <div class="cart_totals ">
+                                            <div class="shop_table shop_table_responsive">
+                                                <div class="cart-subtotal">
+                                                    <div class="colum_cart">Tạm tính</div>
+                                                    <div data-title="Tạm tính"><span
+                                                            class="woocommerce-Price-amount amount"><bdi>{{number_format($data_cart['total_price'])}}<span
+                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="order-total">
-                                                <div class="colum_cart">Tổng</div>
-                                                <div data-title="Tổng">
-                                                    <strong>
+                                                <div class="order-total">
+                                                    <div class="colum_cart">Tổng</div>
+                                                    <div data-title="Tổng">
+                                                        <strong>
                                                         <span class="woocommerce-Price-amount amount">
                                                             <bdi>&nbsp;<span class="woocommerce-Price-currencySymbol">{{number_format($data_cart['total_price'])}} &#8363;</span>
                                                             </bdi>
                                                         </span>
-                                                    </strong>
+                                                        </strong>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="wc-proceed-to-checkout">
+                                                <button type="submit" class="checkout-button alt wc-forward">Mua Hàng
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="wc-proceed-to-checkout">
-                                            <a href="#" class="checkout-button alt wc-forward">Mua Hàng</a>
-                                        </div>
-
-
                                     </div>
-                                </div>
-
-
+                                </form>
                                 <style type="text/css">
                                     .wt-single-coupon {
                                         background-color: #2890a8;
@@ -2622,7 +2623,8 @@
         <div id="rhmobtoppnl" style="background-color: #ffffff;" class="pr15 pl15 pb15 pt15">
             <div class="text-center">
                 <a href="https://shopmc.com.vn">
-                    <img id="mobpanelimg" src="https://shopmc.com.vn/wp-content/uploads/2019/02/Minecraft_logo.png" alt="Logo"/>
+                    <img id="mobpanelimg" src="https://shopmc.com.vn/wp-content/uploads/2019/02/Minecraft_logo.png"
+                         alt="Logo"/>
                 </a>
             </div>
         </div>

@@ -32,9 +32,13 @@ class OrderController extends Controller
            'status' => 1,
            'price'=>$request->total_price
        ]);
-       foreach ($request->item_id as $item_id){
-           $order->items()->attach($item_id);
-       }
+        foreach ($request->cart as $key => $item){
+            $order->items()->attach($key);
+            $order_detail = Order_Detail::where('order_id',$order->id)->where('item_id',$key)->first();
+            $order_detail->update([
+                'quantity'=>$item['qty']
+            ]);
+        }
     }
 
     public function show($id)

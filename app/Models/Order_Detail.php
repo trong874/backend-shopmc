@@ -10,8 +10,13 @@ class Order_Detail extends Model
     use HasFactory;
 
     protected $table = 'order_detail';
+    protected $fillable = [
+        'quantity',
+        'status'
+    ];
 
-    function item(){
+    function item()
+    {
         return $this->hasOne(Item::class);
     }
 }

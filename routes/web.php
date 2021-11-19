@@ -30,6 +30,10 @@ Route::group(['middleware' => 'language'], function () {
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
     });
+
+    Route::post('order-store',[OrderController::class,'store'])->name('order.store');
+
+    Route::post('/checkout',[PagesController::class,'checkout'])->name('checkout');
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
         Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 

@@ -9,6 +9,15 @@ class Order extends Model
 {
     use HasFactory;
     protected $table = 'order';
+    protected $fillable = [
+        'payment_type',
+        'title',
+        'description',
+        'author_id',
+        'price',
+        'status',
+        ''
+    ];
 
     function items()
     {
