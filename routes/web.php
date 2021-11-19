@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
@@ -45,6 +46,8 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('news-group',GroupController::class);
 
+        Route::resource('orders', OrderController::class);
+
         Route::resource('admin-manage',UserQTVController::class);
 
         Route::get('/{account_type}/filter/user_qtv',[UserQTVController::class,'filter'])->name('user_qtv.filter');
@@ -68,6 +71,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::post('add-item-into-group',[GroupController::class,'addItemIntoGroup'])->name('group.add-item');
 
         Route::get('detele-item-group',[GroupController::class,'deleteItemInGroup'])->name('group.delete-item');
+
+        Route::get('order-filter',[OrderController::class,'filter'])->name('order.filter');
     });
 
 });
