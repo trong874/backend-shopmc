@@ -55,10 +55,9 @@
                         </a>
                     </div>
                     <div class="search head_search">
-                        <form role="search" method="get" class="search-form" action="#">
-                            <input type="text" name="s" placeholder="Tìm kiếm" class="re-ajax-search"
-                                   autocomplete="off" data-posttype="product">
-                            <input type="hidden" name="post_type" value="product"/>
+                        <form role="search" method="get" class="search-form" action="{{route('product.search')}}">
+                            <input type="text" name="keyword" placeholder="Tìm kiếm" class="re-ajax-search"
+                                   autocomplete="off" data-posttype="product" value="{{@$keyword}}">
                             <button type="submit" class="btnsearch"><i class="fas fa-search"></i></button>
                         </form>
                         <div class="re-aj-search-wrap"></div>
@@ -90,8 +89,8 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div id="my_cart" >
+{{--mycart--}}
+                        <div id="my_cart">
 
                         </div>
                     </div>
@@ -100,14 +99,13 @@
         </div>
 
         <style>
-            .cart_out:hover  #cartDetail{
+            #cartDetail{
                 display: block;
             }
             #cartDetail{
-
                 position: absolute;
                 width:450px;
-                display: none;
+                /*display: none;*/
                 height: auto;
                 background-color: white;
                 /*margin-left: 1300px;*/
@@ -126,6 +124,25 @@
                 max-height: 60px;
             }
         </style>
+        <script>
+            $(".cart_out").mouseenter(function () {
+                $.ajax({
+                    url:'/getCart/',
+                    type:'GET',
+                    success:function (res) {
+                        $("#my_cart").empty();
+                        $("#my_cart").html(res);
+                        $("#my_cart").show();
+
+                    }
+                });
+            })
+            $(".cart_out").mouseleave(function () {
+                console.log(1);
+                $("#my_cart").hide();
+            })
+
+        </script>
 
         <!-- /Logo section -->
 
@@ -210,6 +227,5 @@
             </div>
         </div>
         <!-- /Main Navigation -->
-
     </div>
 </header>

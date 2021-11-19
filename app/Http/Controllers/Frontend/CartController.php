@@ -14,7 +14,14 @@ class CartController extends Controller
 {
     public function cart()
     {
-
+        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+        $data_cart = [
+            'items'=>$cart->items,
+            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+            'cart_items'=>$cart_item_of_cart,
+        ];
+        return view('frontend.cart',['data_cart'=>$data_cart]);
     }
 
     public function addCart(Request $request,$item_id)
@@ -26,7 +33,6 @@ class CartController extends Controller
         if ($cart){
             $oldCart = Cart::with('items')->get();
         }else{
-//            nếu chưa có cart thì tạo cart theo user
             Cart::create([
                 'user_id'=> Auth::user()->id
             ]);
@@ -47,7 +53,6 @@ class CartController extends Controller
             }
         }
 
-
     if ($flag) {
         $cart->items()->attach($item_id);
         $cart_item = Cart_Item::where('cart_id',$cart->id)->where('item_id',$item_id)->first();
@@ -57,16 +62,16 @@ class CartController extends Controller
         ]);
         $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
     }
-    $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+//    $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+//
+//    $data_cart = [
+//        'items'=>$cart->items,
+//        'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+//        'cart_items'=>$cart_item_of_cart,
+//        ''
+//    ];
 
-    $data_cart = [
-        'items'=>$cart->items,
-        'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-        'cart_items'=>$cart_item_of_cart,
-        ''
-    ];
-
-    return view('frontend.my-cart',['data_cart'=>$data_cart]);
+        return response()->json();
     }
 
     public function deleteItemCart($id)
@@ -74,5 +79,19 @@ class CartController extends Controller
         $item = Cart_Item::where('item_id',$id);
         $item->delete();
         return response()->json();
+    }
+
+    public function getCart()
+    {
+        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+        if(isset($cart)){
+            $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+            $data_cart = [
+                'items'=>$cart->items,
+                'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+                'cart_items'=>$cart_item_of_cart,
+            ];
+        }
+        return view('frontend.my-cart', ['data_cart'=> $data_cart]);
     }
 }

@@ -12,9 +12,9 @@
                         <ul id="menu-danhmuc" class="menu">
                             @if($categories_p)
                                 @foreach($categories_p as $category)
-                            <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="{{route('category.detail',$category->slug)}}">{{$category->title}}</a></li>
+                                    <li id="menu-item-9320" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9320"><a href="{{route('category.detail',$category->slug)}}">{{$category->title}}</a></li>
                                 @endforeach
-                                @endif
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -28,12 +28,11 @@
                                 <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;">
                                 </span>
                             </div>
-
                             <div class="price_slider_amount" data-step="10">
                                 <input type="text" id="min_price" name="min_price" value="60000" data-min="60000" placeholder="Giá thấp nhất" style="display: none;">
                                 <input type="text" id="max_price" name="max_price" value="640000" data-max="640000" placeholder="Giá cao nhất" style="display: none;">
                                 <div class="price_label" style="">
-                                 Giá  <span class="from">60,000&nbsp;₫</span> — <span class="to">640,000&nbsp;₫</span>
+                                    Giá  <span class="from">60,000&nbsp;₫</span> — <span class="to">640,000&nbsp;₫</span>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -58,29 +57,27 @@
             <!-- Main Side -->
             <div class="main-side woocommerce page clearfix" id="content">
                 <article class="post" id="page-8507">
-                    <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>{{@$categoryDetails->title}}</nav>
                     <h1 class="arc-main-title " style="margin-top: 10px">{{@$categoryDetails->title}}</h1>
                     <div class="border-grey cursorpointer floatright font90 ml10 pl10 pr10 rehub-main-color rtlmr10 rhhidden" id="mobile-trigger-sidebar"><i class="fa-sliders-v fal"></i> Filter</div>
                     <div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
-                        Hiển thị tất cả {{count(@$products)}} kết quả</p>
+                        Hiển thị tất cả {{count(@$products)}} kết quả cho từ khoá {{@$keyword}}</p>
                     <div class="columns-5 products col_wrap_fifth rh-flex-eq-height grid_woo">
                         @if(isset($products))
-                        @foreach($products as $items)
-                        <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                            <span class="onsale"><span>- 35%</span></span>
-                            <figure class="mb5 mt25 position-relative notresized">
-                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="{{route('item.detail',$items->slug)}}">
-                                    <img class=" lazyloaded"
-                                         data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg"
-                                         width="300" alt="Combo 3 Kiếm Minecraft"
-                                         src="{{$items->image}}">
-                                </a>
-                            </figure>
-                            <h3 class=" text-clamp text-clamp-2">
-                                <a href="#">{{$items->title}}</a>
-                            </h3>
-                            <div class="border-top pt10 pr10 pl10 pb10">
-                                <div class="price_for_grid floatleft rehub-btn-font mr10">
+                            @foreach($products as $items)
+                                <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                    <figure class="mb5 mt25 position-relative notresized">
+                                        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" href="{{route('item.detail',$items->slug)}}">
+                                            <img class=" lazyloaded"
+                                                 data-src="https://shopmc.com.vn/wp-content/uploads/thumbs_dir/combo-3-kiem-minecraft-2-1vl71vlzh480zj0k06nvqkhnsso3izwxafyvb1hozr5w.jpg"
+                                                 width="300" alt="Combo 3 Kiếm Minecraft"
+                                                 src="{{$items->image}}">
+                                        </a>
+                                    </figure>
+                                    <h3 class=" text-clamp text-clamp-2">
+                                        <a href="#">{{$items->title}}</a>
+                                    </h3>
+                                    <div class="border-top pt10 pr10 pl10 pb10">
+                                        <div class="price_for_grid floatleft rehub-btn-font mr10">
                                     <span class="price">
                                         <del>
                                             <span class="woocommerce-Price-amount amount">
@@ -101,22 +98,22 @@
                                             </span>
                                         </ins>
                                     </span>
-                                </div>
-                                <div class="floatright product-meta">
-                                    <div class="rh_woo_star" title="Rated 5 out of 5">
-                                        <span class="rhwoostar rhwoostar1 active">★</span>
-                                        <span class="rhwoostar rhwoostar2 active">★</span>
-                                        <span class="rhwoostar rhwoostar3 active">★</span>
-                                        <span class="rhwoostar rhwoostar4 active">★</span>
-                                        <span class="rhwoostar rhwoostar5 active">★</span>
+                                        </div>
+                                        <div class="floatright product-meta">
+                                            <div class="rh_woo_star" title="Rated 5 out of 5">
+                                                <span class="rhwoostar rhwoostar1 active">★</span>
+                                                <span class="rhwoostar rhwoostar2 active">★</span>
+                                                <span class="rhwoostar rhwoostar3 active">★</span>
+                                                <span class="rhwoostar rhwoostar4 active">★</span>
+                                                <span class="rhwoostar rhwoostar5 active">★</span>
+                                            </div>
+                                            <span class="greycolor postview">Đã bán 420</span>
+                                        </div>
+                                        <div class="rh-flex-right-align btn_for_grid floatright">
+                                        </div>
                                     </div>
-                                    <span class="greycolor postview">Đã bán 420</span>
                                 </div>
-                                <div class="rh-flex-right-align btn_for_grid floatright">
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+                            @endforeach
                         @endif
                     </div>
                 </article>

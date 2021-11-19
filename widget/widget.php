@@ -139,6 +139,15 @@ View::composer('frontend.category_product', function ($view) {
         ]);
     return $view->with('categories_p', $categories_p);
 });
+View::composer('frontend.pages.product.result-filter', function ($view) {
+    $categories_p = Group::where('module', 'category-products')
+        ->where('parent_id',null)
+        ->orderBy('order','ASC')
+        ->get([
+            'title','slug'
+        ]);
+    return $view->with('categories_p', $categories_p);
+});
 
 
 

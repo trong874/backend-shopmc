@@ -79,6 +79,12 @@ class   PagesController extends Controller
         return view('frontend.detail-news',[ 'newDetail'=> $newDetail, 'related'=> $related ]);
     }
 
-
-
+    public function filter(Request $request)
+    {
+        $keyword = $request->keyword;
+        $products = Item::where('module','products')
+            ->where('title','LIKE','%'.$keyword.'%')
+            ->get();
+        return view('frontend.pages.product.result-filter',compact('products','keyword'));
+    }
 }
