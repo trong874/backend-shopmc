@@ -38,6 +38,16 @@ return [
             'new-tab' => false,
         ],
         [
+            'section' => 'Đơn hàng',
+        ],
+        [
+            'title' => 'Danh sách đơn hàng',
+            'root' => true,
+            'icon' => 'media/svg/icons/Shopping/Cart2.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/orders',
+            'new-tab' => false,
+        ],
+        [
             'section' => 'Tin tức',
         ],
         [

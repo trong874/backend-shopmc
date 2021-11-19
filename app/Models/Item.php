@@ -61,4 +61,12 @@ class Item extends Model
     function user(){
         return $this->belongsTo(User::class ,'author_id','id');
     }
+
+    function orders(){
+        return $this->belongsToMany(Order::class,'order_detail','item_id','order_id');
+    }
+
+    function order_detail(){
+        return $this->belongsTo(Order_Detail::class,'item_id','i');
+    }
 }
