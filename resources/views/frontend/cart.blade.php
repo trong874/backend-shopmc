@@ -2247,7 +2247,7 @@
                                                         </div>
                                                         <script>
                                                             function changeQuantity(id) {
-                                                                console.log();
+                                                                console.log(id);
 
                                                                 let total_quantity = '#'+id;
                                                                 console.log(total_quantity);
@@ -2263,7 +2263,6 @@
                                                                         $(total_quantity).html(new Intl.NumberFormat().format(res.quantity));
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
-                                                                        $('#total_price_input').val(res.total_price)
                                                                     }
                                                                 });
                                                             }
@@ -2294,7 +2293,10 @@
                                                     <button type="submit" class="button update_cart" name="update_cart"
                                                             value="Cập nhật giỏ hàng">Cập nhật giỏ hàng
                                                     </button>
-                                                </div>
+
+                                                    <input type="hidden" id="woocommerce-cart-nonce"
+                                                           name="woocommerce-cart-nonce" value="55975a86a8"/><input
+                                                        type="hidden" name="_wp_http_referer" value="/cart/"/></div>
                                             </div>
                                         </div>
                                     </div>
@@ -2320,7 +2322,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="total_price" id="total_price_input" value="{{$data_cart['total_price']}}">
                                             <div class="wc-proceed-to-checkout">
                                                 <button type="submit" class="checkout-button alt wc-forward">Mua Hàng
                                                 </button>
