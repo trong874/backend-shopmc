@@ -92,4 +92,13 @@ class   PagesController extends Controller
     {
         return view('frontend.checkout');
     }
+
+    public function checkUser()
+    {
+        $user= Auth::user();
+        if(isset($user)){
+
+        }
+
+    }
 }
