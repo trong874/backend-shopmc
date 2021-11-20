@@ -2249,7 +2249,8 @@
                                                             function changeQuantity(id) {
                                                                 console.log(id);
                                                                 let total_quantity = '#'+id;
-                                                                console.log(total_quantity);
+                                                                console.log($(total_quantity).val())
+                                                                let item_price = '#item_price_'+id
                                                                 $.ajax({
                                                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                                                                     url:'/change_quantity/'+id,
@@ -2258,7 +2259,8 @@
                                                                         quantity:$(total_quantity).val(),
                                                                     },
                                                                     success:function (res) {
-                                                                        $('#item_price').html(new Intl.NumberFormat().format(res.cart_items['price']));
+                                                                        console.log(res)
+                                                                        $(item_price).html(new Intl.NumberFormat().format(res.cart_items['price']));
                                                                         $(total_quantity).html(new Intl.NumberFormat().format(res.quantity));
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
@@ -2269,7 +2271,7 @@
                                                         <div class="product-subtotal tamtinh" data-title="Tạm tính" >
                                                         <span class="woocommerce-Price-amount amount">
                                                             <bdi>
-                                                                <span class="woocommerce-Price-currencySymbol" id="item_price">
+                                                                <span class="woocommerce-Price-currencySymbol" id="item_price_{{$data_cart['cart_items'][$key]->item_id}}">
                                                                     {{number_format($data_cart['cart_items'][$key]->price)}}&#8363;
                                                                 </span>
                                                             </bdi>
