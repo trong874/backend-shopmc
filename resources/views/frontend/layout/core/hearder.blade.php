@@ -62,13 +62,21 @@
                         </form>
                         <div class="re-aj-search-wrap"></div>
                     </div>
-                    <div class="cart_out rh-flex-right-align" style="position: relative" >
+                    <?php
+                    $user = Auth::user();
+                    if (empty($user)){
+                        $pop = 'act-rehub-login-popup';
+                    }
+                    else{
+                        $pop = '';
+                    }
+                    ?>
+                    <div class="cart_out rh-flex-right-align {{$pop}}" style="position: relative" >
                         <div class="header-actions-logo rh-flex-right-align">
                             <div class="tabledisplay">
                                 <div class="celldisplay rh_woocartmenu_cell text-center">
                                     <span class="inlinestyle rehub-main-btn-bg rehub-main-smooth menu-cart-btn ">
-                                        <a class="rh-header-icon rh-flex-center-align rh_woocartmenu-link cart-contents cart_count_0"
-                                            href="{{route('item.cart')}}">
+                                        <a class="rh-header-icon rh-flex-center-align rh_woocartmenu-link cart-contents cart_count_0" href="{{route('item.cart')}}">
                                             <i class="fas fa-cart-plus"></i>
                                             <span class="rh_woocartmenu-icon">
                                                 <span class="rh-icon-notice rehub-main-color-bg">0</span>
@@ -88,7 +96,7 @@
                                 </div>
                             </div>
                         </div>
-{{--mycart--}}
+                        {{--mycart--}}
                         <div id="my_cart">
 
                         </div>
@@ -237,7 +245,6 @@
                         <button type="submit" class="btnsearch"><i class="rhicon rhi-search"></i></button>
                     </form>
                     <div class="re-aj-search-wrap"></div>
-
                 </div>
             </div>
         </div>

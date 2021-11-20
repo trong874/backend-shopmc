@@ -9,13 +9,12 @@ use App\Models\Cart_Item;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
     public function cart()
     {
-        $user = Auth::user();
-        if(isset($user)){
             $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
             $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
             $data_cart = [
@@ -24,12 +23,6 @@ class CartController extends Controller
                 'cart_items'=>$cart_item_of_cart,
             ];
             return view('frontend.cart',['data_cart'=>$data_cart]);
-        }
-        else{
-            $url = "#";
-            return back($url);
-        }
-
     }
 
     public function addCart(Request $request,$item_id)
@@ -118,5 +111,12 @@ class CartController extends Controller
             'cart_items'=>$cart_item,
         ];
         return response()->json($data_cart);
+    }
+
+    public function destroyItem($id)
+    {
+        $item = Cart_Item::where('item_id',$id);
+        $item->delete();
+        return response()->json();
     }
 }
