@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Order_Detail;
@@ -32,13 +33,17 @@ class OrderController extends Controller
            'status' => 1,
            'price'=>$request->total_price
        ]);
-        foreach ($request->cart as $key => $item){
+        foreach ($request->items as $key => $item){
             $order->items()->attach($key);
             $order_detail = Order_Detail::where('order_id',$order->id)->where('item_id',$key)->first();
             $order_detail->update([
-                'quantity'=>$item['qty']
+                'quantity'=>$item
             ]);
         }
+        $cart = Cart::whereUser_id(Auth::user()->id)->first();
+        $cart->items()->detach();
+        $cart->delete();
+        return redirect()->route('orders');
     }
 
     public function show($id)

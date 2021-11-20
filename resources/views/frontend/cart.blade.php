@@ -2210,7 +2210,7 @@
                                                     </div>
                                                     <div class="cot2">
                                                         <div class="product-name" data-title="Sản phẩm">
-                                                            <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/">{{$item->title}}</a>
+                                                            <a href="#">{{$item->title}}</a>
                                                         </div>
 
                                                         <div class="product-price" data-title="Giá">
@@ -2233,7 +2233,7 @@
                                                                         step="1"
                                                                         min="0"
                                                                         max=""
-                                                                        name=""
+                                                                        name="cart[{{$data_cart['cart_items'][$key]->item_id}}][qty]"
                                                                         value="{{$data_cart['cart_items'][$key]->quantity}}"
                                                                         title="SL"
                                                                         size="4"
@@ -2409,9 +2409,9 @@
                                 <div style="margin: 0 auto;">
                                     <div class="hotline fl"><a
                                             style="height: 45px; width: 50%; padding: 12px; display: inline-block; color: #fff; font-weight: bold; background: #757575;"
-                                            href="https://shopmc.com.vn/shop/">&lt;&lt; Chọn thêm</a><a
+                                            href="#">&lt;&lt; Chọn thêm</a><a
                                             style="height: 45px; width: 50%; padding: 12px; display: inline-block; color: #fff; font-weight: bold;"
-                                            href="https://shopmc.com.vn/checkout/">Tiếp tục &gt;&gt;</a></div>
+                                            href="#">Tiếp tục &gt;&gt;</a></div>
                                 </div>
                             </div>
                         </article>
