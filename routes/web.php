@@ -35,6 +35,8 @@ Route::group(['middleware' => 'language'], function () {
     Route::post('order-store',[OrderController::class,'store'])->name('order.store');
 
     Route::post('/checkout',[PagesController::class,'checkout'])->name('checkout');
+    Route::get('/orders',[PagesController::class,'orders'])->name('orders');
+    Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
         Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 
