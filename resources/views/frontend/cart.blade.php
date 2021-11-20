@@ -2204,22 +2204,18 @@
                                                         <script>
                                                             function deleteItem(id) {
                                                                 let id_delete = '#'+id;
-                                                                console.log(id_delete);
-
                                                                 let str = id ;
                                                                 let id_item =str.replace('delete_', '');
                                                                 console.log(id_item);
-                                                                $.ajax({
-                                                                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                                                                    url:'/destroy-cart/'+ id_item,
-                                                                    type:'GET',
-                                                                    success:function (res) {
-                                                                        $("#all_cart").empty();
-                                                                        $("#all_cart").html(res);
-                                                                        alertify.success("Xóa vật phẩm thành công?");
-                                                                        location.reload()
-                                                                    }
-                                                                });
+                                                                // $.ajax({
+                                                                //     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                                                //     url:'/destroy-cart/'+ id_item,
+                                                                //     type:'GET',
+                                                                //     success:function (res) {
+                                                                //         alertify.success("Xóa vật phẩm thành công?");
+                                                                //         location.reload()
+                                                                //     }
+                                                                // });
                                                             }
                                                         </script>
                                                         <div class="product-thumbnail">
