@@ -2248,7 +2248,6 @@
                                                         <script>
                                                             function changeQuantity(id) {
                                                                 console.log(id);
-
                                                                 let total_quantity = '#'+id;
                                                                 console.log(total_quantity);
                                                                 $.ajax({
