@@ -166,9 +166,7 @@
                 });
             })
         </script>
-
         <!-- /Logo section -->
-
         <!-- Main Navigation -->
         <div class="search-form-inheader header_icons_menu main-nav mob-logo-enabled rh-stickme dark_style" style="max-height: 40px">
             <div class="container" >
