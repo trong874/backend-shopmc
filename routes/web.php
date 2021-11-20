@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
@@ -29,6 +30,10 @@ Route::group(['middleware' => 'language'], function () {
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
     });
+
+    Route::post('order-store',[OrderController::class,'store'])->name('order.store');
+
+    Route::post('/checkout',[PagesController::class,'checkout'])->name('checkout');
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
         Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 
@@ -45,6 +50,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('products-group',GroupController::class);
 
         Route::resource('news-group',GroupController::class);
+
+        Route::resource('orders', OrderController::class);
 
         Route::resource('admin-manage',UserQTVController::class);
 
@@ -69,6 +76,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::post('add-item-into-group',[GroupController::class,'addItemIntoGroup'])->name('group.add-item');
 
         Route::get('detele-item-group',[GroupController::class,'deleteItemInGroup'])->name('group.delete-item');
+
+        Route::get('order-filter',[OrderController::class,'filter'])->name('order.filter');
     });
 
 });

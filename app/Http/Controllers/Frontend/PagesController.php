@@ -87,4 +87,9 @@ class   PagesController extends Controller
             ->get();
         return view('frontend.pages.product.result-filter',compact('products','keyword'));
     }
+
+    public function checkout(Request $request)
+    {
+        return view('frontend.checkout');
+    }
 }

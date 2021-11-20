@@ -63,8 +63,13 @@ class User extends Authenticatable
     function users(){
         return $this->belongsTo(User::class,'created_by','id');
     }
+
     function cart(){
         return $this->hasOne(Cart::class,"user_id",'id');
+    }
+
+    function orders(){
+        return $this->hasMany(Order::class,'author_id','id');
     }
 
 
