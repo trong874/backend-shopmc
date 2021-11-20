@@ -385,7 +385,7 @@
                                                     <div class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                         <span class="price"><span
-                                                                class="woocommerce-Price-amount amount"><bdi>{{$products->price}}<span
+                                                                class="woocommerce-Price-amount amount"><bdi>{{number_format($products->price)}}<span
                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
                                                     </div>
                                                     <div class="floatright product-meta">
