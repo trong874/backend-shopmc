@@ -22,7 +22,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
     Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');
-    Route::get('/destroy-cart/{id}', [CartController::class, 'destroyItem'])->name('destroy.cart_item');
+    Route::delete('/destroy-cart/{id}', [CartController::class, 'destroyItem'])->name('destroy.cart_item');
     Route::get('/getCart', [CartController::class, 'getCart'])->name('get.cart');
     Route::post('/change_quantity/{id}', [CartController::class, 'changeQuantity'])->name('change_quantity');
     Route::post('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');

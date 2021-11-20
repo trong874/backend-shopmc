@@ -2184,9 +2184,9 @@
                                         </div>
                                         <div class="all_cart">
                                             @foreach($data_cart['items'] as $key => $item)
-                                                <div class="woocommerce-cart-form__cart-item cart_item delete-item" onclick="deleteItem(this.id)" id="delete_{{$data_cart['cart_items'][$key]->item_id}}" data-id="{{$data_cart['cart_items'][$key]->item_id}}">
+                                                <div class="woocommerce-cart-form__cart-item cart_item">
                                                     <div class="cot1">
-                                                        <div class="product-remove">
+                                                        <div class="product-remove delete-item" onclick="deleteItem(this.id)" id="delete_{{$data_cart['cart_items'][$key]->item_id}}" data-id="{{$data_cart['cart_items'][$key]->item_id}}">
                                                             <a href="#"
                                                                class="remove" aria-label="Xóa sản phẩm này"
                                                                data-product_id="23053" data-product_sku="">
@@ -2207,15 +2207,15 @@
                                                                 let str = id ;
                                                                 let id_item =str.replace('delete_', '');
                                                                 console.log(id_item);
-                                                                // $.ajax({
-                                                                //     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                                                                //     url:'/destroy-cart/'+ id_item,
-                                                                //     type:'GET',
-                                                                //     success:function (res) {
-                                                                //         alertify.success("Xóa vật phẩm thành công?");
-                                                                //         location.reload()
-                                                                //     }
-                                                                // });
+                                                                $.ajax({
+                                                                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                                                    url:'/destroy-cart/'+ id_item,
+                                                                    type:'GET',
+                                                                    success:function (res) {
+                                                                        alertify.success("Xóa vật phẩm thành công?");
+                                                                        location.reload()
+                                                                    }
+                                                                });
                                                             }
                                                         </script>
                                                         <div class="product-thumbnail">
