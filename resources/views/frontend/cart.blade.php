@@ -2487,10 +2487,7 @@
                                                     <button type="submit" class="button update_cart" name="update_cart"
                                                             value="Cập nhật giỏ hàng">Cập nhật giỏ hàng
                                                     </button>
-
-                                                    <input type="hidden" id="woocommerce-cart-nonce"
-                                                           name="woocommerce-cart-nonce" value="55975a86a8"/><input
-                                                        type="hidden" name="_wp_http_referer" value="/cart/"/></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -2516,6 +2513,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="total_price" value="{{$data_cart['total_price']}}">
                                             <div class="wc-proceed-to-checkout">
                                                 <button type="submit" class="checkout-button alt wc-forward">Mua Hàng
                                                 </button>
