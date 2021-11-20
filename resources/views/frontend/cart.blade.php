@@ -2247,7 +2247,7 @@
                                                         </div>
                                                         <script>
                                                             function changeQuantity(id) {
-                                                                console.log(id);
+                                                                console.log();
 
                                                                 let total_quantity = '#'+id;
                                                                 console.log(total_quantity);
@@ -2263,6 +2263,7 @@
                                                                         $(total_quantity).html(new Intl.NumberFormat().format(res.quantity));
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
+                                                                        $('#total_price_input').val(res.total_price)
                                                                     }
                                                                 });
                                                             }
@@ -2319,7 +2320,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="total_price" value="{{$data_cart['total_price']}}">
+                                            <input type="hidden" name="total_price" id="total_price_input" value="{{$data_cart['total_price']}}">
                                             <div class="wc-proceed-to-checkout">
                                                 <button type="submit" class="checkout-button alt wc-forward">Mua Hàng
                                                 </button>
