@@ -92,7 +92,6 @@ class   PagesController extends Controller
     {
         $data_cart = $request->all();
         unset($data_cart['_token']);
-        dd($data_cart);
         $items = [];
         foreach ($data_cart['cart'] as $key => $item){
             array_push($items,Item::findOrFail($key));

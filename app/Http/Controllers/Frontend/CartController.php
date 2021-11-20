@@ -97,20 +97,18 @@ class CartController extends Controller
 
     public function changeQuantity(Request $request,$id)
     {
-        $this_item = Cart_Item::where('item_id',$id)->first();
-        $product = Item::where('id',$this_item->item_id)->first();
-        $this_item->quantity = $request->quantity;
-        $this_item->price =  $request->quantity * $product->price;
-        $this_item->update($request->all());
-
         $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
-        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->first();
+        $cart_item = Cart_Item::where('item_id',$id)->where('cart_id',$cart->id)->first();
+        $product = Item::findOrFail($id);
+        $cart_item->quantity = $request->quantity;
+        $cart_item->price =  $request->quantity * $product->price;
+        $cart_item->save();
+        $cart_item = Cart_Item::where('item_id',$id)->where('cart_id',$cart->id)->first();
         $data_cart = [
             'items'=>$cart->items,
             'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-            'cart_items'=>$cart_item_of_cart,
+            'cart_items'=>$cart_item,
         ];
-
         return response()->json($data_cart);
     }
 }
