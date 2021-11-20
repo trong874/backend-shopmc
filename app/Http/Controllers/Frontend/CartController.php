@@ -9,19 +9,20 @@ use App\Models\Cart_Item;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
     public function cart()
     {
-        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
-        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
-        $data_cart = [
-            'items'=>$cart->items,
-            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-            'cart_items'=>$cart_item_of_cart,
-        ];
-        return view('frontend.cart',['data_cart'=>$data_cart]);
+            $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+            $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+            $data_cart = [
+                'items'=>$cart->items,
+                'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+                'cart_items'=>$cart_item_of_cart,
+            ];
+            return view('frontend.cart',['data_cart'=>$data_cart]);
     }
 
     public function addCart(Request $request,$item_id)
@@ -110,5 +111,12 @@ class CartController extends Controller
             'cart_items'=>$cart_item,
         ];
         return response()->json($data_cart);
+    }
+
+    public function destroyItem($id)
+    {
+        $item = Cart_Item::where('item_id',$id);
+        $item->delete();
+        return response()->json();
     }
 }

@@ -1909,6 +1909,7 @@
                                     .checkout-button {
                                         background: #f7941d !important;
                                         color: #fff;
+                                        border: none;
                                         padding: 6px 35px;
                                         display: flex;
                                     }
@@ -2181,9 +2182,9 @@
                                                 <div class="product-subtotal">Tạm tính</div>
                                             </div>
                                         </div>
-                                        <div>
+                                        <div class="all_cart">
                                             @foreach($data_cart['items'] as $key => $item)
-                                                <div class="woocommerce-cart-form__cart-item cart_item">
+                                                <div class="woocommerce-cart-form__cart-item cart_item delete-item" onclick="deleteItem(this.id)" id="delete_{{$data_cart['cart_items'][$key]->item_id}}" data-id="{{$data_cart['cart_items'][$key]->item_id}}">
                                                     <div class="cot1">
                                                         <div class="product-remove">
                                                             <a href="#"
@@ -2198,7 +2199,29 @@
                                                                     <path fill="currentColor"
                                                                           d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"></path>
                                                                 </svg>
-                                                            </a></div>
+                                                            </a>
+                                                        </div>
+                                                        <script>
+                                                            function deleteItem(id) {
+                                                                let id_delete = '#'+id;
+                                                                console.log(id_delete);
+
+                                                                let str = id ;
+                                                                let id_item =str.replace('delete_', '');
+                                                                console.log(id_item);
+                                                                $.ajax({
+                                                                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                                                    url:'/destroy-cart/'+ id_item,
+                                                                    type:'GET',
+                                                                    success:function (res) {
+                                                                        $("#all_cart").empty();
+                                                                        $("#all_cart").html(res);
+                                                                        alertify.success("Xóa vật phẩm thành công?");
+                                                                        location.reload()
+                                                                    }
+                                                                });
+                                                            }
+                                                        </script>
                                                         <div class="product-thumbnail">
                                                             <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/"><img
                                                                     width="380" height="434"
@@ -2247,6 +2270,7 @@
                                                         </div>
                                                         <script>
                                                             function changeQuantity(id) {
+                                                                console.log(id);
                                                                 let total_quantity = '#'+id;
                                                                 console.log($(total_quantity).val())
                                                                 let item_price = '#item_price_'+id
@@ -2263,7 +2287,6 @@
                                                                         $(total_quantity).html(new Intl.NumberFormat().format(res.quantity));
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
-                                                                        $('#total_price_input').val(res.total_price)
                                                                     }
                                                                 });
                                                             }
@@ -2294,7 +2317,10 @@
                                                     <button type="submit" class="button update_cart" name="update_cart"
                                                             value="Cập nhật giỏ hàng">Cập nhật giỏ hàng
                                                     </button>
-                                                </div>
+
+                                                    <input type="hidden" id="woocommerce-cart-nonce"
+                                                           name="woocommerce-cart-nonce" value="55975a86a8"/><input
+                                                        type="hidden" name="_wp_http_referer" value="/cart/"/></div>
                                             </div>
                                         </div>
                                     </div>
@@ -2320,7 +2346,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="total_price" id="total_price_input" value="{{$data_cart['total_price']}}">
                                             <div class="wc-proceed-to-checkout">
                                                 <button type="submit" class="checkout-button alt wc-forward">Mua Hàng
                                                 </button>

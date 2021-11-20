@@ -121,5 +121,6 @@ class   PagesController extends Controller
             'order'=>$order,
             'order_detail'=>$order_detail
         ]);
+
     }
 }
