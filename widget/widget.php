@@ -170,7 +170,7 @@ View::composer('frontend.layout.core.hearder', function ($view) {
     }
     else
     {
-        $data_cart = 0;
+        $data_cart = "0";
     }
 
     return $view->with('data_cart', $data_cart);
