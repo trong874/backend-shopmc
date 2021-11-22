@@ -172,7 +172,7 @@ View::composer('frontend.layout.core.hearder', function ($view) {
             'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
             'cart_items'=>$cart_item_of_cart,
         ];
-//        dd($data_cart);
+        dd($data_cart);
     }
 
 
