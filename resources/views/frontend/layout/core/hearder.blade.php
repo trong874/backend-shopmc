@@ -90,9 +90,7 @@
                                             </span>
                                         </a>
                                     </span>
-
                                     <div class="woocommerce widget_shopping_cart"></div>
-
                                 </div>
                             </div>
                         </div>
