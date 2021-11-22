@@ -71,7 +71,16 @@
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>
-                                                <div class="woo-button-area mb30">
+                                                <?php
+                                                $user = Auth::user();
+                                                if (empty($user)){
+                                                    $login = 'act-rehub-login-popup';
+                                                }
+                                                else{
+                                                    $login = '';
+                                                }
+                                                ?>
+                                                <div class="woo-button-area mb30 {{$login}}">
                                                     <form class="cart">
                                                         <input type="hidden" id="wc_quick_buy_hook_20521"
                                                                value="20521"/>
