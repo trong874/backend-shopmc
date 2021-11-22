@@ -156,14 +156,22 @@ View::composer('frontend.pages.product.result-filter', function ($view) {
 //Cart
 
 View::composer('frontend.layout.core.hearder', function ($view) {
-    $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
-    if(isset($cart)){
-        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
-        $data_cart = [
-            'items'=>$cart->items,
-            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-            'cart_items'=>$cart_item_of_cart,
-        ];
+    $user = Auth::user();
+    if (isset($user)){
+        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+        if(isset($cart)){
+            $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+            $data_cart = [
+                'items'=>$cart->items,
+                'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+                'cart_items'=>$cart_item_of_cart,
+            ];
+        }
     }
+    else
+    {
+        $data_cart = 0;
+    }
+
     return $view->with('data_cart', $data_cart);
 });

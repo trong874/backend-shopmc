@@ -96,6 +96,15 @@
                                 </div>
                             </div>
                         </div>
+<!--                        --><?php
+//                        $user = Auth::user();
+//                        if (empty($user)){
+//                            $cart_number = 0;
+//                        }
+//                        else{
+//                            $cart_number = number_format($data_cart['total_price']);
+//                        }
+//                        ?>
                         {{--mycart--}}
                         <div id="my_cart">
 
