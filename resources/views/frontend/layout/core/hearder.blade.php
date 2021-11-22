@@ -84,7 +84,7 @@
                                             <span class="rh_woocartmenu-amount">
                                                 <span class="woocommerce-Price-amount amount">
                                                     <bdi>
-                                                        <span class="woocommerce-Price-currencySymbol">{{number_format($data_cart['total_price'])}} &#8363;</span>
+                                                        <span class="woocommerce-Price-currencySymbol">{{($data_cart['total_price'])}} &#8363;</span>
                                                     </bdi>
                                                 </span>
                                             </span>
