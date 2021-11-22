@@ -160,19 +160,23 @@ View::composer('frontend.layout.core.hearder', function ($view) {
     if (empty($user)){
         {
             $data_cart = 0;
-            dd($data_cart);
+
         }
     }
     else{
-        @$cart = Cart::with('items')->where('user_id',$user->id)->first();
-        dd(@$cart->id);
-        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
-        $data_cart = [
-            'items'=>$cart->items,
-            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-            'cart_items'=>$cart_item_of_cart,
-        ];
-        dd($data_cart);
+        $cart = Cart::with('items')->where('user_id',$user->id)->first();
+        if ($cart == null ){
+            $data_cart = 0;
+        }
+        else{$cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+            $data_cart = [
+                'items'=>$cart->items,
+                'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+                'cart_items'=>$cart_item_of_cart,
+            ];
+
+        }
+
     }
 
 
