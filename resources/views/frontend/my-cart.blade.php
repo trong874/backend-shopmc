@@ -19,7 +19,7 @@
             <div class="col-1 close-item">
 
                     <i aria-hidden="true" data-id="{{$item->id}}" style="cursor: pointer !important;
- font-size: 35px;">&times;</i>
+ font-size: 35px;"><i class="fa fa-trash fa-xs" aria-hidden="true"></i></i>
 
             </div>
         </div>

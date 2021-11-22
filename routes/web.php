@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
@@ -21,6 +22,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/tin-tuc', [PagesController::class, 'getNewsItem'])->name('new.list');
     Route::get('/category/{url}', [PagesController::class, 'getCategory'])->name('page.category');
     Route::get('/cart', [CartController::class, 'cart'])->name('item.cart');
+    Route::delete('/destroy-cart/{id}', [CartController::class, 'destroyItem'])->name('destroy.cart_item');
     Route::get('/getCart', [CartController::class, 'getCart'])->name('get.cart');
     Route::post('/change_quantity/{id}', [CartController::class, 'changeQuantity'])->name('change_quantity');
     Route::post('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
@@ -30,6 +32,12 @@ Route::group(['middleware' => 'language'], function () {
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
     });
+
+    Route::post('order-store',[OrderController::class,'store'])->name('order.store');
+
+    Route::post('/checkout',[PagesController::class,'checkout'])->name('checkout');
+    Route::get('/orders',[PagesController::class,'orders'])->name('orders');
+    Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
         Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 
@@ -46,6 +54,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('products-group',GroupController::class);
 
         Route::resource('news-group',GroupController::class);
+
+        Route::resource('orders', OrderController::class);
 
         Route::resource('admin-manage',UserQTVController::class);
 
@@ -70,6 +80,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::post('add-item-into-group',[GroupController::class,'addItemIntoGroup'])->name('group.add-item');
 
         Route::get('detele-item-group',[GroupController::class,'deleteItemInGroup'])->name('group.delete-item');
+
+        Route::get('order-filter',[OrderController::class,'filter'])->name('order.filter');
     });
 
 });

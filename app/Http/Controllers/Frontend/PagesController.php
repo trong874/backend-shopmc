@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Group;
 use App\Models\Item;
+use App\Models\Order;
+use App\Models\Order_Detail;
 use App\Models\Setting;
-use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class   PagesController extends Controller
 {
@@ -94,6 +96,39 @@ class   PagesController extends Controller
            ->whereBetween('price', [$request->min_value,$request->max_value])
            ->get();
             return view('frontend.category_product',compact('products'));
+
+    }
+
+    public function checkout(Request $request)
+    {
+        $data_cart = $request->all();
+        unset($data_cart['_token']);
+        $items = [];
+        foreach ($data_cart['cart'] as $key => $item){
+            array_push($items,['item'=>Item::findOrFail($key),'qty'=>$item['qty']]);
+        }
+        return view('frontend.checkout',[
+            'data_cart'=>$data_cart,
+            'items'=>$items
+        ]);
+    }
+
+    public function orders()
+    {
+        $orders = Order::where('author_id',Auth::user()->id)->get();
+        return view('frontend.orders',[
+            'orders'=>$orders
+        ]);
+    }
+
+    public function orderDetail($id)
+    {
+        $order = Order::with('items','user')->whereId($id)->first();
+        $order_detail = Order_Detail::whereOrder_id($id)->get();
+        return view('frontend.order_detail',[
+            'order'=>$order,
+            'order_detail'=>$order_detail
+        ]);
 
     }
 }

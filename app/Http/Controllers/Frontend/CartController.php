@@ -9,19 +9,20 @@ use App\Models\Cart_Item;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
     public function cart()
     {
-        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
-        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
-        $data_cart = [
-            'items'=>$cart->items,
-            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-            'cart_items'=>$cart_item_of_cart,
-        ];
-        return view('frontend.cart',['data_cart'=>$data_cart]);
+            $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+            $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+            $data_cart = [
+                'items'=>$cart->items,
+                'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+                'cart_items'=>$cart_item_of_cart,
+            ];
+            return view('frontend.cart',['data_cart'=>$data_cart]);
     }
 
     public function addCart(Request $request,$item_id)
@@ -97,11 +98,25 @@ class CartController extends Controller
 
     public function changeQuantity(Request $request,$id)
     {
-        $this_item = Cart_Item::where('item_id',$id)->first();
-        $product = Item::where('id',$this_item->item_id)->first();
-        $this_item->quantity = $request->quantity;
-        $this_item->price =  $request->quantity * $product->price;
-        $this_item->update($request->all());
-        return response()->json($this_item);
+        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+        $cart_item = Cart_Item::where('item_id',$id)->where('cart_id',$cart->id)->first();
+        $product = Item::findOrFail($id);
+        $cart_item->quantity = $request->quantity;
+        $cart_item->price =  $request->quantity * $product->price;
+        $cart_item->save();
+        $cart_item = Cart_Item::where('item_id',$id)->where('cart_id',$cart->id)->first();
+        $data_cart = [
+            'items'=>$cart->items,
+            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+            'cart_items'=>$cart_item,
+        ];
+        return response()->json($data_cart);
+    }
+
+    public function destroyItem($id)
+    {
+        $item = Cart_Item::where('item_id',$id);
+        $item->delete();
+        return response()->json();
     }
 }
