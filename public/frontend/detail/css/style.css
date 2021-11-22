@@ -263,3 +263,15 @@ body, body.dark_body {
     background-repeat: repeat;
     background-image: none
 }
+
+.sale_product {
+    background: #cd2653;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: -.09em;
+    line-height: 9;
+    text-transform: uppercase;
+    margin-left: 6px;
+    padding: 5px 7px 5px 7px;
+
+}
