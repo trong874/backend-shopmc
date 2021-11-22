@@ -18,40 +18,33 @@
                         </ul>
                     </div>
                 </div>
-                <div id="woocommerce_price_filter-5" class="widget woocommerce widget_price_filter">
-                    <form method="get" action="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">
-                        <div class="price_slider_wrapper">
-                            <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="">
-                                <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;">
-                                </div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;">
-                                </span>
-                                <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;">
-                                </span>
-                            </div>
 
-                            <div class="price_slider_amount" data-step="10">
-                                <input type="text" id="min_price" name="min_price" value="60000" data-min="60000" placeholder="Giá thấp nhất" style="display: none;">
-                                <input type="text" id="max_price" name="max_price" value="640000" data-max="640000" placeholder="Giá cao nhất" style="display: none;">
-                                <div class="price_label" style="">
-                                 Giá  <span class="from">60,000&nbsp;₫</span> — <span class="to">640,000&nbsp;₫</span>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="slider-range" name="rangeInput"></div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="row slider-labels">
+                        <div class="col-xs-6 caption">
+                            <strong>Min:</strong> <span id="slider-range-value1"></span>
+                        </div>
+                        <div class="col-xs-6 text-right caption">
+                            <strong>Max:</strong> <span id="slider-range-value2"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form method="get" action="{{route('product.slider')}}">
+                                <input type="hidden" name="min_value" value="" id="min_price">
+                                <input type="hidden" name="max_value" value="" id="max_price">
+                                <button type="submit" class="button" style="background-color: #0ac709">LỌC</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div id="woocommerce_rating_filter-2" class="widget woocommerce widget_rating_filter">
-                    <div class="title">Average rating</div>
-                    <ul>
-                        <li class="wc-layered-nav-rating">
-                            <a href="#">
-                                <span class="star-rating">
-                                    <span class="rhwoostar rhwoostar1 active">★</span>
-                                    <span class="rhwoostar rhwoostar2 active">★</span>
-                                    <span class="rhwoostar rhwoostar3 active">★</span>
-                                    <span class="rhwoostar rhwoostar4 active">★</span>
-                                    <span class="rhwoostar rhwoostar5 active">★</span>
-                                </span> (13)</a></li></ul></div>
+
+
             </aside>
             <!-- /Sidebar -->
 

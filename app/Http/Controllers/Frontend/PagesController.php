@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Group;
 use App\Models\Item;
 use App\Models\Setting;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class   PagesController extends Controller
@@ -86,5 +87,13 @@ class   PagesController extends Controller
             ->where('title','LIKE','%'.$keyword.'%')
             ->get();
         return view('frontend.pages.product.result-filter',compact('products','keyword'));
+    }
+
+    public function filterPrice(Request $request){
+       $products = Item::where('module','products')
+           ->whereBetween('price', [$request->min_value,$request->max_value])
+           ->get();
+            return view('frontend.category_product',compact('products'));
+
     }
 }
