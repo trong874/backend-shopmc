@@ -159,14 +159,14 @@ View::composer('frontend.layout.core.hearder', function ($view) {
     $user = Auth::user();
     if (empty($user)){
         {
-            $data_cart['total_price'] = 0;
+            $data['total_price'] = 0;
         }
     }
     else{
         $cart = Cart::with('items')->where('user_id',$user->id)->first();
         if(isset($cart)){
             $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
-            $data_cart = [
+            $data = [
                 'items'=>$cart->items,
                 'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
                 'cart_items'=>$cart_item_of_cart,
@@ -174,9 +174,8 @@ View::composer('frontend.layout.core.hearder', function ($view) {
         }
         else
         {
-            $data_cart['total_price'] = 0;
+            $data['total_price'] = 0;
         }
-
     }
-    return $view->with('data_cart', $data_cart);
+    return $view->with('data', $data);
 });

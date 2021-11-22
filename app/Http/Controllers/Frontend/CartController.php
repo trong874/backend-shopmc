@@ -105,7 +105,7 @@ class CartController extends Controller
             }
 
         }
-        return view('frontend.layout.core.hearder',['data_cart'=>$data_cart]);
+        return view('frontend.widget.my-cart',['data_cart'=>$data_cart]);
     }
 
     public function changeQuantity(Request $request,$id)

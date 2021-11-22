@@ -1,4 +1,4 @@
-@if($data_cart !=null)
+
 <ul id="cartDetail">
     <div class="container" style="margin-left: 35px;margin-top: 10px;margin-bottom: 10px;">
         @foreach($data_cart['items'] as $key => $item)
@@ -43,4 +43,4 @@
         </div>
     </div>
 </ul>
-@endif
+
