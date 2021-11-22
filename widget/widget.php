@@ -1,6 +1,10 @@
 <?php
+
+use App\Models\Cart;
+use App\Models\Cart_Item;
 use App\Models\Group;
 use App\Models\Item;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 
@@ -148,5 +152,17 @@ View::composer('frontend.pages.product.result-filter', function ($view) {
     return $view->with('categories_p', $categories_p);
 });
 
+//Cart
 
-
+View::composer('frontend.layout.core.hearder', function ($view) {
+    $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+    if(isset($cart)){
+        $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+        $data_cart = [
+            'items'=>$cart->items,
+            'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+            'cart_items'=>$cart_item_of_cart,
+        ];
+    }
+    return $view->with('data_cart', $data_cart);
+});
