@@ -126,6 +126,7 @@
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
                                                                         alertify.success('Đã thêm vật phẩm này vào giỏ hàng');
+                                                                        location.reload();
                                                                     }
                                                                 });
                                                             }

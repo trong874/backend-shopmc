@@ -160,8 +160,6 @@ View::composer('frontend.layout.core.hearder', function ($view) {
     if (empty($user)){
         {
             $data_cart['total_price'] = 0;
-
-
         }
     }
     else{
@@ -173,6 +171,5 @@ View::composer('frontend.layout.core.hearder', function ($view) {
                 'cart_items'=>$cart_item_of_cart,
             ];
     }
-
     return $view->with('data_cart', $data_cart);
 });
