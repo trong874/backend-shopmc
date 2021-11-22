@@ -160,11 +160,10 @@ View::composer('frontend.layout.core.hearder', function ($view) {
     if (empty($user)){
         {
             $data_cart = 0;
-
         }
     }
     else{
-        $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
+        $cart = Cart::with('items')->where('user_id',$user->id)->first();
         $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
         $data_cart = [
             'items'=>$cart->items,
