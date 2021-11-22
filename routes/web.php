@@ -28,6 +28,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::post('/add-cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
     Route::get('/delete-cart/{id}', [CartController::class, 'deleteItemCart'])->name('delete-cart');
     Route::get('tim-kiem',[PagesController::class,'filter'])->name('product.search');
+    Route::get('slider',[PagesController::class,'filterPrice'])->name('product.slider');
     Route::prefix('admin')->group(function () {
         Route::resource('user-manage', UserController::class);
     });

@@ -16,6 +16,7 @@ View::composer('frontend.widget.__clothes', function ($view) {
         ->first([
         'title', 'description', 'image', 'url', 'id', 'slug'
     ]);
+
     return $view->with('clotheses', $group_clotheses->item);
 });
 

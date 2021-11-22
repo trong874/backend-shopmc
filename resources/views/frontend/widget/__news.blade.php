@@ -53,6 +53,7 @@
                      width="22" height="22" alt="admin"
                      class="avatar avatar-22 wp-user-avatar wp-user-avatar-22 alignnone photo"/>
 				admin
+
 			</a>
 		</span>
                                             <span class="date_meta">{{$new->created_at}}</span>
@@ -73,7 +74,6 @@
                     @endforeach
                 </div>
                 <div class="clearfix"></div>
-
             </div>
         </div>
     </div>

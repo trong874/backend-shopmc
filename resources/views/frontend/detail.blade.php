@@ -25,9 +25,9 @@
                                 <div class="product_content" style="margin-bottom: 25px">
                                     <div
                                         class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
-
-                                        <span class="onsale">
-                                            <span>- 33%</span></span>
+                                        <span class="sale_product">
+                                            <span>- 33%</span>
+                                        </span>
                                         <div>
                                             <figure class="woocommerce-product-gallery__wrapper">
 {{--                                                <div--}}
@@ -37,14 +37,11 @@
                                                        <img src="{{$itemDetail->image}}"/>
 {{--                                                </div>--}}
                                             </figure>
-
                                         </div>
                                     </div>
                                     <div class="wpsm-two-third tabletblockdisplay wpsm-column-last mb30">
                                         <div class="rh-flex-center-align woo_top_meta mobileblockdisplay mb10">
-
                                             <div class="floatleft mr15 disablefloatmobile">
-
                                                 <div class="woocommerce-product-rating">
                                                     <div class="rh_woo_star" title="Rated 5 out of 5"><span
                                                             class="rhwoostar rhwoostar1 active">&#9733;</span><span
@@ -56,14 +53,11 @@
                                                        rel="nofollow">(<span class="count">2</span> đánh giá của khách
                                                         hàng)</a>
                                                 </div>
-
                                             </div>
                                             <span class="floatleft meta post-meta mt0 mb0 disablefloatmobile">
                                            <span><i class="far fa-eye"> </i>5504</span>  Đã bán
                                         </span>
                                         </div>
-
-
                                         <div class="rh-line mb20 mt10"></div>
                                         <div class="rh_post_layout_rev_price_holder position-relative">
                                             <div class="floatright mobileblockdisplay">
@@ -162,7 +156,7 @@
 
                                                    {!! $itemDetail->content !!}
                                                 </div>
-                                                <div class="rh_woo_code_zone_content content-detail">
+                                                <div class="rh_woo_code_zone_content content-detail" style="padding: 15px 0">
                                                     <strong>
                                                         <i class="far fa-phone-plus "></i> LIÊN HỆ</strong><br>
                                                     <strong style="color: #D50000;">
@@ -388,8 +382,6 @@
                                                 <h3 class=" text-clamp text-clamp-2">
                                                     <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
                                                 </h3>
-
-
                                                 <div class="border-top pt10 pr10 pl10 pb10">
                                                     <div class="price_for_grid floatleft rehub-btn-font mr10">
 

@@ -91,6 +91,14 @@ class   PagesController extends Controller
         return view('frontend.pages.product.result-filter',compact('products','keyword'));
     }
 
+    public function filterPrice(Request $request){
+       $products = Item::where('module','products')
+           ->whereBetween('price', [$request->min_value,$request->max_value])
+           ->get();
+            return view('frontend.category_product',compact('products'));
+
+    }
+
     public function checkout(Request $request)
     {
         $data_cart = $request->all();
