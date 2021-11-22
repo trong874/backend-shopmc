@@ -164,8 +164,8 @@ View::composer('frontend.layout.core.hearder', function ($view) {
         }
     }
     else{
-        $cart = Cart::with('items')->where('user_id',$user->id)->first();
-        dd($cart->id);
+        @$cart = Cart::with('items')->where('user_id',$user->id)->first();
+        dd(@$cart->id);
         $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
         $data_cart = [
             'items'=>$cart->items,
