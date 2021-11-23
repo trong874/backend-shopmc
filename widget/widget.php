@@ -107,10 +107,13 @@ View::composer('frontend.widget.__news', function ($view) {
     $group_news= Group::with('item')
         ->where('module','news-group')
         ->where('slug', 'tin-tuc-cong-dong')
-        ->first([
+        ->get([
             'title', 'content', 'description', 'image', 'url','id','slug'
-        ]);
-    return $view->with('news', $group_news);
+        ])->map(function($group) {
+            $group->setRelation('item', $group->item->take(2));
+            return $group;
+        });
+    return $view->with('news', $group_news[0]);
 });
 
 
