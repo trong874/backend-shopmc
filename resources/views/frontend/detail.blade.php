@@ -80,7 +80,7 @@
                                                     $login = '';
                                                 }
                                                 ?>
-                                                <div class="woo-button-area mb30 {{$login}}">
+                                                <div class="woo-button-area mb30">
                                                     <form class="cart">
                                                         <input type="hidden" id="wc_quick_buy_hook_20521"
                                                                value="20521"/>
@@ -98,22 +98,20 @@
                                                                     max="50"
                                                                     name="quantity"
                                                                     value="1"
-                                                                    title="SL"x
+                                                                    title="SL"
                                                                     size="4"
                                                                     placeholder=""
                                                                     inputmode="numeric"/>
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
-
+                                                        <div class="{{$login}}" >
                                                         <a onclick="addToCart({{$itemDetail->id}})" style="vertical-align: top; margin-left: 1em;background-color: #3c6a02" name="add-to-cart" id="addToCart" href="javascript:"
 
                                                          class="btn btn-success">
                                                             Thêm vào giỏ hàng
                                                         </a>
-
                                                         <script>
-
                                                             function addToCart(id) {
                                                                 $.ajax({
                                                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -131,14 +129,13 @@
                                                                 });
                                                             }
                                                         </script>
+                                                        </div>
                                                     </form>
-
-
-                                                    <div class="quick_buy_container quick_buy_20521_container"
+                                                    <div class="quick_buy_container quick_buy_20521_container {{$login}}"
                                                          id="quick_buy_20521_container">
                                                         <button id="quick_buy_20521_button"
                                                                 data-product-id="20521"
-                                                                style="margin-right: -20px; margin-top: 2px"
+                                                                style="margin-right: -42px; margin-top: 2px"
                                                                 data-product-type="simple"
                                                                 class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
                                                                 type="button">Mua Ngay
