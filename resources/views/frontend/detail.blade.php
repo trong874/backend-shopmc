@@ -14,7 +14,8 @@
                             <div class="ce_woo_block_top_holder">
                                 <div class="woo_bl_title flowhidden mb10">
                                     <div class="woocommerce-notices-wrapper"></div>
-                                    <h1 class="floatleft tabletblockdisplay pr20 " style="margin-top: 6px; margin-left: 6px">
+                                    <h1 class="floatleft tabletblockdisplay pr20 "
+                                        style="margin-top: 6px; margin-left: 6px">
                                         {{$itemDetail->title}}</h1>
                                     <div class="woo-top-actions tabletblockdisplay floatright product_row">
                                         <div class="woo-button-actions-area pl5 pb5 pr5">
@@ -30,13 +31,41 @@
                                         </span>
                                         <div>
                                             <figure class="woocommerce-product-gallery__wrapper">
-{{--                                                <div--}}
-{{--                                                    data-thumb="{{$itemDetail[0]->image}}"--}}
-{{--                                                    class="woocommerce-product-gallery__image"--}}
-{{--                                                    data-webp-thumb="{{$itemDetail[0]->image}} ">--}}
-                                                       <img src="{{$itemDetail->image}}"/>
-{{--                                                </div>--}}
+                                                {{--                                                <div--}}
+                                                {{--                                                    data-thumb="{{$itemDetail[0]->image}}"--}}
+                                                {{--                                                    class="woocommerce-product-gallery__image"--}}
+                                                {{--                                                    data-webp-thumb="{{$itemDetail[0]->image}} ">--}}
+                                                <img  src="{{$itemDetail->image}}" id="resultImage" style="width: 370px;height:450px"/>
+                                                {{--                                                </div>--}}
                                             </figure>
+
+                                            <div class="_3k2CdZ">
+                                                @foreach( explode("|", $itemDetail->image_extension) as $image)
+                                                <div class="_1cILQR">
+                                                    <div class="_3-_YTZ">
+                                                        <div class="_25_r8I">
+                                                            <div class="_12uy03 _2GchKS"
+                                                                 style="background-image: url('{{$image}}'); background-size: contain; background-repeat: no-repeat; " onmouseover="changeImage(this)"></div>
+                                                        </div>
+                                                        <div class=""></div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                                <button class="shopee-icon-button _2Rm1oz _2SGvMO">
+                                                    <svg enable-background="new 0 0 13 20" viewBox="0 0 13 20" x="0"
+                                                         y="0" class="shopee-svg-icon icon-arrow-left-bold">
+                                                        <polygon
+                                                            points="4.2 10 12.1 2.1 10 -.1 1 8.9 -.1 10 1 11 10 20 12.1 17.9"></polygon>
+                                                    </svg>
+                                                </button>
+                                                <button class="shopee-icon-button _2Rm1oz _1Z42SM" style="margin-left: 465px">
+                                                    <svg enable-background="new 0 0 13 21" viewBox="0 0 13 21" x="0"
+                                                         y="0" class="shopee-svg-icon icon-arrow-right-bold">
+                                                        <polygon
+                                                            points="11.1 9.9 2.1 .9 -.1 3.1 7.9 11 -.1 18.9 2.1 21 11.1 12 12.1 11"></polygon>
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="wpsm-two-third tabletblockdisplay wpsm-column-last mb30">
@@ -67,7 +96,8 @@
                                                     <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </del>
-                                                    <ins style="margin-left: 10px"><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
+                                                    <ins style="margin-left: 10px"><span
+                                                            class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>
@@ -115,12 +145,12 @@
                                                             function addToCart(id) {
                                                                 $.ajax({
                                                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                                                                    url:'/add-cart/'+id,
-                                                                    type:'POST',
-                                                                    data:{
-                                                                        quantity:$('#quantity').val(),
+                                                                    url: '/add-cart/' + id,
+                                                                    type: 'POST',
+                                                                    data: {
+                                                                        quantity: $('#quantity').val(),
                                                                     },
-                                                                    success:function (res) {
+                                                                    success: function (res) {
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
                                                                         alertify.success('Đã thêm vật phẩm này vào giỏ hàng');
@@ -151,11 +181,13 @@
                                         <div>
 
                                             <div class="mobilesblockdisplay font90 lineheight20 woo_desc_part">
-                                                <div class="woocommerce-product-details__short-description content-detail">
+                                                <div
+                                                    class="woocommerce-product-details__short-description content-detail">
 
-                                                   {!! $itemDetail->content !!}
+                                                    {!! $itemDetail->content !!}
                                                 </div>
-                                                <div class="rh_woo_code_zone_content content-detail" style="padding: 15px 0">
+                                                <div class="rh_woo_code_zone_content content-detail"
+                                                     style="padding: 15px 0">
                                                     <strong>
                                                         <i class="far fa-phone-plus "></i> LIÊN HỆ</strong><br>
                                                     <strong style="color: #D50000;">
@@ -166,9 +198,11 @@
                                                                 src="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png"
                                                                 data-eio="j"/></noscript>
                                                         48 giờ đổi trả hàng miễn phí</strong><br>
-                                                    <p style="color: #0c0f1a">Hotline đặt hàng 0981058326 (Zalo) - 0904568069<br>
+                                                    <p style="color: #0c0f1a">Hotline đặt hàng 0981058326 (Zalo) -
+                                                        0904568069<br>
                                                         (Miễn phí, 8-21h cả T7, CN)</p>
-                                                    <div class="mxh">                                                        <noscript
+                                                    <div class="mxh">
+                                                        <noscript
                                                             data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
                                                             data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
                                                             class="ewww_webp"><img
