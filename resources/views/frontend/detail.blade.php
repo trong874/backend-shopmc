@@ -95,10 +95,10 @@
                                                                     class="input-text qty text"
                                                                     step="1"
                                                                     min="1"
-                                                                    max=""
+                                                                    max="50"
                                                                     name="quantity"
                                                                     value="1"
-                                                                    title="SL"
+                                                                    title="SL"x
                                                                     size="4"
                                                                     placeholder=""
                                                                     inputmode="numeric"/>
