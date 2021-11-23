@@ -9,7 +9,6 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\PagesController;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 
