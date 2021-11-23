@@ -2213,7 +2213,7 @@
                                                                     type:'GET',
                                                                     success:function (res) {
                                                                         alertify.success("Xóa vật phẩm thành công?");
-                                                                        location.reload()
+                                                                        location.reload();
                                                                     }
                                                                 });
                                                             }
@@ -2283,7 +2283,8 @@
                                                                         $(total_quantity).html(new Intl.NumberFormat().format(res.quantity));
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
-                                                                        $('#total_price_input').val(res.total_price)
+                                                                        $('#total_price_input').val(res.total_price);
+                                                                        location.reload();
                                                                     }
                                                                 });
                                                             }

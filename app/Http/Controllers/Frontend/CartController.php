@@ -15,14 +15,24 @@ class CartController extends Controller
 {
     public function cart()
     {
+
             $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
-            $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
-            $data_cart = [
-                'items'=>$cart->items,
-                'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-                'cart_items'=>$cart_item_of_cart,
-            ];
-            return view('frontend.cart',['data_cart'=>$data_cart]);
+            if(isset($cart)){
+                $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+                $data_cart = [
+                    'items'=>$cart->items,
+                    'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+                    'cart_items'=>$cart_item_of_cart,
+                ];
+                return view('frontend.cart',['data_cart'=>$data_cart]);
+            }
+            else{
+                Session::flash('message', 'Bạn không có sản phẩm nào trong giỏ hàng!');
+                Session::flash('alert-class', 'alert-danger');
+                return back();
+
+            }
+
     }
 
     public function addCart(Request $request,$item_id)
@@ -63,15 +73,6 @@ class CartController extends Controller
         ]);
         $cart = Cart::with('items')->where('user_id',Auth::user()->id)->first();
     }
-//    $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
-//
-//    $data_cart = [
-//        'items'=>$cart->items,
-//        'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
-//        'cart_items'=>$cart_item_of_cart,
-//        ''
-//    ];
-
         return response()->json();
     }
 
