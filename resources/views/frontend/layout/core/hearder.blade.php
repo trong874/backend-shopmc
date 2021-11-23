@@ -28,8 +28,12 @@
                                                 <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="35" height="35" alt="Avatar" class="avatar avatar-35 wp-user-avatar wp-user-avatar-35 photo avatar-default"></span>{{Auth::user()->username}}</li>
                                         <li class="user-editorders-link-intop menu-item">
                                             <a href="#">
+                                                <i class="rhicon rhi-user" aria-hidden="true"></i>
+                                                <span>Thông tin tài khoản</span></a></li>
+                                        <li class="user-editorders-link-intop menu-item">
+                                            <a href="{{route('orders')}}">
                                                 <i class="rhicon rhi-shopping-bagfeather" aria-hidden="true"></i>
-                                                <span>Tài khoản của tôi</span></a></li>
+                                                <span>Đơn hàng</span></a></li>
                                         <li class="user-logout-link-intop menu-item">
                                             <a href="{{route('logout')}}">
                                                 <i class="rhicon rhi-lock-alt"></i><span>Đăng xuất</span></a></li></ul></div><div class="use_nam">
