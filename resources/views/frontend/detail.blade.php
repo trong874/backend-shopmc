@@ -58,7 +58,7 @@
                                                             points="4.2 10 12.1 2.1 10 -.1 1 8.9 -.1 10 1 11 10 20 12.1 17.9"></polygon>
                                                     </svg>
                                                 </button>
-                                                <button class="shopee-icon-button _2Rm1oz _1Z42SM" style="margin-left: 465px">
+                                                <button class="shopee-icon-button _2Rm1oz _1Z42SM" style="margin-left: 452px">
                                                     <svg enable-background="new 0 0 13 21" viewBox="0 0 13 21" x="0"
                                                          y="0" class="shopee-svg-icon icon-arrow-right-bold">
                                                         <polygon
