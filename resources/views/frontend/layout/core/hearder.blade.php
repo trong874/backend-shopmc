@@ -145,8 +145,7 @@
                     url:'/getCart/',
                     type:'GET',
                     success:function (res) {
-                        $("#my_cart").empty();
-                        $("#my_cart").html(res);
+                        RenderCart(res);
                         $("#my_cart").show();
                     }
                 });
@@ -162,12 +161,16 @@
                     url:'/delete-cart/'+$(this).data("id"),
                     type:'GET',
                     success:function (res) {
-                        $("#my_cart").empty();
-                        $("#my_cart").html(res);
+                        RenderCart(res);
                         alertify.success("Xóa vật phẩm thành công?");
                     }
                 });
             })
+            function RenderCart(res){
+                $("#my_cart").empty();
+                $("#my_cart").html(res);
+                // console.log($("#total_price_cart").val());
+            }
         </script>
         <!-- /Logo section -->
         <!-- Main Navigation -->
