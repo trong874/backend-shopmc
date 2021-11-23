@@ -93,3 +93,9 @@ let wgact_order_deduplication = true;
 
 
 
+//changeImage
+function changeImage(img){
+    style = img.currentStyle || window.getComputedStyle(img, false),
+        url = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    document.getElementById('resultImage').src = url
+}

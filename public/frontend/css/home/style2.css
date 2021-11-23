@@ -502,4 +502,83 @@ body, body.dark_body {
     -webkit-line-clamp: 2;
 }
 
+/*
+all image
+ */
+ ._3k2CdZ {
+     margin: 5px -5px;
+     position: relative;
+ }
 
+ ._1cILQR {
+     display: inline-block;
+     padding: 5px;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+     width: 19%;
+ }
+
+ ._3-_YTZ {
+     position: relative;
+ }
+
+ ._25_r8I {
+     position: relative;
+ }
+
+ ._12uy03 {
+     width: 100%;
+     padding-top: 100%;
+     background-position: 50%;
+ }
+
+ ._2GchKS {
+     opacity: 1;
+     transition: opacity .2s ease;
+ }
+
+ ._1xFdBY, ._3eZSzS {
+     position: absolute;
+     width: 100%;
+ }
+
+ ._3eZSzS {
+     display: block;
+     top: 0;
+     left: 0;
+     height: 100%;
+     object-fit: cover;
+     pointer-events: none;
+ }
+ .shopee-icon-button {
+     outline: none;
+     cursor: pointer;
+     border: 0;
+     font-size: .875rem;
+     font-weight: 300;
+     line-height: 1;
+     letter-spacing: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: background-color .1s cubic-bezier(.4, 0, .6, 1);
+     border: 1px solid rgba(0, 0, 0, .54);
+     background-color: transparent;
+     padding: 0;
+ }
+
+ ._2SGvMO {
+     left: 5px;
+ }
+
+ ._2Rm1oz {
+     position: absolute;
+     width: 1.25rem;
+     height: 2.5rem;
+     top: 50%;
+     -webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+     color: #fff;
+     border: 0;
+     background-color: rgba(0, 0, 0, .2);
+ }

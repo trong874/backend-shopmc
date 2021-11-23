@@ -61,7 +61,7 @@ class   PagesController extends Controller
     {
         $itemDetail = Item::where('slug',$slug)
             ->first([
-            'title', 'content', 'description', 'image', 'url','price','price_old','slug','id'
+            'title', 'content', 'description', 'image', 'url','price','price_old','slug','id','image_extension'
         ]);
 //        $flashSales = Item::where('position', 'flashsale')->get([
 //            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
@@ -131,4 +131,6 @@ class   PagesController extends Controller
         ]);
 
     }
+
+
 }

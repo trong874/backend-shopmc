@@ -27,11 +27,11 @@
                     </div>
                     <div class="row slider-labels">
                         <div class="col-xs-6 caption">
-                            <strong>Min:</strong> <span id="slider-range-value1"></span>
-                        </div>
+                            <strong>Min:</strong>
+                            <span id="slider-range-value1"></span> đ</div>
                         <div class="col-xs-6 text-right caption">
-                            <strong>Max:</strong> <span id="slider-range-value2"></span>
-                        </div>
+                            <strong>Max:</strong>
+                            <span id="slider-range-value2"></span> đ</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
