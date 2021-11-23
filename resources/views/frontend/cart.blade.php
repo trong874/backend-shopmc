@@ -2283,6 +2283,7 @@
                                                                         $(total_quantity).html(new Intl.NumberFormat().format(res.quantity));
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
+                                                                        $('#total_price_input').val(res.total_price)
                                                                     }
                                                                 });
                                                             }
@@ -2325,7 +2326,7 @@
                                             <div class="shop_table shop_table_responsive">
                                                 <div class="cart-subtotal">
                                                     <div class="colum_cart">Tạm tính</div>
-                                                    <input type="hidden" name="total_price" value="{{$data_cart['total_price']}}">
+                                                    <input type="hidden" name="total_price" id="total_price_input" value="{{$data_cart['total_price']}}">
                                                     <div data-title="Tạm tính"><span
                                                             class="woocommerce-Price-amount amount" id="total_price"><bdi>{{number_format($data_cart['total_price'])}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
