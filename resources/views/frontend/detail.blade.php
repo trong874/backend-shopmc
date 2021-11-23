@@ -101,6 +101,15 @@
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>
+                                                <?php
+                                                $user = Auth::user();
+                                                if (empty($user)){
+                                                    $login = 'act-rehub-login-popup';
+                                                }
+                                                else{
+                                                    $login = '';
+                                                }
+                                                ?>
                                                 <div class="woo-button-area mb30">
                                                     <form class="cart">
                                                         <input type="hidden" id="wc_quick_buy_hook_20521"
@@ -116,7 +125,7 @@
                                                                     class="input-text qty text"
                                                                     step="1"
                                                                     min="1"
-                                                                    max=""
+                                                                    max="50"
                                                                     name="quantity"
                                                                     value="1"
                                                                     title="SL"
@@ -126,17 +135,13 @@
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
+                                                        <div class="{{$login}}" >
+                                                        <a onclick="addToCart({{$itemDetail->id}})" style="vertical-align: top; margin-left: 1em;background-color: #3c6a02" name="add-to-cart" id="addToCart" href="javascript:"
 
-                                                        <a onclick="addToCart({{$itemDetail->id}})"
-                                                           style="vertical-align: top; margin-left: 1em;background-color: #3c6a02"
-                                                           name="add-to-cart" id="addToCart" href="javascript:"
-
-                                                           class="btn btn-success">
+                                                         class="btn btn-success">
                                                             Thêm vào giỏ hàng
                                                         </a>
-
                                                         <script>
-
                                                             function addToCart(id) {
                                                                 $.ajax({
                                                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -149,18 +154,18 @@
                                                                         $("#my_cart").empty();
                                                                         $("#my_cart").html(res);
                                                                         alertify.success('Đã thêm vật phẩm này vào giỏ hàng');
+                                                                        location.reload();
                                                                     }
                                                                 });
                                                             }
                                                         </script>
+                                                        </div>
                                                     </form>
-
-
-                                                    <div class="quick_buy_container quick_buy_20521_container"
+                                                    <div class="quick_buy_container quick_buy_20521_container {{$login}}"
                                                          id="quick_buy_20521_container">
                                                         <button id="quick_buy_20521_button"
                                                                 data-product-id="20521"
-                                                                style="margin-right: -20px; margin-top: 2px"
+                                                                style="margin-right: -42px; margin-top: 2px"
                                                                 data-product-type="simple"
                                                                 class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
                                                                 type="button">Mua Ngay
@@ -310,92 +315,65 @@
                                                 color: #f7941d;
                                                 font-size: 15px;
                                             }
-
                                             .content_product {
                                                 /*display: flow-root;
                                                 /*height: 100px;*/
                                             }
-
                                             .hide_content {
                                                 position: absolute;
                                                 width: 100%;
                                                 height: 100%;
                                                 top: 0;
                                                 left: 0;
-                                                background: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(70%, hsla(0, 0%, 100%, 0)), color-stop(90%, #fff));
-                                                background: linear-gradient(transparent, hsla(0, 0%, 100%, 0) 70%, #fff 90%);
+                                                background: -webkit-gradient(linear,left top,left bottom,color-stop(0,transparent),color-stop(70%,hsla(0,0%,100%,0)),color-stop(90%,#fff));
+                                                background: linear-gradient(transparent,hsla(0,0%,100%,0) 70%,#fff 90%);
                                             }
-
-                                            .all_des {
+                                            .all_des{
                                                 max-height: 220px;
                                                 overflow: hidden;
                                                 position: relative;
                                             }
-
-                                            #readLess {
-                                                display: none;
-                                            }
-
-                                            .span_item {
+                                            #readLess{display: none;}
+                                            .span_item{
                                                 width: 12px;
                                                 margin-left: 5px;
                                                 fill: black;
                                             }
                                         </style>
+                                        <div class="clearfix"></div>
                                         <div class="all_des" style="max-height: none;">
                                             <div class="content_product" style="color: black">
-                                                <p>{!! $itemDetail->description !!}</p>
+                                                <p >{!! $itemDetail->description !!}</p>
                                             </div>
                                             <div class="hide_content" style="display: none;"></div>
                                         </div>
-                                        <div class="read_more_less" id="readMore" style="display: none;color:black">Xem
-                                            Thêm
-                                            <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11"
-                                                 class="span_item">
-                                                <path stroke="none"
-                                                      d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="read_more_less" id="readLess" style="display: block; color:black">
-                                            Thu Gọn
-                                            <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11"
-                                                 class="span_item">
-                                                <path style="color: black;" stroke="none"
-                                                      d="m11 8.5c0-.1 0-.2-.1-.3l-5-6c-.1-.1-.3-.2-.4-.2s-.3.1-.4.2l-5 6c-.2.2-.1.5.1.7s.5.1.7-.1l4.6-5.5 4.6 5.5c.2.2.5.2.7.1.1-.1.2-.3.2-.4z"></path>
-                                            </svg>
-                                        </div>
-                                        <script async="" defer="" crossorigin="anonymous"
-                                                src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v7.0&amp;appId=248671142486453&amp;autoLogAppEvents=1"></script>
+                                        <div class="read_more_less" id="readMore" style="display: none;color:black">Xem Thêm <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" class="span_item"><path stroke="none" d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path></svg></div>
+                                        <div class="read_more_less" id="readLess" style="display: block; color:black">Thu Gọn <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" class="span_item"><path style="color: black;" stroke="none" d="m11 8.5c0-.1 0-.2-.1-.3l-5-6c-.1-.1-.3-.2-.4-.2s-.3.1-.4.2l-5 6c-.2.2-.1.5.1.7s.5.1.7-.1l4.6-5.5 4.6 5.5c.2.2.5.2.7.1.1-.1.2-.3.2-.4z"></path></svg></div>
+                                        <div id="fb-root" class=" fb_reset">
+                                            <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+                                                <div></div></div></div>
+                                        <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v7.0&amp;appId=248671142486453&amp;autoLogAppEvents=1"></script>
                                         <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
                                              data-href="https://shopmc.com.vn/san-pham/kiem-diamond-minecraft-chinh-hang/"
                                              data-numposts="5" data-width="auto"
                                              fb-xfbml-state="rendere
-                                              fb-iframe-plugin-query="
-                                             app_id=248671142486453&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width="
-                                             style="width: 100%;">
+                                              fb-iframe-plugin-query=" app_id=248671142486453&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width=" style="width: 100%;">
                                             <span style="vertical-align: bottom; width: 100%; height: 213px;">
-                                                <iframe name="ff88d50379fa7" width="1000px" height="100px"
-                                                        data-testid="fb:comments Facebook Social Plugin"
-                                                        title="fb:comments Facebook Social Plugin" frameborder="0"
-                                                        allowtransparency="true" allowfullscreen="true" scrolling="no"
-                                                        allow="encrypted-media"
-                                                        src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=248671142486453&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3b660b4c391738%26domain%3Dshopmc.com.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fshopmc.com.vn%252Ff355224624632c%26relation%3Dparent.parent&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width="
-                                                        style="border: none; visibility: visible; width: 100%; height: 213px;"
-                                                        class=""></iframe></span></div>
+                                                <iframe name="ff88d50379fa7" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=248671142486453&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3b660b4c391738%26domain%3Dshopmc.com.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fshopmc.com.vn%252Ff355224624632c%26relation%3Dparent.parent&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width=" style="border: none; visibility: visible; width: 100%; height: 213px;" class=""></iframe></span></div>
                                         <script>
-                                            jQuery(function ($) {
-                                                $(document).ready(function () {
-                                                    $("#readMore").click(function () {
-                                                        $(".all_des").css('max-height', 'none');
-                                                        $(".hide_content").css('display', 'none');
-                                                        $("#readMore").css('display', 'none');
-                                                        $("#readLess").css('display', 'block');
+                                            jQuery(function($) {
+                                                $(document).ready(function() {
+                                                    $("#readMore").click(function(){
+                                                        $(".all_des").css('max-height','none');
+                                                        $(".hide_content").css('display','none');
+                                                        $("#readMore").css('display','none');
+                                                        $("#readLess").css('display','block');
                                                     });
-                                                    $("#readLess").click(function () {
-                                                        $(".all_des").css('max-height', '120px');
-                                                        $(".hide_content").css('display', 'block');
-                                                        $("#readLess").css('display', 'none');
-                                                        $("#readMore").css('display', 'block');
+                                                    $("#readLess").click(function(){
+                                                        $(".all_des").css('max-height','120px');
+                                                        $(".hide_content").css('display','block');
+                                                        $("#readLess").css('display','none');
+                                                        $("#readMore").css('display','block');
                                                     });
                                                 });
                                             });
@@ -415,53 +393,51 @@
                                          data-filterargs='{"post__in":["4447","17068","13006","20499","5305","13003"],"orderby":"post__in","post_type":"product","posts_per_page":6,"tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}'
                                          data-template="woogridpart" id="rh_woogrid_1397075271"
                                          data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
-                                        @if(@$related->item)
+                                      @if(@$related->item)
                                             @foreach($related->item as $products)
                                                 @if($products->id != $itemDetail->id)
-                                                    <div
-                                                        class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                                                        <figure class="mb5 mt25 position-relative">
-                                                            <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                                               href="{{route('item.detail',$products->slug)}}">
-                                                                <img
-                                                                    src="{{$products->image}}"
-                                                                    data-src="{{$products->image}}"
-                                                                    alt="{{$products->title}}"
-                                                                    class="lazyload  ewww_webp_lazy_load" width="300"
-                                                                    height="300"
-                                                                    data-src-webp="{{$products->image}}">
-                                                            </a>
-                                                        </figure>
+                                            <div
+                                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                                <figure class="mb5 mt25 position-relative">
+                                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                                       href="{{route('item.detail',$products->slug)}}">
+                                                        <img
+                                                            src="{{$products->image}}"
+                                                            data-src="{{$products->image}}"
+                                                            alt="{{$products->title}}"
+                                                            class="lazyload  ewww_webp_lazy_load" width="300"
+                                                            height="300"
+                                                            data-src-webp="{{$products->image}}">
+                                                    </a>
+                                                </figure>
 
-                                                        <h3 class=" text-clamp text-clamp-2">
-                                                            <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
-                                                        </h3>
-                                                        <div class="border-top pt10 pr10 pl10 pb10">
-                                                            <div class="price_for_grid floatleft rehub-btn-font mr10">
+                                                <h3 class=" text-clamp text-clamp-2">
+                                                    <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
+                                                </h3>
+                                                <div class="border-top pt10 pr10 pl10 pb10">
+                                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                         <span class="price"><span
                                                                 class="woocommerce-Price-amount amount"><bdi>{{number_format($products->price)}}<span
                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
-                                                            </div>
-                                                            <div class="floatright product-meta">
-                                                                <div class="rh_woo_star" title="Rated 5 out of 5"><span
-                                                                        class="rhwoostar rhwoostar1 active">&#9733;</span><span
-                                                                        class="rhwoostar rhwoostar2 active">&#9733;</span><span
-                                                                        class="rhwoostar rhwoostar3 active">&#9733;</span><span
-                                                                        class="rhwoostar rhwoostar4 active">&#9733;</span><span
-                                                                        class="rhwoostar rhwoostar5 active">&#9733;</span>
-                                                                </div>
-                                                                <span class="greycolor postview">Đã bán 1329</span>
-                                                            </div>
-                                                            <div class="rh-flex-right-align btn_for_grid floatright">
-                                                            </div>
-                                                        </div>
                                                     </div>
+                                                    <div class="floatright product-meta">
+                                                        <div class="rh_woo_star" title="Rated 5 out of 5"><span
+                                                                class="rhwoostar rhwoostar1 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar2 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar3 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar4 active">&#9733;</span><span
+                                                                class="rhwoostar rhwoostar5 active">&#9733;</span></div>
+                                                        <span class="greycolor postview">Đã bán 1329</span></div>
+                                                    <div class="rh-flex-right-align btn_for_grid floatright">
+                                                    </div>
+                                                </div>
+                                            </div>
                                                 @endif
-                                            @endforeach
+                                        @endforeach
                                         @else
                                             Không có sản phẩm liên quan !
-                                        @endif
+                                          @endif
                                     </div>
 
                                 </div>

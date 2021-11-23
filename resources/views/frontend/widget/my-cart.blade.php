@@ -1,4 +1,4 @@
-@if($data_cart !=null)
+
 <ul id="cartDetail">
     <div class="container" style="margin-left: 35px;margin-top: 10px;margin-bottom: 10px;">
         @foreach($data_cart['items'] as $key => $item)
@@ -19,7 +19,7 @@
             <div class="col-1 close-item">
 
                     <i aria-hidden="true" data-id="{{$item->id}}" style="cursor: pointer !important;
- font-size: 35px;"><i class="fa fa-trash fa-xs" aria-hidden="true"></i></i>
+ font-size: 35px;"><i class="fa fa-trash fa-xs" aria-hidden="true" style="color: #cd2653"></i></i>
 
             </div>
         </div>
@@ -43,4 +43,4 @@
         </div>
     </div>
 </ul>
-@endif
+

@@ -1,6 +1,10 @@
 <?php
+
+use App\Models\Cart;
+use App\Models\Cart_Item;
 use App\Models\Group;
 use App\Models\Item;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 
@@ -103,10 +107,13 @@ View::composer('frontend.widget.__news', function ($view) {
     $group_news= Group::with('item')
         ->where('module','news-group')
         ->where('slug', 'tin-tuc-cong-dong')
-        ->first([
+        ->get([
             'title', 'content', 'description', 'image', 'url','id','slug'
-        ]);
-    return $view->with('news', $group_news);
+        ])->map(function($group) {
+            $group->setRelation('item', $group->item->take(2));
+            return $group;
+        });
+    return $view->with('news', $group_news[0]);
 });
 
 
@@ -149,5 +156,29 @@ View::composer('frontend.pages.product.result-filter', function ($view) {
     return $view->with('categories_p', $categories_p);
 });
 
+//Cart
 
-
+View::composer('frontend.layout.core.hearder', function ($view) {
+    $user = Auth::user();
+    if (empty($user)){
+        {
+            $data['total_price'] = 0;
+        }
+    }
+    else{
+        $cart = Cart::with('items')->where('user_id',$user->id)->first();
+        if(isset($cart)){
+            $cart_item_of_cart = Cart_Item::where('cart_id',$cart->id)->get();
+            $data = [
+                'items'=>$cart->items,
+                'total_price'=>Cart_Item::where('cart_id',$cart->id)->sum('price'),
+                'cart_items'=>$cart_item_of_cart,
+            ];
+        }
+        else
+        {
+            $data['total_price'] = 0;
+        }
+    }
+    return $view->with('data', $data);
+});

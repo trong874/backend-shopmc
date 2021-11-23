@@ -65,7 +65,9 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
         $order = Order::findOrFail($id);
-        $order->update($request->all());
+        $order->update([
+            'status'=>$request->status,
+        ]);
         Session::put('message','Cập nhât đơn hàng thành công');
         return back();
     }

@@ -28,8 +28,12 @@
                                                 <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="35" height="35" alt="Avatar" class="avatar avatar-35 wp-user-avatar wp-user-avatar-35 photo avatar-default"></span>{{Auth::user()->username}}</li>
                                         <li class="user-editorders-link-intop menu-item">
                                             <a href="#">
+                                                <i class="rhicon rhi-user" aria-hidden="true"></i>
+                                                <span>Thông tin tài khoản</span></a></li>
+                                        <li class="user-editorders-link-intop menu-item">
+                                            <a href="{{route('orders')}}">
                                                 <i class="rhicon rhi-shopping-bagfeather" aria-hidden="true"></i>
-                                                <span>Tài khoản của tôi</span></a></li>
+                                                <span>Đơn hàng</span></a></li>
                                         <li class="user-logout-link-intop menu-item">
                                             <a href="{{route('logout')}}">
                                                 <i class="rhicon rhi-lock-alt"></i><span>Đăng xuất</span></a></li></ul></div><div class="use_nam">
@@ -71,6 +75,9 @@
                         $pop = '';
                     }
                     ?>
+                    @if(Session::has('message'))
+                        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+                    @endif
                     <div class="cart_out rh-flex-right-align {{$pop}}" style="position: relative" >
                         <div class="header-actions-logo rh-flex-right-align">
                             <div class="tabledisplay">
@@ -83,8 +90,8 @@
                                             </span>
                                             <span class="rh_woocartmenu-amount">
                                                 <span class="woocommerce-Price-amount amount">
-                                                    <bdi>&nbsp
-                                                        <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                    <bdi>
+                                                        <span class="woocommerce-Price-currencySymbol">{{(number_format($data['total_price']))}} &#8363;</span>
                                                     </bdi>
                                                 </span>
                                             </span>
@@ -98,9 +105,6 @@
                         </div>
                         {{--mycart--}}
                         <div id="my_cart">
-
-                        </div>
-                        <div id="wai">
 
                         </div>
                     </div>
@@ -149,7 +153,6 @@
             })
 
             $(".cart_out").mouseleave(function () {
-                console.log(1);
                 $("#my_cart").hide();
             })
 

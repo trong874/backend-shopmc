@@ -1,4 +1,7 @@
 @extends('backend.layout.default')
+@section('styles')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+@endsection
 @section('content')
     <!--begin::Card-->
     <div class="card card-custom m-7">
@@ -16,14 +19,22 @@
                         <div class="d-flex flex-column align-items-md-end px-0">
                             <!--begin::Logo-->
                             <h4>Trạng thái đơn hàng </h4>
-                            <!--end::Logo-->
-                            <select name="status" class="form-control">
-                                <option value="1" @if($order->status == 1) selected @endif>Chờ xác nhận</option>
-                                <option value="2" @if($order->status == 2) selected @endif>Chờ lấy hàng</option>
-                                <option value="3" @if($order->status == 3) selected @endif>Đang giao hàng</option>
-                                <option value="4" @if($order->status == 4) selected @endif>Đã giao hàng</option>
-                                <option value="5" @if($order->status == 5) selected @endif>Đã huỷ</option>
-                            </select>
+                            <form id="change_status_order" method="POST" action="{{route('orders.update',$order->id)}}">
+                                @csrf
+                                @method('PUT')
+                                <select name="status" id="select_status" class="form-control">
+                                    <option value="1" @if($order->status == 1) selected @endif>Chờ xác nhận</option>
+                                    <option value="2" @if($order->status == 2) selected @endif>Chờ lấy hàng</option>
+                                    <option value="3" @if($order->status == 3) selected @endif>Đang giao hàng</option>
+                                    <option value="4" @if($order->status == 4) selected @endif>Đã giao hàng</option>
+                                    <option value="5" @if($order->status == 5) selected @endif>Đã huỷ</option>
+                                </select>
+                                <script>
+                                    $('#select_status').on('change', function () {
+                                        $('#change_status_order').submit();
+                                    })
+                                </script>
+                            </form>
                         </div>
                     </div>
                     <div class="border-bottom w-100"></div>
@@ -59,12 +70,14 @@
                             </thead>
                             <tbody>
                             @foreach($order->items as $key => $item)
-                            <tr class="font-weight-boldest border-bottom-0">
-                                <td class="border-top-0 pl-0 py-4">{{$item->title}}</td>
-                                <td class="border-top-0 text-right py-4">{{$order_detail[$key]->quantity}}</td>
-                                <td class="border-top-0 text-right py-4">{{number_format($item->price)}} ₫</td>
-                                <td class="text-danger border-top-0 pr-0 py-4 text-right">{{number_format($item->price * $order_detail[$key]->quantity)}} ₫</td>
-                            </tr>
+                                <tr class="font-weight-boldest border-bottom-0">
+                                    <td class="border-top-0 pl-0 py-4">{{$item->title}}</td>
+                                    <td class="border-top-0 text-right py-4">{{$order_detail[$key]->quantity}}</td>
+                                    <td class="border-top-0 text-right py-4">{{number_format($item->price)}} ₫</td>
+                                    <td class="text-danger border-top-0 pr-0 py-4 text-right">{{number_format($item->price * $order_detail[$key]->quantity)}}
+                                        ₫
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
@@ -90,7 +103,9 @@
                                 <td>Thanh toán khi nhận hàng</td>
                                 <td>{{$order->id}}</td>
                                 <td>{{$order->created_at}}</td>
-                                <td class="text-danger font-size-h3 font-weight-boldest">{{number_format($order->price)}} ₫</td>
+                                <td class="text-danger font-size-h3 font-weight-boldest">{{number_format($order->price)}}
+                                    ₫
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -102,8 +117,12 @@
             <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
                 <div class="col-md-9">
                     <div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-light-primary font-weight-bold" onclick="window.print();">Download Invoice</button>
-                        <button type="button" class="btn btn-primary font-weight-bold" onclick="window.print();">Print Invoice</button>
+                        <button type="button" class="btn btn-light-primary font-weight-bold" onclick="window.print();">
+                            Download Invoice
+                        </button>
+                        <button type="button" class="btn btn-primary font-weight-bold" onclick="window.print();">Print
+                            Invoice
+                        </button>
                     </div>
                 </div>
             </div>
@@ -113,4 +132,20 @@
         <!--end::Form-->
     </div>
     <!--end::Card-->
+@endsection
+@section('scripts')
+    <script src="{{asset('js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+    @if(Session::has('message'))
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: "success",
+                    title: "{{Session::get('message')}}",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+        </script>
+        {{Session::forget('message')}}
+    @endif
 @endsection
