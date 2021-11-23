@@ -15,14 +15,34 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-3">
-                                        ID đơn hàng: {{$order->id}}
-                                    </div>
-                                    <div class="col-3">
-                                        Tổng : {{number_format($order->price)}} đ
+                                    <div class="col-2">
+                                        ID Order: {{$order->id}}
                                     </div>
                                     <div class="col-4">
-                                        Thời gian đặt hàng: {{date_format($order->created_at,'d-m-y')}}
+                                        Tổng: {{number_format($order->price)}} đ
+                                    </div>
+                                    <div class="col-4">
+                                        Trạng thái:
+                                            @switch($order->status)
+                                                @case('')
+                                                <span class="label label-outline-danger label-pill label-inline mr-2">chưa rõ</span>
+                                                @break
+                                                @case(1)
+                                                <span class="label label-warning label-pill label-inline mr-2">Chờ xác nhận</span>
+                                                @break
+                                                @case(2)
+                                                <span class="label label-warning label-pill label-inline mr-2">Chờ lấy hàng</span>
+                                                @break
+                                                @case(3)
+                                                <span class="label label-primary label-pill label-inline mr-2">Đang giao hàng</span>
+                                                @break
+                                                @case(4)
+                                                <span class="label label-success label-pill label-inline mr-2">Đã giao hàng</span>
+                                                @break
+                                                @case(5)
+                                                <span class="label label-danger label-pill label-inline mr-2">Đã huỷ</span>
+                                        @break
+                                        @endswitch
                                     </div>
                                     <div class="col-2">
                                         <a href="{{route('order.detail',$order->id)}}" class="btn-link">Xem chi tiết</a>
