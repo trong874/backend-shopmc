@@ -272,9 +272,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="wc-proceed-to-checkout">
-                                                <button type="submit" class="checkout-button alt wc-forward">Mua Hàng
-                                                </button>
+                                            <div class="container" style="margin-left: 500px;">
+                                                <div class="row">
+                                                    <div class="wc-proceed-to-checkout col">
+                                                        <button type="button" class="alt wc-forward"
+                                                         style="margin-left: 313px;
+                                                         color: white;
+                                                         background-color: #63A121;
+                                                         border: none;
+                                                         padding: 6px 35px;
+                                                         display: flex;">
+                                                            <a href="{{route('page.index')}}" style="color: white;">Mua tiếp</a>
+                                                        </button>
+                                                    </div>
+                                                    <div class="wc-proceed-to-checkout col">
+                                                        <button type="submit" class="checkout-button alt wc-forward" style="margin-left: -127px;">Mua Hàng
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
