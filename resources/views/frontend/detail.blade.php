@@ -457,7 +457,5 @@
     <script src="{{asset('frontend/detail/js/style2.js')}}"></script>
     <script src="{{asset('frontend/detail/js/style3.js')}}"></script>
     <script>
-
     </script>
-
 @endsection
