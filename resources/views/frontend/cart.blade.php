@@ -137,7 +137,7 @@
                                                                 $.ajax({
                                                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                                                                     url:'/destroy-cart/'+ id_item,
-                                                                    type:'GET',
+                                                                    type:'DELETE',
                                                                     success:function (res) {
                                                                         alertify.success("Xóa vật phẩm thành công?");
                                                                         location.reload();
