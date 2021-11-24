@@ -54,15 +54,13 @@
                                                 <button class="shopee-icon-button _2Rm1oz _2SGvMO">
                                                     <svg enable-background="new 0 0 13 20" viewBox="0 0 13 20" x="0"
                                                          y="0" class="shopee-svg-icon icon-arrow-left-bold">
-                                                        <polygon
-                                                            points="4.2 10 12.1 2.1 10 -.1 1 8.9 -.1 10 1 11 10 20 12.1 17.9"></polygon>
-                                                    </svg>
+                                                        <i class="fas fa-chevron-left fa-lg"></i>                                                    </svg>
                                                 </button>
-                                                <button class="shopee-icon-button _2Rm1oz _1Z42SM" style="margin-left: 465px">
+                                                <button class="shopee-icon-button _2Rm1oz _1Z42SM" style="margin-left: 430px">
                                                     <svg enable-background="new 0 0 13 21" viewBox="0 0 13 21" x="0"
                                                          y="0" class="shopee-svg-icon icon-arrow-right-bold">
-                                                        <polygon
-                                                            points="11.1 9.9 2.1 .9 -.1 3.1 7.9 11 -.1 18.9 2.1 21 11.1 12 12.1 11"></polygon>
+                                                        <polygon>
+                                                            <i class="fas fa-chevron-right fa-lg"></i>                                                        </polygon>
                                                     </svg>
                                                 </button>
                                             </div>
