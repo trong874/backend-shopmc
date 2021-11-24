@@ -62,12 +62,19 @@ class ItemController extends Controller
 
     public function update(Request $request, $id)
     {
-        $item = Item::findOrFail($id);
-        if ($request->group_id) {
-            foreach ($request->group_id as $group_id) {
-                $item->groups()->sync($group_id);
-            }
-        }
+        $item = Item::with('groups')->findOrFail($id);
+      foreach ($item->groups as $group){
+          if ($group->module == 'products-group'){
+              continue;
+          }else{
+              $item->groups()->detach($group->id);
+          }
+      }
+
+      foreach ($request->group_id as $group_id)
+      {
+          $item->groups()->attach($group_id);
+      }
         $item->update($request->all());
         Session::put('message', 'Cập nhật thay đổi thành công');
         return back();
