@@ -36,9 +36,17 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <form method="get" action="{{route('product.slider')}}">
-                                <input type="hidden" name="min_value" value="" id="min_price">
+                                <input type="hidden" name="min_value" value="" id="min_price" style="margin-top: 10px;">
                                 <input type="hidden" name="max_value" value="" id="max_price">
-                                <button type="submit" class="button" style="background-color: #0ac709">LỌC</button>
+                                <button type="submit" class="button" style="background-color: #4CAF50;margin-top: 10px;
+                                                                          border: none;
+                                                                          color: white;
+                                                                          padding: 6px 18px;
+                                                                          text-align: center;
+                                                                          text-decoration: none;
+                                                                          display: inline-block;
+                                                                          font-size: 16px;
+                                                                          border-radius: 8px;">Lọc</button>
                             </form>
                         </div>
                     </div>
