@@ -146,7 +146,7 @@
                                                             }
                                                         </script>
                                                         <div class="product-thumbnail">
-                                                            <a href="https://shopmc.com.vn/san-pham/kiem-vang-minecraft/"><img
+                                                            <a href="{{route('item.detail',$item->slug)}}"><img
                                                                     width="380" height="434"
                                                                     src="{{$item->image}}"
                                                                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
@@ -156,7 +156,7 @@
                                                     </div>
                                                     <div class="cot2">
                                                         <div class="product-name" data-title="Sản phẩm">
-                                                            <a href="#">{{$item->title}}</a>
+                                                            <a href="{{route('item.detail',$item->slug)}}">{{$item->title}}</a>
                                                         </div>
 
                                                         <div class="product-price" data-title="Giá">
