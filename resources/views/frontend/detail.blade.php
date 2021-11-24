@@ -153,6 +153,7 @@
                                                                         $("#my_cart").html(res);
                                                                         alertify.success('Đã thêm vật phẩm này vào giỏ hàng');
                                                                         location.reload();
+
                                                                     }
                                                                 });
                                                             }
@@ -454,7 +455,5 @@
     <script src="{{asset('frontend/detail/js/style2.js')}}"></script>
     <script src="{{asset('frontend/detail/js/style3.js')}}"></script>
     <script>
-
     </script>
-
 @endsection
