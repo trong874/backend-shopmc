@@ -262,26 +262,26 @@
     <?php
     function showOldCategories($categories, $current_data, $parent_id = null, $char = ' ')
     {
+        $flag = false;
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
-                foreach ($current_data->groups as $group)
+                foreach ($current_data->groups as $group) {
                     if ($item->id == $group->id) {
                         echo ' <option value="' . $item->id . '" selected>
                                    ' . $char . $item->title . '
                                 </option>';
-                    } else {
-                        echo ' <option value="' . $item->id . '">
+                        $flag = true;
+                    }
+                }
+                if ($flag) {
+                    showOldCategories($categories, $current_data, $item->id, $char . '__');
+                } else {
+                    echo ' <option value="' . $item->id . '">
                                    ' . $char . $item->title . '
                                 </option>';
-                    }
-                // Xử lý hiển thị chuyên mục
-
-                // Xóa chuyên mục đã lặp
-//                unset($categories[$key]);
-
-                // Tiếp tục đệ quy để tìm chuyên mục con của chuyên mục đang lặp
-                showOldCategories($categories, $current_data, $item->id, $char . '__');
+                    showOldCategories($categories, $current_data, $item->id, $char . '__');
+                }
             }
         }
     }
