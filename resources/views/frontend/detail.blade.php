@@ -2,6 +2,7 @@
 @section('content')
     <link rel="stylesheet" href="{{asset('frontend/detail/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/detail/css/detail.css')}}">
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
@@ -26,46 +27,143 @@
                                 <div class="product_content" style="margin-bottom: 25px">
                                     <div
                                         class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
-                                        <span class="sale_product">
-                                            <span>- 33%</span>
-                                        </span>
-                                        <div>
-                                            <figure class="woocommerce-product-gallery__wrapper">
-                                                {{--                                                <div--}}
-                                                {{--                                                    data-thumb="{{$itemDetail[0]->image}}"--}}
-                                                {{--                                                    class="woocommerce-product-gallery__image"--}}
-                                                {{--                                                    data-webp-thumb="{{$itemDetail[0]->image}} ">--}}
-                                                <img  src="{{$itemDetail->image}}" id="resultImage" style="width: 370px;height:450px"/>
-                                                {{--                                                </div>--}}
-                                            </figure>
-
-                                            <div class="_3k2CdZ">
-                                                @foreach( explode("|", $itemDetail->image_extension) as $image)
-                                                <div class="_1cILQR">
-                                                    <div class="_3-_YTZ">
-                                                        <div class="_25_r8I">
-                                                            <div class="_12uy03 _2GchKS"
-                                                                 style="background-image: url('{{$image}}'); background-size: contain; background-repeat: no-repeat; " onmouseover="changeImage(this)"></div>
-                                                        </div>
-                                                        <div class=""></div>
+                                        <div class="product__carousel">
+                                            <!-- Swiper and EasyZoom plugins start -->
+                                            <div class="swiper-container gallery-top">
+                                                <div class="swiper-wrapper">
+                                                    @foreach(explode("|",$itemDetail->image_extension) as $item)
+                                                    <div class="swiper-slide easyzoom easyzoom--overlay">
+                                                        <a href="{{$item}}">
+                                                            <img src="{{$item}}" alt=""/>
+                                                        </a>
                                                     </div>
+                                                    @endforeach
                                                 </div>
-                                                @endforeach
-                                                <button class="shopee-icon-button _2Rm1oz _2SGvMO">
-                                                    <svg enable-background="new 0 0 13 20" viewBox="0 0 13 20" x="0"
-                                                         y="0" class="shopee-svg-icon icon-arrow-left-bold">
-                                                        <i class="fas fa-chevron-left fa-lg"></i>                                                    </svg>
-                                                </button>
-                                                <button class="shopee-icon-button _2Rm1oz _1Z42SM" style="margin-left: 430px">
-                                                    <svg enable-background="new 0 0 13 21" viewBox="0 0 13 21" x="0"
-                                                         y="0" class="shopee-svg-icon icon-arrow-right-bold">
-                                                        <polygon>
-                                                            <i class="fas fa-chevron-right fa-lg"></i>                                                        </polygon>
-                                                    </svg>
-                                                </button>
+                                                <!-- Add Arrows -->
+                                                <div class="swiper-button-next swiper-button-white"></div>
+                                                <div class="swiper-button-prev swiper-button-white"></div>
                                             </div>
+                                            <div class="swiper-container gallery-thumbs">
+                                                <div class="swiper-wrapper">
+                                                    @foreach(explode("|",$itemDetail->image_extension) as $item)
+                                                    <div class="swiper-slide">
+                                                        <img src="{{$item}}" alt="">
+                                                    </div>
+                                                        @endforeach
+                                                </div>
+                                            </div>
+                                            <!-- Swiper and EasyZoom plugins end -->
                                         </div>
                                     </div>
+                                    <style>
+                                        h1 {
+                                            margin-bottom: 0;
+                                            line-height: 1;
+                                        }
+                                        h2 {
+                                            color: grey;
+                                        }
+
+                                        .product__carousel {
+                                            display: block;
+                                            max-width: 700px;
+                                            margin: 1em auto 3em;
+                                        }
+                                        .product__carousel a {
+                                            display: block;
+                                            margin-bottom: 15px;
+                                        }
+
+                                        .product__carousel .gallery-top {
+                                            border: 1px solid #ebebeb;
+                                            border-radius: 3px;
+                                            margin-bottom: 5px;
+                                        }
+                                        .product__carousel .gallery-top .swiper-slide {
+                                            position: relative;
+                                            overflow: hidden;
+                                        }
+                                        .product__carousel .gallery-top .swiper-slide a {
+                                            position: relative;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                        .product__carousel .gallery-top .swiper-slide a img {
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: contain;
+                                        }
+                                        .product__carousel .gallery-top .swiper-slide .easyzoom-flyout img {
+                                            min-width: 100%;
+                                            min-height: 100%;
+                                        }
+                                        .product__carousel .swiper-button-next.swiper-button-white,
+                                        .product__carousel .swiper-button-prev.swiper-button-white {
+                                            color: #ff3720;
+                                        }
+                                        .product__carousel .gallery-thumbs .swiper-slide {
+                                            position: relative;
+                                            transition: border .15s linear;
+                                            border: 1px solid #ebebeb;
+                                            border-radius: 3px;
+                                            cursor: pointer;
+                                            overflow: hidden;
+                                            height: calc(100% - 2px);
+                                        }
+                                        .product__carousel .gallery-thumbs .swiper-slide.swiper-slide-thumb-active {
+                                            border-color: #000;
+                                        }
+                                        .product__carousel .gallery-thumbs .swiper-slide img {
+                                            position: absolute;
+                                            left: 50%;
+                                            top: 50%;
+                                            transform: translate(-50%,-50%);
+                                            max-width: 100%;
+                                        }
+                                    </style>
+                                    <script>
+                                        // product Gallery and Zoom
+
+                                        // activation carousel plugin
+                                        var galleryThumbs = new Swiper('.gallery-thumbs', {
+                                            spaceBetween: 5,
+                                            freeMode: true,
+                                            watchSlidesVisibility: true,
+                                            watchSlidesProgress: true,
+                                            breakpoints: {
+                                                0: {
+                                                    slidesPerView: 3,
+                                                },
+                                                992: {
+                                                    slidesPerView: 4,
+                                                },
+                                            }
+                                        });
+                                        var galleryTop = new Swiper('.gallery-top', {
+                                            spaceBetween: 10,
+                                            navigation: {
+                                                nextEl: '.swiper-button-next',
+                                                prevEl: '.swiper-button-prev',
+                                            },
+                                            thumbs: {
+                                                swiper: galleryThumbs
+                                            },
+                                        });
+                                        // change carousel item height
+                                        // gallery-top
+                                        let productCarouselTopWidth = $('.gallery-top').outerWidth();
+                                        $('.gallery-top').css('height', productCarouselTopWidth);
+
+                                        // gallery-thumbs
+                                        let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
+                                        $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
+
+                                        // activation zoom plugin
+                                        var $easyzoom = $('.easyzoom').easyZoom();
+                                    </script>
                                     <div class="wpsm-two-third tabletblockdisplay wpsm-column-last mb30">
                                         <div class="rh-flex-center-align woo_top_meta mobileblockdisplay mb10">
                                             <div class="floatleft mr15 disablefloatmobile">
