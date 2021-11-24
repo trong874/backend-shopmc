@@ -27,9 +27,8 @@
         <div class="row" style="margin-bottom: 5px;font-weight: bold;">
             <div class="col-3"><span style="word-wrap: break-word;">Tổng tiền:</span></div>
 
-            <div class="col-9"><span
-                        style="color: black">{{number_format($data_cart['total_price'])}}</span></div>
-
+            <div class="col-9">
+                <span type="text" id="total_price_cart" style="color: black" value="{{number_format($data_cart['total_price'])}}">{{number_format($data_cart['total_price'])}}</span></div>
         </div>
         <div class="row">
             <div class="col-6" style="margin-bottom: 20px">
