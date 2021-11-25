@@ -8,15 +8,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- feeds & pingback -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="pingback" href="https://shopmc.com.vn/xmlrpc.php"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- This site is optimized with the Yoast SEO plugin v15.9 - https://yoast.com/wordpress/plugins/seo/ -->
     <title>{{$page_title ?? "SHOP MC"}}</title>
     <!-- JavaScript -->
@@ -48,6 +55,7 @@
     <meta name="twitter:data1" content="12 phút">
     <script type="application/ld+json" class="yoast-schema-graph">
         {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://shopmc.com.vn/#website","url":"https://shopmc.com.vn/","name":"Shop MC","description":"\u0110\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng","potentialAction":[{"@type":"SearchAction","target":"https://shopmc.com.vn/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"vi"},{"@type":"WebPage","@id":"https://shopmc.com.vn/#webpage","url":"https://shopmc.com.vn/","name":"Shopmc - \u0110\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng t\u1ea1i vi\u1ec7t nam","isPartOf":{"@id":"https://shopmc.com.vn/#website"},"datePublished":"2016-10-18T22:03:29+00:00","dateModified":"2020-12-10T16:04:54+00:00","description":"Shop mc cung c\u1ea5p \u0111\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng duy nh\u1ea5t t\u1ea1i vi\u1ec7t nam, c\u00e1c s\u1ea3n ph\u1ea9m \u0111\u1ed3 ch\u01a1i minecraft nh\u01b0 balo , \u0111\u1ed3ng h\u1ed3, s\u00e1ch, qu\u1ea7n \u00e1o minecraft...","breadcrumb":{"@id":"https://shopmc.com.vn/#breadcrumb"},"inLanguage":"vi","potentialAction":[{"@type":"ReadAction","target":["https://shopmc.com.vn/"]}]},{"@type":"BreadcrumbList","@id":"https://shopmc.com.vn/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://shopmc.com.vn/","url":"https://shopmc.com.vn/","name":"Home"}}]}]}
+
 
     </script>
     <!-- / Yoast SEO plugin. -->
@@ -118,7 +126,8 @@
           media='all'/>
     <script type='text/javascript' src='{{asset('frontend/js/jquery/jquery.js')}}'
             id='jquery-core-js'></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type='text/javascript'
             src='{{asset('frontend/js/js/rbtools.min.js')}}'
             id='tp-tools-js'></script>
@@ -191,9 +200,9 @@
     <div id="top_ankor"></div>
     <!-- HEADER -->
 @include('frontend.layout.core.hearder')
-    <!-- CONTENT -->
+<!-- CONTENT -->
 @yield('content')
-    <!-- /CONTENT -->
+<!-- /CONTENT -->
 
     <style>
         .buttom_home {
@@ -222,14 +231,17 @@
         .goingay {
             text-align: center;
         }
+
         @media screen and (max-width: 480px) {
-            #slider_home #rev_slider_24_1_forcefullwidth,#slider_home #rev_slider_24_1_wrapper,#slider_home #rev_slider_24_1 {
+            #slider_home #rev_slider_24_1_forcefullwidth, #slider_home #rev_slider_24_1_wrapper, #slider_home #rev_slider_24_1 {
                 height: 60px !important;
             }
-            #slider_home #rev_slider_24_1 rs-bullets{
+
+            #slider_home #rev_slider_24_1 rs-bullets {
                 top: 76px !important
             }
-            #slider_home #rev_slider_24_1_wrapper .ares .tp-bullet{
+
+            #slider_home #rev_slider_24_1_wrapper .ares .tp-bullet {
                 width: 6px;
                 height: 6px;
                 left: 8px;
@@ -295,7 +307,7 @@
 
     <!-- FOOTER -->
 @include('frontend.layout.core.footer')
-    <!-- FOOTER -->
+<!-- FOOTER -->
 
 
 </div>
@@ -306,8 +318,8 @@
 <div id="rhmobpnlcustom" class="rhhidden">
     <div id="rhmobtoppnl" style="background-color: #ffffff;" class="pr15 pl15 pb15 pt15">
         <div class="text-center"><a href=""><img id="mobpanelimg"
-                                                                      src="{{asset('frontend/image/Minecraft_logo.png')}}"
-                                                                      alt="Logo"/></a></div>
+                                                 src="{{asset('frontend/image/Minecraft_logo.png')}}"
+                                                 alt="Logo"/></a></div>
     </div>
 </div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -329,10 +341,10 @@
     <!-- Register form -->
 
 @include('frontend.position.register')
-    <!-- Login form -->
+<!-- Login form -->
 @include('frontend.position.login')
-    <!-- Lost Password form -->
-@include('frontend.position.lost-password')
+<!-- Lost Password form -->
+    @include('frontend.position.lost-password')
 </div>
 
 <script type="text/html" id="wpb-modifications"></script>
