@@ -86,15 +86,15 @@
                                             });
                                             // change carousel item height
                                             // gallery-top
-                                            let productCarouselTopWidth = $('.gallery-top').outerWidth();
-                                            $('.gallery-top').css('height', productCarouselTopWidth);
-
-                                            // gallery-thumbs
-                                            let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
-                                            $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
-
-                                            // activation zoom plugin
-                                            var $easyzoom = $('.easyzoom').easyZoom();
+                                            // let productCarouselTopWidth = $('.gallery-top').outerWidth();
+                                            // $('.gallery-top').css('height', productCarouselTopWidth);
+                                            //
+                                            // // gallery-thumbs
+                                            // let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
+                                            // $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
+                                            //
+                                            // // activation zoom plugin
+                                            // var $easyzoom = $('.easyzoom').easyZoom();
 
                                         </script>
                                     </div>
