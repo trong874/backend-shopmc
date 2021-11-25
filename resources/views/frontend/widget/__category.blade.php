@@ -5,7 +5,7 @@
                 <div class="wpb_raw_code wpb_content_element wpb_raw_html">
                     <div class="wpb_wrapper">
                         <div class="cate_home">
-                            <ul class="ul_cate">
+                            <ul class="ul_cate" style="padding: 0">
                                 @if($categories_banner)
                                     {{showCategories($categories_banner)}}
                                 @endif

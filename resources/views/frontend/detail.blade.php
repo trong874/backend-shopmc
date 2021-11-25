@@ -5,6 +5,7 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
+
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
                 <div
                     class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
@@ -54,116 +55,49 @@
                                             </div>
                                             <!-- Swiper and EasyZoom plugins end -->
                                         </div>
+                                        <script>
+                                            //changeImage
+                                            // product Gallery and Zoom
+
+                                            // activation carousel plugin
+                                            var galleryThumbs = new Swiper('.gallery-thumbs', {
+                                                spaceBetween: 5,
+                                                freeMode: true,
+                                                watchSlidesVisibility: true,
+                                                watchSlidesProgress: true,
+                                                breakpoints: {
+                                                    0: {
+                                                        slidesPerView: 3,
+                                                    },
+                                                    992: {
+                                                        slidesPerView: 4,
+                                                    },
+                                                }
+                                            });
+                                            var galleryTop = new Swiper('.gallery-top', {
+                                                spaceBetween: 10,
+                                                navigation: {
+                                                    nextEl: '.swiper-button-next',
+                                                    prevEl: '.swiper-button-prev',
+                                                },
+                                                thumbs: {
+                                                    swiper: galleryThumbs
+                                                },
+                                            });
+                                            // change carousel item height
+                                            // gallery-top
+                                            let productCarouselTopWidth = $('.gallery-top').outerWidth();
+                                            $('.gallery-top').css('height', productCarouselTopWidth);
+
+                                            // gallery-thumbs
+                                            let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
+                                            $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
+
+                                            // activation zoom plugin
+                                            var $easyzoom = $('.easyzoom').easyZoom();
+
+                                        </script>
                                     </div>
-                                    <style>
-                                        h1 {
-                                            margin-bottom: 0;
-                                            line-height: 1;
-                                        }
-                                        h2 {
-                                            color: grey;
-                                        }
-
-                                        .product__carousel {
-                                            display: block;
-                                            max-width: 700px;
-                                            margin: 1em auto 3em;
-                                        }
-                                        .product__carousel a {
-                                            display: block;
-                                            margin-bottom: 15px;
-                                        }
-
-                                        .product__carousel .gallery-top {
-                                            border: 1px solid #ebebeb;
-                                            border-radius: 3px;
-                                            margin-bottom: 5px;
-                                        }
-                                        .product__carousel .gallery-top .swiper-slide {
-                                            position: relative;
-                                            overflow: hidden;
-                                        }
-                                        .product__carousel .gallery-top .swiper-slide a {
-                                            position: relative;
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;
-                                            width: 100%;
-                                            height: 100%;
-                                        }
-                                        .product__carousel .gallery-top .swiper-slide a img {
-                                            width: 100%;
-                                            height: 100%;
-                                            object-fit: contain;
-                                        }
-                                        .product__carousel .gallery-top .swiper-slide .easyzoom-flyout img {
-                                            min-width: 100%;
-                                            min-height: 100%;
-                                        }
-                                        .product__carousel .swiper-button-next.swiper-button-white,
-                                        .product__carousel .swiper-button-prev.swiper-button-white {
-                                            color: #ff3720;
-                                        }
-                                        .product__carousel .gallery-thumbs .swiper-slide {
-                                            position: relative;
-                                            transition: border .15s linear;
-                                            border: 1px solid #ebebeb;
-                                            border-radius: 3px;
-                                            cursor: pointer;
-                                            overflow: hidden;
-                                            height: calc(100% - 2px);
-                                        }
-                                        .product__carousel .gallery-thumbs .swiper-slide.swiper-slide-thumb-active {
-                                            border-color: #000;
-                                        }
-                                        .product__carousel .gallery-thumbs .swiper-slide img {
-                                            position: absolute;
-                                            left: 50%;
-                                            top: 50%;
-                                            transform: translate(-50%,-50%);
-                                            max-width: 100%;
-                                        }
-                                    </style>
-                                    <script>
-                                        // product Gallery and Zoom
-
-                                        // activation carousel plugin
-                                        var galleryThumbs = new Swiper('.gallery-thumbs', {
-                                            spaceBetween: 5,
-                                            freeMode: true,
-                                            watchSlidesVisibility: true,
-                                            watchSlidesProgress: true,
-                                            breakpoints: {
-                                                0: {
-                                                    slidesPerView: 3,
-                                                },
-                                                992: {
-                                                    slidesPerView: 4,
-                                                },
-                                            }
-                                        });
-                                        var galleryTop = new Swiper('.gallery-top', {
-                                            spaceBetween: 10,
-                                            navigation: {
-                                                nextEl: '.swiper-button-next',
-                                                prevEl: '.swiper-button-prev',
-                                            },
-                                            thumbs: {
-                                                swiper: galleryThumbs
-                                            },
-                                        });
-                                        // change carousel item height
-                                        // gallery-top
-                                        let productCarouselTopWidth = $('.gallery-top').outerWidth();
-                                        $('.gallery-top').css('height', productCarouselTopWidth);
-
-                                        // gallery-thumbs
-                                        let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
-                                        $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
-
-                                        // activation zoom plugin
-                                        var $easyzoom = $('.easyzoom').easyZoom();
-                                    </script>
                                     <div class="wpsm-two-third tabletblockdisplay wpsm-column-last mb30">
                                         <div class="rh-flex-center-align woo_top_meta mobileblockdisplay mb10">
                                             <div class="floatleft mr15 disablefloatmobile">
