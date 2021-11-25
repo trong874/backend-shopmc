@@ -1,8 +1,12 @@
 @extends('frontend.layout.master')
-@section('content')
+@section('styles')
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="{{asset('frontend/detail/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/detail/css/detail.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+@endsection
+@section('content')
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
 
@@ -86,14 +90,14 @@
                                             });
                                             // change carousel item height
                                             // gallery-top
-                                            // let productCarouselTopWidth = $('.gallery-top').outerWidth();
-                                            // $('.gallery-top').css('height', productCarouselTopWidth);
-                                            //
-                                            // // gallery-thumbs
-                                            // let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
-                                            // $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
-                                            //
-                                            // // activation zoom plugin
+                                            let productCarouselTopWidth = $('.gallery-top').outerWidth();
+                                            $('.gallery-top').css('height', productCarouselTopWidth);
+
+                                            // gallery-thumbs
+                                            let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
+                                            $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
+
+                                            // activation zoom plugin
                                             // var $easyzoom = $('.easyzoom').easyZoom();
 
                                         </script>
@@ -486,6 +490,4 @@
     <script src="{{asset('frontend/detail/js/style.js')}}"></script>
     <script src="{{asset('frontend/detail/js/style2.js')}}"></script>
     <script src="{{asset('frontend/detail/js/style3.js')}}"></script>
-    <script>
-    </script>
 @endsection
