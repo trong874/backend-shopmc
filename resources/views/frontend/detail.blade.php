@@ -186,7 +186,7 @@
 
                                             <div class="mobilesblockdisplay font90 lineheight20 woo_desc_part">
                                                 <div class="woocommerce-product-details__short-description">
-                                                    {!! $itemDetail->content !!}
+                                                    {!!$itemDetail->content!!}
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>
@@ -374,7 +374,7 @@
                                         <div class="clearfix"></div>
                                         <div class="all_des">
                                             <div class="content_product">
-                                                <p><strong>{!! $itemDetail->description !!}</strong></p>
+                                                <p><strong>{!!$itemDetail->description!!}</strong></p>
 
                                             </div>
                                             <div class="hide_content"></div>
@@ -467,7 +467,7 @@
                                                 </figure>
                                                 <h3 class=" text-clamp text-clamp-2">
                                                     <a href="{{route('item.detail',$products->slug)}}">
-                                                        {{$products->content}}</a>
+                                                        {!! $products->content !!}</a>
                                                 </h3>
 
                                                 <div class="border-top pt10 pr10 pl10 pb10">
