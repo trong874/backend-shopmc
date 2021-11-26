@@ -207,7 +207,7 @@
                                                                 color: white"
                                                                 data-product-type="simple"
                                                                 class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
-                                                                type="button">Mua Ngay
+                                                                type="button"><a href="{{route('item.cart')}}" style="color: white">Mua Ngay</a>
                                                         </button>
                                                     </div>
                                                 </div>
