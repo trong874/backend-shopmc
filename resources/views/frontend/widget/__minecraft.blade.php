@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="woocommerce">
+                <div class="woocommerce" style="margin-left: 15px;">
                     <div class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
                          data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["463","125"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'
                          data-template="woogridpart" id="rh_woogrid_2031402312"

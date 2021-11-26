@@ -229,7 +229,7 @@
                 <div class="responsive_nav_wrap rh_mobile_menu">
                     <div id="dl-menu" class="dl-menuwrapper rh-flex-center-align">
                         <button id="dl-trigger" class="dl-trigger" aria-label="Menu">
-                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 43 32" xmlns="http://www.w3.org/2000/svg">
                                 <g>
                                     <line stroke-linecap="round" id="rhlinemenu_1" y2="7" x2="29" y1="7" x1="3"/>
                                     <line stroke-linecap="round" id="rhlinemenu_2" y2="16" x2="18" y1="16" x1="3"/>
