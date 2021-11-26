@@ -30,9 +30,6 @@
                                 <div class="product_content">
                                     <div
                                         class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
-                                        <span class="onsale">
-                                            <span>- 28%</span>
-                                        </span>
                                         <div class="product__carousel">
                                             <!-- Swiper and EasyZoom plugins start -->
                                             <div class="swiper-container gallery-top">
@@ -159,14 +156,13 @@
                                                         </div>
                                                         <?php
                                                         $user = Auth::user();
-                                                        if (empty($user)){
+                                                        if (empty($user)) {
                                                             $login = 'act-rehub-login-popup';
-                                                        }
-                                                        else{
+                                                        } else {
                                                             $login = '';
                                                         }
                                                         ?>
-                                                        <div class="{{$login}}" >
+                                                        <div class="{{$login}}">
                                                             <a onclick="addToCart({{$itemDetail->id}})"
                                                                style="vertical-align: top; margin-left: 1em;
                                                                background: #f7941d !important;
@@ -199,8 +195,9 @@
                                                         </div>
                                                     </form>
 
-                                                    <div class="quick_buy_container quick_buy_20521_container {{$login}}"
-                                                         id="quick_buy_20521_container">
+                                                    <div
+                                                        class="quick_buy_container quick_buy_20521_container {{$login}}"
+                                                        id="quick_buy_20521_container">
                                                         <button id="quick_buy_20521_button"
                                                                 data-product-id="20521"
                                                                 style="margin-right: -42px;
@@ -229,14 +226,57 @@
                                         <div class="top_share_small top_share notextshare">
                                         </div>
                                         <div class="footer_product">
-                                            <a target="_blank" rel="noopener noreferrer" class="s_link" href="#"><img
-                                                    src="https://www.flaticon.com/svg/static/icons/svg/1341/1341916.svg"
-                                                    class="s_img"><span class="s_text">ShopMC Đảm Bảo</span><span
-                                                    class="s_text_2">3 Ngày Trả Hàng / Hoàn Tiền</span>
-                                            </a>
+
+                                            <div class="rh_woo_code_zone_content">
+                                                <strong>
+                                                    <i class="far fa-phone-plus"></i> LIÊN HỆ</strong><br>
+                                                <strong style="color: #D50000;">
+                                                    <noscript
+                                                        data-img="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png"
+                                                        data-webp="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png.webp"
+                                                        class=""><img
+                                                            src="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png"
+                                                            data-eio="j"/></noscript>
+                                                    <img
+                                                        src="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png.webp">
+                                                    48 giờ đổi trả hàng miễn phí</strong><br>
+                                                <p>Hotline đặt hàng 0981058326 (Zalo) - 0904568069<br>
+                                                    (Miễn phí, 8-21h cả T7, CN)</p>
+                                                <a target=" _blank" rel="" href="https://m.me/shopmcvnnet">
+                                                    <div class="mxh">
+                                                    <noscript
+                                                        data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
+                                                        data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png.webp"
+                                                        class="">
+                                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
+                                                            data-eio="j"/>
+                                                    </noscript>
+                                                       <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png.webp">
+                                                    </div>
+                                                </a>
+                                                <div class="mxh">
+                                                    <noscript
+                                                        data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
+                                                        data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png.webp"
+                                                        class=""><img
+                                                            src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
+                                                            data-eio="j"/>
+                                                    </noscript>
+                                                    <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png.webp">
+                                                </div>
+                                                <div class="mxh">
+                                                    <a href="https://www.youtube.com/channel/UCnIm8teXECxqCxTW4OSVZ4A">
+                                                        <noscript
+                                                            data-img="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
+                                                            data-webp="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"
+                                                            class=""><img src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
+                                                                data-eio="j"/></noscript>
+                                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"></a>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="other-woo-area clearfix">
@@ -465,84 +505,88 @@
                                 <div class="rh-container">
                                     <div class="clearfix"></div>
                                     <div class="woocommerce">
-                                    <h3>Sản phẩn liên quan</h3>
-                                    <div class="woocommerce" style="margin-top: 10px">
+                                        <h3>Sản phẩn liên quan</h3>
+                                        <div class="woocommerce" style="margin-top: 10px">
 
-                                        <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
-                                             data-filterargs="{&quot;post__in&quot;:[&quot;8489&quot;,&quot;8420&quot;,&quot;8425&quot;,&quot;8434&quot;,&quot;8428&quot;,&quot;9576&quot;],&quot;orderby&quot;:&quot;post__in&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;posts_per_page&quot;:6,&quot;tax_query&quot;:[{&quot;relation&quot;:&quot;AND&quot;,&quot;0&quot;:{&quot;taxonomy&quot;:&quot;product_visibility&quot;,&quot;field&quot;:&quot;name&quot;,&quot;terms&quot;:&quot;exclude-from-catalog&quot;,&quot;operator&quot;:&quot;NOT IN&quot;}}],&quot;no_found_rows&quot;:1}"
-                                             data-template="woogridpart" id="rh_woogrid_1295472877"
-                                             data-innerargs="{&quot;columns&quot;:&quot;6_col&quot;,&quot;woolinktype&quot;:&quot;product&quot;,&quot;disable_thumbs&quot;:&quot;&quot;,&quot;gridtype&quot;:&quot;&quot;,&quot;soldout&quot;:&quot;&quot;,&quot;attrelpanel&quot;:&quot;&quot;}">
+                                            <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
+                                                 data-filterargs="{&quot;post__in&quot;:[&quot;8489&quot;,&quot;8420&quot;,&quot;8425&quot;,&quot;8434&quot;,&quot;8428&quot;,&quot;9576&quot;],&quot;orderby&quot;:&quot;post__in&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;posts_per_page&quot;:6,&quot;tax_query&quot;:[{&quot;relation&quot;:&quot;AND&quot;,&quot;0&quot;:{&quot;taxonomy&quot;:&quot;product_visibility&quot;,&quot;field&quot;:&quot;name&quot;,&quot;terms&quot;:&quot;exclude-from-catalog&quot;,&quot;operator&quot;:&quot;NOT IN&quot;}}],&quot;no_found_rows&quot;:1}"
+                                                 data-template="woogridpart" id="rh_woogrid_1295472877"
+                                                 data-innerargs="{&quot;columns&quot;:&quot;6_col&quot;,&quot;woolinktype&quot;:&quot;product&quot;,&quot;disable_thumbs&quot;:&quot;&quot;,&quot;gridtype&quot;:&quot;&quot;,&quot;soldout&quot;:&quot;&quot;,&quot;attrelpanel&quot;:&quot;&quot;}">
 
-                                            @if(@$related->item)
-                                                @foreach($related->item as $products)
-                                                    @if($products->id != $itemDetail->id)
-                                                        <div
-                                                            class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                                @if(@$related->item)
+                                                    @foreach($related->item as $products)
+                                                        @if($products->id != $itemDetail->id)
+                                                            <div
+                                                                class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                                                             <span
                                                                 class="re-ribbon-badge badge_20"><span>còn hàng!</span></span>
-                                                            <figure class="mb5 mt25 position-relative notresized">
-                                                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                                                   href="{{route('item.detail',$products->slug)}}">
-                                                                    <img class=" lazyloaded"
-                                                                         data-src="{{$products->image}}"
-                                                                         width="300"
-                                                                         alt="Kiếm Biến hình Siêu chất chính hãng"
-                                                                         src="{{$products->image}}">
-                                                                </a>
-                                                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                                                            </figure>
+                                                                <figure class="mb5 mt25 position-relative notresized">
+                                                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                                                       href="{{route('item.detail',$products->slug)}}">
+                                                                        <img class=" lazyloaded"
+                                                                             data-src="{{$products->image}}"
+                                                                             width="300"
+                                                                             alt="Kiếm Biến hình Siêu chất chính hãng"
+                                                                             src="{{$products->image}}">
+                                                                    </a>
+                                                                    <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
+                                                                </figure>
 
-                                                            <h3 class=" text-clamp text-clamp-2">
-                                                                <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
-                                                            </h3>
+                                                                <h3 class=" text-clamp text-clamp-2">
+                                                                    <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
+                                                                </h3>
 
 
-                                                            <div class="border-top pt10 pr10 pl10 pb10">
-                                                                <div
-                                                                    class="price_for_grid floatleft rehub-btn-font mr10">
-                                                        <p class="price">
-                                                            <del><span class="woocommerce-Price-amount amount">
+                                                                <div class="border-top pt10 pr10 pl10 pb10">
+                                                                    <div
+                                                                        class="price_for_grid floatleft rehub-btn-font mr10">
+                                                                        <p class="price">
+                                                                            <del><span
+                                                                                    class="woocommerce-Price-amount amount">
                                                             <bdi>{{number_format($itemDetail->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
                                                         </span>
-                                                            </del>
-                                                            <ins style="margin-left: 10px"><span
-                                                                    class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
-                                                                            class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
-                                                            </ins>
-                                                        </p>
-                                                    </div>
-                                                    <div class="floatright product-meta">
-                                                        <span class="greycolor postview">Đã bán 182</span></div>
-                                                    <div class="rh-flex-right-align btn_for_grid floatright">
-                                                    </div>
-                                                </div>
+                                                                            </del>
+                                                                            <ins style="margin-left: 10px"><span
+                                                                                    class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
+                                                                                            class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                                                            </ins>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="floatright product-meta">
+                                                                        <span
+                                                                            class="greycolor postview">Đã bán 182</span>
+                                                                    </div>
+                                                                    <div
+                                                                        class="rh-flex-right-align btn_for_grid floatright">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                @else
+                                                    Không có sản phẩm liên quan !
+                                                @endif
                                             </div>
-                                                    @endif
-                                                @endforeach
-                                            @else
-                                                Không có sản phẩm liên quan !
-                                            @endif
                                         </div>
+                                        <div class="clearfix"></div>
                                     </div>
-                                    <div class="clearfix"></div>
                                 </div>
-                            </div>
-                        </div><!-- #product-8426 -->
+                            </div><!-- #product-8426 -->
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
         </div>
-    </div>
-    <meta name="generator"
-          content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
-@endsection
-@section('styles')
-    <link rel="stylesheet" href="{{asset('frontend/css/qib-container/style.css')}}">
-    <script src="{{asset('frontend/js/dist/easyzoom.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('frontend/css/css/easyzoom.css')}}">
-    <script src="{{asset('frontend/js/dist/swiper.min.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('frontend/css/css/swiper.min.css')}}">
+        <meta name="generator"
+              content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
+        @endsection
+        @section('styles')
+            <link rel="stylesheet" href="{{asset('frontend/css/qib-container/style.css')}}">
+            <script src="{{asset('frontend/js/dist/easyzoom.js')}}"></script>
+            <link rel="stylesheet" href="{{asset('frontend/css/css/easyzoom.css')}}">
+            <script src="{{asset('frontend/js/dist/swiper.min.js')}}"></script>
+            <link rel="stylesheet" href="{{asset('frontend/css/css/swiper.min.css')}}">
 @endsection
