@@ -159,6 +159,9 @@
           href="https://shopmc.com.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fshopmc.com.vn%2F&#038;format=xml"/>
     <link rel="preload" href="{{asset('frontend/css/rehub-theme/fonts/rhicons.woff2?leryx9')}}" as="font"
           type="font/woff2" crossorigin="crossorigin">
+    <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}?v={{time()}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}?v={{time()}}">
+    @yield('filter_price')
     <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/filter_price.css')}}">
@@ -190,8 +193,6 @@
             }</style>
     </noscript><!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="{{asset('frontend/js/gtag/js.js')}}"></script>
-    <script src="{{asset('frontend/js/home/filter_price.js')}}"></script>
-
 </head>
 <body
     class="home page-template page-template-page-home page-template-page-home-php page page-id-9004 theme-rehub-theme woocommerce-no-js noinnerpadding wpb-js-composer js-comp-ver-6.4.1 vc_responsive elementor-default elementor-kit-22691 elementor-page elementor-page-9004">

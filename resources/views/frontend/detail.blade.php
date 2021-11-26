@@ -1,4 +1,6 @@
 @extends('frontend.layout.master')
+@section('content')
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 @section('styles')
     <link rel="stylesheet" href="{{asset('frontend/detail/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/detail/css/detail.css')}}">
@@ -10,36 +12,43 @@
 @section('content')
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
-
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
                 <div
                     class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
                     id="content">
                     <div class="post">
-                        <div id="product-20521"
-                             class="post-20521 product type-product status-publish has-post-thumbnail store-mojang product_cat-kiem-cuoc-riu-kim-cuong-minecraft product_tag-shopmcmall first instock sale shipping-taxable purchasable product-type-simple">
+                        <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span
+                                class="delimiter"><i class="rhicon rhi-angle-right"></i></span><a
+                                href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">Kiếm Cuốc Rìu
+                                Minecraft</a><span class="delimiter"><i class="rhicon rhi-angle-right"></i></span>Rìu
+                            Chặt Gỗ Diamond Minecraft
+                        </nav>
+                        <div id="product-8434"
+                             class="post-8434 product type-product status-publish has-post-thumbnail product_cat-kiem-cuoc-riu-minecraft first instock sale shipping-taxable purchasable product-type-simple">
                             <div class="ce_woo_block_top_holder">
                                 <div class="woo_bl_title flowhidden mb10">
                                     <div class="woocommerce-notices-wrapper"></div>
-                                    <h1 class="floatleft tabletblockdisplay pr20 "
-                                        style="margin-top: 6px; margin-left: 6px">
-                                        {{$itemDetail->title}}</h1>
+                                    <h1 class="floatleft tabletblockdisplay pr20 " style="margin: 6px 0px 6px 6px">{{$itemDetail->title}}</h1>
                                     <div class="woo-top-actions tabletblockdisplay floatright product_row">
                                         <div class="woo-button-actions-area pl5 pb5 pr5">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="border-grey-bottom clearfix mb15"></div>
-                                <div class="product_content" style="margin-bottom: 25px">
+                                <div class="product_content">
                                     <div
                                         class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
-                                        <div class="product__carousel">
+                                        <span class="onsale" >
+                                            - 39%
+                                        </span>
+                                        <div class="product__carousel" >
                                             <!-- Swiper and EasyZoom plugins start -->
                                             <div class="swiper-container gallery-top">
                                                 <div class="swiper-wrapper">
                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide easyzoom easyzoom--overlay">
                                                             <a href="{{$item}}">
+                                                                <img src="{{$item}}" alt=""/>
                                                                 <img src="{{$item}}?raw=true" alt=""/>
                                                             </a>
                                                         </div>
@@ -53,6 +62,7 @@
                                                 <div class="swiper-wrapper">
                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide">
+                                                            <img src="{{$item}}" alt="">
                                                             <img src="{{$item}}?raw=true" alt="">
                                                         </div>
                                                     @endforeach
@@ -61,7 +71,6 @@
                                             <!-- Swiper and EasyZoom plugins end -->
                                         </div>
                                         <script>
-                                            //changeImage
                                             // product Gallery and Zoom
 
                                             // activation carousel plugin
@@ -100,33 +109,33 @@
 
                                             // activation zoom plugin
                                             var $easyzoom = $('.easyzoom').easyZoom();
-
                                         </script>
                                     </div>
                                     <div class="wpsm-two-third tabletblockdisplay wpsm-column-last mb30">
                                         <div class="rh-flex-center-align woo_top_meta mobileblockdisplay mb10">
+
                                             <div class="floatleft mr15 disablefloatmobile">
+
                                                 <div class="woocommerce-product-rating">
                                                     <div class="rh_woo_star" title="Rated 5 out of 5"><span
-                                                            class="rhwoostar rhwoostar1 active">&#9733;</span><span
-                                                            class="rhwoostar rhwoostar2 active">&#9733;</span><span
-                                                            class="rhwoostar rhwoostar3 active">&#9733;</span><span
-                                                            class="rhwoostar rhwoostar4 active">&#9733;</span><span
-                                                            class="rhwoostar rhwoostar5 active">&#9733;</span></div>
-                                                    <a href="#" class="woocommerce-review-link"
-                                                       rel="nofollow">(<span class="count">2</span> đánh giá của khách
-                                                        hàng)</a>
+                                                            class="rhwoostar rhwoostar1 active">★</span><span
+                                                            class="rhwoostar rhwoostar2 active">★</span><span
+                                                            class="rhwoostar rhwoostar3 active">★</span><span
+                                                            class="rhwoostar rhwoostar4 active">★</span><span
+                                                            class="rhwoostar rhwoostar5 active">★</span></div>
                                                 </div>
                                             </div>
                                             <span class="floatleft meta post-meta mt0 mb0 disablefloatmobile">
-                                           <span><i class="far fa-eye"> </i>5504</span>  Đã bán
+                                            <span class="greycolor postview_meta">313</span> Đã bán
                                         </span>
                                         </div>
                                         <div class="rh-line mb20 mt10"></div>
                                         <div class="rh_post_layout_rev_price_holder position-relative">
                                             <div class="floatright mobileblockdisplay">
+
                                             </div>
                                             <div class="compare-button-holder">
+
                                                 <p class="price">
                                                     <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
@@ -145,30 +154,42 @@
                                                 }
                                                 ?>
                                                 <div class="woo-button-area mb30">
-                                                    <form class="cart">
-                                                        <input type="hidden" id="wc_quick_buy_hook_20521"
-                                                               value="20521"/>
+
+
+                                                    <form class="cart"
+                                                          action="https://shopmc.com.vn/san-pham/riu-chat-go-minecraft/"
+                                                          method="post" enctype="multipart/form-data">
+                                                        <input type="hidden" id="wc_quick_buy_hook_8434" value="8434">
                                                         <div class="qib-container">
                                                             <button type="button" class="minus qib-button">-</button>
                                                             <div class="quantity buttons_added">
                                                                 <label class="screen-reader-text"
-                                                                       for="quantity">Combo Kiếm - Cup -
-                                                                    Rìu - Xẻng Minecraft số lượng</label> <input
-                                                                    type="number"
-                                                                    id="quantity"
-                                                                    class="input-text qty text"
-                                                                    step="1"
-                                                                    min="1"
-                                                                    max="50"
-                                                                    name="quantity"
-                                                                    value="1"
-                                                                    title="SL"
-                                                                    size="4"
-                                                                    placeholder=""
-                                                                    inputmode="numeric"/>
+                                                                       for="quantity_619f58e6d92d7">Rìu Chặt Gỗ Diamond
+                                                                    Minecraft số lượng</label> <input type="number"
+                                                                                                      id="quantity_619f58e6d92d7"
+                                                                                                      class="input-text qty text"
+                                                                                                      step="1" min="1"
+                                                                                                      max=""
+                                                                                                      name="quantity"
+                                                                                                      value="1"
+                                                                                                      title="SL"
+                                                                                                      size="4"
+                                                                                                      placeholder=""
+                                                                                                      inputmode="numeric">
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
+
+                                                        <button type="submit" name="add-to-cart" value="8434"
+                                                                class="single_add_to_cart_button button alt">Thêm vào
+                                                            giỏ hàng
+                                                        </button>
+
+                                                    </form>
+
+                                                    <div class="quick_buy_container quick_buy_8434_container"
+                                                         id="quick_buy_8434_container">
+                                                        <button id="quick_buy_8434_button" data-product-id="8434"
                                                         <div class="{{$login}}">
                                                             <a onclick="addToCart({{$itemDetail->id}})"
                                                                style="vertical-align: top; margin-left: 1em;background-color: #3c6a02"
@@ -205,7 +226,7 @@
                                                                 data-product-id="20521"
                                                                 style="margin-right: -42px; margin-top: 2px"
                                                                 data-product-type="simple"
-                                                                class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
+                                                                class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_8434 quick_buy_8434_button quick_buy_8434_simple quick_buy_8434_simple_button"
                                                                 type="button">Mua Ngay
                                                         </button>
                                                     </div>
@@ -218,61 +239,21 @@
                                         <div>
 
                                             <div class="mobilesblockdisplay font90 lineheight20 woo_desc_part">
-                                                <div
-                                                    class="woocommerce-product-details__short-description content-detail">
-
+                                                <div class="woocommerce-product-details__short-description">
                                                     {!! $itemDetail->content !!}
                                                 </div>
-                                                <div class="rh_woo_code_zone_content content-detail"
-                                                     style="padding: 15px 0">
-                                                    <strong>
-                                                        <i class="far fa-phone-plus "></i> LIÊN HỆ</strong><br>
-                                                    <strong style="color: #D50000;">
-                                                        <noscript
-                                                            data-img="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png"
-                                                            data-webp="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png"
-                                                            class="ewww_webp"><img
-                                                                src="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png"
-                                                                data-eio="j"/></noscript>
-                                                        48 giờ đổi trả hàng miễn phí</strong><br>
-                                                    <p style="color: #0c0f1a">Hotline đặt hàng 0981058326 (Zalo) -
-                                                        0904568069<br>
-                                                        (Miễn phí, 8-21h cả T7, CN)</p>
-                                                    <div class="mxh">
-                                                        <noscript
-                                                            data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
-                                                            data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
-                                                            class="ewww_webp"><img
-                                                                src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
-                                                                data-eio="j"/>
-                                                        </noscript>
-                                                    </div>
-                                                    <div class="mxh">
-                                                        <noscript
-                                                            data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
-                                                            data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
-                                                            class="ewww_webp"><img
-                                                                src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
-                                                                data-eio="j"/>
-                                                        </noscript>
-                                                    </div>
-                                                    <div class="mxh">
-                                                        <a href="https://www.youtube.com/channel/UCnIm8teXECxqCxTW4OSVZ4A">
-                                                            <noscript
-                                                                data-img="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
-                                                                data-webp="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
-                                                                class="ewww_webp"><img
-                                                                    src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
-                                                                    data-eio="j"/></noscript>
-                                                        </a>
-                                                    </div>
-                                                </div>
                                             </div>
+                                            <div class="clearfix"></div>
                                         </div>
-                                        <div class="top_share_small top_share notextshare mt-8">
+                                        <div class="top_share_small top_share notextshare">
+
                                         </div>
 
                                         <div class="footer_product">
+                                            <a target="_blank" rel="noopener noreferrer" class="s_link" href="#"><img
+                                                    src="https://www.flaticon.com/svg/static/icons/svg/1341/1341916.svg"
+                                                    class="s_img"><span class="s_text">ShopMC Đảm Bảo</span><span
+                                                    class="s_text_2">3 Ngày Trả Hàng / Hoàn Tiền</span></a>
                                         </div>
                                     </div>
 
@@ -282,6 +263,7 @@
                                 <div class="rh-container">
                                 </div>
                             </div>
+
                             <div class="codinh">
                                 <!--div class="float-panel-woo-price rh-flex-center-align font120 rh-flex-right-align">
                                     <!?php woocommerce_template_single_price();?>
@@ -302,23 +284,23 @@
 		c-0.601,0.084-1.071-0.711-1.131-1.445c-0.157-1.938-0.015-4.414-0.003-6.472h0.003c0-0.055-0.001-0.114-0.001-0.171
 		s0.001-0.117,0.001-0.171H7.321c-0.012-2.058-0.154-4.534,0.003-6.472c0.06-0.735,0.53-1.531,1.131-1.445
 		c0.673,0.093,2.347,1.33,2.953,1.646c1.64,0.843,4.286-5.689,3.059-6.457c-0.963-0.597-1.827-1.405-2.87-1.837
-		c-0.177-0.074-0.374-0.075-0.561-0.113C6.752-0.807,2.384,2.886,1.938,8.445z"/>
+		c-0.177-0.074-0.374-0.075-0.561-0.113C6.752-0.807,2.384,2.886,1.938,8.445z"></path>
 </g>
                                             <g></g>
                                             <g></g>
                                             <g></g>
                                             <g></g>
                                             <g></g>
+                                            < g="">
+                                            <g><!--<g--></g>
+                                            <g></g>
+                                            < g="">
                                             <g></g>
                                             <g></g>
+                                            <g><!--<g--></g>
                                             <g></g>
                                             <g></g>
-                                            <g></g>
-                                            <g></g>
-                                            <g></g>
-                                            <g></g>
-                                            <g></g>
-                                            <g></g></svg>
+                                           </svg>
                                         <div class="goingay">Gọi Ngay</div>
                                     </a>
                                 </div>
@@ -326,21 +308,79 @@
                                     <div class="product-bottom_space-real"></div>
                                 </div>
                                 <div class="dat-mua">
-
+                                    <div class="datngay">
+                                        <a href="?add-to-cart=8434" data-product_id="8434" data-product_sku="RD"
+                                           class="button_datngay" add_to_cart_button="" ajax_add_to_cart="">
+                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                 width="446.843px" height="446.843px" viewBox="0 0 446.843 446.843"
+                                                 style="enable-background:new 0 0 446.843 446.843;"
+                                                 xml:space="preserve">
+<g>
+    <path d="M444.09,93.103c-2.698-3.699-7.006-5.888-11.584-5.888H109.92c-0.625,0-1.249,0.038-1.85,0.119l-13.276-38.27
+		c-1.376-3.958-4.406-7.113-8.3-8.646L19.586,14.134c-7.374-2.887-15.695,0.735-18.591,8.1c-2.891,7.369,0.73,15.695,8.1,18.591
+		l60.768,23.872l74.381,214.399c-3.283,1.144-6.065,3.663-7.332,7.187l-21.506,59.739c-1.318,3.663-0.775,7.733,1.468,10.916
+		c2.24,3.183,5.883,5.078,9.773,5.078h11.044c-6.844,7.616-11.044,17.646-11.044,28.675c0,23.718,19.298,43.012,43.012,43.012
+		s43.012-19.294,43.012-43.012c0-11.029-4.2-21.059-11.044-28.675h93.776c-6.847,7.616-11.048,17.646-11.048,28.675
+		c0,23.718,19.294,43.012,43.013,43.012c23.718,0,43.012-19.294,43.012-43.012c0-11.029-4.2-21.059-11.043-28.675h13.433
+		c6.599,0,11.947-5.349,11.947-11.948c0-6.599-5.349-11.947-11.947-11.947H143.647l13.319-36.996
+		c1.72,0.724,3.578,1.152,5.523,1.152h210.278c6.234,0,11.751-4.027,13.65-9.959l59.739-186.387
+		C447.557,101.567,446.788,96.802,444.09,93.103z M169.659,409.807c-10.543,0-19.116-8.573-19.116-19.116
+		s8.573-19.117,19.116-19.117s19.116,8.574,19.116,19.117S180.202,409.807,169.659,409.807z M327.367,409.807
+		c-10.543,0-19.117-8.573-19.117-19.116s8.574-19.117,19.117-19.117c10.542,0,19.116,8.574,19.116,19.117
+		S337.909,409.807,327.367,409.807z M402.52,148.149h-73.161V115.89h83.499L402.52,148.149z M381.453,213.861h-52.094v-37.038
+		h63.967L381.453,213.861z M234.571,213.861v-37.038h66.113v37.038H234.571z M300.684,242.538v31.064h-66.113v-31.064H300.684z
+		 M139.115,176.823h66.784v37.038h-53.933L139.115,176.823z M234.571,148.149V115.89h66.113v32.259H234.571z M205.898,115.89v32.259
+		h-76.734l-11.191-32.259H205.898z M161.916,242.538h43.982v31.064h-33.206L161.916,242.538z M329.359,273.603v-31.064h42.909
+		l-9.955,31.064H329.359z"></path>
+</g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+                                                <g>
+                                                </g>
+</svg>
+                                            <div>Đặt hàng</div>
+                                        </a></div>
                                     <div class="muangay">
-                                        <input value="Mua Ngay" type="button" id="quick_buy_20521_button" name=""
-                                               data-product-type="simple" data-product-id="20521"
-                                               class="muangay_bottom wcqb_button wc_quick_buy_button quick_buy_button quick_buy_simple quick_buy_20521_button quick_buy_20521wc_quick_buy_button">
+                                        <input value="Mua Ngay" type="button" id="quick_buy_8434_button" name=""
+                                               data-product-type="simple" data-product-id="8434"
+                                               class="muangay_bottom wcqb_button wc_quick_buy_button quick_buy_button quick_buy_simple quick_buy_8434_button quick_buy_8434wc_quick_buy_button">
                                     </div>
                                 </div>
                             </div>
                             <!--/div-->
                             <!--/div-->
-                            {{--Description--}}
+
                             <div class="content-woo-area">
                                 <div class="rh-tabletext-block rh-tabletext-wooblock" id="section-description">
                                     <div class="rh-tabletext-block-heading">
-                                        <span class="toggle-this-table" style="color: black"></span>
+                                        <span class="toggle-this-table"></span>
                                         <h4 class="rh-heading-icon">Mô tả</h4>
                                     </div>
                                     <div class="rh-tabletext-block-wrapper">
@@ -382,15 +422,32 @@
                                             .span_item {
                                                 width: 12px;
                                                 margin-left: 5px;
-                                                fill: black;
+                                                fill: #f7941d;
                                             }
                                         </style>
                                         <div class="clearfix"></div>
+                                        <div class="all_des">
+                                            <div class="content_product">
+                                                <p><strong>{!! $itemDetail->description !!}</strong></p>
                                         <div class="all_des" style="max-height: none;">
                                             <div class="content_product" style="color: black">
                                                 <p>{!! $itemDetail->description !!}</p>
                                             </div>
-                                            <div class="hide_content" style="display: none;"></div>
+                                            <div class="hide_content"></div>
+                                        </div>
+                                        <div class="read_more_less" id="readMore">Xem Thêm
+                                            <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11"
+                                                 class="span_item">
+                                                <path stroke="none"
+                                                      d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="read_more_less" id="readLess">Thu Gọn
+                                            <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11"
+                                                 class="span_item">
+                                                <path stroke="none"
+                                                      d="m11 8.5c0-.1 0-.2-.1-.3l-5-6c-.1-.1-.3-.2-.4-.2s-.3.1-.4.2l-5 6c-.2.2-.1.5.1.7s.5.1.7-.1l4.6-5.5 4.6 5.5c.2.2.5.2.7.1.1-.1.2-.3.2-.4z"></path>
+                                            </svg>
                                         </div>
                                         <div class="read_more_less" id="readMore" style="display: none;color:black">Xem
                                             Thêm
@@ -416,6 +473,19 @@
                                         <script async="" defer="" crossorigin="anonymous"
                                                 src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v7.0&amp;appId=248671142486453&amp;autoLogAppEvents=1"></script>
                                         <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
+                                             data-href="https://shopmc.com.vn/san-pham/riu-chat-go-minecraft/"
+                                             data-numposts="5" data-width="auto" fb-xfbml-state="rendered"
+                                             fb-iframe-plugin-query="app_id=248671142486453&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Friu-chat-go-minecraft%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width="
+                                             style="width: 100%;"><span
+                                                style="vertical-align: bottom; width: 100%; height: 203px;"><iframe
+                                                    name="f3dcc4592e4e124" width="1000px" height="100px"
+                                                    data-testid="fb:comments Facebook Social Plugin"
+                                                    title="fb:comments Facebook Social Plugin" frameborder="0"
+                                                    allowtransparency="true" allowfullscreen="true" scrolling="no"
+                                                    allow="encrypted-media"
+                                                    src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=248671142486453&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df6dc8c8a36bc44%26domain%3Dshopmc.com.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fshopmc.com.vn%252Ff3262a3d450be24%26relation%3Dparent.parent&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Friu-chat-go-minecraft%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width="
+                                                    style="border: none; visibility: visible; width: 100%; height: 203px;"
+                                                    class=""></iframe></span></div>
                                              data-href="https://shopmc.com.vn/san-pham/kiem-diamond-minecraft-chinh-hang/"
                                              data-numposts="5" data-width="auto"
                                              fb-xfbml-state="rendere
@@ -452,7 +522,62 @@
 
                                     </div>
                                 </div>
+
                             </div>
+
+                            <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
+                                <div class="rh-container">
+                                    <div class="clearfix"></div>
+                                    <h3>Top sản phẩm bán chạy</h3>
+                                    <div class="woocommerce" style="margin-top: 6px">
+                                        <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
+                                             data-filterargs="{&quot;post__in&quot;:[&quot;8312&quot;,&quot;8438&quot;,&quot;8516&quot;,&quot;8442&quot;,&quot;8315&quot;,&quot;8428&quot;],&quot;orderby&quot;:&quot;post__in&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;posts_per_page&quot;:6,&quot;tax_query&quot;:[{&quot;relation&quot;:&quot;AND&quot;,&quot;0&quot;:{&quot;taxonomy&quot;:&quot;product_visibility&quot;,&quot;field&quot;:&quot;name&quot;,&quot;terms&quot;:&quot;exclude-from-catalog&quot;,&quot;operator&quot;:&quot;NOT IN&quot;}}],&quot;no_found_rows&quot;:1}"
+                                             data-template="woogridpart" id="rh_woogrid_1764706442"
+                                             data-innerargs="{&quot;columns&quot;:&quot;6_col&quot;,&quot;woolinktype&quot;:&quot;product&quot;,&quot;disable_thumbs&quot;:&quot;&quot;,&quot;gridtype&quot;:&quot;&quot;,&quot;soldout&quot;:&quot;&quot;,&quot;attrelpanel&quot;:&quot;&quot;}">
+
+                                            @if(@$related->item)
+                                                @foreach($related->item as $products)
+                                                    @if($products->id != $itemDetail->id)
+                                            <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                                <span class="re-ribbon-badge badge_20">
+                                                    <span>Hết hàng!</span>
+                                                </span>
+                                                <figure class="mb5 mt25 position-relative notresized">
+                                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                                       href="{{route('item.detail',$products->slug)}}">
+                                                        <img class=" lazyloaded"
+                                                             data-src="{{$products->image}}"
+                                                             width="300" alt="Cup Minecraft Bông Chính Hãng"
+                                                             src="{{$products->image}}">
+                                                    </a>
+                                                    <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
+                                                </figure>
+                                                <h3 class=" text-clamp text-clamp-2">
+                                                    <a href="{{route('item.detail',$products->slug)}}">
+                                                        {{$products->content}}</a>
+                                                </h3>
+
+                                                <div class="border-top pt10 pr10 pl10 pb10">
+                                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
+                                                        <span class="price">
+                                                            <span class="woocommerce-Price-amount amount"><bdi>{{number_format($products->price)}}<span
+                                                                        class="woocommerce-Price-currencySymbol">₫</span>
+                                                                </bdi>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="floatright product-meta">
+                                                        <span class="greycolor postview">Đã bán 117</span></div>
+                                                    <div class="rh-flex-right-align btn_for_grid floatright">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                Không có sản phẩm liên quan !
+                                            @endif
+                                        </div>
                         </div>
                         <!-- #product-20521 -->
                         <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
@@ -512,20 +637,22 @@
                                             Không có sản phẩm liên quan !
                                         @endif
                                     </div>
-
                                 </div>
-
-                                <div class="clearfix"></div>
-
                             </div>
-                        </div>
+
+                        </div><!-- #product-8434 -->
+
 
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>
+
     <script src="{{asset('frontend/detail/js/style.js')}}"></script>
     <script src="{{asset('frontend/detail/js/style2.js')}}"></script>
     <script src="{{asset('frontend/detail/js/style3.js')}}"></script>
+
 @endsection
