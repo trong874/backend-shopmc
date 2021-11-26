@@ -176,3 +176,7 @@
         </div>
     </div>
 @endsection
+@section('filter_price')
+    <link rel="stylesheet" href="{{asset('frontend/css/home/filter_price.css')}}">
+    <script src="{{asset('frontend/js/home/filter_price.js')}}"></script>
+@endsection
