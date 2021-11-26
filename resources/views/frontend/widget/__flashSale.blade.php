@@ -7,7 +7,7 @@
                         <h4 style="margin-left: 10px">Flash Sale</h4>
                     </div>
                 </article>
-                <div class="woocommerce">
+                <div class="woocommerce" style="margin-left: 15px;">
                     <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
                          data-filterargs='{"post__in":["8426","8431","8434","8554","9736","23053"],"orderby":"post__in","post_type":"product","posts_per_page":12,"tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}'
                          data-template="woogridpart" id="rh_woogrid_779630174"

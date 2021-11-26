@@ -1,6 +1,6 @@
 <div class="vc_row wpb_row vc_row-fluid vc_custom_1607449154738 vc_row-has-fill centered-container">
     <div class="wpb_column vc_column_container vc_col-sm-12 ">
-{{--        vc_hidden-xs--}}
+        {{--        vc_hidden-xs--}}
         <div class="vc_column-inner ">
             <div class="wpb_wrapper "><h4
                     style="margin-block-start: 1em; margin-left: 15px"
@@ -33,7 +33,8 @@
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
                                                                             <span>{{number_format($baloBag->price_old)}}</span>
-                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                            <span
+                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                     </span>
                                                                 </del>
@@ -41,15 +42,16 @@
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
                                                                              <span>{{number_format($baloBag->price)}}</span>
-                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                            <span
+                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                         </bdi>
                                                                         </span>
                                                                 </ins>
                                                             </span>
                                     </div>
-{{--                                    <div class="floatright product-meta">--}}
-{{--                                        <span class="greycolor postview">{!! $baloBag->description !!}</span>--}}
-{{--                                    </div>--}}
+                                    {{--                                    <div class="floatright product-meta">--}}
+                                    {{--                                        <span class="greycolor postview">{!! $baloBag->description !!}</span>--}}
+                                    {{--                                    </div>--}}
                                     <div class="rh-flex-right-align btn_for_grid floatright">
                                     </div>
                                 </div>
@@ -61,7 +63,7 @@
                                             class="rhwoostar rhwoostar4 active">&#9733;</span><span
                                             class="rhwoostar rhwoostar5 active">&#9733;</span>
                                     </div>
-{{--                                    <span class="greycolor postview">{!! $baloBag->description !!}</span>--}}
+                                    {{--                                    <span class="greycolor postview">{!! $baloBag->description !!}</span>--}}
                                 </div>
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
