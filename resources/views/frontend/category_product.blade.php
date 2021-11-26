@@ -28,7 +28,7 @@
                     <div class="row slider-labels">
                         <div class="col-xs-6 caption">
                             <strong>Min:</strong>
-                            <span id="   "></span> đ</div>
+                            <span id="slider-range-value1"></span> đ</div>
                         <div class="col-xs-6 text-right caption">
                             <strong>Max:</strong>
                             <span id="slider-range-value2"></span> đ</div>
@@ -184,7 +184,4 @@
         </div>
     </div>
 @endsection
-@section('filter_price')
-    <link rel="stylesheet" href="{{asset('frontend/css/home/filter_price.css')}}">
-    <script src="{{asset('frontend/js/home/filter_price.js')}}"></script>
-@endsection
+

@@ -474,11 +474,17 @@
                                                 <div class="border-top pt10 pr10 pl10 pb10">
                                                     <div class="price_for_grid floatleft rehub-btn-font mr10">
 
-                                                        <span class="price"><span
-                                                                class="woocommerce-Price-amount amount">
-                                                                 <bdi>{{number_format($itemDetail->price_old)}}<span
-                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
-                                                            </span></span>
+                                                        <p class="price">
+                                                            <del><span class="woocommerce-Price-amount amount">
+                                                            <bdi>{{number_format($itemDetail->price_old)}}<span
+                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                        </span>
+                                                            </del>
+                                                            <ins style="margin-left: 10px"><span
+                                                                    class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
+                                                                            class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                                            </ins>
+                                                        </p>
                                                     </div>
                                                     <div class="floatright product-meta">
                                                         <span class="greycolor postview">Đã bán 182</span></div>
