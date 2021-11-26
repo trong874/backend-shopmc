@@ -161,9 +161,6 @@
           type="font/woff2" crossorigin="crossorigin">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}?v={{time()}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}?v={{time()}}">
-    @yield('filter_price')
-    <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/filter_price.css')}}">
     @yield('styles')
     <!-- START woopt Pixel Manager -->
@@ -187,6 +184,7 @@
     <meta name="msapplication-TileImage"
           content="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-270x270.png"/>
     <script src="{{asset('frontend/js/home/style2.js')}}"></script>
+    <script src="{{asset('frontend/js/home/filter_price.js')}}"></script>
     <noscript>
         <style> .wpb_animate_when_almost_visible {
                 opacity: 1;
