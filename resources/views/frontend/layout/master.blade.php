@@ -162,6 +162,10 @@
     <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}?v={{time()}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}?v={{time()}}">
     @yield('filter_price')
+    <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/home/filter_price.css')}}">
+    @yield('styles')
     <!-- START woopt Pixel Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-861272757"></script>
     <script>

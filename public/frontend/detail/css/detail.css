@@ -29914,7 +29914,7 @@ pre.wpsm-code.wpsm_code_2 {
 
 @font-face {
     font-family: 'rhicons';
-    src: url(//shopmc.vn/wp-content/themes/rehub-theme/fonts/rhicons.woff2?leryx9) format('woff2'), url(//shopmc.vn/wp-content/themes/rehub-theme/fonts/rhicons.ttf?leryx9) format('truetype'), url(//shopmc.vn/wp-content/themes/rehub-theme/fonts/rhicons.woff?leryx9) format('woff'), url(//shopmc.vn/wp-content/themes/rehub-theme/fonts/rhicons.svg?leryx9#rhicons) format('svg');
+    src: url(/frontend/css/rehub-theme/fonts/rhicons.woff2) format('woff2'), url(/frontend/css/rehub-theme/fonts/rhicons.woff2) format('truetype'), url(/frontend/css/rehub-theme/fonts/rhicons.woff2) format('woff'), url(/frontend/css/rehub-theme/fonts/rhicons.woff2) format('svg');
     font-weight: 400;
     font-style: normal;
     font-display: swap
