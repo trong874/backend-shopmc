@@ -2,7 +2,7 @@
     <div class="rh-container clearfix">
         <div class="rh-flex-eq-height col_wrap_three">
             <div class="footer_widget col_item">
-                <div id="text-2" class="widget widget_text">
+                <div id="text-2" class="widget widget_text" style="margin-left: 15px;">
                     <div class="title">VỀ SHOP</div>
                     <div class="textwidget"><p class="hotline"><span style="color: #c4011a;"><strong>Hotline đặt hàng: </strong></span><a
                                 href="tel:0981058326"><strong><span
