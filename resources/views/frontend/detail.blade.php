@@ -1,8 +1,6 @@
 @extends('frontend.layout.master')
 @section('content')
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
@@ -10,19 +8,18 @@
                     class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
                     id="content">
                     <div class="post">
-
                         <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span
                                 class="delimiter"><i class="rhicon rhi-angle-right"></i></span><a
                                 href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">{{$itemDetail->title}}</a>
                         </nav>
-
                         <div id="product-8426"
                              class="post-8426 product type-product status-publish has-post-thumbnail store-mojang product_cat-kiem-cuoc-riu-minecraft first instock sale shipping-taxable purchasable product-type-simple">
                             <div class="ce_woo_block_top_holder">
                                 <div class="woo_bl_title flowhidden mb10">
                                     <div class="woocommerce-notices-wrapper"></div>
 
-                                    <h1 class="floatleft tabletblockdisplay pr20 " style="margin: 6px 0px 6px 6px">{{$itemDetail->title}}</h1>
+                                    <h1 class="floatleft tabletblockdisplay pr20 "
+                                        style="margin: 6px 0px 6px 6px">{{$itemDetail->title}}</h1>
 
                                     <div class="woo-top-actions tabletblockdisplay floatright product_row">
                                         <div class="woo-button-actions-area pl5 pb5 pr5">
@@ -33,11 +30,9 @@
                                 <div class="product_content">
                                     <div
                                         class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
-
                                         <span class="onsale">
                                             <span>- 28%</span>
                                         </span>
-
                                         <div class="product__carousel">
                                             <!-- Swiper and EasyZoom plugins start -->
                                             <div class="swiper-container gallery-top">
@@ -49,7 +44,6 @@
                                                             </a>
                                                         </div>
                                                     @endforeach
-
                                                 </div>
                                                 <!-- Add Arrows -->
                                                 <div class="swiper-button-next swiper-button-white"></div>
@@ -57,19 +51,17 @@
                                             </div>
                                             <div class="swiper-container gallery-thumbs">
                                                 <div class="swiper-wrapper">
-                                                    <   @foreach(explode("|",$itemDetail->image_extension) as $item)
+                                                    < @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide">
                                                             <img src="{{$item}}?raw=true" alt="">
                                                         </div>
                                                     @endforeach
-
                                                 </div>
                                             </div>
                                             <!-- Swiper and EasyZoom plugins end -->
                                         </div>
                                         <script>
                                             // product Gallery and Zoom
-
                                             // activation carousel plugin
                                             var galleryThumbs = new Swiper('.gallery-thumbs', {
                                                 spaceBetween: 5,
@@ -119,16 +111,14 @@
                                                             class="rhwoostar rhwoostar2 active">★</span><span
                                                             class="rhwoostar rhwoostar3 active">★</span><span
                                                             class="rhwoostar rhwoostar4 active">★</span><span
-                                                            class="rhwoostar rhwoostar5 active">★</span></div>
+                                                            class="rhwoostar rhwoostar5 active">★</span>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                             <span class="floatleft meta post-meta mt0 mb0 disablefloatmobile">
                                             <span class="greycolor postview_meta">1212</span> Đã bán
                                         </span>
                                         </div>
-
-
                                         <div class="rh-line mb20 mt10"></div>
                                         <div class="rh_post_layout_rev_price_holder position-relative">
                                             <div class="floatright mobileblockdisplay">
@@ -147,8 +137,6 @@
                                                     </ins>
                                                 </p>
                                                 <div class="woo-button-area mb30">
-
-
                                                     <form class="cart"
                                                           action="https://shopmc.com.vn/san-pham/kiem-diamond-minecraft-chinh-hang/"
                                                           method="post" enctype="multipart/form-data">
@@ -158,27 +146,68 @@
                                                             <div class="quantity buttons_added">
                                                                 <label class="screen-reader-text"
                                                                        for="quantity_61a046e02517d">Kiếm Diamond
-                                                                    Minecraft Chính Hãng số lượng</label> <input
-                                                                    type="number" id="quantity_61a046e02517d"
+                                                                    Minecraft Chính Hãng số lượng</label>
+                                                                <input
+                                                                    type="number" id="quantity"
                                                                     class="input-text qty text" step="1" min="1" max=""
                                                                     name="quantity" value="1" title="SL" size="4"
                                                                     placeholder="" inputmode="numeric">
                                                             </div>
                                                             <button type="button" class="plus qib-button">+</button>
                                                         </div>
-
-                                                        <button type="submit" name="add-to-cart" value="8426"
-                                                                class="single_add_to_cart_button button alt">Thêm vào
-                                                            giỏ hàng
-                                                        </button>
-
+                                                        <?php
+                                                        $user = Auth::user();
+                                                        if (empty($user)){
+                                                            $login = 'act-rehub-login-popup';
+                                                        }
+                                                        else{
+                                                            $login = '';
+                                                        }
+                                                        ?>
+                                                        <div class="{{$login}}" >
+                                                            <a onclick="addToCart({{$itemDetail->id}})"
+                                                               style="vertical-align: top; margin-left: 1em;
+                                                               background: #f7941d !important;
+                                                               border: none;"
+                                                               name="add-to-cart"
+                                                               id="addToCart"
+                                                               href="javascript:"
+                                                               class="btn btn-success">
+                                                                Thêm vào giỏ hàng
+                                                            </a>
+                                                            <script>
+                                                                function addToCart(id) {
+                                                                    console.log($('#quantity').val());
+                                                                    $.ajax({
+                                                                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                                                        url: '/add-cart/' + id,
+                                                                        type: 'POST',
+                                                                        data: {
+                                                                            quantity: $('#quantity').val(),
+                                                                        },
+                                                                        success: function (res) {
+                                                                            $("#my_cart").empty();
+                                                                            $("#my_cart").html(res);
+                                                                            alertify.success('Đã thêm vật phẩm này vào giỏ hàng');
+                                                                            location.reload();
+                                                                        }
+                                                                    });
+                                                                }
+                                                            </script>
+                                                        </div>
                                                     </form>
 
-                                                    <div class="quick_buy_container quick_buy_8426_container"
-                                                         id="quick_buy_8426_container">
-                                                        <button id="quick_buy_8426_button" data-product-id="8426"
+                                                    <div class="quick_buy_container quick_buy_20521_container {{$login}}"
+                                                         id="quick_buy_20521_container">
+                                                        <button id="quick_buy_20521_button"
+                                                                data-product-id="20521"
+                                                                style="margin-right: -42px;
+                                                                background: #fb641b;
+                                                                border: none;
+                                                                border-radius: 2px;
+                                                                color: white"
                                                                 data-product-type="simple"
-                                                                class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_8426 quick_buy_8426_button quick_buy_8426_simple quick_buy_8426_simple_button"
+                                                                class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
                                                                 type="button">Mua Ngay
                                                         </button>
                                                     </div>
@@ -187,31 +216,27 @@
                                             </div>
                                         </div>
                                         <div class="rh-line mt30 mb25"></div>
-
                                         <div>
-
                                             <div class="mobilesblockdisplay font90 lineheight20 woo_desc_part">
                                                 <div class="woocommerce-product-details__short-description">
-                                                   {!! $itemDetail->content !!}
+                                                    {!! $itemDetail->content !!}
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="top_share_small top_share notextshare">
-
                                         </div>
-
                                         <div class="footer_product">
                                             <a target="_blank" rel="noopener noreferrer" class="s_link" href="#"><img
                                                     src="https://www.flaticon.com/svg/static/icons/svg/1341/1341916.svg"
                                                     class="s_img"><span class="s_text">ShopMC Đảm Bảo</span><span
-                                                    class="s_text_2">3 Ngày Trả Hàng / Hoàn Tiền</span></a>
+                                                    class="s_text_2">3 Ngày Trả Hàng / Hoàn Tiền</span>
+                                            </a>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-
                             <div class="other-woo-area clearfix">
                                 <div class="rh-container">
                                 </div>
@@ -323,7 +348,6 @@
                             </div>
                             <!--/div-->
                             <!--/div-->
-
                             <div class="content-woo-area">
                                 <div class="rh-tabletext-block rh-tabletext-wooblock" id="section-description">
                                     <div class="rh-tabletext-block-heading">
@@ -432,19 +456,14 @@
                                                 });
                                             });
                                         </script>
-
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
                                 <div class="rh-container">
                                     <div class="clearfix"></div>
                                     <h3>Top sản phẩm bán chạy</h3>
                                     <div class="woocommerce">
-
-
                                         <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
                                              data-filterargs="{&quot;post__in&quot;:[&quot;8489&quot;,&quot;8420&quot;,&quot;8425&quot;,&quot;8434&quot;,&quot;8428&quot;,&quot;9576&quot;],&quot;orderby&quot;:&quot;post__in&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;posts_per_page&quot;:6,&quot;tax_query&quot;:[{&quot;relation&quot;:&quot;AND&quot;,&quot;0&quot;:{&quot;taxonomy&quot;:&quot;product_visibility&quot;,&quot;field&quot;:&quot;name&quot;,&quot;terms&quot;:&quot;exclude-from-catalog&quot;,&quot;operator&quot;:&quot;NOT IN&quot;}}],&quot;no_found_rows&quot;:1}"
                                              data-template="woogridpart" id="rh_woogrid_1295472877"
@@ -453,54 +472,54 @@
                                             @if(@$related->item)
                                                 @foreach($related->item as $products)
                                                     @if($products->id != $itemDetail->id)
-                                            <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                                                <span class="re-ribbon-badge badge_20"><span>còn hàng!</span></span>
-                                                <figure class="mb5 mt25 position-relative notresized">
-                                                    <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
-                                                       href="{{route('item.detail',$products->slug)}}">
-                                                        <img class=" lazyloaded"
-                                                             data-src="{{$products->image}}"
-                                                             width="300" alt="Kiếm Biến hình Siêu chất chính hãng"
-                                                             src="{{$products->image}}">
-                                                    </a>
-                                                    <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
-                                                </figure>
+                                                        <div
+                                                            class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
+                                                            <span
+                                                                class="re-ribbon-badge badge_20"><span>còn hàng!</span></span>
+                                                            <figure class="mb5 mt25 position-relative notresized">
+                                                                <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
+                                                                   href="{{route('item.detail',$products->slug)}}">
+                                                                    <img class=" lazyloaded"
+                                                                         data-src="{{$products->image}}"
+                                                                         width="300"
+                                                                         alt="Kiếm Biến hình Siêu chất chính hãng"
+                                                                         src="{{$products->image}}">
+                                                                </a>
+                                                                <!--div class="gridcountdown"><!?php rehub_woo_countdown('no');?></div-->
+                                                            </figure>
 
-                                                <h3 class=" text-clamp text-clamp-2">
-                                                    <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
-                                                </h3>
+                                                            <h3 class=" text-clamp text-clamp-2">
+                                                                <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
+                                                            </h3>
 
 
-                                                <div class="border-top pt10 pr10 pl10 pb10">
-                                                    <div class="price_for_grid floatleft rehub-btn-font mr10">
+                                                            <div class="border-top pt10 pr10 pl10 pb10">
+                                                                <div
+                                                                    class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                         <span class="price"><span
                                                                 class="woocommerce-Price-amount amount"><bdi>400,000&nbsp;<span
                                                                         class="woocommerce-Price-currencySymbol">₫</span></bdi></span></span>
-                                                    </div>
-                                                    <div class="floatright product-meta">
-                                                        <span class="greycolor postview">Đã bán 182</span></div>
-                                                    <div class="rh-flex-right-align btn_for_grid floatright">
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                                                </div>
+                                                                <div class="floatright product-meta">
+                                                                    <span class="greycolor postview">Đã bán 182</span>
+                                                                </div>
+                                                                <div
+                                                                    class="rh-flex-right-align btn_for_grid floatright">
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     @endif
                                                 @endforeach
                                             @else
                                                 Không có sản phẩm liên quan !
                                             @endif
-
                                         </div>
                                     </div>
-
                                     <div class="clearfix"></div>
-
                                 </div>
                             </div>
                         </div><!-- #product-8426 -->
-
-
                     </div>
 
                 </div>
@@ -508,8 +527,11 @@
             </div>
         </div>
     </div>
+    <meta name="generator"
+          content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
 @endsection
 @section('styles')
+    <link rel="stylesheet" href="{{asset('frontend/css/qib-container/style.css')}}">
     <script src="{{asset('frontend/js/dist/easyzoom.js')}}"></script>
     <link rel="stylesheet" href="{{asset('frontend/css/css/easyzoom.css')}}">
     <script src="{{asset('frontend/js/dist/swiper.min.js')}}"></script>
