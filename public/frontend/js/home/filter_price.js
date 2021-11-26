@@ -1,4 +1,4 @@
-/* slider_range */
+
 // Requires jQuery
 
 // Initialize slider:
@@ -27,12 +27,13 @@ $(document).ready(function() {
     rangeSlider.noUiSlider.on('update', function(values, handle) {
         document.getElementById('slider-range-value1').innerHTML = values[0];
         document.getElementById('slider-range-value2').innerHTML = values[1];
-        document.getElementById('min_price').value =moneyFormat.from(
+        document.getElementById('min_price').value = moneyFormat.from(
             values[0]);
         document.getElementById('max_price').value = moneyFormat.from(
             values[1]);
     });
 });
+
 
 
 // https://refreshless.com/nouislider/
@@ -1976,3 +1977,21 @@ $(document).ready(function() {
     /** @export */
     window.wNumb = wNumb;
 }());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
