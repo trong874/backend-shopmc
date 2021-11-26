@@ -363,7 +363,7 @@
                                                 text-align: center;
                                                 border-top: 1px solid #eee;
                                                 padding-top: 10px;
-                                                color: #f7941d;
+                                                color: black;
                                                 font-size: 15px;
                                             }
 
@@ -395,7 +395,7 @@
                                             .span_item {
                                                 width: 12px;
                                                 margin-left: 5px;
-                                                fill: #f7941d;
+                                                fill: black;
                                             }
                                         </style>
                                         <div class="clearfix"></div>
@@ -464,7 +464,6 @@
                             <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
                                 <div class="rh-container">
                                     <div class="clearfix"></div>
-                                    <h3>Top sản phẩm bán chạy</h3>
                                     <div class="woocommerce">
                                     <h3>Sản phẩn liên quan</h3>
                                     <div class="woocommerce" style="margin-top: 10px">
