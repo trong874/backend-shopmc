@@ -138,8 +138,10 @@
                                             <div class="compare-button-holder">
 
                                                 <p class="price">
-                                                    <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price_old)}}<span
-                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
+                                                    <del><span class="woocommerce-Price-amount amount">
+                                                            <bdi>{{number_format($itemDetail->price_old)}}<span
+                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                        </span>
                                                     </del>
                                                     <ins style="margin-left: 10px"><span
                                                             class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
@@ -441,10 +443,8 @@
                             <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
                                 <div class="rh-container">
                                     <div class="clearfix"></div>
-                                    <h3>Top sản phẩm bán chạy</h3>
-                                    <div class="woocommerce">
-
-
+                                    <h3>Sản phẩn liên quan</h3>
+                                    <div class="woocommerce" style="margin-top: 10px">
                                         <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
                                              data-filterargs="{&quot;post__in&quot;:[&quot;8489&quot;,&quot;8420&quot;,&quot;8425&quot;,&quot;8434&quot;,&quot;8428&quot;,&quot;9576&quot;],&quot;orderby&quot;:&quot;post__in&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;posts_per_page&quot;:6,&quot;tax_query&quot;:[{&quot;relation&quot;:&quot;AND&quot;,&quot;0&quot;:{&quot;taxonomy&quot;:&quot;product_visibility&quot;,&quot;field&quot;:&quot;name&quot;,&quot;terms&quot;:&quot;exclude-from-catalog&quot;,&quot;operator&quot;:&quot;NOT IN&quot;}}],&quot;no_found_rows&quot;:1}"
                                              data-template="woogridpart" id="rh_woogrid_1295472877"
@@ -475,8 +475,10 @@
                                                     <div class="price_for_grid floatleft rehub-btn-font mr10">
 
                                                         <span class="price"><span
-                                                                class="woocommerce-Price-amount amount"><bdi>400,000&nbsp;<span
-                                                                        class="woocommerce-Price-currencySymbol">₫</span></bdi></span></span>
+                                                                class="woocommerce-Price-amount amount">
+                                                                 <bdi>{{number_format($itemDetail->price_old)}}<span
+                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                            </span></span>
                                                     </div>
                                                     <div class="floatright product-meta">
                                                         <span class="greycolor postview">Đã bán 182</span></div>
