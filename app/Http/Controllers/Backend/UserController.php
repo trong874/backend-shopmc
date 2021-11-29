@@ -115,7 +115,8 @@ class UserController extends Controller
             'status'=>$request->status
         ];
         $user->update($data_user);
-        Session::put('message','Cập nhật thông tin thành công !!');
+        Session::flash('message','Cập nhật thông tin thành công !!');
+        Session::flash('alert-class', 'alert-danger');
         return back();
     }
 

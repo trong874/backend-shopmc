@@ -57,7 +57,9 @@
                                             <!-- Swiper and EasyZoom plugins end -->
                                         </div>
                                         <script>
+                                            //changeImage
                                             // product Gallery and Zoom
+
                                             // activation carousel plugin
                                             var galleryThumbs = new Swiper('.gallery-thumbs', {
                                                 spaceBetween: 5,
@@ -94,6 +96,7 @@
 
                                             // activation zoom plugin
                                             var $easyzoom = $('.easyzoom').easyZoom();
+
                                         </script>
                                     </div>
                                     <div class="wpsm-two-third tabletblockdisplay wpsm-column-last mb30">
@@ -134,6 +137,14 @@
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>
+                                                <?php
+                                                $user = Auth::user();
+                                                if (empty($user)) {
+                                                    $login = 'act-rehub-login-popup';
+                                                } else {
+                                                    $login = '';
+                                                }
+                                                ?>
                                                 <div class="woo-button-area mb30">
                                                     <form class="cart"
                                                           action="https://shopmc.com.vn/san-pham/kiem-diamond-minecraft-chinh-hang/"
@@ -215,7 +226,9 @@
                                             </div>
                                         </div>
                                         <div class="rh-line mt30 mb25"></div>
+
                                         <div>
+
                                             <div class="mobilesblockdisplay font90 lineheight20 woo_desc_part">
                                                 <div class="woocommerce-product-details__short-description">
                                                     {!! $itemDetail->content !!}
@@ -274,9 +287,14 @@
                                                         <img src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"></a>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="top_share_small top_share notextshare mt-8">
+                                        </div>
 
+                                        <div class="footer_product">
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="other-woo-area clearfix">
@@ -284,6 +302,9 @@
                                 </div>
                             </div>
                             <div class="codinh">
+                                <!--div class="float-panel-woo-price rh-flex-center-align font120 rh-flex-right-align">
+                                    <!?php woocommerce_template_single_price();?>
+                                </div-->
                                 <div class="callnow">
                                     <a class="acallnow" href="tel://0981058326">
                                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -302,6 +323,8 @@
 		c0.673,0.093,2.347,1.33,2.953,1.646c1.64,0.843,4.286-5.689,3.059-6.457c-0.963-0.597-1.827-1.405-2.87-1.837
 		c-0.177-0.074-0.374-0.075-0.561-0.113C6.752-0.807,2.384,2.886,1.938,8.445z"></path>
 </g>
+                                            <g></g>
+                                            <g></g>
                                             <g></g>
                                             <g></g>
                                             <g></g>
@@ -390,6 +413,7 @@
                             </div>
                             <!--/div-->
                             <!--/div-->
+                            {{--Description--}}
                             <div class="content-woo-area">
                                 <div class="rh-tabletext-block rh-tabletext-wooblock" id="section-description">
                                     <div class="rh-tabletext-block-heading">
@@ -498,6 +522,7 @@
                                                 });
                                             });
                                         </script>
+
                                     </div>
                                 </div>
                             </div>
