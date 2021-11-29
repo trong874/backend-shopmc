@@ -31,8 +31,7 @@
                                 </div>
                                 <div class="border-grey-bottom clearfix mb15"></div>
                                 <div class="product_content" style="margin-bottom: 25px">
-                                    <div
-                                        class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
+                                    <div class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
                                         <div class="product__carousel">
                                             <!-- Swiper and EasyZoom plugins start -->
                                             <div class="swiper-container gallery-top">

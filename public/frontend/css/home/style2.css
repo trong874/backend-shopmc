@@ -505,13 +505,6 @@ body, body.dark_body {
  /*
 all image
 */
- h1 {
-     margin-bottom: 0;
-     line-height: 1;
- }
- h2 {
-     color: grey;
- }
 
  .product__carousel {
      display: block;

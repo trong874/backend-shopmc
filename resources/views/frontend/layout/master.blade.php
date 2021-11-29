@@ -547,7 +547,6 @@
                 $("body").removeClass("sf-input-focused");
             });
         }
-
     });
 </script>
 </body>
