@@ -310,12 +310,11 @@
             $(document).ready(function () {
                 Swal.fire({
                     icon: "success",
-                    title: "{{Session::get('message')}}",
+                    title: "{{Session::pull('message')}}",
                     showConfirmButton: false,
                     timer: 1500
                 });
             })
         </script>
-        {{Session::forget('message')}}
     @endif
 @endsection

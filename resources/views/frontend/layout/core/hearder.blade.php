@@ -22,7 +22,7 @@
                             <div class="userblockintop"><div class="user-dropdown-intop">
                                     <span class="user-ava-intop">
                                         <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="28" height="28" alt="Avatar" class="avatar avatar-28 wp-user-avatar wp-user-avatar-28 photo avatar-default"></span>
-                                    <ul class="user-dropdown-intop-menu">
+                                    <ul class="user-dropdown-intop-menu" style="padding-left: 0">
                                         <li class="user-name-and-badges-intop">
                                             <span class="user-image-in-name">
                                                 <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="35" height="35" alt="Avatar" class="avatar avatar-35 wp-user-avatar wp-user-avatar-35 photo avatar-default"></span>{{Auth::user()->username}}</li>
