@@ -48,7 +48,7 @@
                                             <div class="swiper-container gallery-thumbs">
                                                 <div class="swiper-wrapper">
                                                      @foreach(explode("|",$itemDetail->image_extension) as $item)
-                                                        <div class="swiper-slide">
+                                                        <div class="swiper-slide" style="height: 146px">
                                                             <img src="{{$item}}?raw=true" alt="">
                                                         </div>
                                                     @endforeach
