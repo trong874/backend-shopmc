@@ -22,7 +22,7 @@
                             <div class="userblockintop"><div class="user-dropdown-intop">
                                     <span class="user-ava-intop">
                                         <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="28" height="28" alt="Avatar" class="avatar avatar-28 wp-user-avatar wp-user-avatar-28 photo avatar-default"></span>
-                                    <ul class="user-dropdown-intop-menu">
+                                    <ul class="user-dropdown-intop-menu" style="padding-left: 0">
                                         <li class="user-name-and-badges-intop">
                                             <span class="user-image-in-name">
                                                 <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="35" height="35" alt="Avatar" class="avatar avatar-35 wp-user-avatar wp-user-avatar-35 photo avatar-default"></span>{{Auth::user()->username}}</li>
@@ -229,7 +229,7 @@
                 <div class="responsive_nav_wrap rh_mobile_menu">
                     <div id="dl-menu" class="dl-menuwrapper rh-flex-center-align">
                         <button id="dl-trigger" class="dl-trigger" aria-label="Menu">
-                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 43 32" xmlns="http://www.w3.org/2000/svg">
                                 <g>
                                     <line stroke-linecap="round" id="rhlinemenu_1" y2="7" x2="29" y1="7" x1="3"/>
                                     <line stroke-linecap="round" id="rhlinemenu_2" y2="16" x2="18" y1="16" x1="3"/>

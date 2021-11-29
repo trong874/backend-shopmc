@@ -565,3 +565,10 @@ all image
      transform: translate(-50%,-50%);
      max-width: 100%;
  }
+
+  .onsale {
+     right: 5px;
+     background: #ff2238;
+     color: #fff;
+      margin-left: 6px
+ }

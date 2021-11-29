@@ -7,7 +7,7 @@
                         <h4 style="margin-left: 10px">Flash Sale</h4>
                     </div>
                 </article>
-                <div class="woocommerce">
+                <div class="woocommerce" style="margin-left: 15px;">
                     <div class="rh-flex-eq-height products  col_wrap_six grid_woo"
                          data-filterargs='{"post__in":["8426","8431","8434","8554","9736","23053"],"orderby":"post__in","post_type":"product","posts_per_page":12,"tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}'
                          data-template="woogridpart" id="rh_woogrid_779630174"
@@ -28,11 +28,8 @@
                                 <h3 class=" text-clamp text-clamp-2">
                                     <a href="{{route('item.detail',$flashSale->slug)}}">{{$flashSale->title}}</a>
                                 </h3>
-
-
                                 <div class="border-top pt10 pr10 pl10 pb10">
                                     <div class="price_for_grid floatleft rehub-btn-font mr10">
-
                                                             <span class="price"><del>
                                                                     <span class="woocommerce-Price-amount amount">
                                                                         <bdi>
@@ -69,8 +66,6 @@
                                 <div class="rh-flex-right-align btn_for_grid floatright">
                                 </div>
                             </div>
-
-
                     </div>
                         @endforeach
                 </div>

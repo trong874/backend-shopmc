@@ -583,6 +583,10 @@ blockquote:not(.wp-block-quote) p {
 .woocommerce .single_add_to_cart_button, .woocommerce div.product form.cart .button {
     background: #f7941d !important;
     border-radius: 0 !important;
+
+}
+.woocommerce .single_add_to_cart_button, .woocommerce div.product form.cart .button{
+    width: 140px;
 }
 
 .woo_cat_sec_description {
