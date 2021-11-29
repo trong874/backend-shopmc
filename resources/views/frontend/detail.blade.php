@@ -28,8 +28,7 @@
                                 </div>
                                 <div class="border-grey-bottom clearfix mb15"></div>
                                 <div class="product_content">
-                                    <div
-                                        class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
+                                    <div class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
                                         <div class="product__carousel">
                                             <!-- Swiper and EasyZoom plugins start -->
                                             <div class="swiper-container gallery-top">
@@ -48,7 +47,7 @@
                                             </div>
                                             <div class="swiper-container gallery-thumbs">
                                                 <div class="swiper-wrapper">
-                                                    < @foreach(explode("|",$itemDetail->image_extension) as $item)
+                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide">
                                                             <img src="{{$item}}?raw=true" alt="">
                                                         </div>
@@ -144,8 +143,9 @@
                                                             <button type="button" class="minus qib-button">-</button>
                                                             <div class="quantity buttons_added">
                                                                 <label class="screen-reader-text"
-                                                                       for="quantity_61a046e02517d">Kiếm Diamond
-                                                                    Minecraft Chính Hãng số lượng</label>
+                                                                       for="quantity_61a046e02517d">
+                                                                    Kiếm Diamond Minecraft Chính Hãng số lượng
+                                                                </label>
                                                                 <input
                                                                     type="number" id="quantity"
                                                                     class="input-text qty text" step="1" min="1" max=""

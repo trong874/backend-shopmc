@@ -579,3 +579,11 @@ all image
      color: #fff;
       margin-left: 6px
  }
+ @media (max-width: 480px) {
+     .product_content .swiper-container {
+         height: 300px !important;
+     }
+     .product_content .swiper-container {
+         width: 400px !important;
+     }
+ }
