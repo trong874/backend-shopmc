@@ -89,6 +89,9 @@ class GroupController extends Controller
             ]);
         }
         $item = Item::findOrFail($item_id);
+
+        $item->groups()->attach($group_id);
+
         $group = Group::findOrFail($group_id);
         $html = view('backend.groups.table_item_in_group',compact('group'))->render();
         return response()->json([
