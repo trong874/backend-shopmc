@@ -41,14 +41,17 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
-        Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email|max:255|unique:users',
             'username' => 'required|min:3|unique:users',
             'phone' => 'regex:/^0\d{9}$/|numeric',
             'birtday' => 'date',
             'password' => 'required|string|confirmed|min:3'
         ]);
-
+        if ($validator->fails()) {
+            Session::put('message_error',$validator->errors()->toArray());
+            return back();
+        }
         $data_user = [
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,

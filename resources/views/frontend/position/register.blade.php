@@ -29,8 +29,18 @@
                 <button class="wpsm-button rehub_main_btn" type="submit">Đăng Ký</button>
             </div>
         </form>
-        <div class="rehub-errors"></div>
+
         <div class="rehub-login-popup-footer">Already have an account? <span
                 class="act-rehub-login-popup color_link" data-type="login">Login</span></div>
     </div>
+    @if(Session::has('message_error'))
+        <script>
+        @foreach(Session::pull('message_error') as $error)
+            @foreach($error as $value)
+                alertify.success("{{$value}}")
+            @endforeach
+        @endforeach
+        </script>
+    @endif
 </div>
+
