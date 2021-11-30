@@ -10,9 +10,8 @@ function seeMore(group_id,idElement, page,id_button_see_more) {
         success: function (res) {
             if (res){
                 $(idElement).append(res)
-                page++;
             }else {
-                $('#'+id_button_see_more).remove();
+                $(id_button_see_more).remove();
             }
         }
     })
