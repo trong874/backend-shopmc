@@ -4,8 +4,7 @@
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
-                <div
-                    class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
+                <div class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
                     id="content">
                     <div class="post">
                         <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span

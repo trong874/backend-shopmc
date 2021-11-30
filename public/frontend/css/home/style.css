@@ -782,9 +782,9 @@ nav.woocommerce-breadcrumb {
 .woocommerce article h1 {
     margin: 0;
 }
-
-article p, .post p {
-    margin: 0 0 10px 0;
+.rh-tabletext-block .rh-tabletext-wooblock
+.article p, .post p {
+    margin: 0 0 10px 0px;
 }
 
 .mb30 {

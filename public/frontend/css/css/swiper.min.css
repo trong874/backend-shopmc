@@ -44,15 +44,11 @@
     transition-property: transform;
     box-sizing: content-box;
     margin-left: 6px;
-
 }
 
 .swiper-container-android .swiper-slide, .swiper-wrapper {
     transform: translate3d(0px, 0, 0);
 
-}
-.abc{
-    margin-left: 5px;
 }
 
 .swiper-container-multirow > .swiper-wrapper {
@@ -76,6 +72,7 @@
     height: 100%;
     position: relative;
     transition-property: transform
+
 }
 
 .swiper-slide-invisible-blank {
