@@ -4,7 +4,7 @@
         <td>{{$item->title}}</td>
         <td>{{$item->status}}</td>
         <td>
-            <button class="btn btn-icon btn-light btn-hover-primary btn-sm rachehe" data-toggle="modal" data-target="#item-group-{{$item->id}}">
+            <button class="btn btn-icon btn-light btn-hover-primary btn-sm rachehe" onclick="if (confirm('Xác nhận xoá item?')){deleteItemInGroup({{$item->id}},{{$group->id}})}">
 				<span class="svg-icon svg-icon-md svg-icon-primary">
 						<!--begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg-->
 						<svg xmlns="http://www.w3.org/2000/svg"
@@ -30,29 +30,11 @@
                     <!--end::Svg Icon-->
                 </span>
             </button>
-            <div class="modal hide fade" id="item-group-{{$item->id}}" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Xác nhận tháo tác</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">
-                                <i aria-hidden="true" class="ki ki-close"></i>
-                            </button>
-                        </div>
-                        <div class="modal-body">Xác nhận xoá item {{$item->id}}</div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Huỷ</button>
-                            <button type="button" class="btn btn-danger font-weight-bold" onclick="deleteItemInGroup({{$item->id}},{{$group->id}})">Xoá</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </td>
     </tr>
     <script>
         function deleteItemInGroup(item_id,group_id) {
             let tbody_id = '#table_item_in_group_' + group_id;
-            let modal_id = '#item-group-' + item_id;
             $.ajax({
                 url:"{{route('group.delete-item')}}",
                 headers: {
@@ -64,11 +46,20 @@
                     group_id:group_id
                 },
                 success:function (res) {
-                    $(tbody_id).html(res);
-                    $('.modal-backdrop').remove();
+                    $(tbody_id).html(res.html);
+                    $(document).ready(function () {
+                        Swal.fire({
+                            icon: "success",
+                            title: res.message,
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                    })
                 }
             })
         }
     </script>
 @endforeach
-
+@section('scripts')
+    <script src="{{asset('js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+@endsection
