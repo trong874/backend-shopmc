@@ -131,7 +131,6 @@ class   PagesController extends Controller
             'order' => $order,
             'order_detail' => $order_detail
         ]);
-
     }
 
     public function seeMoreProduct(Request $request)
@@ -143,7 +142,7 @@ class   PagesController extends Controller
         $data=$data->whereHas('groups', function ($query) use ($group_id){
             $query->where('group_id',$group_id);
         });
-        $data = $data->where('status',1)->paginate(5);
+        $data = $data->where('status',1)->paginate(6);
         $html = view('frontend/widget/components/load_item',compact('data'))->render();
         return response()->json($html);
     }

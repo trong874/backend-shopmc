@@ -72,9 +72,9 @@
                         @endforeach
                     </div>
                     <script>
-                        var page_balo_bag =2;
+                        var page_balo_bag =3;
                     </script>
-                    <div class="re_ajax_pagination mt-3"  onclick="seeMore({{$data_group->id}},'#balo_bag',page_balo_bag++)">
+                    <div class="re_ajax_pagnation mt-3"  onclick="seeMore({{$data_group->id}},'#balo_bag',page_balo_bag++)">
                         <span data-offset="12" data-containerid="rh_woogrid_1813845785" class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
                     </div>
                 </div>
