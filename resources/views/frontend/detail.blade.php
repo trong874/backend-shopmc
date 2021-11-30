@@ -4,8 +4,7 @@
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
-                <div
-                    class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
+                <div class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
                     id="content">
                     <div class="post">
                         <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span
@@ -27,11 +26,11 @@
                                     </div>
                                 </div>
                                 <div class="border-grey-bottom clearfix mb15"></div>
-                                <div class="product_content">
+                                <div class="swiper-container">
                                     <div class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
                                         <div class="product__carousel" >
                                             <!-- Swiper and EasyZoom plugins start -->
-                                            <div class="swiper-container gallery-top" >
+                                            <div class="swiper-container gallery-top">
                                                 <div class="swiper-wrapper">
                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide easyzoom easyzoom--overlay">
@@ -604,6 +603,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <meta name="generator"
               content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
         @endsection
