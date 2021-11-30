@@ -204,6 +204,7 @@ img {
     vertical-align: top;
     border: 0;
 }
+
 #rhLoader {
     position: fixed;
     display: table;
@@ -3551,7 +3552,7 @@ h2.ext_link {
 }
 
 .post ul li {
-    list-style:  none;
+    list-style: none;
 }
 
 .post li {
@@ -16544,7 +16545,7 @@ pre.wpsm-code.wpsm_code_2 {
     margin-top: 0
 }
 
-.sidebar .title{
+.sidebar .title {
     position: relative;
     border-bottom: 1px solid #ddd;
     padding-bottom: 15px;
@@ -16566,6 +16567,7 @@ pre.wpsm-code.wpsm_code_2 {
     position: absolute;
     bottom: -1px;
 }
+
 .sidebar li {
     margin-top: 20px;
 }

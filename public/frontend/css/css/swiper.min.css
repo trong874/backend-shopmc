@@ -42,11 +42,16 @@
     z-index: 1;
     display: flex;
     transition-property: transform;
-    box-sizing: content-box
+    box-sizing: content-box;
+
 }
 
 .swiper-container-android .swiper-slide, .swiper-wrapper {
-    transform: translate3d(0px, 0, 0)
+    transform: translate3d(0px, 0, 0);
+
+}
+.abc{
+    margin-left: 5px;
 }
 
 .swiper-container-multirow > .swiper-wrapper {
@@ -60,7 +65,7 @@
 
 .swiper-container-free-mode > .swiper-wrapper {
     transition-timing-function: ease-out;
-    margin: 0 auto
+    margin: 0 0 0 6px;
 }
 
 .swiper-slide {

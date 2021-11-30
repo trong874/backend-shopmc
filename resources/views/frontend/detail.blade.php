@@ -29,9 +29,9 @@
                                 <div class="border-grey-bottom clearfix mb15"></div>
                                 <div class="product_content">
                                     <div class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
-                                        <div class="product__carousel">
+                                        <div class="product__carousel" >
                                             <!-- Swiper and EasyZoom plugins start -->
-                                            <div class="swiper-container gallery-top">
+                                            <div class="swiper-container gallery-top" >
                                                 <div class="swiper-wrapper">
                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide easyzoom easyzoom--overlay">
@@ -46,9 +46,9 @@
                                                 <div class="swiper-button-prev swiper-button-white"></div>
                                             </div>
                                             <div class="swiper-container gallery-thumbs">
-                                                <div class="swiper-wrapper">
+                                                <div class="swiper-wrapper" >
                                                      @foreach(explode("|",$itemDetail->image_extension) as $item)
-                                                        <div class="swiper-slide" style="height: 146px">
+                                                        <div class="swiper-slide" >
                                                             <img src="{{$item}}?raw=true" alt="">
                                                         </div>
                                                     @endforeach
@@ -543,8 +543,7 @@
                                                         @if($products->id != $itemDetail->id)
                                                             <div
                                                                 class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-                                                            <span
-                                                                class="re-ribbon-badge badge_20"><span>còn hàng!</span></span>
+{{--                                                            <span class="re-ribbon-badge badge_20"><span>còn hàng!</span></span>--}}
                                                                 <figure class="mb5 mt25 position-relative notresized">
                                                                     <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
                                                                        href="{{route('item.detail',$products->slug)}}">
