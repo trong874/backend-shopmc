@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Group;
+use App\Models\Group_Item;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -78,11 +79,25 @@ class GroupController extends Controller
 
     public function addItemIntoGroup(Request $request)
     {
-        $item = Item::findOrFail($request->item_id);
-        $item->groups()->attach($request->group_id);
-        $group = Group::findOrFail($request->group_id);
+        $item_id = $request->item_id;
+        $group_id = $request->group_id;
+
+        $check = Group_Item::whereItem_id($item_id)->whereGroup_id($group_id)->first();
+        if ($check){
+            return response()->json([
+                'error_message'=>'Item đã tồn tại trong nhóm này.'
+            ]);
+        }
+        $item = Item::findOrFail($item_id);
+
+        $item->groups()->attach($group_id);
+
+        $group = Group::findOrFail($group_id);
         $html = view('backend.groups.table_item_in_group',compact('group'))->render();
-        return response()->json($html);
+        return response()->json([
+            'html'=>$html,
+            'message'=>'Đã thêm item '.$item->title.' vào nhóm',
+        ]);
     }
 
     public function deleteItemInGroup(Request $request)
@@ -91,6 +106,8 @@ class GroupController extends Controller
         $item->groups()->detach($request->group_id);
         $group = Group::findOrFail($request->group_id);
         $html = view('backend.groups.table_item_in_group',compact('group'))->render();
-        return response()->json($html);
+        return response()->json([
+            'html'=>$html,
+            'message'=>'Đã xoá item số '.$item->id.' khỏi nhóm']);
     }
 }

@@ -13,11 +13,13 @@ View::composer('frontend.widget.__clothes', function ($view) {
     $group_clotheses = Group::with('item')
         ->where('module','products-group')
         ->where('slug', 'quan-ao')
-        ->first([
-        'title', 'description', 'image', 'url', 'id', 'slug'
-    ]);
-
-    return $view->with('data_group', $group_clotheses->item);
+        ->get([
+            'title', 'description', 'image', 'url', 'id', 'slug'
+        ])->map(function($group) {
+            $group->setRelation('item', $group->item->take(12));
+            return $group;
+        });
+    return $view->with('data_group', $group_clotheses[0]);
 });
 
 
@@ -26,10 +28,13 @@ View::composer('frontend.widget.__flashSale', function ($view) {
     $group_flashSales = Group::with('item')
         ->where('module','products-group')
         ->where('slug', 'flash-sale')
-        ->first([
-        'title', 'description', 'image', 'url', 'id','slug'
-    ]);
-    return $view->with('flashSales', $group_flashSales);
+        ->get([
+            'title', 'description', 'image', 'url', 'id', 'slug'
+        ])->map(function($group) {
+            $group->setRelation('item', $group->item->take(12));
+            return $group;
+        });
+    return $view->with('flashSales', $group_flashSales[0]);
 });
 
 
@@ -42,7 +47,7 @@ View::composer('frontend.widget.__minecraft', function ($view) {
         ->get([
         'title', 'description', 'image', 'url', 'id', 'slug'
     ])->map(function($group) {
-            $group->setRelation('item', $group->item->take(6));
+            $group->setRelation('item', $group->item->take(12));
             return $group;
         });
     return $view->with('data_group', $group_toyMinecrafts[0]);
@@ -58,7 +63,7 @@ View::composer('frontend.widget.__backpacks_handbangs', function ($view) {
         ->get([
             'title', 'description', 'image', 'url', 'id', 'slug'
         ])->map(function($group) {
-            $group->setRelation('item', $group->item->take(2));
+            $group->setRelation('item', $group->item->take(12));
             return $group;
         });
     return $view->with('data_group', $group_balobag[0] );
@@ -70,10 +75,13 @@ View::composer('frontend.widget.__logoMinecraft', function ($view) {
     $group_legos= Group::with('item')
         ->where('module','products-group')
         ->where('slug', 'lego-minecraft')
-        ->first([
-        'title', 'description', 'image', 'url','id','slug'
-    ]);
-    return $view->with('data_group', $group_legos->item);
+        ->get([
+            'title', 'description', 'image', 'url', 'id', 'slug'
+        ])->map(function($group) {
+            $group->setRelation('item', $group->item->take(12));
+            return $group;
+        });
+    return $view->with('data_group', $group_legos[0]);
 });
 
 

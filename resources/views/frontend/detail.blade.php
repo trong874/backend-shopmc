@@ -26,11 +26,11 @@
                                     </div>
                                 </div>
                                 <div class="border-grey-bottom clearfix mb15"></div>
-                                <div class="swiper-container">
+                                <div class="product_content">
                                     <div class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
                                         <div class="product__carousel" >
                                             <!-- Swiper and EasyZoom plugins start -->
-                                            <div class="swiper-container gallery-top">
+                                            <div class="swiper-container gallery-top" >
                                                 <div class="swiper-wrapper">
                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide easyzoom easyzoom--overlay">
@@ -252,9 +252,9 @@
                                                     <img
                                                         src="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png.webp">
                                                     48 giờ đổi trả hàng miễn phí</strong><br>
-                                                <p>Hotline đặt hàng 0981058326 (Zalo) - 0904568069<br>
+                                                <p>Hotline đặt hàng 09xxxxxxxx (Zalo) - 09xxxxxxxx<br>
                                                     (Miễn phí, 8-21h cả T7, CN)</p>
-                                                <a target=" _blank" rel="" href="https://m.me/shopmcvnnet">
+                                                <a target=" _blank" rel="" href="#">
                                                     <div class="mxh">
                                                     <noscript
                                                         data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
@@ -277,7 +277,7 @@
                                                     <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png.webp">
                                                 </div>
                                                 <div class="mxh">
-                                                    <a href="https://www.youtube.com/channel/UCnIm8teXECxqCxTW4OSVZ4A">
+                                                    <a href="#">
                                                         <noscript
                                                             data-img="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
                                                             data-webp="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"
@@ -603,7 +603,11 @@
                 </div>
             </div>
         </div>
-    </div>
+        <style>
+            .rh_woo_star .active, .woocommerce .wc-layered-nav-rating .star-rating .rhwoostar.active {
+                color: #ff8a00 !important;
+            }
+        </style>
         <meta name="generator"
               content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
         @endsection

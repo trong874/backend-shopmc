@@ -1,5 +1,5 @@
 
-function seeMore(group_id,idElement, page) {
+function seeMore(group_id,idElement, page,id_button_see_more) {
     $.ajax({
         url: '/see_more_product',
         data: {
@@ -8,8 +8,11 @@ function seeMore(group_id,idElement, page) {
         },
         method: 'GET',
         success: function (res) {
-            $(idElement).append(res)
-            page++;
+            if (res){
+                $(idElement).append(res)
+            }else {
+                $(id_button_see_more).remove();
+            }
         }
     })
 }
