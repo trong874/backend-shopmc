@@ -44,7 +44,26 @@
                     group_id:group_id
                 },
                 success:function (res) {
-                    $(tbody_id).html(res)
+                    if(res.error_message){
+                        $(document).ready(function () {
+                            Swal.fire({
+                                icon: "error",
+                                title: res.error_message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        })
+                    }else {
+                        $(tbody_id).html(res.html)
+                        $(document).ready(function () {
+                            Swal.fire({
+                                icon: "success",
+                                title: res.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        })
+                    }
                 }
             })
         }
