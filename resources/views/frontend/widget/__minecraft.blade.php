@@ -94,7 +94,7 @@
                     <script>
                         var page_toy =3;
                     </script>
-                    <div class="re_ajax_pagination mt-3" id="see_more_toy_button" onclick="seeMore({{$data_group->id}},'#do_choi_mc',page_toy++,this.id)">
+                    <div class="re_ajax_pagination mt-3" id="see_more_toy_button" onclick="seeMore({{$data_group->id}},'#do_choi_mc',page_toy++,'#'+this.id)">
                             <span data-offset="12"
                                   data-containerid="rh_woogrid_2031402312"
                                   class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
