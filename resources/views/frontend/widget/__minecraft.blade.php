@@ -92,7 +92,7 @@
                         @endif
                     </div>
                     <script>
-                        var page_toy =2;
+                        var page_toy =3;
                     </script>
                     <div class="re_ajax_pagination mt-3" onclick="seeMore({{$data_group->id}},'#do_choi_mc',page_toy++)">
                             <span data-offset="12"
