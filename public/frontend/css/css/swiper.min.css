@@ -43,6 +43,7 @@
     display: flex;
     transition-property: transform;
     box-sizing: content-box;
+    margin-left: 6px;
 
 }
 
@@ -66,6 +67,7 @@
 .swiper-container-free-mode > .swiper-wrapper {
     transition-timing-function: ease-out;
     margin: 0 0 0 6px;
+
 }
 
 .swiper-slide {
