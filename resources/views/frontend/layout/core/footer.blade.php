@@ -90,7 +90,7 @@
                         <p>
                             <strong>ĐỊA CHỈ CỬA HÀNG:</strong>
                         </p>
-                        <p style="margin-top: 10px">số 41, ngõ 160, đường Láng, Đống Đa, Hà Nội</p>
+                        <p style="margin-top: 10px">số 37 Nguyễn Văn Huyên, Quan Hoa, Cầu Giấy</p>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
     <div class="rh-container clearfix">
         <div class="footer_most_bottom">
             <div class="f_text">
-                <span class="f_text_span">2021 WEB PHỤ KIỆN GAME</span>
+                <span class="f_text_span" style="margin-left: 6px">2021 WEB PHỤ KIỆN GAME</span>
             </div>
         </div>
     </div>
