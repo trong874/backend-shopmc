@@ -77,6 +77,7 @@
                     ?>
                     @if(Session::has('message'))
                         <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+                        {{ Session::forget('message')}}
                     @endif
                     <div class="cart_out rh-flex-right-align {{$pop}}" style="position: relative" >
                         <div class="header-actions-logo rh-flex-right-align">
