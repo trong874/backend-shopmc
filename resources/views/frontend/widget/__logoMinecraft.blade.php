@@ -12,7 +12,7 @@
                         data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["114"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'
                         data-template="woogridpart" id="rh_woogrid_1266572959"
                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
-                        @foreach($legos as $lego)
+                        @foreach($data_group as $lego)
                             <div class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                                 <span class="onsale"><span>- 26%</span></span>
                                 <figure class="mb5 mt25 position-relative notresized">

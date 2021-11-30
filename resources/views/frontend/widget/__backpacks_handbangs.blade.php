@@ -8,10 +8,11 @@
                 <div class="woocommerce" style="margin-left: 15px;">
                     <div
                         class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
+                        id="balo_bag"
                         data-filterargs='{"post_type":"product","posts_per_page":12,"orderby":"","order":"DESC","tax_query":[{"taxonomy":"product_cat","terms":["115"],"field":"term_id"},{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}]}'
                         data-template="woogridpart" id="rh_woogrid_1813845785"
                         data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"","soldout":"","attrelpanel":""}'>
-                        @foreach($baloBags as $baloBag)
+                        @foreach($data_group->item as $baloBag)
                             <div
                                 class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
                                 <span class="onsale">Sale!</span>
@@ -69,12 +70,12 @@
                                 </div>
                             </div>
                         @endforeach
-
-                        <div class="re_ajax_pagination mt-3">
-                            <span data-offset="12"
-                                  data-containerid="rh_woogrid_1813845785"
-                                  class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
-                        </div>
+                    </div>
+                    <script>
+                        var page_balo_bag =2;
+                    </script>
+                    <div class="re_ajax_pagination mt-3"  onclick="seeMore({{$data_group->id}},'#balo_bag',page_balo_bag++)">
+                        <span data-offset="12" data-containerid="rh_woogrid_1813845785" class="re_ajax_pagination_btn def_btn">Xem Thêm</span>
                     </div>
                 </div>
                 <div class="clearfix"></div>
