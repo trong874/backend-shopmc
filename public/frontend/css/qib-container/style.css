@@ -155,5 +155,5 @@ form.cart button[type='submit']:focus:not(#qib_id):not(#qib_id) {
     margin-bottom: 8px;
 }
 .rh_woo_star .active, .woocommerce .wc-layered-nav-rating .star-rating .rhwoostar.active {
-    color: #ff8a00;
+    color: #ff8a00 !important;
 }
