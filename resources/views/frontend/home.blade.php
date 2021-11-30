@@ -1,4 +1,7 @@
 @extends('frontend.layout.master')
+@section('scripts')
+    <script src="{{asset('frontend/js/home/ajax_see_more.js')}}"></script>
+@endsection
 @section('content')
     <div class="rh-container full_width">
         <div class="rh-content-wrap clearfix">
@@ -28,7 +31,9 @@
                         </div>
                         @include('frontend.widget.__category')
                         @include('frontend.widget.__flashSale')
+                        <div id="toy_minecraft">
                         @include('frontend.widget.__minecraft')
+                        </div>
                         @include('frontend.widget.__backpacks_handbangs')
                         @include('frontend.widget.__clothes')
                         @include('frontend.widget.__logoMinecraft')
