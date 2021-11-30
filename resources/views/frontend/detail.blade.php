@@ -253,9 +253,9 @@
                                                     <img
                                                         src="https://shopmc.vn/wp-content/uploads/2019/06/shield-icon.png.webp">
                                                     48 giờ đổi trả hàng miễn phí</strong><br>
-                                                <p>Hotline đặt hàng 0981058326 (Zalo) - 0904568069<br>
+                                                <p>Hotline đặt hàng 09xxxxxxxx (Zalo) - 09xxxxxxxx<br>
                                                     (Miễn phí, 8-21h cả T7, CN)</p>
-                                                <a target=" _blank" rel="" href="https://m.me/shopmcvnnet">
+                                                <a target=" _blank" rel="" href="#">
                                                     <div class="mxh">
                                                     <noscript
                                                         data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
@@ -278,7 +278,7 @@
                                                     <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png.webp">
                                                 </div>
                                                 <div class="mxh">
-                                                    <a href="https://www.youtube.com/channel/UCnIm8teXECxqCxTW4OSVZ4A">
+                                                    <a href="#">
                                                         <noscript
                                                             data-img="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
                                                             data-webp="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"
