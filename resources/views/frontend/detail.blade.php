@@ -604,6 +604,11 @@
                 </div>
             </div>
         </div>
+        <style>
+            .rh_woo_star .active, .woocommerce .wc-layered-nav-rating .star-rating .rhwoostar.active {
+                color: #ff8a00 !important;
+            }
+        </style>
         <meta name="generator"
               content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
         @endsection
