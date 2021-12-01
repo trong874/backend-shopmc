@@ -62,8 +62,7 @@
                                                                         <bdi>
                                                                             @if(isset($toyMinecraft->price_old))
                                                                                 <span>{{number_format($toyMinecraft->price_old)}}</span>
-                                                                                <span
-                                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                <span class="woocommerce-Price-currencySymbol">&#8363;</span>
                                                                             @endif
                                                                         </bdi>
                                                                     </span>
