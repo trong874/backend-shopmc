@@ -67,7 +67,9 @@ class   PagesController extends Controller
 //        $flashSales = Item::where('position', 'flashsale')->get([
 //            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
 //        ]);
-        $related = $itemDetail->groups()->with('item')->where('module', 'products-group')->first();
+        $related = $itemDetail->groups()->with('item')
+            ->where('module', 'products-group')
+            ->first();
         return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related]);
     }
 
