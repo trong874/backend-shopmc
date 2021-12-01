@@ -566,12 +566,12 @@
                                                                         <p class="price">
                                                                             <del><span
                                                                                     class="woocommerce-Price-amount amount">
-                                                            <bdi>{{number_format($itemDetail->price_old)}}<span
+                                                            <bdi>{{number_format($products->price_old)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
                                                         </span>
                                                                             </del>
                                                                             <ins style="margin-left: 10px"><span
-                                                                                    class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
+                                                                                    class="woocommerce-Price-amount amount"><bdi>{{number_format($products->price)}}<span
                                                                                             class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                                             </ins>
                                                                         </p>
