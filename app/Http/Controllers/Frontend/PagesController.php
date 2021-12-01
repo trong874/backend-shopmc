@@ -64,11 +64,15 @@ class   PagesController extends Controller
             ->first([
                 'title', 'content', 'description', 'image', 'url', 'price', 'price_old', 'slug', 'id', 'image_extension'
             ]);
-//        $flashSales = Item::where('position', 'flashsale')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-//        ]);
-        $related = $itemDetail->groups()->with('item')->where('module', 'products-group')->first();
-        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related]);
+
+        $related = $itemDetail->groups()->with('item')
+            ->where('module', 'products-group')
+            ->get()
+            ->map(function($group) {
+                $group->setRelation('item', $group->item->take(3));
+                return $group;
+            });
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related[0]]);
     }
 
 
