@@ -69,7 +69,7 @@ class   PagesController extends Controller
             ->where('module', 'products-group')
             ->get()
             ->map(function($group) {
-                $group->setRelation('item', $group->item->take(3));
+                $group->setRelation('item', $group->item->take(7));
                 return $group;
             });
 
