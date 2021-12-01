@@ -126,9 +126,14 @@
                                             <div class="compare-button-holder">
 
                                                 <p class="price">
-                                                    <del><span class="woocommerce-Price-amount amount">
-                                                            <bdi>{{number_format($itemDetail->price_old)}}<span
-                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                    <del>
+                                                        <span class="woocommerce-Price-amount amount">
+                                                            <bdi>
+                                                                @if(isset($itemDetail->price_old))
+                                                                <span>{{number_format($itemDetail->price_old)}}</span>
+                                                                <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                    @endif
+                                                            </bdi>
                                                         </span>
                                                     </del>
                                                     <ins style="margin-left: 10px"><span
@@ -564,10 +569,14 @@
                                                                     <div
                                                                         class="price_for_grid floatleft rehub-btn-font mr10">
                                                                         <p class="price">
-                                                                            <del><span
-                                                                                    class="woocommerce-Price-amount amount">
-                                                            <bdi>{{number_format($products->price_old)}}<span
-                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                                            <del>
+                                                                                <span class="woocommerce-Price-amount amount">
+                                                                  <bdi>
+                                                                      @if(isset($products->price_old))
+                                                                      <span> {{number_format($products->price_old)}}</span>
+                                                                   <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                          @endif
+                                                                  </bdi>
                                                         </span>
                                                                             </del>
                                                                             <ins style="margin-left: 10px"><span
