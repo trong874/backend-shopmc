@@ -72,7 +72,8 @@ class   PagesController extends Controller
                 $group->setRelation('item', $group->item->take(3));
                 return $group;
             });
-        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related[0]]);
+
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related]);
     }
 
 
