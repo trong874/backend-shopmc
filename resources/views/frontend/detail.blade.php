@@ -542,8 +542,8 @@
                                                  data-template="woogridpart" id="rh_woogrid_1295472877"
                                                  data-innerargs="{&quot;columns&quot;:&quot;6_col&quot;,&quot;woolinktype&quot;:&quot;product&quot;,&quot;disable_thumbs&quot;:&quot;&quot;,&quot;gridtype&quot;:&quot;&quot;,&quot;soldout&quot;:&quot;&quot;,&quot;attrelpanel&quot;:&quot;&quot;}">
 
-                                                @if(@$related->item)
-                                                    @foreach($related->item as $products)
+                                                @if(@$related[0]->item)
+                                                    @foreach($related[0]->item as $products)
                                                         @if($products->id != $itemDetail->id)
                                                             <div
                                                                 class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
