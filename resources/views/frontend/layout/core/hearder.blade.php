@@ -244,8 +244,8 @@
                     </div>
                 </div>
                 <div class="search-header-contents">
-                    <form role="search" method="get" class="search-form" action="/">
-                        <input type="text" name="s" placeholder="Tìm kiếm"  autocomplete="off">
+                    <form role="search" method="get" class="search-form" action="{{route('product.search')}}">
+                        <input type="text" name="keyword" placeholder="Tìm kiếm"  autocomplete="off" value="{{@$keyword}}">
                         <input type="hidden" name="post_type" value="product"/>
                         <button type="submit" class="btnsearch"><i class="rhicon rhi-search"></i></button>
                     </form>
