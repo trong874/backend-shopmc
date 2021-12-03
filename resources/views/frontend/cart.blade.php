@@ -211,7 +211,7 @@
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_input').val(res.total_price);
-                                                                        location.reload();
+                                                                        $('#btn_total_price_in_header').html(new Intl.NumberFormat().format(res.total_price));
                                                                     }
                                                                 });
                                                             }
