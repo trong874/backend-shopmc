@@ -5400,15 +5400,15 @@ ul.login-links {
     list-style: none;
 }
 
-.widget.better_menu li:before, .footer-bottom .footer_widget .widget_categories ul li:before, .footer-bottom .footer_widget .widget_archive ul li:before, .footer-bottom .footer_widget .widget_nav_menu ul li:before {
-    position: absolute;
-    content: ".";
-    top: 0;
-    left: 0;
-    color: #999;
-    line-height: 0;
-    font-size: 30px;
-}
+/*.widget.better_menu li:before, .footer-bottom .footer_widget .widget_categories ul li:before, .footer-bottom .footer_widget .widget_archive ul li:before, .footer-bottom .footer_widget .widget_nav_menu ul li:before {*/
+/*    position: absolute;*/
+/*    content: ".";*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    color: #999;*/
+/*    line-height: 0;*/
+/*    font-size: 30px;*/
+/*}*/
 
 .footer-bottom .footer_widget .woocommerce ul li {
     background-image: none;
