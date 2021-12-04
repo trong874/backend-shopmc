@@ -41,15 +41,15 @@
                     <div class="d-flex justify-content-between pt-6">
                         <div class="d-flex flex-column flex-root">
                             <span class="font-weight-bolder mb-2">Họ tên:</span>
-                            <span class="opacity-70">{{@$order->user->fullname}}</span>
+                            <span class="opacity-70">{{@$shipment_details->fullname}}</span>
                         </div>
                         <div class="d-flex flex-column flex-root">
                             <span class="font-weight-bolder mb-2">Số điện thoại:</span>
-                            <span class="opacity-70">{{@$order->user->phone}}</span>
+                            <span class="opacity-70">{{@$shipment_details->phone}}</span>
                         </div>
                         <div class="d-flex flex-column flex-root">
                             <span class="font-weight-bolder mb-2">Địa chỉ giao hàng:</span>
-                            <span class="opacity-70">{{@$order->user->address}}</span>
+                            <span class="opacity-70" id="shipment_details"></span>
                         </div>
                     </div>
                 </div>
@@ -133,6 +133,7 @@
     </div>
     <!--end::Card-->
 @endsection
+
 @section('scripts')
     <script src="{{asset('js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
     @if(Session::has('message'))
@@ -147,4 +148,39 @@
             })
         </script>
     @endif
+    <script>
+        function readTextFile(file, callback) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType("application/json");
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            }
+            rawFile.send(null);
+        }
+
+        //usage:
+        readTextFile("{{asset('frontend/local_selector.json')}}", function (text) {
+            let shipment_details = document.getElementById('shipment_details');
+
+            let data = JSON.parse(text);
+            let province = data.filter(function (n) {
+                return n.i ===  {{$shipment_details->province}};
+            })
+
+            let district = province[0].c.filter(function (n) {
+                return n.i === {{@$shipment_details->district}};
+            })
+
+            let ward = district[0].c.filter(function (n) {
+                return n.i === {{@$shipment_details->ward}};
+            })
+
+            let address = "{{@$shipment_details->address}}";
+            console.log(address)
+            shipment_details.append(address + ', ' + ward[0].n + ', ' + district[0].n + ', '+ province[0].n)
+        });
+    </script>
 @endsection

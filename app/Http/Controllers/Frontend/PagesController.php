@@ -109,7 +109,6 @@ class   PagesController extends Controller
     public function checkout(Request $request)
     {
         $data_cart = $request->all();
-        unset($data_cart['_token']);
         $items = [];
         foreach ($data_cart['cart'] as $key => $item) {
             array_push($items, ['item' => Item::findOrFail($key), 'qty' => $item['qty']]);
@@ -132,8 +131,10 @@ class   PagesController extends Controller
     {
         $order = Order::with('items', 'user')->whereId($id)->first();
         $order_detail = Order_Detail::whereOrder_id($id)->get();
+        $shipment_details = json_decode($order->params);
         return view('frontend.order_detail', [
             'order' => $order,
+            'shipment_details'=>$shipment_details,
             'order_detail' => $order_detail
         ]);
     }
