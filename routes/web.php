@@ -34,7 +34,7 @@ Route::group(['middleware' => 'language'], function () {
 
     Route::post('order-store',[OrderController::class,'store'])->name('order.store');
 
-    Route::post('/checkout',[PagesController::class,'checkout'])->name('checkout');
+    Route::get('/checkout',[PagesController::class,'checkout'])->name('checkout');
     Route::get('/orders',[PagesController::class,'orders'])->name('orders');
     Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
 

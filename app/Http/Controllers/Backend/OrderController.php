@@ -10,6 +10,7 @@ use App\Models\Order_Detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
 {
@@ -28,10 +29,24 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->shipment_details, [
+            'fullname' => 'required|min:5|max:255',
+            'ward' => 'required',
+            'district' => 'required',
+            'province' => 'required',
+            'address' => 'required',
+            'phone' => 'required|numeric',
+        ]);
+        if ($validator->fails()) {
+            Session::put('message_error',$validator->errors()->toArray());
+            return back();
+        }
+        $params = json_encode($request->shipment_details);
        $order = Order::create([
            'author_id'=>Auth::user()->id,
            'status' => 1,
-           'price'=>$request->total_price
+           'price'=>$request->total_price,
+           'params'=>$params,
        ]);
         foreach ($request->items as $key => $item){
             $order->items()->attach($key);
@@ -55,8 +70,10 @@ class OrderController extends Controller
     {
         $order = Order::with('items','user')->whereId($id)->first();
         $order_detail = Order_Detail::whereOrder_id($id)->get();
+        $shipment_details = json_decode($order->params);
         return view('backend.orders.form-data',[
             'order'=>$order,
+            'shipment_details'=>$shipment_details,
             'order_detail'=>$order_detail,
             'page_title'=>'Thông tin đơn hàng.'
         ]);
