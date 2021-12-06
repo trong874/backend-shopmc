@@ -25,6 +25,7 @@ class ItemController extends Controller
             'items' => $items,
             'groups' => $this->getGroupsByModule(),
             'module' => $this->module]);
+
     }
 
     public function create()

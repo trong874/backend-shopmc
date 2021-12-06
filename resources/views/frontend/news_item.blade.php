@@ -80,7 +80,7 @@
                             <img class="anh1" src="https://thegioilego.com.vn/wp-content/uploads/2019/02/shop-icon.png"
                                  style="float: left;">
                             <div class="text3">
-                                <b>Shopmc</b><br>
+                                <b>Shop phụ kiện game</b><br>
                                 Cam kết chính hãng 100%
                             </div>
                         </div>
