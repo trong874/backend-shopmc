@@ -96,6 +96,22 @@ class OrderController extends Controller
         return back();
     }
 
+    public function orderCancel(Request $request)
+    {
+        $auth_id = $request->auth_id;
+        $order_id = $request->order_id;
+        $order = Order::findOrFail($order_id);
+        if ($order->author_id == $auth_id){
+            $order->update([
+                'status'=> 5,
+            ]);
+            Session::put('message','Đơn hàng của bạn đã được huỷ !');
+            return back();
+        }
+        Session::put('message','Lỗi');
+        return back();
+    }
+
     public function filter(Request $request)
     {
         $q = Order::query();

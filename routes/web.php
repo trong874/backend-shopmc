@@ -40,6 +40,10 @@ Route::group(['middleware' => 'language'], function () {
 
     Route::get('/see_more_product',[PagesController::class,'seeMoreProduct']);
 
+    Route::middleware(['auth'])->group(function (){
+        Route::get('order_cancel',[OrderController::class,'orderCancel'])->name('order_cancel');
+    });
+
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
         Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
 

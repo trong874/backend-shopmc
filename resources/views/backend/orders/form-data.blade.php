@@ -179,7 +179,7 @@
             })
 
             let address = "{{@$shipment_details->address}}";
-            console.log(address)
+
             shipment_details.append(address + ', ' + ward[0].n + ', ' + district[0].n + ', '+ province[0].n)
         });
     </script>
