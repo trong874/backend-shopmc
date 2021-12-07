@@ -58,7 +58,7 @@
                                                                                                      class="input-text "
                                                                                                      name="shipment_details[address]"
                                                                                                      id="billing_email"
-                                                                                                     placeholder="Bỏ trống nếu bạn không có địa chỉ email"
+                                                                                                     placeholder="Nhập địa chỉ của bạn"
                                                                                                      value=""></span>
                                                     </p></div>
                                                     <p class="form-row form-row-wide validate-required validate-phone"
@@ -69,7 +69,7 @@
                                                                                                      class="input-text "
                                                                                                      name="shipment_details[phone]"
                                                                                                      id="billing_phone"
-                                                                                                     placeholder=""
+                                                                                                     placeholder="Nhập số điện thoại"
                                                                                                      value=""
                                                                                                      autocomplete="tel"></span>
                                                     </p>
