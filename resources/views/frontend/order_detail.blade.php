@@ -94,6 +94,17 @@
                                         ₫
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        @if($order->status === 1)
+                                            <a class="btn btn-danger right" onclick="return confirm('Xác nhận huỷ đơn hàng?')" href="{{route('order_cancel',['auth_id'=>Auth::user()->id,
+                                                                                                                                                                'order_id'=>$order->id])}}">Huỷ đơn hàng</a>
+                                        @endif
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -126,7 +137,7 @@
 
             let data = JSON.parse(text);
             let province = data.filter(function (n) {
-                return n.i ===  {{$shipment_details->province}};
+                return n.i ===  {{@$shipment_details->province}};
             })
 
             let district = province[0].c.filter(function (n) {
