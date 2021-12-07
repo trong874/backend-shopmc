@@ -100,7 +100,7 @@
                                     <td></td>
                                     <td>
                                         @if($order->status === 1)
-                                            <a class="btn btn-danger right" onclick="return confirm('Xác nhận huỷ đơn hàng?')" href="{{route('order_cancel',['auth_id'=>Auth::user()->id,
+                                            <a class="btn btn-danger right" onclick="return confirm('Xác nhận huỷ đơn hàng ?')" href="{{route('order_cancel',['auth_id'=>Auth::user()->id,
                                                                                                                                                                 'order_id'=>$order->id])}}">Huỷ đơn hàng</a>
                                         @endif
                                     </td>
