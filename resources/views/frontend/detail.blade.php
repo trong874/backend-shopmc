@@ -563,8 +563,6 @@
                                                                 <h3 class=" text-clamp text-clamp-2">
                                                                     <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
                                                                 </h3>
-
-
                                                                 <div class="border-top pt10 pr10 pl10 pb10">
                                                                     <div
                                                                         class="price_for_grid floatleft rehub-btn-font mr10">
