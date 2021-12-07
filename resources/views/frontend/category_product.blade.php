@@ -126,8 +126,6 @@
             </div>
             <!-- /Main Side -->
 
-
-
         </div>
         <style>
             .buttom_home {
