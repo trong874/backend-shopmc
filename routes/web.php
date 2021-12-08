@@ -42,6 +42,7 @@ Route::group(['middleware' => 'language'], function () {
 
     Route::middleware(['auth'])->group(function (){
         Route::get('order_cancel',[OrderController::class,'orderCancel'])->name('order_cancel');
+        Route::post('use-voucher',[OrderController::class,'useVoucher'])->name('use_voucher');
     });
 
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {

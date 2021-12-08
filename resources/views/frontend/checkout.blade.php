@@ -32,7 +32,8 @@
                                                        id="billing_address_1_field" data-priority="50"><label
                                                             for="billing_address_1" class="">Phường xã&nbsp;<abbr
                                                                 class="required" title="bắt buộc">*</abbr></label><span
-                                                            class="woocommerce-input-wrapper"><select name="shipment_details[ward]"></select>
+                                                            class="woocommerce-input-wrapper"><select
+                                                                name="shipment_details[ward]"></select>
 </span>
                                                     </p>
 
@@ -52,7 +53,8 @@
                                                         <select name="shipment_details[province]"></select>
                                                     </p>
                                                     <p class="form-row form-row-wide" id="billing_email_field"
-                                                       data-priority=""><label for="billing_email" class="">Số nhà , đường <abbr
+                                                       data-priority=""><label for="billing_email" class="">Số nhà ,
+                                                            đường <abbr
                                                                 class="required" title="bắt buộc">*</abbr></label><span
                                                             class="woocommerce-input-wrapper"><input type="text"
                                                                                                      class="input-text "
@@ -61,18 +63,18 @@
                                                                                                      placeholder="Nhập địa chỉ của bạn"
                                                                                                      value=""></span>
                                                     </p></div>
-                                                    <p class="form-row form-row-wide validate-required validate-phone"
-                                                       id="billing_phone_field" data-priority="100"><label
-                                                            for="billing_phone" class="">Số điện thoại&nbsp;<abbr
-                                                                class="required" title="bắt buộc">*</abbr></label><span
-                                                            class="woocommerce-input-wrapper"><input type="tel"
-                                                                                                     class="input-text "
-                                                                                                     name="shipment_details[phone]"
-                                                                                                     id="billing_phone"
-                                                                                                     placeholder="Nhập số điện thoại"
-                                                                                                     value=""
-                                                                                                     autocomplete="tel"></span>
-                                                    </p>
+                                                <p class="form-row form-row-wide validate-required validate-phone"
+                                                   id="billing_phone_field" data-priority="100"><label
+                                                        for="billing_phone" class="">Số điện thoại&nbsp;<abbr
+                                                            class="required" title="bắt buộc">*</abbr></label><span
+                                                        class="woocommerce-input-wrapper"><input type="tel"
+                                                                                                 class="input-text "
+                                                                                                 name="shipment_details[phone]"
+                                                                                                 id="billing_phone"
+                                                                                                 placeholder="Nhập số điện thoại"
+                                                                                                 value=""
+                                                                                                 autocomplete="tel"></span>
+                                                </p>
                                             </div>
 
                                             <div class="woocommerce-account-fields">
@@ -140,7 +142,7 @@
                                             @endforeach
                                             <div>
                                                 <input type="hidden" name="total_price"
-                                                       value="{{$data_cart['total_price']}}">
+                                                       value="{{$data_cart['total_price']}}" id="total_price_input">
                                                 <div class="cart-subtotal top_checkout">
                                                     <div class="w80">Tạm tính</div>
                                                     <div><span class="woocommerce-Price-amount amount"><bdi>{{number_format($data_cart['total_price'])}}<span
@@ -148,12 +150,37 @@
                                                     </div>
                                                 </div>
 
+                                                 <div class="woocommerce-shipping-totals shipping top_checkout">
+                                                    <div class="colum_cart w80 d_block">
+                                                        <div class="label-gh"> Nhập mã voucher :</div>
+                                                    </div>
+                                                    <div id="shipping_method" class="woocommerce-shipping-methods">
+                                                        <div style="display: flex">
+                                                            <input type="text" id="voucher_input" style="margin-right: 6px;
+                                                                                      height: 36px;
+                                                                                       width: 126px;">
+                                                            <button type="button" id="voucher_btn_use" style="height: 36px;
+                                                                      width: 56px;
+                                                                      border: 1px">Dùng
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="woocommerce-shipping-totals shipping top_checkout">
                                                     <div class="colum_cart w80 d_block">
-                                                        <div class="label-gh"> Giao hàng :</div>
-
-
+                                                        <div class="label-gh"> Giảm giá :</div>
+                                                    </div>
+                                                    <div id="shipping_method" class="woocommerce-shipping-methods">
+                                                        <div>
+                                                            <label
+                                                                for="shipping_method_0_flat_rate1"><span  id="discount_product">0</span> ₫</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="woocommerce-shipping-totals shipping top_checkout">
+                                                    <div class="colum_cart w80 d_block">
+                                                        <div class="label-gh"> Phí vận chuyển :</div>
                                                     </div>
                                                     <div id="shipping_method" class="woocommerce-shipping-methods">
                                                         <div>
@@ -164,16 +191,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
                                                 <div class="order-total top_checkout">
-                                                    <div class="w80">Tổng</div>
-                                                    <div><strong><span class="woocommerce-Price-amount amount"><bdi>{{number_format($data_cart['total_price'])}}<span
-                                                                        class="woocommerce-Price-currencySymbol">₫</span></bdi></span></strong>
+                                                    <div class="w80">Tổng tiền hàng</div>
+                                                    <div>
+                                                        <label
+                                                            for="shipping_method_0_flat_rate1"><span  id="voucher_price">{{number_format($data_cart['total_price'])}}</span> đ</label>
                                                     </div>
                                                 </div>
-
-
+                                                <div>
+                                                    <span style="color: red" id="alert_error_message">
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -248,10 +276,43 @@
     <script src="{{asset('frontend/js/assets/district.js')}}"></script>
     <script>
         var localpicker = new LocalPicker({
-            province : 'shipment_details[province]',
-            district : 'shipment_details[district]',
-            ward : 'shipment_details[ward]',
+            province: 'shipment_details[province]',
+            district: 'shipment_details[district]',
+            ward: 'shipment_details[ward]',
         });
     </script>
+    <script>
+        $('#voucher_btn_use').on('click',function (){
+           $.ajax({
+               url:"{{route('use_voucher')}}",
+               type:'post',
+               data:{
+                   "_token": "{{ csrf_token() }}",
+                   "voucher_code":$('#voucher_input').val()
+               },
+               success:function (res){
+                   if (res.error){
+                       $('#alert_error_message').html(res.error)
+                   }else {
+                       $('#alert_error_message').html('')
+                       let voucher_discount;
 
+                       if(res.discount_percentage){
+                           voucher_discount = {{$data_cart['total_price']}}*(res.discount_percentage/100)
+                       }
+                       if (res.discount_amount){
+                           voucher_discount = res.discount_amount
+                       }
+                       let total_price = {{$data_cart['total_price']}} - voucher_discount;
+                       if (total_price <= 0){
+                           total_price = 0;
+                       }
+                       $('#discount_product').html('- '+new Intl.NumberFormat().format(voucher_discount));
+                       $('#voucher_price').html(new Intl.NumberFormat().format(total_price));
+                       $('#total_price_input').val(total_price);
+                   }
+               }
+           })
+        });
+    </script>
 @endsection
