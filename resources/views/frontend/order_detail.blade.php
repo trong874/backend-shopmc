@@ -81,6 +81,7 @@
                                 <tr>
                                     <th class="font-weight-bold text-muted text-uppercase">Thanh toán bằng:</th>
                                     <th class="font-weight-bold text-muted text-uppercase">ID đơn hàng</th>
+{{--                                    <th class="font-weight-bold text-muted text-uppercase">Mã giảm giá</th>--}}
                                     <th class="font-weight-bold text-muted text-uppercase">Ngày mua</th>
                                     <th class="font-weight-bold text-muted text-uppercase">Tổng thanh toán:</th>
                                 </tr>
@@ -94,6 +95,7 @@
                                         ₫
                                     </td>
                                 </tr>
+
                                 <tr>
                                     <td></td>
                                     <td></td>
@@ -105,6 +107,7 @@
                                         @endif
                                     </td>
                                 </tr>
+
                                 </tbody>
                             </table>
                         </div>

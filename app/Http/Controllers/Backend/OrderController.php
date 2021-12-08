@@ -7,6 +7,8 @@ use App\Models\Cart;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Order_Detail;
+use App\Models\Voucher;
+use App\Models\Voucher_User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -142,5 +144,23 @@ class OrderController extends Controller
             'old_data' => $old_data,
             'orders' => $orders,
            ]);
+    }
+
+    public function useVoucher(Request $request)
+    {
+        $voucher_code = $request->voucher_code;
+        $voucher = Voucher::whereCode($voucher_code)->first();
+        $voucher_user = Voucher_User::whereUser_id(Auth::user()->id)->whereVoucher_id($voucher->id)->get();
+        if (count($voucher_user) >= $voucher->max_uses_user){
+            return response()->json([
+                'error'=>'Bạn đã dùng voucher quá số lần cho phép !'
+            ]);
+        }
+        $voucher->users()->attach(Auth::user()->id);
+        if ($voucher){
+            return response()->json($voucher);
+        }else{
+            return response()->json('voucher nhập không hợp lệ !');
+        }
     }
 }
