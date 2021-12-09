@@ -57,6 +57,11 @@ class OrderController extends Controller
                 'quantity'=>$item
             ]);
         }
+        $voucher_code = $request->shipment_details['voucher_code'];
+        $voucher = Voucher::whereCode($voucher_code)->first();
+        if ($voucher){
+            $voucher->users()->attach(Auth::user()->id);
+        }
         $cart = Cart::whereUser_id(Auth::user()->id)->first();
         $cart->items()->detach();
         $cart->delete();
@@ -156,7 +161,6 @@ class OrderController extends Controller
                 'error'=>'Bạn đã dùng voucher quá số lần cho phép !'
             ]);
         }
-        $voucher->users()->attach(Auth::user()->id);
         if ($voucher){
             return response()->json($voucher);
         }else{

@@ -79,9 +79,11 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="font-weight-bold text-muted text-uppercase">Thanh toán bằng:</th>
+                                    <th class="font-weight-bold text-muted text-uppercase">Phương thức thanh toán:</th>
                                     <th class="font-weight-bold text-muted text-uppercase">ID đơn hàng</th>
-{{--                                    <th class="font-weight-bold text-muted text-uppercase">Mã giảm giá</th>--}}
+                                    @if(@$voucher)
+                                    <th class="font-weight-bold text-muted text-uppercase">Mã giảm giá</th>
+                                    @endif
                                     <th class="font-weight-bold text-muted text-uppercase">Ngày mua</th>
                                     <th class="font-weight-bold text-muted text-uppercase">Tổng thanh toán:</th>
                                 </tr>
@@ -90,6 +92,9 @@
                                 <tr class="font-weight-bolder">
                                     <td>Thanh toán khi nhận hàng</td>
                                     <td>{{$order->id}}</td>
+                                    @if(@$voucher)
+                                    <td>{{@$voucher->title}}</td>
+                                    @endif
                                     <td>{{$order->created_at}}</td>
                                     <td class="text-danger font-size-h3 font-weight-boldest">{{number_format($order->price)}}
                                         ₫
@@ -99,11 +104,14 @@
                                 <tr>
                                     <td></td>
                                     <td></td>
+                                    @if(@$voucher)
+                                    <td></td>
+                                    @endif
                                     <td></td>
                                     <td>
                                         @if($order->status === 1)
                                             <a class="btn btn-danger right" onclick="return confirm('Xác nhận huỷ đơn hàng ?')" href="{{route('order_cancel',['auth_id'=>Auth::user()->id,
-                                                                                                                                                               'order_id'=>$order->id])}}">Huỷ đơn hàng</a>
+                                                                                                                                                       'order_id'=>$order->id])}}">Huỷ đơn hàng</a>
                                         @endif
                                     </td>
                                 </tr>
