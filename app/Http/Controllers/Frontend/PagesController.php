@@ -64,7 +64,6 @@ class   PagesController extends Controller
             ->first([
                 'title', 'content', 'description', 'image', 'url', 'price', 'price_old', 'slug', 'id', 'image_extension'
             ]);
-
         $related = $itemDetail->groups()->with('item')
             ->where('module', 'products-group')
             ->get()
@@ -72,6 +71,7 @@ class   PagesController extends Controller
                 $group->setRelation('item', $group->item->take(7));
                 return $group;
             });
+
 
         return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related]);
     }
@@ -125,6 +125,7 @@ class   PagesController extends Controller
         return view('frontend.orders', [
             'orders' => $orders
         ]);
+
     }
 
     public function orderDetail($id)

@@ -69,4 +69,7 @@ class Item extends Model
     function order_detail(){
         return $this->belongsTo(Order_Detail::class,'item_id','i');
     }
+    function vouchers(){
+        return $this->belongsToMany(Voucher::class,'voucher_item','item_id','voucher_id');
+    }
 }
