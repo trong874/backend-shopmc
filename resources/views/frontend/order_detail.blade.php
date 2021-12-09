@@ -79,9 +79,8 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="font-weight-bold text-muted text-uppercase">Thanh toán bằng:</th>
+                                    <th class="font-weight-bold text-muted text-uppercase">Phương thức thanh toán:</th>
                                     <th class="font-weight-bold text-muted text-uppercase">ID đơn hàng</th>
-{{--                                    <th class="font-weight-bold text-muted text-uppercase">Mã giảm giá</th>--}}
                                     <th class="font-weight-bold text-muted text-uppercase">Ngày mua</th>
                                     <th class="font-weight-bold text-muted text-uppercase">Tổng thanh toán:</th>
                                 </tr>
@@ -94,9 +93,10 @@
                                     <td class="text-danger font-size-h3 font-weight-boldest">{{number_format($order->price)}}
                                         ₫
                                     </td>
-                                </tr>
 
+                                </tr>
                                 <tr>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
