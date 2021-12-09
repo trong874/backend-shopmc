@@ -31,6 +31,10 @@
                                                 <i class="rhicon rhi-user" aria-hidden="true"></i>
                                                 <span>Thông tin tài khoản</span></a></li>
                                         <li class="user-editorders-link-intop menu-item">
+                                            <a href="#">
+                                                <i class="far fa-usd-circle"></i>
+                                                <span>Số dư:</span></a></li>
+                                        <li class="user-editorders-link-intop menu-item">
                                             <a href="{{route('orders')}}">
                                                 <i class="rhicon rhi-shopping-bagfeather" aria-hidden="true"></i>
                                                 <span>Đơn hàng</span></a></li>
@@ -194,8 +198,7 @@
                             </ul>
                         </li>
                         <li id="menu-item-9558" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                href="#"><i class="far fa-usd-circle"></i> Khuyến
-                                mại</a></li>
+                                href="{{route('recharge.user')}}"><i class="far fa-usd-circle"></i> Nạp thẻ</a></li>
                         <li id="menu-item-9664" class="menu-item menu-item-type-custom menu-item-object-custom"><a
                                 href="{{route('new.list')}}"><i class="fas fa-newspaper"></i>
                                 Tin tức</a></li>

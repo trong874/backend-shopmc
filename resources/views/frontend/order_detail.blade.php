@@ -81,9 +81,7 @@
                                 <tr>
                                     <th class="font-weight-bold text-muted text-uppercase">Phương thức thanh toán:</th>
                                     <th class="font-weight-bold text-muted text-uppercase">ID đơn hàng</th>
-                                    @if(@$voucher)
                                     <th class="font-weight-bold text-muted text-uppercase">Mã giảm giá</th>
-                                    @endif
                                     <th class="font-weight-bold text-muted text-uppercase">Ngày mua</th>
                                     <th class="font-weight-bold text-muted text-uppercase">Tổng thanh toán:</th>
                                 </tr>
@@ -100,7 +98,6 @@
                                         ₫
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td></td>
                                     <td></td>
@@ -110,12 +107,10 @@
                                     <td></td>
                                     <td>
                                         @if($order->status === 1)
-                                            <a class="btn btn-danger right" onclick="return confirm('Xác nhận huỷ đơn hàng ?')" href="{{route('order_cancel',['auth_id'=>Auth::user()->id,
-                                                                                                                                                       'order_id'=>$order->id])}}">Huỷ đơn hàng</a>
+                                            <a class="btn btn-danger right" onclick="return confirm('Xác nhận huỷ đơn hàng ?')" href="{{route('order_cancel',['auth_id'=>Auth::user()->id,                                                                                                                                           'order_id'=>$order->id])}}">Huỷ đơn hàng</a>
                                         @endif
                                     </td>
                                 </tr>
-
                                 </tbody>
                             </table>
                         </div>
