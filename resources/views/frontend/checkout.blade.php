@@ -191,6 +191,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <input type="hidden" name="shipment_details[voucher_code]" id="voucher_params">
                                                 <div class="order-total top_checkout">
                                                     <div class="w80">Tổng tiền hàng</div>
                                                     <div>
@@ -307,6 +308,7 @@
                        if (total_price <= 0){
                            total_price = 0;
                        }
+                       $('#voucher_params').val(res.code    );
                        $('#discount_product').html('- '+new Intl.NumberFormat().format(voucher_discount));
                        $('#voucher_price').html(new Intl.NumberFormat().format(total_price));
                        $('#total_price_input').val(total_price);

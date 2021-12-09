@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Models\Order;
 use App\Models\Order_Detail;
 use App\Models\Setting;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -133,8 +134,10 @@ class   PagesController extends Controller
         $order = Order::with('items', 'user')->whereId($id)->first();
         $order_detail = Order_Detail::whereOrder_id($id)->get();
         $shipment_details = json_decode($order->params);
+        $voucher = Voucher::whereCode($shipment_details->voucher_code)->first('title');
         return view('frontend.order_detail', [
             'order' => $order,
+            'voucher'=>$voucher,
             'shipment_details'=>$shipment_details,
             'order_detail' => $order_detail
         ]);
