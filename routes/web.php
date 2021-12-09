@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\PagesController;
+use App\Http\Controllers\Frontend\RechargeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -37,6 +38,8 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/checkout',[PagesController::class,'checkout'])->name('checkout');
     Route::get('/orders',[PagesController::class,'orders'])->name('orders');
     Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
+
+    Route::get('/nap-the',[RechargeController::class,'recharge'])->name('recharge.user');
 
     Route::get('/see_more_product',[PagesController::class,'seeMoreProduct']);
 
