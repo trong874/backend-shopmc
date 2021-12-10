@@ -27,7 +27,7 @@
                                             <span class="user-image-in-name">
                                                 <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="35" height="35" alt="Avatar" class="avatar avatar-35 wp-user-avatar wp-user-avatar-35 photo avatar-default"></span>{{Auth::user()->username}}</li>
                                         <li class="user-editorders-link-intop menu-item">
-                                            <a href="#">
+                                            <a href="{{route('profile.user')}}">
                                                 <i class="rhicon rhi-user" aria-hidden="true"></i>
                                                 <span>Thông tin tài khoản</span></a></li>
                                         <li class="user-editorders-link-intop menu-item">

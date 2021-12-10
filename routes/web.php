@@ -42,6 +42,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/orders',[PagesController::class,'orders'])->name('orders');
     Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
     Route::get('/see_more_product',[PagesController::class,'seeMoreProduct']);
+    Route::get('/profile',[PagesController::class,'profile'])->name('profile.user');
 
     Route::middleware(['auth'])->group(function (){
         Route::get('order_cancel',[OrderController::class,'orderCancel'])->name('order_cancel');
