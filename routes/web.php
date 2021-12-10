@@ -8,12 +8,15 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\ChargeController;
 use App\Http\Controllers\Frontend\PagesController;
-use App\Http\Controllers\Frontend\RechargeController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => 'language'], function () {
+    Route::get('test',function (){
+     dd('Test');
+    });
 
     Route::get('/',[PagesController::class,'index'])->name('page.index');
     Route::get('/san-pham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');
@@ -38,14 +41,12 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/checkout',[PagesController::class,'checkout'])->name('checkout');
     Route::get('/orders',[PagesController::class,'orders'])->name('orders');
     Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
-
-    Route::get('/nap-the',[RechargeController::class,'recharge'])->name('recharge.user');
-
     Route::get('/see_more_product',[PagesController::class,'seeMoreProduct']);
 
     Route::middleware(['auth'])->group(function (){
         Route::get('order_cancel',[OrderController::class,'orderCancel'])->name('order_cancel');
         Route::post('use-voucher',[OrderController::class,'useVoucher'])->name('use_voucher');
+        Route::resource('charge',ChargeController::class);
     });
 
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
