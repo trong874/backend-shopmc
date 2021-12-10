@@ -10,4 +10,8 @@ class RechargeController extends Controller
     public function recharge(){
         return view('frontend.recharge');
     }
+
+    public function profile(){
+        return view('frontend.layout.core.profile');
+    }
 }

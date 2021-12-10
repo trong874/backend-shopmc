@@ -40,6 +40,7 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
 
     Route::get('/nap-the',[RechargeController::class,'recharge'])->name('recharge.user');
+    Route::get('/user-profile',[RechargeController::class,'profile'])->name('profile.user');
 
     Route::get('/see_more_product',[PagesController::class,'seeMoreProduct']);
 
