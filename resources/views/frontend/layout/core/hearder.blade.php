@@ -198,7 +198,7 @@
                             </ul>
                         </li>
                         <li id="menu-item-9558" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                href="{{route('recharge.user')}}"><i class="far fa-usd-circle"></i> Nạp thẻ</a></li>
+                                href="{{route('charge.index')}}"><i class="far fa-usd-circle"></i> Nạp thẻ</a></li>
                         <li id="menu-item-9664" class="menu-item menu-item-type-custom menu-item-object-custom"><a
                                 href="{{route('new.list')}}"><i class="fas fa-newspaper"></i>
                                 Tin tức</a></li>

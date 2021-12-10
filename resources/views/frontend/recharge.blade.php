@@ -10,21 +10,25 @@
                             <h3 class="title_3">Nạp Thẻ</h3>
                         </div>
                     </div>
-                    <form method="POST" action="https://nick.vn/nap-the" accept-charset="UTF-8"
+                    <form method="POST" action="{{route('charge.store')}}" accept-charset="UTF-8"
                           class="form-horizontal form-charge" data-hs-cf-bound="true">
-                        <input name="_token" type="hidden"
-                               value="ICmMvDBWzJbcqPvF1ivpYvfTVU5ITBR12MbQprCE">
+                        @csrf
+                        @if(Session::has('message'))
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>Thẻ này đã nạp trước đó !
+                        </div>
+                        @endif
                         <div class="form-group">
                             <label class="col-md-3 control-label">Tài khoản:</label>
                             <div class="col-md-6">
                                 <input class="form-control  c-square c-theme" type="text"
-                                       value="" readonly="">
+                                       value="{{Auth::user()->username}}" disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Loại thẻ:</label>
                             <div class="col-md-6">
-                                <select class="form-control  c-square c-theme" name="type" id="type">
+                                <select class="form-control  c-square c-theme" name="telecom_key" id="type">
                                     <option value="VIETTEL">VIETTEL</option>
 
                                     <option value="MOBIFONE">MOBIFONE</option>
@@ -47,7 +51,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Mệnh giá:</label>
                             <div class="col-md-6">
-                                <select class="form-control  c-square c-theme" name="amount" id="amount" required="">
+                                <select class="form-control  c-square c-theme" name="declare_amount" id="amount" required="">
                                     <option value="">-- Chọn mệnh giá --</option>
 
 
@@ -95,32 +99,24 @@
                                        required="" placeholder="">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Mã bảo vệ (*):</label>
-                            <div class="col-md-6">
-                                <div class="input-group">
+{{--                        <div class="form-group">--}}
+{{--                            <label class="col-md-3 control-label">Mã bảo vệ (*):</label>--}}
+{{--                            <div class="col-md-6">--}}
+{{--                                <div class="input-group">--}}
 
-                                    <input type="text" class="form-control c-square" id="captcha" name="captcha"
-                                           placeholder="Mã bảo vệ" maxlength="3" autocomplete="off" required="">
-                                    <span class="input-group-addon" style="padding: 1px;">
+{{--                                    <input type="text" class="form-control c-square" id="captcha" name="captcha"--}}
+{{--                                           placeholder="Mã bảo vệ" maxlength="3" autocomplete="off" required="">--}}
+{{--                                    <span class="input-group-addon" style="padding: 1px;">--}}
 {{--                                    <img src="https://nick.vn/captcha/flat?WtZ45pg7" height="30px" id="imgcaptcha"--}}
 {{--                                         onclick="document.getElementById('imgcaptcha').src ='https://nick.vn/captcha/flat?XNJoYIJp'+Math.random();document.getElementById('captcha').focus();"--}}
 {{--                                         alt="png-image">--}}
-                                </span>
-                                </div>
-                            </div>
-                        </div>
+{{--                                </span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="form-group c-margin-t-40">
                             <div class="col-md-offset-3 col-md-6">
-                                <button type="submit"
-                                        class="btn btn-submit "
-                                        data-loading-text="<i class='fa fa-spinner fa-spin '></i>">Nạp thẻ</button>
-                                <script>
-                                    $(".form-charge").submit(function () {
-                                        $('.btn-submit').button('loading');
-                                    });
-                                </script>
-
+                                <button type="submit" class="btn btn-submit ">Nạp thẻ</button>
                             </div>
                         </div>
                     </form>
@@ -158,5 +154,39 @@
             padding-left: 15px;
             padding-right: 15px;
         }
-    </style>
+        .alert-dismissable .close, .alert-dismissible .close {
+            position: relative;
+            top: -2px;
+            right: -21px;
+            color: inherit;
+        }
+        button.close {
+            padding: 0;
+            cursor: pointer;
+            background: 0 0;
+            border: 0;
+            -webkit-appearance: none;
+        }
+        .close {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            color: #3f444a;
+            font-size: 28px;
+            outline: none !important;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            -webkit-transition: back 0.2s ease-out;
+        }
+        .close {
+            float: right;
+            font-size: 21px;
+            line-height: 1;
+            text-shadow: 0 1px 0 #fff;
+        }
+</style>
+@endsection
+@section('scripts')
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 @endsection

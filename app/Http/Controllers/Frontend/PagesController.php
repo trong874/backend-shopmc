@@ -156,5 +156,9 @@ class   PagesController extends Controller
         $html = view('frontend/widget/components/load_item',compact('data'))->render();
         return response()->json($html);
     }
+    
+    public function profile(){
+        return view('frontend.layout.core.profile');
+    }
 
 }
