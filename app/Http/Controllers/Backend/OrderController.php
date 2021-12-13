@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Order_Detail;
+use App\Models\Telecom;
 use App\Models\Voucher;
 use App\Models\Voucher_User;
 use Illuminate\Http\Request;

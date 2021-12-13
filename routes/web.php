@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\TelecomController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use App\Http\Controllers\Frontend\CartController;
@@ -48,6 +49,7 @@ Route::group(['middleware' => 'language'], function () {
         Route::get('order_cancel',[OrderController::class,'orderCancel'])->name('order_cancel');
         Route::post('use-voucher',[OrderController::class,'useVoucher'])->name('use_voucher');
         Route::resource('charge',ChargeController::class);
+        Route::post('get_telecom_value',[TelecomController::class,'getTelecomValue'])->name('ajax_get_telecom_value');
     });
 
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
@@ -69,6 +71,10 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('orders', OrderController::class);
 
+        Route::resource('telecoms', TelecomController::class);
+
+        Route::post('telecom/{id}/set-value',[TelecomController::class,'setValue'])->name('set_value_telecom');
+
         Route::resource('admin-manage',UserQTVController::class);
 
         Route::get('/{account_type}/filter/user_qtv',[UserQTVController::class,'filter'])->name('user_qtv.filter');
@@ -82,6 +88,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::post('/delete-many-user', [UserQTVController::class, 'destroyMuch'])->name('user_qtv.destroy_many');
 
         Route::post('delete-many-group', [GroupController::class, 'destroyMuch'])->name('groups.destroy_many');
+
+        Route::post('delete-many-telecom',[TelecomController::class,'destroyMuch'])->name('telecoms.destroy_many');
 
         Route::post('/update-list', [CategoryController::class, 'saveList'])->name('groups.update_list');
 
