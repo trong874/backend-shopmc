@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Classes\Ma_Hoa\Encryption;
 use App\Http\Controllers\Controller;
 use App\Models\Charge;
+use App\Models\Telecom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,8 @@ class ChargeController extends Controller
 {
     public function index()
     {
-        return view('frontend.recharge');
+        $telecoms = Telecom::with('telecomValue')->get();
+        return view('frontend.recharge',['telecoms'=>$telecoms]);
     }
 
     public function create()

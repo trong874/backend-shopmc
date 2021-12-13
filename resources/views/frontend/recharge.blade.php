@@ -1,4 +1,7 @@
 @extends('frontend.layout.master')
+@section('styles')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@endsection
 @section('content')
     <div class="rh-container full_width">
         <div class="rh-content-wrap clearfix">
@@ -14,9 +17,11 @@
                           class="form-horizontal form-charge" data-hs-cf-bound="true">
                         @csrf
                         @if(Session::has('message'))
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>Thẻ này đã nạp trước đó !
-                        </div>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                        aria-hidden="true">×</span></button>
+                                Thẻ này đã nạp trước đó !
+                            </div>
                         @endif
                         <div class="form-group">
                             <label class="col-md-3 control-label">Tài khoản:</label>
@@ -28,59 +33,21 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Loại thẻ:</label>
                             <div class="col-md-6">
-                                <select class="form-control  c-square c-theme" name="telecom_key" id="type">
-                                    <option value="VIETTEL">VIETTEL</option>
-
-                                    <option value="MOBIFONE">MOBIFONE</option>
-
-                                    <option value="VINAPHONE">VINAPHONE</option>
-
-                                    <option value="VIETNAMMOBILE">VIETNAMMOBILE</option>
-
-                                    <option value="ZING">ZING</option>
-
-                                    <option value="GATE">GATE</option>
-
-                                    <option value="VCOIN">VCOIN</option>
-
-                                    <option value="GARENA">GARENA</option>
-
+                                <select class="form-control  c-square c-theme" name="telecom_key" id="telecom_key">
+                                    @if(isset($telecoms))
+                                        @foreach($telecoms as $item)
+                                            <option value="{{$item->id}}">{{$item->title}}</option>
+                                        @endforeach
+                                    @endif
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Mệnh giá:</label>
                             <div class="col-md-6">
-                                <select class="form-control  c-square c-theme" name="declare_amount" id="amount" required="">
-                                    <option value="">-- Chọn mệnh giá --</option>
-
-
-                                    <option r-default="0" value="10000" rel-ratio="70.0">10,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="20000" rel-ratio="70.0">20,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="30000" rel-ratio="70.0">30,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="50000" rel-ratio="70.0">50,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="100000" rel-ratio="70.0">100,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="200000" rel-ratio="70.0">200,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="300000" rel-ratio="70.0">300,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="500000" rel-ratio="70.0">500,000 VNĐ = 70.0%</option>
-
-
-                                    <option r-default="0" value="1000000" rel-ratio="70.0">1,000,000 VNĐ = 70.0%
-                                    </option>
+                                <select class="form-control  c-square c-theme" name="declare_amount" id="telecom_value"
+                                        required="">
+                                    @include('frontend.component.value_telecom')
                                 </select>
                             </div>
                         </div>
@@ -99,21 +66,21 @@
                                        required="" placeholder="">
                             </div>
                         </div>
-{{--                        <div class="form-group">--}}
-{{--                            <label class="col-md-3 control-label">Mã bảo vệ (*):</label>--}}
-{{--                            <div class="col-md-6">--}}
-{{--                                <div class="input-group">--}}
+                        {{--                        <div class="form-group">--}}
+                        {{--                            <label class="col-md-3 control-label">Mã bảo vệ (*):</label>--}}
+                        {{--                            <div class="col-md-6">--}}
+                        {{--                                <div class="input-group">--}}
 
-{{--                                    <input type="text" class="form-control c-square" id="captcha" name="captcha"--}}
-{{--                                           placeholder="Mã bảo vệ" maxlength="3" autocomplete="off" required="">--}}
-{{--                                    <span class="input-group-addon" style="padding: 1px;">--}}
-{{--                                    <img src="https://nick.vn/captcha/flat?WtZ45pg7" height="30px" id="imgcaptcha"--}}
-{{--                                         onclick="document.getElementById('imgcaptcha').src ='https://nick.vn/captcha/flat?XNJoYIJp'+Math.random();document.getElementById('captcha').focus();"--}}
-{{--                                         alt="png-image">--}}
-{{--                                </span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        {{--                                    <input type="text" class="form-control c-square" id="captcha" name="captcha"--}}
+                        {{--                                           placeholder="Mã bảo vệ" maxlength="3" autocomplete="off" required="">--}}
+                        {{--                                    <span class="input-group-addon" style="padding: 1px;">--}}
+                        {{--                                    <img src="https://nick.vn/captcha/flat?WtZ45pg7" height="30px" id="imgcaptcha"--}}
+                        {{--                                         onclick="document.getElementById('imgcaptcha').src ='https://nick.vn/captcha/flat?XNJoYIJp'+Math.random();document.getElementById('captcha').focus();"--}}
+                        {{--                                         alt="png-image">--}}
+                        {{--                                </span>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                         <div class="form-group c-margin-t-40">
                             <div class="col-md-offset-3 col-md-6">
                                 <button type="submit" class="btn btn-submit ">Nạp thẻ</button>
@@ -131,7 +98,8 @@
             margin-right: -187px;
             /*border-bottom: 1px solid;*/
         }
-        .btn-submit{
+
+        .btn-submit {
             color: #ffffff;
             background: #32c5d2;
             border-color: #32c5d2;
@@ -139,10 +107,12 @@
             padding: 7px 20px 5px 20px;
             text-transform: uppercase
         }
-        .title_3{
+
+        .title_3 {
             font-size: 20px;
         }
-        .control-label .col-md-3{
+
+        .control-label .col-md-3 {
             margin-bottom: 0;
             padding-top: 7px;
             font-weight: 300;
@@ -154,12 +124,14 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+
         .alert-dismissable .close, .alert-dismissible .close {
             position: relative;
             top: -2px;
             right: -21px;
             color: inherit;
         }
+
         button.close {
             padding: 0;
             cursor: pointer;
@@ -167,6 +139,7 @@
             border: 0;
             -webkit-appearance: none;
         }
+
         .close {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-weight: 300;
@@ -177,16 +150,37 @@
             filter: alpha(opacity=50);
             -webkit-transition: back 0.2s ease-out;
         }
+
         .close {
             float: right;
             font-size: 21px;
             line-height: 1;
             text-shadow: 0 1px 0 #fff;
         }
-</style>
+    </style>
 @endsection
 @section('scripts')
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script>
+        $('#telecom_key').on('change',function () {
+            let telecom_id = this.value;
+            $.ajax({
+                url:"{{route('ajax_get_telecom_value')}}",
+                type:"POST",
+                data:{
+                    _token:"{{csrf_token()}}",
+                    telecom_id : telecom_id,
+                },
+                success:function (res) {
+                    $('#telecom_value').html(res)
+                }
+            })
+        })
+    </script>
 @endsection
