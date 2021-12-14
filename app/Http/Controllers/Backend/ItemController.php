@@ -64,18 +64,18 @@ class ItemController extends Controller
     public function update(Request $request, $id)
     {
         $item = Item::with('groups')->findOrFail($id);
-      foreach ($item->groups as $group){
-          if ($group->module == 'products-group'){
-              continue;
-          }else{
-              $item->groups()->detach($group->id);
-          }
-      }
-
-      foreach ($request->group_id as $group_id)
-      {
-          $item->groups()->attach($group_id);
-      }
+        foreach ($item->groups as $group) {
+            if ($group->module == $this->module .'-group') {
+                continue;
+            } else {
+                $item->groups()->detach($group->id);
+            }
+        }
+        if ($request->group_id){
+        foreach ($request->group_id as $group_id) {
+            $item->groups()->attach($group_id);
+        }
+        }
         $item->update($request->all());
         Session::put('message', 'Cập nhật thay đổi thành công');
         return back();
@@ -86,7 +86,7 @@ class ItemController extends Controller
         $item = Item::findOrFail($item);
         $item->groups()->detach();
         $item->delete();
-        Session::put('message','Đã xoá item số ' . $item->id);
+        Session::put('message', 'Đã xoá item số ' . $item->id);
         return back();
     }
 
@@ -94,7 +94,7 @@ class ItemController extends Controller
     {
         $ids = $request->ids;
         Item::whereIn('id', explode(",", $ids))->delete();
-        Session::put('message','Đã xoá những item '.$ids);
+        Session::put('message', 'Đã xoá những item ' . $ids);
     }
 
     public function filter(Request $request, $module)
@@ -155,7 +155,7 @@ class ItemController extends Controller
     {
         $item = Item::find($id);
         $item->replicate()->save();
-        Session::put('message','Đã nhân bản item số '.$id);
+        Session::put('message', 'Đã nhân bản item số ' . $id);
         return back();
     }
 }

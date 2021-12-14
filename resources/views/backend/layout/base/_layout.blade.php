@@ -60,7 +60,7 @@
     @endif
 
     @if (config('layout.extras.toolbar.display'))
-        @include('backend.layout.partials.extras._toolbar')
+{{--        @include('backend.layout.partials.extras._toolbar')--}}
     @endif
 
     @if (config('layout.extras.chat.display'))

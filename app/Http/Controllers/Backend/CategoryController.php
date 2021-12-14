@@ -60,11 +60,18 @@ class CategoryController extends Controller
     {
         $group = Group::findOrFail($group, [
             'id',
+            'url',
+            'order',
             'position',
             'title',
             'slug',
             'parent_id',
-            'image'
+            'image',
+            'image_extension',
+            'image_banner',
+            'image_icon',
+            'ended_at',
+            'created_at'
         ]);
 
         return view('backend.categories.form-data', [
@@ -79,11 +86,19 @@ class CategoryController extends Controller
     {
         $group = Group::findOrFail($group);
         $group->update([
+            'id'=>$request->id,
+            'url'=>$request->url,
+            'order'=>$request->order,
             'position'=>$request->position,
-            'title' => $request->title,
+            'title'=>$request->title,
             'slug'=>$request->slug,
-            'parent_id' => $request->parent_id,
-            'image' => $request->image
+            'parent_id'=>$request->group_id,
+            'image'=>$request->image,
+            'image_extension'=>$request->image_extension,
+            'image_banner'=>$request->image_banner,
+            'image_icon'=>$request->image_icon,
+            'ended_at'=>$request->ended_at,
+            'created_at'=>$request->created_at,
         ]);
         Session::put('message','Chỉnh sửa thành công');
         return back();
