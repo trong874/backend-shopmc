@@ -3,7 +3,7 @@
     @yield('content')
 @else
     <div class="d-flex flex-column-fluid">
-        <div class="{{ Metronic::printClasses('content-container', false) }}" style="max-width: 100%;width: 100%">
+        <div class=" container-fluid ">
             @yield('content')
         </div>
     </div>
