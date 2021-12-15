@@ -12,7 +12,7 @@ class TelecomController extends Controller
 {
     public function index()
     {
-        $telecoms  = Telecom::with('telecomValue')->paginate(10);
+        $telecoms  = Telecom::with('telecomValue')->paginate(10 );
         return view('backend.telecoms.list',['telecoms'=>$telecoms]);
     }
 
@@ -42,10 +42,13 @@ class TelecomController extends Controller
     public function update(Request $request, $id)
     {
         $telecom = Telecom::findOrFail($id);
+        $data = $request->all();
         $telecom->update([
-            'title'=>$request->title,
-            'status'=>$request->status,
-            'image'=>$request->image,
+            'title'=>$data['title'],
+            'key'=>$data['key'],
+            'image'=>$data['image'],
+            'status'=>$data['status'],
+            'order'=>$data['order'],
         ]);
         Session::put('message','Cập nhật thông tin thành công !');
         return back();
@@ -90,5 +93,27 @@ class TelecomController extends Controller
         $telecom = Telecom::with('telecomValue')->whereId($request->telecom_id)->get();
         $html = view('frontend.component.value_telecom',['telecoms'=>$telecom])->render();
         return response()->json($html);
+    }
+
+    public function filter(Request $request)
+    {
+        $q = Telecom::query();
+        if ($request->id) {
+            $q->where('id',  $request->id);
+        }
+        if ($request->title) {
+            $q->where('title', 'LIKE', '%' . $request->title . '%');
+        }
+        if ($request->status) {
+            $q->where('status', $request->status);
+        }
+        if ($request->start && $request->end) {
+            $q->whereBetween('created_at', [$request->date_from, $request->date_to]);
+        }
+        if ($request->start && !$request->end) {
+            $q->where('created_at', '>=', $request->start);
+        }
+        $telecoms = $q->paginate(10);
+        return view('backend.telecoms.list',compact('telecoms'));
     }
 }
