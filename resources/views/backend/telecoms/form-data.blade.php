@@ -1,6 +1,6 @@
 @extends('backend.layout.default')
 @section('meta-data')
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 @endsection
 @section('styles')
     <script src="{{asset('ckfinder/ckfinder.js')}}"></script>
@@ -10,63 +10,46 @@
 @endsection
 @section('content')
     <!--begin::Card-->
-    <div class="card card-custom m-7">
-        <div class="card-header">
-            <h3 class="card-title">Tạo mới telecom</h3>
-        </div>
     <!--begin::Form-->
-        <?php
-        if (isset($telecom)) {
-            $action = route("telecoms.update", $telecom);
-        } else {
-            $action = route("telecoms.store");
-        }
-        ?>
-        <form class="form" method="POST" action="{{$action}}">
-            @if(isset($telecom))
-                {{ method_field('PUT') }}
-            @endif
-            @csrf
-            <div class="card-body">
-                <div class="form-group row mt-3">
-                    <label class="col-lg-1 col-form-label text-right">Title</label>
-                    <div class="col-lg-3">
-                        <input type="text" name="title" class="form-control" id="title" placeholder="Title"
-                               value="{{@$telecom->title}}"/>
-                        <span class="form-text text-muted">Please enter your Title</span>
+    <?php
+    if (isset($telecom)) {
+        $action = route("telecoms.update", $telecom);
+    } else {
+        $action = route("telecoms.store");
+    }
+    ?>
+    <form class="form" method="POST" action="{{$action}}" id="formMain">
+        @if(isset($telecom))
+            {{ method_field('PUT') }}
+        @endif
+        @csrf
+        <div class="row">
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>
+                            Cài đặt nạp thẻ tự động
+                        </h5>
                     </div>
-                    <label class="col-lg-1 col-form-label text-right">Status:</label>
-                    <div class="col-lg-3">
-                        <span class="switch col-3 switch-outline switch-icon switch-success">
-                   <label>
-                       <input type="checkbox"
-                              value="{{@$telecom->status}}"
-                              name="status"
-                              onclick="toggle(this);"
-                              @if(@$telecom->status == 1)
-                              checked
-                           @endif>
-                          <span></span>
-
-                   </label>
-                         <script>
-                           function toggle(button) {
-                               switch (button.value) {
-                                   case "1":
-                                       button.value = "0";
-                                       break;
-                                   case "0":
-                                       button.value = "1";
-                                       break;
-                               }
-                           }
-                         </script>
-                 </span>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="locale">Ảnh đại diện:</label>
-                        <div class="">
-                            <div class="fileinput ck-parent" data-provides="fileinput">
+                    <div class="card-body">
+                        <div class="form-group row mt-3">
+                            <label class="col-lg-2 col-form-label text-right">Tiêu đề</label>
+                            <div class="col-lg-10">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title"
+                                       value="{{@$telecom->title}}"/>
+                                <span class="form-text text-muted">Please enter your Title</span>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-3">
+                            <label class="col-lg-2 col-form-label text-right">Từ khoá</label>
+                            <div class="col-lg-10">
+                                <input type="text" name="key" class="form-control" id="title" placeholder="Từ khoá"
+                                       value="{{@$telecom->key}}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-3">
+                            <label class="col-lg-2 col-form-label text-right">Ảnh</label>
+                            <div class="fileinput ck-parent col-lg-10" data-provides="fileinput">
                                 <div class="fileinput-new thumbnail" style="width: 100px; height: 100px">
 
                                     <img class="ck-thumb" id="image_avatar"
@@ -89,19 +72,46 @@
                     </div>
                 </div>
             </div>
-
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-lg-5"></div>
-                    <div class="col-lg-7">
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button type="reset" class="btn btn-secondary">Cancel</button>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>
+                            Trạng thái
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row mt3">
+                            <label>Trạng thái</label>
+                            <select name="status" class="form-control">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Ngưng hoạt động</option>
+                            </select>
+                        </div>
+                        <div class="form-group row mt3">
+                            <label>Ngày tạo</label>
+                            <?php date_default_timezone_set('Asia/Ho_Chi_Minh') ?>
+                            <div class="input-group date" id="kt_datetimepicker_1" data-target-input="nearest">
+                                <input type="text" name="created_at" class="form-control datetimepicker-input"
+                                       value="{{$telecom->created_at ?? date('d/m/Y H:i:s')}}"
+                                       data-target="#kt_datetimepicker_1" data-toggle="datetimepicker">
+                                <div class="input-group-append" data-target="#kt_datetimepicker_1"
+                                     data-toggle="datetimepicker">
+															<span class="input-group-text">
+																<i class="ki ki-calendar"></i>
+															</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row mt3">
+                            <label>Thứ tự</label>
+                            <input type="text" name="order" class="form-control" value="{{@$telecom->order}}">
+                        </div>
                     </div>
                 </div>
             </div>
-        </form>
-        <!--end::Form-->
-    </div>
+        </div>
+    </form>
+    <!--end::Form-->
     <!--end::Card-->
 @endsection
 @section('scripts')
@@ -120,4 +130,14 @@
             })
         </script>
     @endif
+    <script>
+        $(document).ready(function () {
+            $('#submit_form').html(
+                '<button type="button" class="btn-shadow-hover font-weight-bold mr-2 btn btn-light-success"> <i class="flaticon2-check-mark"></i>'+'{{@$telecom ? "Chỉnh sửa" : "Thêm mới"}}'+'</button>'
+            )
+        })
+        $('#submit_form').on('click',function () {
+            $('#formMain').submit();
+        })
+    </script>
 @endsection

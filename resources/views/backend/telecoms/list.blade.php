@@ -1,8 +1,82 @@
 @extends('backend.layout.default')
 @section('meta-data')
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 @endsection
 @section('content')
+    <form action="{{route('telecom.filter')}}" method="GET" id="form_filter">
+        <div class="card">
+            <div class="card-header">
+                <h5>Bộ lọc</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group col-3">
+                        <label>ID</label>
+                        <input type="text" name="id" class="form-control" placeholder="ID Telecom">
+                    </div>
+                    <div class="form-group col-3">
+                        <label>Tiêu đề</label>
+                        <input type="text" name="title" class="form-control" placeholder="Tiêu đề">
+                    </div>
+                    <div class="form-group col-3">
+                        <label>Key</label>
+                        <input type="text" name="key" class="form-control" placeholder="Từ khoá">
+                    </div>
+                    <div class="form-group col-3">
+                        <label>Trạng thái</label>
+                        <select name="status" class="form-control">
+                            <option value="">--Trạng thái--</option>
+                            <option value="1">Hoạt động</option>
+                            <option value="0">Ngưng hoạt động</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-4"></div>
+                    <div class="form-group col-4">
+                        <?php date_default_timezone_set('Asia/Ho_Chi_Minh') ?>
+                        <div class="input-group date">
+                            <div id="kt_datetimepicker_1" data-target-input="nearest">
+                                <input type="text" name="start" class="form-control datetimepicker-input"
+                                       data-target="#kt_datetimepicker_1" data-toggle="datetimepicker"
+                                       placeholder="Từ ngày">
+                            </div>
+                            <div class="input-group-append">
+															<span class="input-group-text">
+																<i class="ki ki-calendar"></i>
+															</span>
+                            </div>
+                            <div id="kt_datetimepicker_2" data-target-input="nearest">
+                                <input type="text" name="end" class="form-control datetimepicker-input"
+                                       data-target="#kt_datetimepicker_2"
+                                       data-toggle="datetimepicker"
+                                       placeholder="Đến ngày">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4 row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-primary--icon" id="btn_submit_form">
+                            <span>
+                                <i class="la la-search"></i>
+                                <span>Tìm kiếm</span>
+                            </span>
+                            </button>
+                            <button type="reset" class="btn btn-secondary btn-secondary--icon" id="kt_reset">
+                            <span>
+                                <i class="la la-close"></i>
+                                <span>Reset</span>
+                            </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <div class="card card-custom">
         <div class="card-header">
             <div class="card-title">
@@ -48,7 +122,7 @@
                 <!--end::Button-->
             </div>
         </div>
-        <div class="card-body">
+        <div class="card-body" id="list_telecom">
             <!--begin: Datatable-->
             <table class="table table-bordered table-hover table-checkable" id="kt_datatable"
                    style="margin-top: 13px !important">
@@ -74,7 +148,8 @@
                             <td style="text-overflow: Ellipsis;max-width: 200px;max-height: 50px;overflow: hidden;white-space: nowrap;">
                                 <a href="#">{{$item->title}}</a></td>
                             <td>{{$item->key}}</td>
-                            <td><img src="{{$item->image}}" alt="" style="height: 50px;width: 50px;object-fit:contain;max-height: 50px"></td>
+                            <td><img src="{{$item->image}}" alt=""
+                                     style="height: 50px;width: 50px;object-fit:contain;max-height: 50px"></td>
                             <td>{{$item->order}}</td>
                             <td>
                                 @if($item->status == 1)
@@ -115,95 +190,132 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route("telecoms.edit",$item)}}" class="btn btn-sm btn-clean btn-icon" title="Edit">
+                                <a href="{{route("telecoms.edit",$item)}}" class="btn btn-sm btn-clean btn-icon"
+                                   title="Edit">
                                     <i class="la la-edit"></i>
                                 </a>
-                                <a href="#set_value_{{$item->id}}" data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Replicate">
+                                <a href="#set_value_{{$item->id}}" data-toggle="modal"
+                                   class="btn btn-sm btn-clean btn-icon" title="Replicate">
                                     <i class="flaticon-interface-7"></i>
                                 </a>
-                                <div class="modal fade" id="set_value_{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeSm" aria-hidden="true">
+                                <div class="modal fade" id="set_value_{{$item->id}}" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalSizeSm" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                                         <div class="modal-content">
                                             <form action="{{route('set_value_telecom',$item->id)}}" method="POST">
                                                 @csrf
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa mệnh giá</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <i aria-hidden="true" class="ki ki-close"></i>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Tiêu đề</label>
-                                                    <input type="text" class="form-control" name="title" readonly="" value="{{$item->title}}" autofocus="true">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa mệnh
+                                                        giá</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <i aria-hidden="true" class="ki ki-close"></i>
+                                                    </button>
                                                 </div>
-                                                <div class="form-group ">
-                                                    <label class="form-control-label">Từ khoá</label>
-                                                    <input type="text" class="form-control" name="title" readonly="" value="{{$item->key}}" autofocus="true">
-                                                </div>
-                                                <div class="dataTables_scrollBody" style=" overflow: auto; width: 100%;">
-                                                    <table class="table table-bordered table-list">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>Mệnh giá</th>
-                                                            <th class="text-success">C.K <br> Đúng mệnh giá (%)</th>
-                                                            <th class="text-danger">C.K  <br>Sai mệnh giá (%)</th>
-                                                            <th class="text-success">C.K (Đ.lý) <br> Đúng mệnh giá (%)</th>
-                                                            <th class="text-danger">C.K (Đ.lý) <br> Sai mệnh giá (%)</th>
-                                                            <th style="min-width: 120px">Trạng thái</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        @foreach($item->telecomValue as $key => $value)
-                                                        <tr>
-                                                            <td><input type="text" class="form-control" name="amount[]" value="{{$value->amount}}"></td>
-                                                            <td><input type="text" class="form-control" maxlength="4" name="ratio_true_amount[]" value="{{$value->ratio_true_amount}}"></td>
-                                                            <td><input type="text" class="form-control" maxlength="4" name="ratio_false_amount[]" value="{{$value->ratio_false_amount}}"></td>
-                                                            <td><input type="text" class="form-control" maxlength="4" name="agency_ratio_true_amount[]" value="{{$value->agency_ratio_true_amount}}"></td>
-                                                            <td><input type="text" class="form-control" maxlength="4" name="agency_ratio_false_amount[]" value="{{$value->agency_ratio_false_amount}}"></td>
-                                                            <td>
-                                                                <select class="form-control" style="min-width: 30px;" name="status[]">
-                                                                    <option value="0">Tắt</option>
-                                                                    <option value="1" selected="">Bật</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label">Tiêu đề</label>
+                                                        <input type="text" class="form-control" name="title" readonly=""
+                                                               value="{{$item->title}}" autofocus="true">
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="form-control-label">Từ khoá</label>
+                                                        <input type="text" class="form-control" name="title" readonly=""
+                                                               value="{{$item->key}}" autofocus="true">
+                                                    </div>
+                                                    <div class="dataTables_scrollBody"
+                                                         style=" overflow: auto; width: 100%;">
+                                                        <table class="table table-bordered table-list">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Mệnh giá</th>
+                                                                <th class="text-success">C.K <br> Đúng mệnh giá (%)</th>
+                                                                <th class="text-danger">C.K <br>Sai mệnh giá (%)</th>
+                                                                <th class="text-success">C.K (Đ.lý) <br> Đúng mệnh giá
+                                                                    (%)
+                                                                </th>
+                                                                <th class="text-danger">C.K (Đ.lý) <br> Sai mệnh giá (%)
+                                                                </th>
+                                                                <th style="min-width: 120px">Trạng thái</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($item->telecomValue as $key => $value)
+                                                                <tr>
+                                                                    <td><input type="text" class="form-control"
+                                                                               name="amount[]"
+                                                                               value="{{$value->amount}}"></td>
+                                                                    <td><input type="text" class="form-control"
+                                                                               maxlength="4" name="ratio_true_amount[]"
+                                                                               value="{{$value->ratio_true_amount}}">
+                                                                    </td>
+                                                                    <td><input type="text" class="form-control"
+                                                                               maxlength="4" name="ratio_false_amount[]"
+                                                                               value="{{$value->ratio_false_amount}}">
+                                                                    </td>
+                                                                    <td><input type="text" class="form-control"
+                                                                               maxlength="4"
+                                                                               name="agency_ratio_true_amount[]"
+                                                                               value="{{$value->agency_ratio_true_amount}}">
+                                                                    </td>
+                                                                    <td><input type="text" class="form-control"
+                                                                               maxlength="4"
+                                                                               name="agency_ratio_false_amount[]"
+                                                                               value="{{$value->agency_ratio_false_amount}}">
+                                                                    </td>
+                                                                    <td>
+                                                                        <select class="form-control"
+                                                                                style="min-width: 30px;"
+                                                                                name="status[]">
+                                                                            <option value="0">Tắt</option>
+                                                                            <option value="1" selected="">Bật</option>
+                                                                        </select>
+                                                                    </td>
+                                                                </tr>
                                                             @endforeach
-                                                        </tbody>
-                                                        <tfoot>
-                                                        <tr>
-                                                            <td colspan="6">
-                                                                <button type="button" class="btn btn-primary btn-block add-row">Thêm</button>
-                                                            </td>
-                                                        </tr>
-                                                        </tfoot>
-                                                    </table>
+                                                            </tbody>
+                                                            <tfoot>
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <button type="button"
+                                                                            class="btn btn-primary btn-block add-row">
+                                                                        Thêm
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                <button type="submit" class="btn btn-success m-btn m-btn--custom m-btn--icon">
-                                                    Chỉnh sửa
-                                                </button>
-                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Hủy
+                                                    </button>
+                                                    <button type="submit"
+                                                            class="btn btn-success m-btn m-btn--custom m-btn--icon">
+                                                        Chỉnh sửa
+                                                    </button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#form_delete-{{$item->id}}"  data-toggle="modal" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                <a href="#form_delete-{{$item->id}}" data-toggle="modal"
+                                   class="btn btn-sm btn-clean btn-icon" title="Delete">
                                     <i class="la la-trash"></i>
                                 </a>
                             </td>
                         </tr>
                     @endforeach
                 @endif
+
                 </tbody>
             </table>
             <div class="row" style="float:right">
                 {{ $telecoms->links('pagination::bootstrap-4') }}
             </div>
             <!--end: Datatable-->
+
         </div>
     </div>
 @endsection
@@ -229,5 +341,50 @@
                 $(".table-list tbody").append(markup);
             });
         });
+    </script>
+    <script>
+        $('#form_filter').on('submit',function (event) {
+            event.preventDefault();
+            let param = $('#form_filter').serialize()
+            const link = "{{route('telecom.filter')}}"+'?'+param
+            console.log(link)
+            const url = new URL(link);
+
+            let id = url.searchParams.get('id');
+            let title = url.searchParams.get('title');
+            let key = url.searchParams.get('key');
+            let status = url.searchParams.get('status');
+            let start = url.searchParams.get('start');
+            let end = url.searchParams.get('end');
+
+            if (typeof URLSearchParams !== 'undefined') {
+                const params = new URLSearchParams(param)
+                if(id === ''){
+                    params.delete('id')
+                }
+                if(title === ''){
+                    params.delete('title')
+                }
+                if(key === ''){
+                    params.delete('key')
+                }
+                if(status === ''){
+                    params.delete('status')
+                }
+                if(start === ''){
+                    params.delete('start')
+                }
+                if(end === ''){
+                    params.delete('end')
+                }
+                if(params === ''){
+                    location.reload();
+                }else{
+                    window.location.href = "{{route('telecom.filter')}}?" + params
+                }
+            } else {
+                console.log(`Your browser ${navigator.appVersion} does not support URLSearchParams`)
+            }
+        })
     </script>
 @endsection

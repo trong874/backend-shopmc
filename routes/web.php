@@ -102,6 +102,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::get('detele-item-group',[GroupController::class,'deleteItemInGroup'])->name('group.delete-item');
 
         Route::get('order-filter',[OrderController::class,'filter'])->name('order.filter');
+
+        Route::get('telecom-filter',[TelecomController::class,'filter'])->name('telecom.filter');
     });
 
 });
