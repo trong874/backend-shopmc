@@ -9,13 +9,16 @@
                         <div class="title"><h1 class="entry-title">Xác nhận – Thanh toán</h1></div>
                         <div class="woocommerce">
                             <div class="woocommerce-notices-wrapper"></div>
-                            <form method="post" class="checkout woocommerce-checkout" action="{{route('order.store')}}">
+                            <form method="post" class="checkout woocommerce-checkout" action="{{route('order.store')}}"
+                                  id="shipment_details_form">
                                 @csrf
                                 <div class="re_woocheckout_details">
                                     <div class="col2-set" id="customer_details">
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
                                                 <h3>Thông tin thanh toán</h3>
+                                                <div id="notification_error"></div>
+
                                                 <div class="woocommerce-billing-fields__field-wrapper">
                                                     <p class="form-row form-row-wide validate-required"
                                                        id="billing_last_name_field" data-priority=""><label
@@ -74,19 +77,6 @@
                                                                                                  placeholder="Nhập số điện thoại"
                                                                                                  value=""
                                                                                                  autocomplete="tel"></span>
-                                                </p>
-                                            </div>
-
-                                            <div class="woocommerce-account-fields">
-
-                                                <p class="form-row form-row-wide create-account woocommerce-validated">
-                                                    <label
-                                                        class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-                                                        <input
-                                                            class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox"
-                                                            id="createaccount" type="checkbox" name="createaccount"
-                                                            value="1"> <span>Để thay đổi thông tin, hãy cập nhật thông tin cá nhân</span>
-                                                    </label>
                                                 </p>
                                             </div>
                                         </div>
@@ -150,7 +140,7 @@
                                                     </div>
                                                 </div>
 
-                                                 <div class="woocommerce-shipping-totals shipping top_checkout">
+                                                <div class="woocommerce-shipping-totals shipping top_checkout">
                                                     <div class="colum_cart w80 d_block">
                                                         <div class="label-gh"> Nhập mã voucher :</div>
                                                     </div>
@@ -174,7 +164,8 @@
                                                     <div id="shipping_method" class="woocommerce-shipping-methods">
                                                         <div>
                                                             <label
-                                                                for="shipping_method_0_flat_rate1"><span  id="discount_product">0</span> ₫</label>
+                                                                for="shipping_method_0_flat_rate1"><span
+                                                                    id="discount_product">0</span> ₫</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -191,12 +182,15 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="shipment_details[voucher_code]" id="voucher_params">
+                                                <input type="hidden" name="shipment_details[voucher_code]"
+                                                       id="voucher_params">
                                                 <div class="order-total top_checkout">
                                                     <div class="w80">Tổng tiền hàng</div>
                                                     <div>
                                                         <label
-                                                            for="shipping_method_0_flat_rate1"><span  id="voucher_price">{{number_format($data_cart['total_price'])}}</span> đ</label>
+                                                            for="shipping_method_0_flat_rate1"><span
+                                                                id="voucher_price">{{number_format($data_cart['total_price'])}}</span>
+                                                            đ</label>
                                                     </div>
                                                 </div>
                                                 <div>
@@ -254,7 +248,7 @@
                                                 </div>
 
 
-                                                <button type="submit" class="button alt">Đặt hàng
+                                                <button type="submit" class="button alt" id="button_submit_form">Đặt hàng
                                                 </button>
                                             </div>
                                         </div>
@@ -275,46 +269,40 @@
 @endsection
 @section('scripts')
     <script src="{{asset('frontend/js/assets/district.js')}}"></script>
-    <script>
-        var localpicker = new LocalPicker({
-            province: 'shipment_details[province]',
-            district: 'shipment_details[district]',
-            ward: 'shipment_details[ward]',
-        });
-    </script>
-    <script>
-        $('#voucher_btn_use').on('click',function (){
-           $.ajax({
-               url:"{{route('use_voucher')}}",
-               type:'post',
-               data:{
-                   "_token": "{{ csrf_token() }}",
-                   "voucher_code":$('#voucher_input').val()
-               },
-               success:function (res){
-                   if (res.error){
-                       $('#alert_error_message').html(res.error)
-                   }else {
-                       $('#alert_error_message').html('')
-                       let voucher_discount;
+    <script src="{{asset('frontend/js/frontend/checkout.js')}}">
+        $('#voucher_btn_use').on('click', function () {
+            $.ajax({
+                url: "{{route('use_voucher')}}",
+                type: 'post',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "voucher_code": $('#voucher_input').val()
+                },
+                success: function (res) {
+                    if (res.error) {
+                        $('#alert_error_message').html(res.error)
+                    } else {
+                        $('#alert_error_message').html('')
+                        let voucher_discount;
 
-                       if(res.discount_percentage){
-                           voucher_discount = {{$data_cart['total_price']}}*(res.discount_percentage/100)
-                       }
-                       if (res.discount_amount){
-                           voucher_discount = res.discount_amount
-                       }
-                       let total_price = {{$data_cart['total_price']}} - voucher_discount;
-                       if (total_price <= 0){
-                           total_price = 0;
-                       }
-                       $('#voucher_params').val(res.code    );
-                       $('#discount_product').html('- '+new Intl.NumberFormat().format(voucher_discount));
-                       $('#voucher_price').html(new Intl.NumberFormat().format(total_price));
-                       $('#total_price_input').val(total_price);
-                   }
-               }
-           })
+                        if (res.discount_percentage) {
+                            voucher_discount = {{$data_cart['total_price']}}*
+                            (res.discount_percentage / 100)
+                        }
+                        if (res.discount_amount) {
+                            voucher_discount = res.discount_amount
+                        }
+                        let total_price = {{$data_cart['total_price']}} -voucher_discount;
+                        if (total_price <= 0) {
+                            total_price = 0;
+                        }
+                        $('#voucher_params').val(res.code);
+                        $('#discount_product').html('- ' + new Intl.NumberFormat().format(voucher_discount));
+                        $('#voucher_price').html(new Intl.NumberFormat().format(total_price));
+                        $('#total_price_input').val(total_price);
+                    }
+                }
+            })
         });
     </script>
 @endsection
