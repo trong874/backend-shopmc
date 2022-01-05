@@ -70,6 +70,7 @@ class CategoryController extends Controller
             'image_extension',
             'image_banner',
             'image_icon',
+            'status',
             'ended_at',
             'created_at'
         ]);
@@ -84,22 +85,9 @@ class CategoryController extends Controller
 
     public function update(Request $request, $group)
     {
-        $group = Group::findOrFail($group);
-        $group->update([
-            'id'=>$request->id,
-            'url'=>$request->url,
-            'order'=>$request->order,
-            'position'=>$request->position,
-            'title'=>$request->title,
-            'slug'=>$request->slug,
-            'parent_id'=>$request->group_id,
-            'image'=>$request->image,
-            'image_extension'=>$request->image_extension,
-            'image_banner'=>$request->image_banner,
-            'image_icon'=>$request->image_icon,
-            'ended_at'=>$request->ended_at,
-            'created_at'=>$request->created_at,
-        ]);
+        $data_category = $request->all();
+        $category = Group::findOrFail($group);
+        $category->update($data_category);
         Session::put('message','Chỉnh sửa thành công');
         return back();
     }
@@ -142,5 +130,6 @@ class CategoryController extends Controller
     {
         $ids = $request->ids;
         Group::whereIn('id', explode(",", $ids))->delete();
+        return response()->json(['status'=>'success']);
     }
 }

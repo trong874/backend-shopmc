@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => 'language'], function () {
-    Route::get('test',function (){
-     dd('Test');
-    });
 
     Route::get('/',[PagesController::class,'index'])->name('page.index');
     Route::get('/san-pham/{slug}', [PagesController::class, 'getItemDetail'])->name('item.detail');

@@ -137,19 +137,19 @@ class ItemController extends Controller
         return Group::where('module', 'category-' . $this->module)->get(['id', 'title', 'parent_id']);
     }
 
-    public function searchItemGroup(Request $request)
-    {
-        if (empty($request->search_query)) {
-            return [];
+        public function searchItemGroup(Request $request)
+        {
+            if (empty($request->search_query)) {
+                return [];
+            }
+            $result = Item::where('title', 'LIKE', '%' . $request->search_query . '%')
+                ->where('module', substr($request->module, 0, -6))
+                ->where('status', self::STATUS_ACTIVE)
+                ->limit(2)
+                ->get();
+            $html = view('backend.groups.result-search-item-group', ['items' => $result, 'group_id' => $request->group_id])->render();
+            return response()->json($html);
         }
-        $result = Item::where('title', 'LIKE', '%' . $request->search_query . '%')
-            ->where('module', substr($request->module, 0, -6))
-            ->where('status', self::STATUS_ACTIVE)
-            ->limit(2)
-            ->get();
-        $html = view('backend.groups.result-search-item-group', ['items' => $result, 'group_id' => $request->group_id])->render();
-        return response()->json($html);
-    }
 
     public function replication($id)
     {
