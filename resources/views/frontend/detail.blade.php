@@ -7,7 +7,7 @@
                 <div class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
                     id="content">
                     <div class="post">
-                        <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span
+                        <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span
                                 class="delimiter"><i class="rhicon rhi-angle-right"></i></span><a
                                 href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">{{$itemDetail->title}}</a>
                         </nav>

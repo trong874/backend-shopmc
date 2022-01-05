@@ -161,9 +161,9 @@
                                            value="{{@$item->image_extension}}">
                                     <div class="sortable grid">
                                         @if(@$item->image_extension)
-                                            @foreach(explode('|',$item->image_extension) as $item)
+                                            @foreach(explode('|',$item->image_extension) as $url_image)
                                                 <div class="image-preview-box">
-                                                    <img src="{{$item}}" alt="" data-input="{{$item}}">
+                                                    <img src="{{$url_image}}" alt="" data-input="{{$url_image}}">
                                                     <a rel="8" class="btn btn-xs  btn-icon btn-danger btn_delete_image"
                                                        data-toggle="modal" data-target="#deleteModal"><i
                                                             class="la la-close"></i></a>
@@ -171,9 +171,6 @@
                                             @endforeach
                                         @endif
                                     </div>
-                                    <style>
-
-                                    </style>
                                     <a class="btn btn-success ck-popup-multiply" style="margin-top: 15px;">
                                         <i class="la la-cloud-upload-alt"></i> Chọn hình
                                     </a>
