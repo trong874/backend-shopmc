@@ -142,5 +142,6 @@ class CategoryController extends Controller
     {
         $ids = $request->ids;
         Group::whereIn('id', explode(",", $ids))->delete();
+        return response()->json(['status'=>'success']);
     }
 }
