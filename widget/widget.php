@@ -196,3 +196,10 @@ View::composer('frontend.layout.core.hearder', function ($view) {
     }
     return $view->with('data', $data);
 });
+
+View::composer('frontend.home',function ($view){
+   $slideBanners = Item::whereHas('groups',function($q){
+       $q->where('slug','slide-banner');
+    })->get();
+   return $view->with('slideBanners',$slideBanners);
+});

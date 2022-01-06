@@ -2,18 +2,16 @@
     <div class="rh-container full_width">
         <div class="rh-content-wrap clearfix">
             <!-- Main Side -->
-
-
-                                                        <!--START Slider 1 REVOLUTION SLIDER 6.2.23 -->
+            <!--START Slider 1 REVOLUTION SLIDER 6.2.23 -->
             <p class="rs-p-wp-fix"></p>
             <div id="slider_home">
                 <rs-module-wrap id="rev_slider_24_1_wrapper" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
                     <rs-module id="rev_slider_24_1" style="" data-version="6.2.23">
                         <rs-slides>
+                            @foreach($slideBanners as $slideBanner)
                             <rs-slide data-key="rs-34" data-title="Slide" data-anim="ei:d;eo:d;s:d;r:0;t:parallaxtoright;sl:d;">
-                                <img src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
-                                <!--
-                                                           -->
+                                <img src="{{asset('/frontend/image/transparent.png')}}" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
+                                <!-- -->
                                 <rs-layer
                                     id="slider-24-slide-34-layer-2"
                                     data-type="image"
@@ -25,62 +23,10 @@
                                     data-frame_1="sp:1000;"
                                     data-frame_999="o:0;st:w;"
                                     style="z-index:5;">
-                                    <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-ninjago.jpg" width="1200" height="240" data-no-retina>
+                                    <img src="{{$slideBanner->image}}" width="1200" height="240" data-no-retina>
                                 </rs-layer><!--
--->						                                                 </rs-slide>
-                            <rs-slide data-key="rs-36" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
-                                <img src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
-                                <!--
-                                                           -->
-                                <rs-layer
-                                    id="slider-24-slide-36-layer-3"
-                                    data-type="image"
-                                    data-rsp_ch="on"
-                                    data-text="w:normal;s:20,20,20,7;l:0,0,0,9;"
-                                    data-dim="w:1200px,1200px,1200px,480px;h:240px,240px,240px,95px;"
-                                    data-frame_0="x:right;"
-                                    data-frame_1="sp:1000;"
-                                    data-frame_999="o:0;st:w;"
-                                    style="z-index:5;">
-                                    <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-friends.jpg" width="1200" height="240" data-no-retina>
-                                </rs-layer><!--
--->						                                               </rs-slide>
-                            <rs-slide data-key="rs-33" data-title="Slide" data-anim="ei:d;eo:d;s:d;r:0;t:slideoverup;sl:d;">
-                                <img src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
-                                <!--
-                                                   -->
-                                <rs-layer
-                                    id="slider-24-slide-33-layer-1"
-                                    data-type="image"
-                                    data-rsp_ch="on"
-                                    data-xy="yo:-2px,-2px,-2px,0;"
-                                    data-text="w:normal;s:20,20,20,7;l:0,0,0,9;"
-                                    data-dim="w:1200px,1200px,1200px,480px;h:240px,240px,240px,95px;"
-                                    data-frame_0="x:right;"
-                                    data-frame_1="sp:1000;"
-                                    data-frame_999="o:0;st:w;"
-                                    style="z-index:5;">
-                                    <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-minecraft.jpg" width="1200" height="240" data-no-retina>
-                                </rs-layer><!--
--->						                                            </rs-slide>
-                            <rs-slide data-key="rs-37" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
-                                <img src="//shopmc.com.vn/wp-content/plugins/revslider/public/assets/assets/transparent.png" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
-                                <!--
-                                                            -->
-                                <rs-layer
-                                    id="slider-24-slide-37-layer-4"
-                                    data-type="image"
-                                    data-rsp_ch="on"
-                                    data-xy="xo:-2px,-2px,-2px,0;"
-                                    data-text="w:normal;s:20,20,20,7;l:0,0,0,9;"
-                                    data-dim="w:1200px,1200px,1200px,480px;h:240px,240px,240px,95px;"
-                                    data-frame_0="x:right;"
-                                    data-frame_1="sp:1000;"
-                                    data-frame_999="o:0;st:w;"
-                                    style="z-index:5;">
-                                    <img src="//shopmc.com.vn/wp-content/uploads/2020/11/lego-city.jpg" width="1200" height="240" data-no-retina>
-                                </rs-layer><!--
--->						                                          </rs-slide>
+-->						    </rs-slide>
+                            @endforeach
                         </rs-slides>
                     </rs-module>
                     <script type="text/javascript">
