@@ -255,6 +255,58 @@
                 </div>
             </div>
         </div>
+            <div class="row mt-2">
+                <div class="card col-lg-9">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">
+                                Tối ưu SEO <i class="mr-2"></i>
+                                <span class="d-block text-muted pt-2 font-size-sm">Thiết lập các thẻ mô tả tối ưu nội dung tìm kiếm trên Google.</span>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <div class="col-12 col-md-12">
+                                <label>Tiêu đề Trang (&lt;title&gt;)</label>
+                                <input type="text" id="seo_title" name="seo_title" value="Bài viết hay" placeholder=""
+                                       class="form-control ">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-12 col-md-12">
+                                <label>Mô Tả Trang ( &lt;meta Description&gt; )</label>
+                                <input type="text" id="seo_description" name="seo_description" value="" placeholder=""
+                                       class="form-control ">
+                            </div>
+                        </div>
+
+                        <fieldset class="content-group">
+                            <legend class="text-bold"
+                                    style="border-bottom: 1px solid #e5e5e5;font-size: 15px;padding-bottom: 10px;margin-bottom: 10px">
+                                Khi lên top, page này sẽ hiển thị như sau:
+                            </legend>
+                            <div class="form-group">
+                                <h3 id="google_title" class="title_google"
+                                    style="color:#1a0dab;font-size: 18px;font-family: arial,sans-serif;padding:0;margin: 0;">
+                                    Bài viết hay</h3>
+                                <div style="color:#006621;font-size: 14px;font-family: arial,sans-serif;">
+                                    <span class="prefix_url">https://phukiengame.com.vn/</span><span
+                                        id="google_slug" class="google_slug">bai-viet-hay</span>
+                                </div>
+                                <div id="google_description" class="google_description"
+                                     style="color: #545454;font-size: small;font-family: arial,sans-serif;"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
     </form>
         <!--end::Form-->
     <!--end::Card-->

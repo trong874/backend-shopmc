@@ -40,7 +40,8 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
-        $item = Item::create($request->all());
+        $data_item = $request->all();
+        $item = Item::create($data_item);
         if ($request->group_id) {
             foreach ($request->group_id as $group_id) {
                 $item->groups()->attach($group_id);
@@ -63,6 +64,7 @@ class ItemController extends Controller
 
     public function update(Request $request, $id)
     {
+        $data_item = $request->all();
         $item = Item::with('groups')->findOrFail($id);
         foreach ($item->groups as $group) {
             if ($group->module == $this->module .'-group') {
@@ -76,7 +78,7 @@ class ItemController extends Controller
             $item->groups()->attach($group_id);
         }
         }
-        $item->update($request->all());
+        $item->update($data_item);
         Session::put('message', 'Cập nhật thay đổi thành công');
         return back();
     }

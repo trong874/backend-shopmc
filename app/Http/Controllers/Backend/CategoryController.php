@@ -39,15 +39,8 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        Group::create([
-            'title' => $request->title,
-            'position'=>$request->position,
-            'module' => $request->module,
-            'slug'=>$request->slug,
-            'parent_id' => $request->parent_id,
-            'image' => $request->image,
-            'author_id' => $request->author_id
-        ]);
+        $data_category = $request->all();
+        Group::create($data_category);
         Session::put('message','Tạo mới thành công');
         return view('backend.categories.form-data', [
             'groups' => $this->getGroupsByModule(),
@@ -58,22 +51,7 @@ class CategoryController extends Controller
 
     public function edit($group)
     {
-        $group = Group::findOrFail($group, [
-            'id',
-            'url',
-            'order',
-            'position',
-            'title',
-            'slug',
-            'parent_id',
-            'image',
-            'image_extension',
-            'image_banner',
-            'image_icon',
-            'status',
-            'ended_at',
-            'created_at'
-        ]);
+        $group = Group::findOrFail($group);
 
         return view('backend.categories.form-data', [
             'groups' => $this->getGroupsByModule(),

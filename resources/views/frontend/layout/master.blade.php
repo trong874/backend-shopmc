@@ -40,30 +40,19 @@
 
     <meta name="description" content="{{@$seo_description ?? 'Shop Phụ Kiện Game chuyên cung cấp các phụ kiện chơi game chính hãng chất lượng'}}"/>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-    <link rel="canonical" href="https://shopmc.com.vn/"/>
+    <link rel="canonical" href="https://dev.phukiengame.com.vn/"/>
     <meta property="og:locale" content="vi_VN"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Shopmc - Đồ chơi minecraft chính hãng tại việt nam"/>
+    <meta property="og:title" content="Phukiengame - Đồ chơi minecraft chính hãng tại việt nam"/>
     <meta property="og:description"
-          content="Shop mc cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
-    <meta property="og:url" content="https://shopmc.com.vn/"/>
-    <meta property="og:site_name" content="Shop MC"/>
+          content="Phukiengame cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
+    <meta property="og:url" content="https://dev.phukiengame.com.vn/"/>
+    <meta property="og:site_name" content="Phukiengame"/>
     <meta property="article:modified_time" content="2020-12-10T16:04:54+00:00"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:label1" content="Est. reading time">
     <meta name="twitter:data1" content="12 phút">
-    <script type="application/ld+json" class="yoast-schema-graph">
-        {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://shopmc.com.vn/#website","url":"https://shopmc.com.vn/","name":"Shop MC","description":"\u0110\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng","potentialAction":[{"@type":"SearchAction","target":"https://shopmc.com.vn/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"vi"},{"@type":"WebPage","@id":"https://shopmc.com.vn/#webpage","url":"https://shopmc.com.vn/","name":"Shopmc - \u0110\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng t\u1ea1i vi\u1ec7t nam","isPartOf":{"@id":"https://shopmc.com.vn/#website"},"datePublished":"2016-10-18T22:03:29+00:00","dateModified":"2020-12-10T16:04:54+00:00","description":"Shop mc cung c\u1ea5p \u0111\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng duy nh\u1ea5t t\u1ea1i vi\u1ec7t nam, c\u00e1c s\u1ea3n ph\u1ea9m \u0111\u1ed3 ch\u01a1i minecraft nh\u01b0 balo , \u0111\u1ed3ng h\u1ed3, s\u00e1ch, qu\u1ea7n \u00e1o minecraft...","breadcrumb":{"@id":"https://shopmc.com.vn/#breadcrumb"},"inLanguage":"vi","potentialAction":[{"@type":"ReadAction","target":["https://shopmc.com.vn/"]}]},{"@type":"BreadcrumbList","@id":"https://shopmc.com.vn/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://shopmc.com.vn/","url":"https://shopmc.com.vn/","name":"Home"}}]}]}
-
-
-    </script>
     <!-- / Yoast SEO plugin. -->
-
-    <link rel='dns-prefetch' href='//s.w.org'/>
-    <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Shop MC &raquo;"
-          href="https://shopmc.com.vn/feed/"/>
-    <link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Shop MC &raquo;"
-          href="https://shopmc.com.vn/comments/feed/"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('frontend/js/home/style.js')}}"></script>
     <link rel='stylesheet' id='wp-block-library-css'
@@ -133,6 +122,11 @@
     <script type='text/javascript'
             src='{{asset('frontend/js/js/rs6.min.js')}}'
             id='revmin-js'></script>
+    <script type='text/javascript' id='wt-smart-coupon-js-extra'>
+        /* <![CDATA[ */
+        var WTSmartCouponOBJ = {"ajaxurl": "https:\/\/shopmc.com.vn\/wp-admin\/admin-ajax.php"};
+        /* ]]> */
+    </script>
     <script type='text/javascript'
             src='{{asset('frontend/js/js/wt-smart-coupon-public.js')}}'
             id='wt-smart-coupon-js'></script>

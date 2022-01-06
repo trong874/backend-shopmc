@@ -37,16 +37,8 @@ class GroupController extends Controller
 
     public function store(Request $request)
     {
-        Group::create([
-            'status'=>$request->status,
-            'title' => $request->title,
-            'position' => $request->position,
-            'module' => $request->module,
-            'slug' => $request->slug,
-            'parent_id' => $request->parent_id,
-            'image' => $request->image,
-            'author_id' => $request->author_id
-        ]);
+        $data_group = $request->all();
+        Group::create($data_group);
         Session::put('message', 'Tạo mới thành công');
         return view('backend.groups.form-data', [
             'page_title' => 'Tạo mới nhóm ' . $this->module,
@@ -66,8 +58,9 @@ class GroupController extends Controller
 
     public function update(Request $request, $group)
     {
+        $data_group = $request->all();
         $group = Group::findOrFail($group);
-        $group->update($request->all());
+        $group->update($data_group);
         Session::put('message', 'Chỉnh sửa thành công');
         return back();
     }
