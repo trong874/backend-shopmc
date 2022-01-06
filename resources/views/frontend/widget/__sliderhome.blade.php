@@ -9,7 +9,7 @@
                         <rs-slides>
                             @foreach($slideBanners as $slideBanner)
                             <rs-slide data-key="rs-34" data-title="Slide" data-anim="ei:d;eo:d;s:d;r:0;t:parallaxtoright;sl:d;">
-                                <img src="{{asset('/frontend/image/transparent.png')}}" alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
+                                <img src="{{asset('/frontend/image/transparent.png')}}"  alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
                                 <!-- -->
                                 <rs-layer
                                     id="slider-24-slide-34-layer-2"
@@ -22,7 +22,7 @@
                                     data-frame_1="sp:1000;"
                                     data-frame_999="o:0;st:w;"
                                     style="z-index:5;">
-                                    <img src="{{$slideBanner->image}}" width="1200" height="240" data-no-retina>
+                                    <img src="{{$slideBanner->image}}" width="1200" height="240" data-no-retina style="object-fit: cover !important;">
                                 </rs-layer><!--
 -->						    </rs-slide>
                             @endforeach
