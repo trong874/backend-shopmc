@@ -139,8 +139,6 @@
     <script type='text/javascript'
             src='{{asset('frontend/js/public/wgact.js')}}'
             id='front-end-scripts-js'></script>
-    <meta name="generator" content="WordPress 5.5.6"/>
-    <meta name="generator" content="WooCommerce 4.7.0"/>
     <link rel='shortlink' href='{{$url}}'/>
     <link rel="preload" href="{{asset('frontend/css/rehub-theme/fonts/rhicons.woff2?leryx9')}}" as="font"
           type="font/woff2" crossorigin="crossorigin">
@@ -159,10 +157,6 @@
                 opacity: 1 !important;
             }</style>
     </noscript>
-    <meta name="onesignal" content="wordpress-plugin"/>
-    <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
-    <meta name="generator"
-          content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
     <link rel="icon" href="{{asset('/frontend/image/cropped-mc-32x32.png')}}" sizes="32x32"/>
     <link rel="icon" href="{{asset('/frontend/image/cropped-mc-192x192.png')}}" sizes="192x192"/>
     <link rel="apple-touch-icon" href="{{asset('/frontend/image/cropped-mc-180x180.png')}}"/>
