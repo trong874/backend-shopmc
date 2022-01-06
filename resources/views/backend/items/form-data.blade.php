@@ -245,16 +245,22 @@
                         <div class="form-group">
                             <label>Trạng thái</label>
                             <select name="status" class="form-control">
-                                <option value="1" @if(@$item)@if($item->status == 1) selected @endif @endif>Hoạt động</option>
-                                <option value="0"  @if(@$item)@if($item->status == 0) selected @endif @endif>Ngừng hoạt động</option>
+                                <option value="1" @if(@$item)@if($item->status == 1) selected @endif @endif>Hoạt động
+                                </option>
+                                <option value="0" @if(@$item)@if($item->status == 0) selected @endif @endif>Ngừng hoạt
+                                    động
+                                </option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Ngày tạo</label>
-                           <?php date_default_timezone_set('Asia/Ho_Chi_Minh') ?>
+                            <?php date_default_timezone_set('Asia/Ho_Chi_Minh') ?>
                             <div class="input-group date" id="kt_datetimepicker_1" data-target-input="nearest">
-                                <input type="text" name="created_at" class="form-control datetimepicker-input" value="{{$item->created_at ?? date('d/m/Y H:i:s')}}" data-target="#kt_datetimepicker_1" data-toggle="datetimepicker">
-                                <div class="input-group-append" data-target="#kt_datetimepicker_1" data-toggle="datetimepicker">
+                                <input type="text" name="created_at" class="form-control datetimepicker-input"
+                                       value="{{$item->created_at ?? date('d/m/Y H:i:s')}}"
+                                       data-target="#kt_datetimepicker_1" data-toggle="datetimepicker">
+                                <div class="input-group-append" data-target="#kt_datetimepicker_1"
+                                     data-toggle="datetimepicker">
 															<span class="input-group-text">
 																<i class="ki ki-calendar"></i>
 															</span>
@@ -264,8 +270,11 @@
                         <div class="form-group">
                             <label>Ngày hết hạn</label>
                             <div class="input-group date" id="kt_datetimepicker_2" data-target-input="nearest">
-                                <input type="text" name="ended_at" class="form-control datetimepicker-input" data-target="#kt_datetimepicker_2" value="{{@$item->ended_at}}" placeholder="Ngày hết hạn" data-toggle="datetimepicker">
-                                <div class="input-group-append" data-target="#kt_datetimepicker_2" data-toggle="datetimepicker">
+                                <input type="text" name="ended_at" class="form-control datetimepicker-input"
+                                       data-target="#kt_datetimepicker_2" value="{{@$item->ended_at}}"
+                                       placeholder="Ngày hết hạn" data-toggle="datetimepicker">
+                                <div class="input-group-append" data-target="#kt_datetimepicker_2"
+                                     data-toggle="datetimepicker">
 															<span class="input-group-text">
 																<i class="ki ki-calendar"></i>
 															</span>
@@ -280,6 +289,58 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-2">
+            <div class="card col-lg-9">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">
+                                Tối ưu SEO <i class="mr-2"></i>
+                                <span class="d-block text-muted pt-2 font-size-sm">Thiết lập các thẻ mô tả tối ưu nội dung tìm kiếm trên Google.</span>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <div class="col-12 col-md-12">
+                                <label>Tiêu đề Trang (&lt;title&gt;)</label>
+                                <input type="text" id="seo_title" name="seo_title" value="{{@$item->seo_title ?? 'Bài viết hay'}}" placeholder=""
+                                       class="form-control ">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-12 col-md-12">
+                                <label>Mô Tả Trang ( &lt;meta Description&gt; )</label>
+                                <input type="text" id="seo_description" name="seo_description" value="{{@$item->seo_description}}" placeholder=""
+                                       class="form-control ">
+                            </div>
+                        </div>
+
+                        <fieldset class="content-group">
+                            <legend class="text-bold"
+                                    style="border-bottom: 1px solid #e5e5e5;font-size: 15px;padding-bottom: 10px;margin-bottom: 10px">
+                                Khi lên top, page này sẽ hiển thị như sau:
+                            </legend>
+                            <div class="form-group">
+                                <h3 id="google_title" class="title_google"
+                                    style="color:#1a0dab;font-size: 18px;font-family: arial,sans-serif;padding:0;margin: 0;">
+                                    Bài viết hay</h3>
+                                <div style="color:#006621;font-size: 14px;font-family: arial,sans-serif;">
+                                    <span class="prefix_url">https://phukiengame.com.vn/</span><span
+                                        id="google_slug" class="google_slug">bai-viet-hay</span>
+                                </div>
+                                <div id="google_description" class="google_description"
+                                     style="color: #545454;font-size: small;font-family: arial,sans-serif;"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
     </form>
     <!--end::Form-->
     <!--end::Card-->
@@ -344,10 +405,10 @@
     <script>
         $(document).ready(function () {
             $('#submit_form').html(
-                '<button type="button" class="btn-shadow-hover font-weight-bold mr-2 btn btn-light-success"> <i class="flaticon2-check-mark"></i>'+'{{@$item ? "Chỉnh sửa" : "Thêm mới"}}'+'</button>'
+                '<button type="button" class="btn-shadow-hover font-weight-bold mr-2 btn btn-light-success"> <i class="flaticon2-check-mark"></i>' + '{{@$item ? "Chỉnh sửa" : "Thêm mới"}}' + '</button>'
             )
         })
-        $('#submit_form').on('click',function () {
+        $('#submit_form').on('click', function () {
             $('#formMain').submit();
         })
     </script>

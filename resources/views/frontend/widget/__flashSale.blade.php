@@ -4,7 +4,7 @@
             <div class="wpb_wrapper">
                 <article class="post wpb_content_element vc_custom_1607448849913">
                     <div class="wpb_wrapper">
-                        <h4 style="margin-left: 10px">Flash Sale</h4>
+                        <h2 style="margin-left: 10px">Flash Sale</h2>
                     </div>
                 </article>
                 <div class="woocommerce" style="margin-left: 15px;">

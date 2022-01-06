@@ -2,9 +2,7 @@
     <div class="wpb_column vc_column_container vc_col-sm-12 ">
         {{--        vc_hidden-xs--}}
         <div class="vc_column-inner ">
-            <div class="wpb_wrapper "><h4
-                    style="margin-block-start: 1em; margin-left: 15px"
-                    class="vc_custom_heading post vc_custom_1607448849913">Balo Túi Xách</h4>
+            <div class="wpb_wrapper "><h2 style="margin-left: 15px">Balo Túi Xách</h2>
                 <div class="woocommerce" style="margin-left: 15px;">
                     <div
                         class="rh-flex-eq-height products  re_aj_pag_clk_wrap col_wrap_six grid_woo"
