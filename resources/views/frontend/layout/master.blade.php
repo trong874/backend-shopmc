@@ -19,7 +19,6 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
-    <link rel="pingback" href="https://shopmc.com.vn/xmlrpc.php"/>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -39,32 +38,21 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
     <meta name="description"
-          content="Shop mc cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
+          content="Phukiengame cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-    <link rel="canonical" href="https://shopmc.com.vn/"/>
+    <link rel="canonical" href="https://dev.phukiengame.com.vn/"/>
     <meta property="og:locale" content="vi_VN"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Shopmc - Đồ chơi minecraft chính hãng tại việt nam"/>
+    <meta property="og:title" content="Phukiengame - Đồ chơi minecraft chính hãng tại việt nam"/>
     <meta property="og:description"
-          content="Shop mc cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
-    <meta property="og:url" content="https://shopmc.com.vn/"/>
-    <meta property="og:site_name" content="Shop MC"/>
+          content="Phukiengame cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
+    <meta property="og:url" content="https://dev.phukiengame.com.vn/"/>
+    <meta property="og:site_name" content="Phukiengame"/>
     <meta property="article:modified_time" content="2020-12-10T16:04:54+00:00"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:label1" content="Est. reading time">
     <meta name="twitter:data1" content="12 phút">
-    <script type="application/ld+json" class="yoast-schema-graph">
-        {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://shopmc.com.vn/#website","url":"https://shopmc.com.vn/","name":"Shop MC","description":"\u0110\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng","potentialAction":[{"@type":"SearchAction","target":"https://shopmc.com.vn/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"vi"},{"@type":"WebPage","@id":"https://shopmc.com.vn/#webpage","url":"https://shopmc.com.vn/","name":"Shopmc - \u0110\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng t\u1ea1i vi\u1ec7t nam","isPartOf":{"@id":"https://shopmc.com.vn/#website"},"datePublished":"2016-10-18T22:03:29+00:00","dateModified":"2020-12-10T16:04:54+00:00","description":"Shop mc cung c\u1ea5p \u0111\u1ed3 ch\u01a1i minecraft ch\u00ednh h\u00e3ng duy nh\u1ea5t t\u1ea1i vi\u1ec7t nam, c\u00e1c s\u1ea3n ph\u1ea9m \u0111\u1ed3 ch\u01a1i minecraft nh\u01b0 balo , \u0111\u1ed3ng h\u1ed3, s\u00e1ch, qu\u1ea7n \u00e1o minecraft...","breadcrumb":{"@id":"https://shopmc.com.vn/#breadcrumb"},"inLanguage":"vi","potentialAction":[{"@type":"ReadAction","target":["https://shopmc.com.vn/"]}]},{"@type":"BreadcrumbList","@id":"https://shopmc.com.vn/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://shopmc.com.vn/","url":"https://shopmc.com.vn/","name":"Home"}}]}]}
-
-
-    </script>
     <!-- / Yoast SEO plugin. -->
-
-    <link rel='dns-prefetch' href='//s.w.org'/>
-    <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Shop MC &raquo;"
-          href="https://shopmc.com.vn/feed/"/>
-    <link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Shop MC &raquo;"
-          href="https://shopmc.com.vn/comments/feed/"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('frontend/js/home/style.js')}}"></script>
     <link rel='stylesheet' id='wp-block-library-css'
@@ -134,29 +122,14 @@
     <script type='text/javascript'
             src='{{asset('frontend/js/js/rs6.min.js')}}'
             id='revmin-js'></script>
-    <script type='text/javascript' id='wt-smart-coupon-js-extra'>
-        /* <![CDATA[ */
-        var WTSmartCouponOBJ = {"ajaxurl": "https:\/\/shopmc.com.vn\/wp-admin\/admin-ajax.php"};
-        /* ]]> */
-    </script>
     <script type='text/javascript'
             src='{{asset('frontend/js/js/wt-smart-coupon-public.js')}}'
             id='wt-smart-coupon-js'></script>
     <script type='text/javascript'
             src='{{asset('frontend/js/public/wgact.js')}}'
             id='front-end-scripts-js'></script>
-    <link rel="https://api.w.org/" href="https://shopmc.com.vn/wp-json/"/>
-    <link rel="alternate" type="application/json" href="https://shopmc.com.vn/wp-json/wp/v2/pages/9004"/>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://shopmc.com.vn/xmlrpc.php?rsd"/>
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-          href="https://shopmc.com.vn/wp-includes/wlwmanifest.xml"/>
-    <meta name="generator" content="WordPress 5.5.6"/>
-    <meta name="generator" content="WooCommerce 4.7.0"/>
-    <link rel='shortlink' href='https://shopmc.com.vn/'/>
-    <link rel="alternate" type="application/json+oembed"
-          href="https://shopmc.com.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fshopmc.com.vn%2F"/>
-    <link rel="alternate" type="text/xml+oembed"
-          href="https://shopmc.com.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fshopmc.com.vn%2F&#038;format=xml"/>
+    <link rel="https://api.w.org/" href="https://dev.phukiengame.com.vn/"/>
+    <link rel='shortlink' href='https://dev.phukiengame.com.vn/'/>
     <link rel="preload" href="{{asset('frontend/css/rehub-theme/fonts/rhicons.woff2?leryx9')}}" as="font"
           type="font/woff2" crossorigin="crossorigin">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}?v={{time()}}">
@@ -174,15 +147,11 @@
                 opacity: 1 !important;
             }</style>
     </noscript>
-    <meta name="onesignal" content="wordpress-plugin"/>
-    <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
-    <meta name="generator"
-          content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
-    <link rel="icon" href="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-32x32.png" sizes="32x32"/>
-    <link rel="icon" href="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-192x192.png" sizes="192x192"/>
-    <link rel="apple-touch-icon" href="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-180x180.png"/>
+    <link rel="icon" href="{{asset('/frontend/image/cropped-mc-32x32.png')}}" sizes="32x32"/>
+    <link rel="icon" href="{{asset('/frontend/image/cropped-mc-192x192.png')}}" sizes="192x192"/>
+    <link rel="apple-touch-icon" href="{{asset('/frontend/image/cropped-mc-180x180.png')}}"/>
     <meta name="msapplication-TileImage"
-          content="https://shopmc.com.vn/wp-content/uploads/2017/05/cropped-mc-270x270.png"/>
+          content="{{asset('/frontend/image/cropped-mc-270x270.png')}}"/>
     <script src="{{asset('frontend/js/home/style2.js')}}"></script>
     <script src="{{asset('frontend/js/home/filter_price.js')}}"></script>
     <noscript>
@@ -375,40 +344,17 @@
         }
     }
 </script>
-<script type='text/javascript' id='contact-form-7-js-extra'>
-    /* <![CDATA[ */
-    var wpcf7 = {
-        "apiSettings": {
-            "root": "https:\/\/shopmc.com.vn\/wp-json\/contact-form-7\/v1",
-            "namespace": "contact-form-7\/v1"
-        }, "cached": "1"
-    };
-    /* ]]> */
-</script>
 <script type='text/javascript'
-        src='https://shopmc.com.vn/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3'
+        src='{{asset('/frontend/js/scripts.js')}}'
         id='contact-form-7-js'></script>
 <script type='text/javascript'
-        src='https://shopmc.com.vn/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'
+        src='{{asset('/frontend/js/jquery.blockUI.min.js')}}'
         id='jquery-blockui-js'></script>
-<script type='text/javascript' id='wc-add-to-cart-js-extra'>
-    /* <![CDATA[ */
-    var wc_add_to_cart_params = {
-        "ajax_url": "\/wp-admin\/admin-ajax.php",
-        "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
-        "i18n_view_cart": "Xem gi\u1ecf h\u00e0ng",
-        "cart_url": "https:\/\/shopmc.com.vn\/cart\/",
-        "is_cart": "",
-        "cart_redirect_after_add": "no",
-        "i18n_added_to_cart": "Has been added to cart."
-    };
-    /* ]]> */
-</script>
 <script type='text/javascript'
-        src='https://shopmc.com.vn/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.7.0'
+        src='{{asset('/frontend/js/add-to-cart.min.js')}}'
         id='wc-add-to-cart-js'></script>
 <script type='text/javascript'
-        src='https://shopmc.com.vn/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'
+        src='{{asset('/frontend/js/js.cookie.min.js')}}'
         id='js-cookie-js'></script>
 <script type='text/javascript' id='woocommerce-js-extra'>
     /* <![CDATA[ */
@@ -416,7 +362,7 @@
     /* ]]> */
 </script>
 <script type='text/javascript'
-        src='https://shopmc.com.vn/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=4.7.0'
+        src='{{asset('/frontend/js/woocommerce.min.js')}}'
         id='woocommerce-js'></script>
 <script type='text/javascript' id='wc-cart-fragments-js-extra'>
     /* <![CDATA[ */
@@ -468,16 +414,6 @@
         id='rehub-js'></script>
 <script type='text/javascript' src='{{asset('frontend/js/js/niceselect.js')}}'
         id='rhniceselect-js'></script>
-<script type='text/javascript' id='rehubwoo-js-extra'>
-    /* <![CDATA[ */
-    var rhwoovar = {
-        "ajax_url": "\/wp-admin\/admin-ajax.php",
-        "templateurl": "https:\/\/shopmc.com.vn\/wp-content\/themes\/rehub-theme",
-        "quicknonce": "83ee40e181",
-        "favornonce": "303883ae52"
-    };
-    /* ]]> */
-</script>
 <script type='text/javascript' src='{{asset('frontend/js/js/woocommerce.js')}}'
         id='rehubwoo-js'></script>
 <script type='text/javascript' src='{{asset('frontend/js/js/jquery.sticky.js')}}'
