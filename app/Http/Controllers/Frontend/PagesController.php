@@ -65,10 +65,7 @@ class   PagesController extends Controller
 
     public function getItemDetail($slug)
     {
-        $itemDetail = Item::where('slug', $slug)
-            ->first([
-                'title', 'content', 'description', 'image', 'url', 'price', 'price_old', 'slug', 'id', 'image_extension'
-            ]);
+        $itemDetail = Item::where('slug', $slug)->first();
         $page_title = $itemDetail->seo_title;
         $page_description = $itemDetail->seo_description;
         $related = $itemDetail->groups()->with('item')
@@ -86,9 +83,7 @@ class   PagesController extends Controller
     {
         $newDetail = Item::where('module', 'news')
             ->where('slug', $slug)
-            ->first([
-                'title', 'content', 'description', 'image', 'url', 'slug', 'id'
-            ]);
+            ->first();
         $page_title = $newDetail->seo_title;
         $page_description = $newDetail->seo_description;
         $related = $newDetail->groups()->with('item')->where('module', 'news-group')->first();

@@ -276,7 +276,7 @@
                         <div class="form-group row">
                             <div class="col-12 col-md-12">
                                 <label>Tiêu đề Trang (&lt;title&gt;)</label>
-                                <input type="text" id="seo_title" name="seo_title" value="Bài viết hay" placeholder=""
+                                <input type="text" id="seo_title" name="seo_title" value="{{$group->seo_title ?? 'Bài viết hay'}}" placeholder=""
                                        class="form-control ">
                             </div>
 
@@ -286,7 +286,7 @@
                         <div class="form-group row">
                             <div class="col-12 col-md-12">
                                 <label>Mô Tả Trang ( &lt;meta Description&gt; )</label>
-                                <input type="text" id="seo_description" name="seo_description" value="" placeholder=""
+                                <input type="text" id="seo_description" name="seo_description" value="{{@$group->seo_description}}" placeholder=""
                                        class="form-control ">
                             </div>
                         </div>

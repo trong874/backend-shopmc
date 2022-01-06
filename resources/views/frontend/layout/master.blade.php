@@ -38,7 +38,7 @@
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-    <meta name="description" content="{{@$seo_description ?? 'Shop Phụ Kiện Game chuyên cung cấp các phụ kiện chơi game chính hãng chất lượng'}}"/>
+    <meta name="description" content="{{$page_description ?? 'Shop Phụ Kiện Game chuyên cung cấp các phụ kiện chơi game chính hãng chất lượng'}}"/>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
     <?php
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
