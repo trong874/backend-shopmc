@@ -5,9 +5,11 @@ use App\Http\Controllers\Backend\GroupController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\TelecomController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserQTVController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\ChargeController;
 use App\Http\Controllers\Frontend\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,11 +36,18 @@ Route::group(['middleware' => 'language'], function () {
 
     Route::post('order-store',[OrderController::class,'store'])->name('order.store');
 
-    Route::post('/checkout',[PagesController::class,'checkout'])->name('checkout');
+    Route::get('/checkout',[PagesController::class,'checkout'])->name('checkout');
     Route::get('/orders',[PagesController::class,'orders'])->name('orders');
     Route::get('/order_detail/{id}',[PagesController::class,'orderDetail'])->name('order.detail');
-
     Route::get('/see_more_product',[PagesController::class,'seeMoreProduct']);
+    Route::get('/profile',[PagesController::class,'profile'])->name('profile.user');
+
+    Route::middleware(['auth'])->group(function (){
+        Route::get('order_cancel',[OrderController::class,'orderCancel'])->name('order_cancel');
+        Route::post('use-voucher',[OrderController::class,'useVoucher'])->name('use_voucher');
+        Route::resource('charge',ChargeController::class);
+        Route::post('get_telecom_value',[TelecomController::class,'getTelecomValue'])->name('ajax_get_telecom_value');
+    });
 
     Route::prefix('admin')->middleware(['auth'])->middleware(['auth_qtv'])->group(function () {
         Route::get('/', [\App\Http\Controllers\Backend\PagesController::class, 'index'])->name('dashboard');
@@ -59,6 +68,10 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::resource('orders', OrderController::class);
 
+        Route::resource('telecoms', TelecomController::class);
+
+        Route::post('telecom/{id}/set-value',[TelecomController::class,'setValue'])->name('set_value_telecom');
+
         Route::resource('admin-manage',UserQTVController::class);
 
         Route::get('/{account_type}/filter/user_qtv',[UserQTVController::class,'filter'])->name('user_qtv.filter');
@@ -73,6 +86,8 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::post('delete-many-group', [GroupController::class, 'destroyMuch'])->name('groups.destroy_many');
 
+        Route::post('delete-many-telecom',[TelecomController::class,'destroyMuch'])->name('telecoms.destroy_many');
+
         Route::post('/update-list', [CategoryController::class, 'saveList'])->name('groups.update_list');
 
         Route::get('set-locale/{locale}', [\App\Http\Controllers\Backend\PagesController::class, 'changeLanguage'])->name('setLocale');
@@ -84,6 +99,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::get('detele-item-group',[GroupController::class,'deleteItemInGroup'])->name('group.delete-item');
 
         Route::get('order-filter',[OrderController::class,'filter'])->name('order.filter');
+
+        Route::get('telecom-filter',[TelecomController::class,'filter'])->name('telecom.filter');
     });
 
 });

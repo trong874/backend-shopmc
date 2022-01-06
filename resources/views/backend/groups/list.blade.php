@@ -197,7 +197,7 @@
                                 </div>
 
                                 {{--                                List Item Modal--}}
-                                <div class="modal fade modal_delete_8" id="list-item-{{$group->id}}" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="list-item-{{$group->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalSizeSm" aria-hidden="true" >
                                     <div id="kakaa" class="modal-dialog modal-dialog-centered modal-xl" role="document">
                                         <div class="modal-content">

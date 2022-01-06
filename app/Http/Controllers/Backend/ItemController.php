@@ -25,6 +25,7 @@ class ItemController extends Controller
             'items' => $items,
             'groups' => $this->getGroupsByModule(),
             'module' => $this->module]);
+
     }
 
     public function create()
@@ -63,18 +64,18 @@ class ItemController extends Controller
     public function update(Request $request, $id)
     {
         $item = Item::with('groups')->findOrFail($id);
-      foreach ($item->groups as $group){
-          if ($group->module == 'products-group'){
-              continue;
-          }else{
-              $item->groups()->detach($group->id);
-          }
-      }
-
-      foreach ($request->group_id as $group_id)
-      {
-          $item->groups()->attach($group_id);
-      }
+        foreach ($item->groups as $group) {
+            if ($group->module == $this->module .'-group') {
+                continue;
+            } else {
+                $item->groups()->detach($group->id);
+            }
+        }
+        if ($request->group_id){
+        foreach ($request->group_id as $group_id) {
+            $item->groups()->attach($group_id);
+        }
+        }
         $item->update($request->all());
         Session::put('message', 'Cập nhật thay đổi thành công');
         return back();
@@ -85,7 +86,7 @@ class ItemController extends Controller
         $item = Item::findOrFail($item);
         $item->groups()->detach();
         $item->delete();
-        Session::put('message','Đã xoá item số ' . $item->id);
+        Session::put('message', 'Đã xoá item số ' . $item->id);
         return back();
     }
 
@@ -93,7 +94,7 @@ class ItemController extends Controller
     {
         $ids = $request->ids;
         Item::whereIn('id', explode(",", $ids))->delete();
-        Session::put('message','Đã xoá những item '.$ids);
+        Session::put('message', 'Đã xoá những item ' . $ids);
     }
 
     public function filter(Request $request, $module)
@@ -136,25 +137,25 @@ class ItemController extends Controller
         return Group::where('module', 'category-' . $this->module)->get(['id', 'title', 'parent_id']);
     }
 
-    public function searchItemGroup(Request $request)
-    {
-        if (empty($request->search_query)) {
-            return [];
+        public function searchItemGroup(Request $request)
+        {
+            if (empty($request->search_query)) {
+                return [];
+            }
+            $result = Item::where('title', 'LIKE', '%' . $request->search_query . '%')
+                ->where('module', substr($request->module, 0, -6))
+                ->where('status', self::STATUS_ACTIVE)
+                ->limit(2)
+                ->get();
+            $html = view('backend.groups.result-search-item-group', ['items' => $result, 'group_id' => $request->group_id])->render();
+            return response()->json($html);
         }
-        $result = Item::where('title', 'LIKE', '%' . $request->search_query . '%')
-            ->where('module', substr($request->module, 0, -6))
-            ->where('status', self::STATUS_ACTIVE)
-            ->limit(2)
-            ->get();
-        $html = view('backend.groups.result-search-item-group', ['items' => $result, 'group_id' => $request->group_id])->render();
-        return response()->json($html);
-    }
 
     public function replication($id)
     {
         $item = Item::find($id);
         $item->replicate()->save();
-        Session::put('message','Đã nhân bản item số '.$id);
+        Session::put('message', 'Đã nhân bản item số ' . $id);
         return back();
     }
 }

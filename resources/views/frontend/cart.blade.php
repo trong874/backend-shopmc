@@ -93,8 +93,7 @@
                             <div class="title"><h1 class="entry-title">Giỏ hàng của bạn</h1></div>
                             <div class="woocommerce">
                                 <div class="woocommerce-notices-wrapper"></div>
-                                <form class="woocommerce-cart-form" action="{{route('checkout')}}" method="post">
-                                    @csrf
+                                <form class="woocommerce-cart-form" action="{{route('checkout')}}" method="get">
                                     <div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents"
                                          cellspacing="0">
                                         <div class="top_cart">
@@ -211,7 +210,7 @@
                                                                         $('#total_price').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_all').html(new Intl.NumberFormat().format(res.total_price));
                                                                         $('#total_price_input').val(res.total_price);
-                                                                        location.reload();
+                                                                        $('#btn_total_price_in_header').html(new Intl.NumberFormat().format(res.total_price));
                                                                     }
                                                                 });
                                                             }

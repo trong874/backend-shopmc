@@ -27,9 +27,13 @@
                                             <span class="user-image-in-name">
                                                 <img src="{{Auth::user()->image ?? asset('media/users/100_3.jpg')}}" width="35" height="35" alt="Avatar" class="avatar avatar-35 wp-user-avatar wp-user-avatar-35 photo avatar-default"></span>{{Auth::user()->username}}</li>
                                         <li class="user-editorders-link-intop menu-item">
-                                            <a href="#">
+                                            <a href="{{route('profile.user')}}">
                                                 <i class="rhicon rhi-user" aria-hidden="true"></i>
                                                 <span>Thông tin tài khoản</span></a></li>
+                                        <li class="user-editorders-link-intop menu-item">
+                                            <a href="#">
+                                                <i class="far fa-usd-circle"></i>
+                                                <span>Số dư:</span></a></li>
                                         <li class="user-editorders-link-intop menu-item">
                                             <a href="{{route('orders')}}">
                                                 <i class="rhicon rhi-shopping-bagfeather" aria-hidden="true"></i>
@@ -92,7 +96,7 @@
                                             <span class="rh_woocartmenu-amount">
                                                 <span class="woocommerce-Price-amount amount">
                                                     <bdi>
-                                                        <span class="woocommerce-Price-currencySymbol">{{(number_format($data['total_price']))}} &#8363;</span>
+                                                        <span class="woocommerce-Price-currencySymbol" id="btn_total_price_in_header">{{(number_format($data['total_price']))}} &#8363;</span>
                                                     </bdi>
                                                 </span>
                                             </span>
@@ -194,8 +198,7 @@
                             </ul>
                         </li>
                         <li id="menu-item-9558" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                href="#"><i class="far fa-usd-circle"></i> Khuyến
-                                mại</a></li>
+                                href="{{route('charge.index')}}"><i class="far fa-usd-circle"></i> Nạp thẻ</a></li>
                         <li id="menu-item-9664" class="menu-item menu-item-type-custom menu-item-object-custom"><a
                                 href="{{route('new.list')}}"><i class="fas fa-newspaper"></i>
                                 Tin tức</a></li>
@@ -244,8 +247,8 @@
                     </div>
                 </div>
                 <div class="search-header-contents">
-                    <form role="search" method="get" class="search-form" action="/">
-                        <input type="text" name="s" placeholder="Tìm kiếm"  autocomplete="off">
+                    <form role="search" method="get" class="search-form" action="{{route('product.search')}}">
+                        <input type="text" name="keyword" placeholder="Tìm kiếm"  autocomplete="off" value="{{@$keyword}}">
                         <input type="hidden" name="post_type" value="product"/>
                         <button type="submit" class="btnsearch"><i class="rhicon rhi-search"></i></button>
                     </form>

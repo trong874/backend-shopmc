@@ -30,6 +30,7 @@ class GroupController extends Controller
     public function create()
     {
         return view('backend.groups.form-data', [
+            'groups' =>$this->getGroupsByModule(),
             'module' => $this->module,
         ]);
     }
@@ -57,6 +58,7 @@ class GroupController extends Controller
     {
         $group = Group::findOrFail($group);
         return view('backend.groups.form-data', [
+            'groups' =>$this->getGroupsByModule(),
             'module' => $this->module,
             'group' => $group
         ]);
@@ -89,6 +91,9 @@ class GroupController extends Controller
             ]);
         }
         $item = Item::findOrFail($item_id);
+
+        $item->groups()->attach($group_id);
+
         $group = Group::findOrFail($group_id);
         $html = view('backend.groups.table_item_in_group',compact('group'))->render();
         return response()->json([
@@ -106,5 +111,10 @@ class GroupController extends Controller
         return response()->json([
             'html'=>$html,
             'message'=>'Đã xoá item số '.$item->id.' khỏi nhóm']);
+    }
+
+    public function getGroupsByModule()
+    {
+        return Group::where('module',$this->module)->get(['id', 'title']);
     }
 }

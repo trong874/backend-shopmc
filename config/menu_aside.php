@@ -72,6 +72,16 @@ return [
             'new-tab' => false,
         ],
         [
+            'section' => 'Telecom',
+        ],
+        [
+            'title' => 'Quản lí nạp thẻ',
+            'root' => true,
+            'icon' => 'media/svg/icons/Shopping/Dollar.svg', // or can be 'flaticon-home' or any flaticon-*
+            'page' => '/admin/telecoms',
+            'new-tab' => false,
+        ],
+        [
             'section' => 'Người dùng',
         ],
         [

@@ -27,15 +27,15 @@
                         <div class="d-flex justify-content-between pt-6 mb-4 mt-4">
                             <div class="d-flex flex-column flex-root">
                                 <h3 class="font-weight-bolder mb-2">Họ tên:</h3>
-                                <span class="opacity-70">{{@$order->user->fullname}}</span>
+                                <span class="opacity-70">{{@$shipment_details->fullname}}</span>
                             </div>
                             <div class="d-flex flex-column flex-root">
                                 <h3 class="font-weight-bolder mb-2">Số điện thoại:</h3>
-                                <span class="opacity-70">{{@$order->user->phone}}</span>
+                                <span class="opacity-70">{{@$shipment_details->phone}}</span>
                             </div>
                             <div class="d-flex flex-column flex-root">
                                 <h3 class="font-weight-bolder mb-2">Địa chỉ giao hàng:</h3>
-                                <span class="opacity-70">{{@$order->user->address}}</span>
+                                <span class="opacity-70" id="shipment_details"></span>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,8 @@
                                     <th class="pl-0 font-weight-bold text-muted text-uppercase">Tên mặt hàng</th>
                                     <th class="text-right font-weight-bold text-muted text-uppercase">Số lượng</th>
                                     <th class="text-right font-weight-bold text-muted text-uppercase">Giá sản phẩm</th>
-                                    <th class="text-right pr-0 font-weight-bold text-muted text-uppercase">Thành tiền</th>
+                                    <th class="text-right pr-0 font-weight-bold text-muted text-uppercase">Thành tiền
+                                    </th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -60,7 +61,9 @@
                                         <td class="border-top-0 pl-0 py-4">{{$item->title}}</td>
                                         <td class="border-top-0 text-right py-4">{{$order_detail[$key]->quantity}}</td>
                                         <td class="border-top-0 text-right py-4">{{number_format($item->price)}} ₫</td>
-                                        <td class="text-danger border-top-0 pr-0 py-4 text-right">{{number_format($item->price * $order_detail[$key]->quantity)}} ₫</td>
+                                        <td class="text-danger border-top-0 pr-0 py-4 text-right">{{number_format($item->price * $order_detail[$key]->quantity)}}
+                                            ₫
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -76,8 +79,11 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="font-weight-bold text-muted text-uppercase">Thanh toán bằng:</th>
+                                    <th class="font-weight-bold text-muted text-uppercase">Phương thức thanh toán:</th>
                                     <th class="font-weight-bold text-muted text-uppercase">ID đơn hàng</th>
+                                    @if(@$voucher)
+                                    <th class="font-weight-bold text-muted text-uppercase">Mã giảm giá</th>
+                                    @endif
                                     <th class="font-weight-bold text-muted text-uppercase">Ngày mua</th>
                                     <th class="font-weight-bold text-muted text-uppercase">Tổng thanh toán:</th>
                                 </tr>
@@ -86,8 +92,26 @@
                                 <tr class="font-weight-bolder">
                                     <td>Thanh toán khi nhận hàng</td>
                                     <td>{{$order->id}}</td>
+                                    @if(@$voucher)
+                                    <td>{{@$voucher->title}}</td>
+                                    @endif
                                     <td>{{$order->created_at}}</td>
-                                    <td class="text-danger font-size-h3 font-weight-boldest">{{number_format($order->price)}} ₫</td>
+                                    <td class="text-danger font-size-h3 font-weight-boldest">{{number_format($order->price)}}
+                                        ₫
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    @if(@$voucher)
+                                    <td></td>
+                                    @endif
+                                    <td></td>
+                                    <td>
+                                        @if($order->status === 1)
+                                            <a class="btn btn-danger right" onclick="return confirm('Xác nhận huỷ đơn hàng ?')" href="{{route('order_cancel',['auth_id'=>Auth::user()->id,                                                                                                                                           'order_id'=>$order->id])}}">Huỷ đơn hàng</a>
+                                        @endif
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -100,4 +124,40 @@
             <!--end::Form-->
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        function readTextFile(file, callback) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType("application/json");
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            }
+            rawFile.send(null);
+        }
+
+        //usage:
+        readTextFile("{{asset('frontend/local_selector.json')}}", function (text) {
+            let shipment_details = document.getElementById('shipment_details');
+
+            let data = JSON.parse(text);
+            let province = data.filter(function (n) {
+                return n.i ===  {{@$shipment_details->province}};
+            })
+
+            let district = province[0].c.filter(function (n) {
+                return n.i === {{@$shipment_details->district}};
+            })
+
+            let ward = district[0].c.filter(function (n) {
+                return n.i === {{@$shipment_details->ward}};
+            })
+
+            let address = "{{@$shipment_details->address}}";
+            shipment_details.append(address + ', ' + ward[0].n + ', ' + district[0].n + ', '+ province[0].n)
+        });
+    </script>
 @endsection

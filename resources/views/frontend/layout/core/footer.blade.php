@@ -102,7 +102,7 @@
     <div class="rh-container clearfix">
         <div class="footer_most_bottom">
             <div class="f_text">
-                <span class="f_text_span" style="margin-left: 6px">2021 WEB PHỤ KIỆN GAME</span>
+                <span class="f_text_span" style="margin-left: 6px">2021 SHOP PHỤ KIỆN GAME</span>
             </div>
         </div>
     </div>

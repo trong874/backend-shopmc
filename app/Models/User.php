@@ -72,5 +72,7 @@ class User extends Authenticatable
         return $this->hasMany(Order::class,'author_id','id');
     }
 
-
+     function vouchers(){
+        return $this->belongsToMany(Voucher::class,'voucher_user','user_id','voucher_id');
+     }
 }

@@ -60,11 +60,19 @@ class CategoryController extends Controller
     {
         $group = Group::findOrFail($group, [
             'id',
+            'url',
+            'order',
             'position',
             'title',
             'slug',
             'parent_id',
-            'image'
+            'image',
+            'image_extension',
+            'image_banner',
+            'image_icon',
+            'status',
+            'ended_at',
+            'created_at'
         ]);
 
         return view('backend.categories.form-data', [
@@ -77,14 +85,9 @@ class CategoryController extends Controller
 
     public function update(Request $request, $group)
     {
-        $group = Group::findOrFail($group);
-        $group->update([
-            'position'=>$request->position,
-            'title' => $request->title,
-            'slug'=>$request->slug,
-            'parent_id' => $request->parent_id,
-            'image' => $request->image
-        ]);
+        $data_category = $request->all();
+        $category = Group::findOrFail($group);
+        $category->update($data_category);
         Session::put('message','Chỉnh sửa thành công');
         return back();
     }
@@ -127,5 +130,6 @@ class CategoryController extends Controller
     {
         $ids = $request->ids;
         Group::whereIn('id', explode(",", $ids))->delete();
+        return response()->json(['status'=>'success']);
     }
 }

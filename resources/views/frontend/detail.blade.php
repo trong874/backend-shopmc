@@ -4,11 +4,10 @@
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
-                <div
-                    class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
+                <div class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
                     id="content">
                     <div class="post">
-                        <nav class="woocommerce-breadcrumb"><a href="https://shopmc.com.vn">Trang chủ</a><span
+                        <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span
                                 class="delimiter"><i class="rhicon rhi-angle-right"></i></span><a
                                 href="https://shopmc.com.vn/danh-muc/kiem-cuoc-riu-minecraft/">{{$itemDetail->title}}</a>
                         </nav>
@@ -127,13 +126,18 @@
                                             <div class="compare-button-holder">
 
                                                 <p class="price">
-                                                    <del><span class="woocommerce-Price-amount amount">
-                                                            <bdi>{{number_format($itemDetail->price_old)}}<span
-                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                    <del>
+                                                        <span class="woocommerce-Price-amount amount">
+                                                            <bdi>
+                                                                @if(isset($itemDetail->price_old))
+                                                                <span>{{number_format($itemDetail->price_old)}}</span>
+                                                                <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                    @endif
+                                                            </bdi>
                                                         </span>
                                                     </del>
-                                                    <ins style="margin-left: 10px"><span
-                                                            class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
+                                                    <ins style="margin-left: 10px">
+                                                        <span class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
                                                                     class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                     </ins>
                                                 </p>
@@ -538,8 +542,8 @@
                                                  data-template="woogridpart" id="rh_woogrid_1295472877"
                                                  data-innerargs="{&quot;columns&quot;:&quot;6_col&quot;,&quot;woolinktype&quot;:&quot;product&quot;,&quot;disable_thumbs&quot;:&quot;&quot;,&quot;gridtype&quot;:&quot;&quot;,&quot;soldout&quot;:&quot;&quot;,&quot;attrelpanel&quot;:&quot;&quot;}">
 
-                                                @if(@$related->item)
-                                                    @foreach($related->item as $products)
+                                                @if(@$related[0]->item)
+                                                    @foreach($related[0]->item as $products)
                                                         @if($products->id != $itemDetail->id)
                                                             <div
                                                                 class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
@@ -559,20 +563,22 @@
                                                                 <h3 class=" text-clamp text-clamp-2">
                                                                     <a href="{{route('item.detail',$products->slug)}}">{{$products->title}}</a>
                                                                 </h3>
-
-
                                                                 <div class="border-top pt10 pr10 pl10 pb10">
                                                                     <div
                                                                         class="price_for_grid floatleft rehub-btn-font mr10">
                                                                         <p class="price">
-                                                                            <del><span
-                                                                                    class="woocommerce-Price-amount amount">
-                                                            <bdi>{{number_format($itemDetail->price_old)}}<span
-                                                                    class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                                            <del>
+                                                                                <span class="woocommerce-Price-amount amount">
+                                                                  <bdi>
+                                                                      @if(isset($products->price_old))
+                                                                      <span> {{number_format($products->price_old)}}</span>
+                                                                   <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                          @endif
+                                                                  </bdi>
                                                         </span>
                                                                             </del>
                                                                             <ins style="margin-left: 10px"><span
-                                                                                    class="woocommerce-Price-amount amount"><bdi>{{number_format($itemDetail->price)}}<span
+                                                                                    class="woocommerce-Price-amount amount"><bdi>{{number_format($products->price)}}<span
                                                                                             class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                                             </ins>
                                                                         </p>

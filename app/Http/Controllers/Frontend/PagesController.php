@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Models\Order;
 use App\Models\Order_Detail;
 use App\Models\Setting;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,10 +65,15 @@ class   PagesController extends Controller
             ->first([
                 'title', 'content', 'description', 'image', 'url', 'price', 'price_old', 'slug', 'id', 'image_extension'
             ]);
-//        $flashSales = Item::where('position', 'flashsale')->get([
-//            'title', 'description', 'image', 'url', 'price', 'price_old','id','slug'
-//        ]);
-        $related = $itemDetail->groups()->with('item')->where('module', 'products-group')->first();
+        $related = $itemDetail->groups()->with('item')
+            ->where('module', 'products-group')
+            ->get()
+            ->map(function($group) {
+                $group->setRelation('item', $group->item->take(7));
+                return $group;
+            });
+
+
         return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related]);
     }
 
@@ -104,7 +110,6 @@ class   PagesController extends Controller
     public function checkout(Request $request)
     {
         $data_cart = $request->all();
-        unset($data_cart['_token']);
         $items = [];
         foreach ($data_cart['cart'] as $key => $item) {
             array_push($items, ['item' => Item::findOrFail($key), 'qty' => $item['qty']]);
@@ -121,14 +126,19 @@ class   PagesController extends Controller
         return view('frontend.orders', [
             'orders' => $orders
         ]);
+
     }
 
     public function orderDetail($id)
     {
         $order = Order::with('items', 'user')->whereId($id)->first();
         $order_detail = Order_Detail::whereOrder_id($id)->get();
+        $shipment_details = json_decode($order->params);
+        $voucher = Voucher::whereCode($shipment_details->voucher_code)->first('title');
         return view('frontend.order_detail', [
             'order' => $order,
+            'voucher'=>$voucher,
+            'shipment_details'=>$shipment_details,
             'order_detail' => $order_detail
         ]);
     }
@@ -145,6 +155,10 @@ class   PagesController extends Controller
         $data = $data->where('status',1)->paginate(6);
         $html = view('frontend/widget/components/load_item',compact('data'))->render();
         return response()->json($html);
+    }
+    
+    public function profile(){
+        return view('frontend.layout.core.profile');
     }
 
 }

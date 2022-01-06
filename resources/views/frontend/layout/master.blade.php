@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- This site is optimized with the Yoast SEO plugin v15.9 - https://yoast.com/wordpress/plugins/seo/ -->
-    <title>{{$page_title ?? "Phukiengame"}}</title>
+    <title>{{$page_title ?? "SHOP PHỤ KIỆN GAME"}}</title>
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 

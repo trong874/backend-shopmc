@@ -16,7 +16,7 @@ class Order extends Model
         'author_id',
         'price',
         'status',
-        ''
+        'params'
     ];
 
     function items()
