@@ -495,7 +495,7 @@
                                         <script async="" defer="" crossorigin="anonymous"
                                                 src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v7.0&amp;appId=248671142486453&amp;autoLogAppEvents=1"></script>
                                         <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
-                                             data-href="https://shopmc.com.vn/san-pham/kiem-diamond-minecraft-chinh-hang/"
+                                             data-href="/{{$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]}}"
                                              data-numposts="5" data-width="auto" fb-xfbml-state="rendered"
                                              fb-iframe-plugin-query="app_id=248671142486453&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width="
                                              style="width: 100%;"><span
