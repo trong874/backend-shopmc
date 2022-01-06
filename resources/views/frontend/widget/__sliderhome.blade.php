@@ -1,7 +1,6 @@
 
     <div class="rh-container full_width">
         <div class="rh-content-wrap clearfix">
-            <!-- Main Side -->
             <!--START Slider 1 REVOLUTION SLIDER 6.2.23 -->
             <p class="rs-p-wp-fix"></p>
             <div id="slider_home">
