@@ -40,7 +40,17 @@
     <meta name="description"
           content="Phukiengame cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-    <link rel="canonical" href="https://dev.phukiengame.com.vn/"/>
+    <?php
+    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+        $url = "https://";
+    else
+        $url = "http://";
+    // Append the host(domain name, ip) to the URL.
+    $url.= $_SERVER['HTTP_HOST'];
+    // Append the requested resource location to the URL
+    $url.= $_SERVER['REQUEST_URI'];
+    ?>
+    <link rel="canonical" href="{{$url}}"/>
     <meta property="og:locale" content="vi_VN"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Phukiengame - Đồ chơi minecraft chính hãng tại việt nam"/>
