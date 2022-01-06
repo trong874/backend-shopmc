@@ -7,8 +7,7 @@
                     <div class="wpb_column vc_column_container vc_col-sm-4">
                         <div class="vc_column-inner ">
                             <div class="wpb_wrapper">
-                                <h4 style="margin-block-start: 1em; margin-left: 15px"
-                                    class="vc_custom_heading post ">Đồ Chơi Minecraft</h4>
+                                <h2 style="margin-left: 15px">Đồ Chơi Minecraft</h2>
                             </div>
                         </div>
                     </div>

@@ -26,6 +26,8 @@ class   PagesController extends Controller
             ->get([
                 'image', 'title', 'slug'
             ]);
+        $page_title = 'Trang tin tức';
+        $page_description = 'Các tin tức được cập nhật mới hằng ngày';
         return view('frontend.news_item', ['all_news' => $all_news]);
     }
 
@@ -44,7 +46,7 @@ class   PagesController extends Controller
         $categoryDetails = Group::where('module', 'category-products')
             ->where('slug', $slug)->first();
         if ($categoryDetails->parent_id == null) {
-            $categories = $categoryDetails->groups()->with('item')->get(['id']);
+            $categories = $categoryDetails->groups()->with('item')->get(['id','title','description']);
             foreach ($categories as $category) {
                 foreach ($category->item as $product) {
                     array_push($products, $product);
@@ -55,7 +57,9 @@ class   PagesController extends Controller
                 'title', 'image', 'price', 'price_old', 'slug'
             ]);
         }
-        return view('frontend.category_product', compact('categoryDetails', 'products'));
+        $page_title = $categoryDetails->titlte;
+        $page_description = $categoryDetails->page_description;
+        return view('frontend.category_product', compact('categoryDetails', 'products','page_title','page_description'));
     }
 
 
@@ -65,6 +69,8 @@ class   PagesController extends Controller
             ->first([
                 'title', 'content', 'description', 'image', 'url', 'price', 'price_old', 'slug', 'id', 'image_extension'
             ]);
+        $page_title = $itemDetail->title;
+        $page_description = $itemDetail->description;
         $related = $itemDetail->groups()->with('item')
             ->where('module', 'products-group')
             ->get()
@@ -73,8 +79,7 @@ class   PagesController extends Controller
                 return $group;
             });
 
-
-        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related]);
+        return view('frontend.detail', ['itemDetail' => $itemDetail, 'related' => $related,'page_title'=>$page_title,'page_description'=>$page_description]);
     }
 
 
@@ -85,8 +90,10 @@ class   PagesController extends Controller
             ->first([
                 'title', 'content', 'description', 'image', 'url', 'slug', 'id'
             ]);
+        $page_title = $newDetail->title;
+        $page_description = $newDetail->description;
         $related = $newDetail->groups()->with('item')->where('module', 'news-group')->first();
-        return view('frontend.detail-news', ['newDetail' => $newDetail, 'related' => $related]);
+        return view('frontend.detail-news', ['newDetail' => $newDetail, 'related' => $related,'page_title'=>$page_title,'page_description'=>$page_description]);
     }
 
     public function filter(Request $request)
@@ -156,7 +163,7 @@ class   PagesController extends Controller
         $html = view('frontend/widget/components/load_item',compact('data'))->render();
         return response()->json($html);
     }
-    
+
     public function profile(){
         return view('frontend.layout.core.profile');
     }

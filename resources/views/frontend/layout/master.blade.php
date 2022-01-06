@@ -38,8 +38,7 @@
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-    <meta name="description"
-          content="Shop mc cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
+    <meta name="description" content="{{@$seo_description ?? 'Shop Phụ Kiện Game chuyên cung cấp các phụ kiện chơi game chính hãng chất lượng'}}"/>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
     <link rel="canonical" href="https://shopmc.com.vn/"/>
     <meta property="og:locale" content="vi_VN"/>
@@ -134,11 +133,6 @@
     <script type='text/javascript'
             src='{{asset('frontend/js/js/rs6.min.js')}}'
             id='revmin-js'></script>
-    <script type='text/javascript' id='wt-smart-coupon-js-extra'>
-        /* <![CDATA[ */
-        var WTSmartCouponOBJ = {"ajaxurl": "https:\/\/shopmc.com.vn\/wp-admin\/admin-ajax.php"};
-        /* ]]> */
-    </script>
     <script type='text/javascript'
             src='{{asset('frontend/js/js/wt-smart-coupon-public.js')}}'
             id='wt-smart-coupon-js'></script>

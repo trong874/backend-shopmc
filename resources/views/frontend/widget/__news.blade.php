@@ -3,9 +3,9 @@
     <div class="wpb_column vc_column_container vc_col-sm-12 ">
 {{--        vc_hidden-xs--}}
         <div class="vc_column-inner post">
-            <div class="wpb_wrapper"><h4
+            <div class="wpb_wrapper"><h2
                     style="margin-block-start: 1em;  margin-left: 15px"
-                    class="vc_custom_heading vc_custom_1607448849913">Tin tức cộng đồng</h4>
+                    class="vc_custom_heading vc_custom_1607448849913">Tin tức cộng đồng</h2>
             </div>
         </div>
     </div>
@@ -34,8 +34,8 @@
                                     </figure>
                                 </div>
                                 <div class="newsdetail newstitleblock rh_gr_right_sec">
-                                    <h2 class="font130 mt0 mb10 mobfont120 lineheight20"><a
-                                            href="{{route('news.detail',$new->slug)}}">{{$new->title}}</a></h2>
+                                    <h3 class="font130 mt0 mb10 mobfont120 lineheight20"><a
+                                            href="{{route('news.detail',$new->slug)}}">{{$new->title}}</a></h3>
                                     <span
                                         class="more-from-store-a floatleft ml0 mr10 mb5 lineheight20"><span
                                             class="tag_post_store_meta"></span></span>
