@@ -73,7 +73,7 @@
                     <script>
                         var page_balo_bag =3;
                     </script>
-                    <div class="re_ajax_pagination mt-3" onclick="seeMore({{$data_group->id}},'#clothing_products',page_clothes++)">
+                    <div class="re_ajax_pagination mt-3" id="see-more-handbangs-button" onclick="seeMore({{$data_group->id}},'#clothing_products',page_clothes++,'#'+this.id)">
                             <span data-offset="12"
                                   data-containerid="rh_woogrid_2031402312"
                                   class="re_ajax_pagination_btn def_btn">Xem Thêm</span>

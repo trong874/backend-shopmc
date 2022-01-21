@@ -8,8 +8,8 @@ function seeMore(group_id,idElement, page,id_button_see_more) {
         },
         method: 'GET',
         success: function (res) {
-            if (res){
-                $(idElement).append(res)
+            if (res.status){
+                $(idElement).append(res.html)
             }else {
                 $(id_button_see_more).remove();
             }
