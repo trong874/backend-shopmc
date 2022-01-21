@@ -4,6 +4,7 @@ use App\Models\Cart;
 use App\Models\Cart_Item;
 use App\Models\Group;
 use App\Models\Item;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
@@ -202,4 +203,25 @@ View::composer('frontend.home',function ($view){
        $q->where('slug','slide-banner');
     })->get();
    return $view->with('slideBanners',$slideBanners);
+});
+
+//get setting
+View::composer('frontend.layout.master', function ($view) {
+    $settings = Setting::all();
+    return $view->with('settings', $settings);
+});
+
+View::composer('frontend.widget.__sliderhome', function ($view) {
+    $settings = Setting::all();
+    return $view->with('settings', $settings);
+});
+
+View::composer('frontend.news_item', function ($view) {
+    $settings = Setting::all();
+    return $view->with('settings', $settings);
+});
+
+View::composer('frontend.detail-news', function ($view) {
+    $settings = Setting::all();
+    return $view->with('settings', $settings);
 });

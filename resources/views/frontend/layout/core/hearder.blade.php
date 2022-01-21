@@ -58,7 +58,7 @@
                 <div class="logo-section rh-flex-center-align tabletblockdisplay header_seven_style clearfix">
                     <div class="logo">
                         <a href="{{ route('page.index') }}" class="logo_image">
-                            <img src="https://shopmc.com.vn/wp-content/uploads/2019/02/Minecraft_logo.png"
+                            <img src="{{$settings[7]['val']}}"
                                  alt="Shop MC" height="" width=""/>
                         </a>
                     </div>
