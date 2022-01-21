@@ -69,19 +69,19 @@
                                             <div class="fileinput ck-parent" data-provides="fileinput">
                                                 <div class="fileinput-new thumbnail" style="width: 100px; height: 100px">
 
-                                                    <img class="ck-thumb" id="image_avatar"
+                                                    <img class="ck-thumb" id="{{$item->id}}"
                                                          src="{{(isset($item->image))? $item->image : asset('/frontend/image/empty.jpg')}}"
                                                          alt="">
-                                                    <input class="ck-input" id="image_avatar_input" type="hidden" name="{{$item->id}}"
+                                                    <input class="ck-input" id="{{$item->id}}_input" type="hidden" name="{{$item->id}}"
                                                            value="{{@$item->image}}">
 
                                                 </div>
                                                 <div class="button-action">
                                                     <button type="button" class="btn btn-outline-success"
-                                                            onclick="selectFileWithCKFinder('image_avatar')"> Thay đổi
+                                                            onclick="selectFileWithCKFinder('{{$item->id}}')"> Thay đổi
                                                     </button>
                                                     <button type="button" class="btn btn-outline-danger"
-                                                            onclick="deleteImage('image_avatar')"> Xóa
+                                                            onclick="deleteImage('{{$item->id}}')"> Xóa
                                                     </button>
                                                 </div>
                                             </div>
