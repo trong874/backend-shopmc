@@ -7,7 +7,9 @@
                 <rs-module-wrap id="rev_slider_24_1_wrapper" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
                     <rs-module id="rev_slider_24_1" style="" data-version="6.2.23">
                         <rs-slides>
-                            @foreach($slideBanners as $slideBanner)
+                            @foreach($settings as $item)
+                                @foreach(explode('|',$item->val) as $img_ex)
+                                    @if(@$item->type == 'image_website_slide')
                             <rs-slide data-key="rs-34" data-title="Slide" data-anim="ei:d;eo:d;s:d;r:0;t:parallaxtoright;sl:d;">
                                 <img src="{{asset('/frontend/image/transparent.png')}}"  alt="Slide" title="Trang chủ" data-parallax="off" class="rev-slidebg" data-no-retina>
                                 <!-- -->
@@ -22,9 +24,11 @@
                                     data-frame_1="sp:1000;"
                                     data-frame_999="o:0;st:w;"
                                     style="z-index:5;">
-                                    <img src="{{$slideBanner->image}}" width="1200" height="240" data-no-retina style="object-fit: cover !important;">
+                                    <img src="{{$img_ex}}" width="1200" height="240" data-no-retina style="object-fit: cover !important;">
                                 </rs-layer><!--
 -->						    </rs-slide>
+                                    @endif
+                                @endforeach
                             @endforeach
                         </rs-slides>
                     </rs-module>

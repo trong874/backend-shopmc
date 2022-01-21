@@ -106,7 +106,7 @@
                                  style="float: left;">
                             <div class="text3">
                                 <b>Liên Hệ</b><br>
-                                Hotline đặt hàng 0904568069
+                                Hotline đặt hàng {{$settings[4]['val']}}
                                 (hỗ trợ 24/7 cả T7, CN)
                             </div>
                         </div>

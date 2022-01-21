@@ -6,11 +6,11 @@
                     <div class="title">VỀ SHOP</div>
                     <div class="textwidget"><p class="hotline"><span style="color: #c4011a;"><strong>Hotline đặt hàng: </strong></span><a
                                 href="tel:0981058326"><strong><span
-                                        style="color: #c4011a;">0981 058 326</span></strong></a></p>
+                                        style="color: #c4011a;">{{$settings[4]['val']}}</span></strong></a></p>
                         <p class="hotline"><span class="small-text">(Hỗ trợ 24/7, kể cả T7 &#8211; CN)</span></p>
                         <p class="hotline"><strong><span style="color: #c4011a;">Hotline: </span><a
-                                    href="tel:0904568069"><span
-                                        style="color: #c4011a;">090 4568 069</span></a></strong></p>
+                                    href="tel:{{$settings[4]['val']}}"><span
+                                        style="color: #c4011a;">{{$settings[4]['val']}}</span></a></strong></p>
                         <p class="hotline"><span class="small-text">(Hỗ trợ 24/7, kể cả T7 &#8211; CN)</span></p>
                         <ul>
                             <li><a href="#">Các câu hỏi thường gặp</a>
@@ -75,7 +75,7 @@
                             <div class="title">KẾT NỐI VỚI CHÚNG TÔI</div>
                             <div class="widget_recent_entries">
                                 <p>
-                                    <a href="#" target=" _blank"
+                                    <a href="{{$settings[6]['val']}}" target=" _blank"
                                       rel="noopener noreferrer">
                                         <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"/>
                                     </a>
@@ -90,7 +90,7 @@
                         <p>
                             <strong>ĐỊA CHỈ CỬA HÀNG:</strong>
                         </p>
-                        <p style="margin-top: 10px">số 37 Nguyễn Văn Huyên, Quan Hoa, Cầu Giấy</p>
+                        <p style="margin-top: 10px">{{$settings[3]['val']}}</p>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
     <div class="rh-container clearfix">
         <div class="footer_most_bottom">
             <div class="f_text">
-                <span class="f_text_span" style="margin-left: 6px">2021 SHOP PHỤ KIỆN GAME</span>
+                <span class="f_text_span" style="margin-left: 6px">{{$settings[0]['val']}}</span>
             </div>
         </div>
     </div>

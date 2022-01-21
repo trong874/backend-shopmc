@@ -1,4 +1,10 @@
 @extends('backend.layout.default')
+@section('styles')
+    <script src="{{asset('ckfinder/ckfinder.js')}}"></script>
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('css/nestable.css')}}">
+    <link rel="stylesheet" href="{{asset('css/product-form.css')}}">
+@endsection
 @section('content')
     <form action="{{route("setting.update",'-')}}" method="POST">
         @method('PUT')
@@ -53,6 +59,73 @@
                                     </div>
                                 @endif
                             @endforeach
+                                <div class="form-group row mt-3">
+
+                                    @foreach($configs as $item)
+                                        @if(@$item->type == 'logo_website')
+                                    <div class="col-md-6">
+                                        <label for="locale">{{$item->name}}:</label>
+                                        <div class="">
+                                            <div class="fileinput ck-parent" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail" style="width: 100px; height: 100px">
+
+                                                    <img class="ck-thumb" id="image_avatar"
+                                                         src="{{(isset($item->image))? $item->image : asset('/frontend/image/empty.jpg')}}"
+                                                         alt="">
+                                                    <input class="ck-input" id="image_avatar_input" type="hidden" name="{{$item->id}}"
+                                                           value="{{@$item->image}}">
+
+                                                </div>
+                                                <div class="button-action">
+                                                    <button type="button" class="btn btn-outline-success"
+                                                            onclick="selectFileWithCKFinder('image_avatar')"> Thay đổi
+                                                    </button>
+                                                    <button type="button" class="btn btn-outline-danger"
+                                                            onclick="deleteImage('image_avatar')"> Xóa
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        @endif
+                                    @endforeach
+
+                                </div>
+
+                                <div class="form-group row mt-3">
+                                    @foreach($configs as $item)
+                                        @if(@$item->type == 'image_website_slide')
+                                            <div class="col-md-8">
+                                                <label for="locale">{{$item->name}}:</label>
+                                                <div class="card">
+                                                    <div class="card-body p-3 ck-parent" style="min-height: 148px">
+                                                        <input class="image_input_text" type="hidden" name="{{$item->id}}"
+                                                               value="{{@$item->val}}">
+                                                        <div class="sortable grid">
+                                                            @if(@$item->val)
+                                                                @foreach(explode('|',$item->val) as $img_ex)
+                                                                    <div class="image-preview-box">
+                                                                        <img src="{{$img_ex}}" alt="" data-input="{{$img_ex}}">
+                                                                        <a rel="8" class="btn btn-xs  btn-icon btn-danger btn_delete_image"
+                                                                           data-toggle="modal" data-target="#deleteModal"><i
+                                                                                class="la la-close"></i></a>
+                                                                    </div>
+                                                                @endforeach
+                                                            @endif
+                                                        </div>
+                                                        <style>
+
+                                                        </style>
+                                                        <a class="btn btn-success ck-popup-multiply" style="margin-top: 15px;">
+                                                            <i class="la la-cloud-upload-alt"></i> Chọn hình
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                </div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Tab content
                             2
@@ -80,4 +153,7 @@
             })
         </script>
     @endif
+    <script src="{{asset('js/form-data-item.js')}}"></script>
+    <script src="{{asset('js/jquery.nestable.js')}}"></script>
+    <script src="{{asset('js/jquery.sortable.js')}}"></script>
 @endsection
