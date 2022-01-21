@@ -65,7 +65,7 @@
                     <script>
                         var page_lego_minecraft = 3;
                     </script>
-                    <div class="re_ajax_pagination mt-3" onclick="seeMore({{$data_group->id}},'#lego_minecraft',page_lego_minecraft++)">
+                    <div class="re_ajax_pagination mt-3" id="see-more-lego-mc-btn" onclick="seeMore({{$data_group->id}},'#lego_minecraft',page_lego_minecraft++,'#'+this.id)">
                             <span data-offset="12"
                                   data-containerid="rh_woogrid_2031402312"
                                   class="re_ajax_pagination_btn def_btn">Xem Thêm</span>

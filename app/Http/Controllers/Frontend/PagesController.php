@@ -150,12 +150,20 @@ class   PagesController extends Controller
         $data = Item::with(array('groups' => function($query){
             $query->where('module','products-group');
         }));
-        $data=$data->whereHas('groups', function ($query) use ($group_id){
+        $data = $data->whereHas('groups', function ($query) use ($group_id){
             $query->where('group_id',$group_id);
         });
         $data = $data->where('status',1)->paginate(6);
-        $html = view('frontend/widget/components/load_item',compact('data'))->render();
-        return response()->json($html);
+        if ($data['data']){
+            $html = view('frontend/widget/components/load_item',compact('data'))->render();
+            return response()->json([
+                'status'=>true,
+                'html'=>$html
+            ]);
+        }
+        return response()->json([
+            'status'=>false
+        ]);
     }
 
     public function profile(){
