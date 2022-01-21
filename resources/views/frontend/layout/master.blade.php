@@ -43,7 +43,8 @@
 
     <meta name="description" content="{{$page_description ?? 'Shop Phụ Kiện Game chuyên cung cấp các phụ kiện chơi game chính hãng chất lượng'}}"/>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-    <?php
+    <meta property="fb:admins" content="&#123;juss.ladykillah.7&#125;"/>
+<?php
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
         $url = "https://";
     else
