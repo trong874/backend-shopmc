@@ -1,10 +1,13 @@
 @extends('frontend.layout.master')
 @section('content')
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=458273852376116&autoLogAppEvents=1" nonce="ytpfLwrg"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <div class="rh-container">
         <div class="rh-content-wrap clearfix">
             <div id="contents-section-woo-area" class="rh-stickysidebar-wrapper">
-                <div class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
+                <div
+                    class="ce_woo_auto_sections ce_woo_blocks main-side rh-sticky-container clearfix full_width woo_default_no_sidebar"
                     id="content">
                     <div class="post">
                         <nav class="woocommerce-breadcrumb"><a href="/">Trang chủ</a><span
@@ -27,10 +30,11 @@
                                 </div>
                                 <div class="border-grey-bottom clearfix mb15"></div>
                                 <div class="product_content">
-                                    <div class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
-                                        <div class="product__carousel" >
+                                    <div
+                                        class="wpsm-one-third wpsm-column-first tabletblockdisplay compare-full-images modulo-lightbox mb30">
+                                        <div class="product__carousel">
                                             <!-- Swiper and EasyZoom plugins start -->
-                                            <div class="swiper-container gallery-top" >
+                                            <div class="swiper-container gallery-top">
                                                 <div class="swiper-wrapper">
                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
                                                         <div class="swiper-slide easyzoom easyzoom--overlay">
@@ -45,9 +49,9 @@
                                                 <div class="swiper-button-prev swiper-button-white"></div>
                                             </div>
                                             <div class="swiper-container gallery-thumbs">
-                                                <div class="swiper-wrapper" >
-                                                     @foreach(explode("|",$itemDetail->image_extension) as $item)
-                                                        <div class="swiper-slide" >
+                                                <div class="swiper-wrapper">
+                                                    @foreach(explode("|",$itemDetail->image_extension) as $item)
+                                                        <div class="swiper-slide">
                                                             <img src="{{$item}}?raw=true" alt="">
                                                         </div>
                                                     @endforeach
@@ -130,9 +134,9 @@
                                                         <span class="woocommerce-Price-amount amount">
                                                             <bdi>
                                                                 @if(isset($itemDetail->price_old))
-                                                                <span>{{number_format($itemDetail->price_old)}}</span>
-                                                                <span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                                                    @endif
+                                                                    <span>{{number_format($itemDetail->price_old)}}</span>
+                                                                    <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                @endif
                                                             </bdi>
                                                         </span>
                                                     </del>
@@ -222,7 +226,8 @@
                                                                 color: white"
                                                                 data-product-type="simple"
                                                                 class="wcqb-preset preset1 wcqb_button wc_quick_buy_button quick_buy_button quick_buy_button_tag quick_buy_simple quick_buy_simple_button quick_buy_20521 quick_buy_20521_button quick_buy_20521_simple quick_buy_20521_simple_button"
-                                                                type="button"><a href="{{route('item.cart')}}" style="color: white">Mua Ngay</a>
+                                                                type="button"><a href="{{route('item.cart')}}"
+                                                                                 style="color: white">Mua Ngay</a>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -261,14 +266,16 @@
                                                     (Miễn phí, 8-21h cả T7, CN)</p>
                                                 <a target=" _blank" rel="" href="#">
                                                     <div class="mxh">
-                                                    <noscript
-                                                        data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
-                                                        data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png.webp"
-                                                        class="">
-                                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
-                                                            data-eio="j"/>
-                                                    </noscript>
-                                                       <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png.webp">
+                                                        <noscript
+                                                            data-img="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
+                                                            data-webp="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png.webp"
+                                                            class="">
+                                                            <img
+                                                                src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png"
+                                                                data-eio="j"/>
+                                                        </noscript>
+                                                        <img
+                                                            src="https://shopmc.vn/wp-content/uploads/2019/03/icon-fb.png.webp">
                                                     </div>
                                                 </a>
                                                 <div class="mxh">
@@ -279,16 +286,19 @@
                                                             src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png"
                                                             data-eio="j"/>
                                                     </noscript>
-                                                    <img src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png.webp">
+                                                    <img
+                                                        src="https://shopmc.vn/wp-content/uploads/2019/03/icon-zalo.png.webp">
                                                 </div>
                                                 <div class="mxh">
                                                     <a href="#">
                                                         <noscript
                                                             data-img="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
                                                             data-webp="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"
-                                                            class=""><img src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
+                                                            class=""><img
+                                                                src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png"
                                                                 data-eio="j"/></noscript>
-                                                        <img src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"></a>
+                                                        <img
+                                                            src="https://shopmc.vn/wp-content/uploads/2019/03/youtube.png.webp"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -492,22 +502,6 @@
                                                 <div></div>
                                             </div>
                                         </div>
-                                        <script async="" defer="" crossorigin="anonymous"
-                                                src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v7.0&amp;appId=248671142486453&amp;autoLogAppEvents=1"></script>
-                                        <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
-                                             data-href="/{{$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]}}"
-                                             data-numposts="5" data-width="auto" fb-xfbml-state="rendered"
-                                             fb-iframe-plugin-query="app_id=248671142486453&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width="
-                                             style="width: 100%;"><span
-                                                style="vertical-align: bottom; width: 100%; height: 282px;"><iframe
-                                                    name="f31d227439edd98" width="1000px" height="100px"
-                                                    data-testid="fb:comments Facebook Social Plugin"
-                                                    title="fb:comments Facebook Social Plugin" frameborder="0"
-                                                    allowtransparency="true" allowfullscreen="true" scrolling="no"
-                                                    allow="encrypted-media"
-                                                    src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=248671142486453&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df19d8580865e108%26domain%3Dshopmc.com.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fshopmc.com.vn%252Ff9c5198ea72d98%26relation%3Dparent.parent&amp;container_width=1158&amp;height=100&amp;href=https%3A%2F%2Fshopmc.com.vn%2Fsan-pham%2Fkiem-diamond-minecraft-chinh-hang%2F&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width="
-                                                    style="border: none; visibility: visible; width: 100%; height: 282px;"
-                                                    class=""></iframe></span></div>
                                         <script>
                                             jQuery(function ($) {
                                                 $(document).ready(function () {
@@ -528,6 +522,20 @@
                                         </script>
 
                                     </div>
+                                    <div class="fb-comments"
+                                         data-href="<?php
+                                    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+                                        $url = "https://";
+                                    else
+                                        $url = "http://";
+                                    // Append the host(domain name, ip) to the URL.
+                                    $url.= $_SERVER['HTTP_HOST'];
+
+                                    // Append the requested resource location to the URL
+                                    $url.= $_SERVER['REQUEST_URI'];
+
+                                    echo $url;
+                                    ?>  " data-width="1200" data-numposts="5"></div>
                                 </div>
                             </div>
                             <div class="related-woo-area clearbox flowhidden" id="related-section-woo-area">
@@ -547,7 +555,7 @@
                                                         @if($products->id != $itemDetail->id)
                                                             <div
                                                                 class="product col_item woo_grid_compact two_column_mobile type-product rh-hover-up no_btn_enabled ">
-{{--                                                            <span class="re-ribbon-badge badge_20"><span>còn hàng!</span></span>--}}
+                                                                {{--                                                            <span class="re-ribbon-badge badge_20"><span>còn hàng!</span></span>--}}
                                                                 <figure class="mb5 mt25 position-relative notresized">
                                                                     <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align"
                                                                        href="{{route('item.detail',$products->slug)}}">
@@ -568,12 +576,14 @@
                                                                         class="price_for_grid floatleft rehub-btn-font mr10">
                                                                         <p class="price">
                                                                             <del>
-                                                                                <span class="woocommerce-Price-amount amount">
+                                                                                <span
+                                                                                    class="woocommerce-Price-amount amount">
                                                                   <bdi>
                                                                       @if(isset($products->price_old))
-                                                                      <span> {{number_format($products->price_old)}}</span>
-                                                                   <span class="woocommerce-Price-currencySymbol">&#8363;</span>
-                                                                          @endif
+                                                                          <span> {{number_format($products->price_old)}}</span>
+                                                                          <span
+                                                                              class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                      @endif
                                                                   </bdi>
                                                         </span>
                                                                             </del>
@@ -615,8 +625,6 @@
                 color: #ff8a00 !important;
             }
         </style>
-        <meta name="generator"
-              content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
         @endsection
         @section('styles')
             <link rel="stylesheet" href="{{asset('frontend/css/qib-container/style.css')}}">
