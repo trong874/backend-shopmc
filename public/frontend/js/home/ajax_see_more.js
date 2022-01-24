@@ -1,4 +1,3 @@
-
 function seeMore(group_id,idElement, page,id_button_see_more) {
     $.ajax({
         url: '/see_more_product',
