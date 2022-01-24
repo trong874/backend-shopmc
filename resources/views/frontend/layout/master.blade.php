@@ -7,52 +7,45 @@
     <meta property="fb:app_id" content="458273852376116"/>
     <meta charset="UTF-8"/>
 
-    <link rel="icon" href="{{asset("$settings[8]['val']")}}" type="image/x-icon" />
+    <link rel="icon" href="{{asset("$settings[8]['val']")}}" type="image/x-icon"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- feeds & pingback -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    <script src="{{asset('frontend/js/jquery.min.js')}}"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
-    <link rel="profile" href="http://gmpg.org/xfn/11"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
+   <script src = "{{asset('frontend/js/jquery-3.6.0.js')}}" integrity = "sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin ="anonymous" ></script>
+    <link rel="stylesheet" href="{{asset('frontend/css/all.css')}}" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- This site is optimized with the Yoast SEO plugin v15.9 - https://yoast.com/wordpress/plugins/seo/ -->
     <title>{{$page_title ?? "SHOP PHỤ KIỆN GAME"}}</title>
     <!-- JavaScript -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="{{asset('frontend/js/alertify.min.js')}}"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/alertify.min.css')}}"/>
     <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/default.min.css')}}"/>
     <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-
-    <meta name="description" content="{{$page_description ?? 'Shop Phụ Kiện Game chuyên cung cấp các phụ kiện chơi game chính hãng chất lượng'}}"/>
+    <link rel="stylesheet" href="{{asset('frontend/css/semantic.min.css')}}"/>
+    <meta name="description"
+          content="{{$page_description ?? 'Shop Phụ Kiện Game chuyên cung cấp các phụ kiện chơi game chính hãng chất lượng'}}"/>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
     <meta property="fb:admins" content="&#123;juss.ladykillah.7&#125;"/>
-<?php
-    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+    <?php
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
         $url = "https://";
     else
         $url = "http://";
     // Append the host(domain name, ip) to the URL.
-    $url.= $_SERVER['HTTP_HOST'];
+    $url .= $_SERVER['HTTP_HOST'];
     // Append the requested resource location to the URL
-    $url.= $_SERVER['REQUEST_URI'];
+    $url .= $_SERVER['REQUEST_URI'];
     ?>
     <link rel="canonical" href="{{$url}}"/>
     <meta property="og:locale" content="vi_VN"/>
@@ -62,7 +55,7 @@
           content="Phukiengame cung cấp đồ chơi minecraft chính hãng duy nhất tại việt nam, các sản phẩm đồ chơi minecraft như balo , đồng hồ, sách, quần áo minecraft..."/>
     <meta property="og:url" content="{{$url}}"/>
     <meta property="og:site_name" content="Phukiengame"/>
-    <meta property="article:modified_time" content="2020-12-10T16:04:54+00:00"/>
+    <meta property="article:modified_time" content="{{time()}}"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:label1" content="Est. reading time">
     <meta name="twitter:data1" content="12 phút">
@@ -148,8 +141,8 @@
     <link rel="stylesheet" href="{{asset('frontend/css/home/style2.css')}}?v={{time()}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/style.css')}}?v={{time()}}">
     <link rel="stylesheet" href="{{asset('frontend/css/home/filter_price.css')}}">
-    @yield('styles')
-    <!-- START woopt Pixel Manager -->
+@yield('styles')
+<!-- START woopt Pixel Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-861272757"></script>
     <script>
         gtag('config', 'AW-861272757');
@@ -361,7 +354,7 @@
         src='{{asset('/frontend/js/scripts.js')}}'
         id='contact-form-7-js'></script>
 <script type='text/javascript'
-        src='{{asset('/frontend/js/jquery.blockUI.min.js')}}'
+        src='{{asset('/frontend/js/jquery.blockUI.min.js')}}' f
         id='jquery-blockui-js'></script>
 <script type='text/javascript'
         src='{{asset('/frontend/js/add-to-cart.min.js')}}'
